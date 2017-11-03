@@ -1946,6 +1946,189 @@
           "IsMultiContentStreaming": false
         }
       }
+    },
+    "/legacy/voucher": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Gutschein berechnen",
+        "tags": [
+          "voucher"
+        ],
+        "operationId": "Gutschein berechnen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "password",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GutscheinBerechnenrequest"
+              }
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GutscheinBerechnenresponse"
+            },
+            "examples": {
+              "application/json": {
+                "dataset": [
+                  {
+                    "dataset": {
+                      "companyOrderID": "0001/01/616",
+                      "notice": "Das ist eine Kassen Bestellung",
+                      "shid": 1,
+                      "dcid": 1,
+                      "payments": [
+                        {
+                          "type": 20,
+                          "owner": "",
+                          "number": "",
+                          "option1": "",
+                          "option2": "",
+                          "option3": "",
+                          "state": ""
+                        }
+                      ],
+                      "user": {
+                        "userName": "user@example.com",
+                        "formOfAddress": "Herr",
+                        "letterFormOfAddress": "Sehr geehrter Herr",
+                        "birthday": "1977-01-04 00:00:00",
+                        "custom1": "Das ist eine Information",
+                        "custom2": "Das ist eine Beschreibung",
+                        "phone": "02562 165984",
+                        "email": "user@example.com",
+                        "title": "Dr.",
+                        "firstName": "Max",
+                        "surName": "Müller"
+                      },
+                      "sellTo": {
+                        "company": "schukai GmbH",
+                        "address1": "Münchenerstrasse 563",
+                        "address2": "",
+                        "zip": "80331",
+                        "city": "München",
+                        "country": "de"
+                      },
+                      "positions": [
+                        {
+                          "iid": "10056",
+                          "optional": "40",
+                          "name": "T-Shirt",
+                          "itemNumber": "3265-632",
+                          "ean": "3625896514756",
+                          "customerNumber": "",
+                          "count": 1,
+                          "gross": 4995,
+                          "net": 4197,
+                          "currency": "EUR",
+                          "vat": 1900,
+                          "priceType": "",
+                          "custom1": "",
+                          "custom2": "",
+                          "custom3": "",
+                          "customized": "",
+                          "description": "",
+                          "salesman": 126
+                        }
+                      ],
+                      "sys": {
+                        "reserverStockPositions": false,
+                        "createDelivery": true,
+                        "createEdiOrder": true
+                      }
+                    },
+                    "sys": {
+                      "message": "201 Created",
+                      "code": 201
+                    }
+                  }
+                ],
+                "sys": {
+                  "message": "201 Created",
+                  "code": 201
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {}
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/legacy/voucher?password=MEYBIRTHDAY",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "[\n\t{\n\t\"IID\":\"10083\",\n\t\"price\":595,\n\t\"vat\":1900,\n\t\"count\":1\n\t}\n]"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Connection": "keep-alive",
+                "Content-Encoding": "gzip",
+                "Content-Length": "605",
+                "Content-Type": "application/json",
+                "Date": "Sun, 29 Oct 2017 20:17:47 GMT",
+                "Server": "nginx",
+                "X-Powered-By": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":[{\"dataset\":{\"companyOrderID\":\"0001\\/01\\/616\",\"notice\":\"Das ist eine Kassen Bestellung\",\"shid\":1,\"dcid\":1,\"payments\":[{\"type\":20,\"owner\":\"\",\"number\":\"\",\"option1\":\"\",\"option2\":\"\",\"option3\":\"\",\"state\":\"\"}],\"user\":{\"userName\":\"user@example.com\",\"formOfAddress\":\"Herr\",\"letterFormOfAddress\":\"Sehr geehrter Herr\",\"birthday\":\"1977-01-04 00:00:00\",\"custom1\":\"Das ist eine Information\",\"custom2\":\"Das ist eine Beschreibung\",\"phone\":\"02562 165984\",\"email\":\"user@example.com\",\"title\":\"Dr.\",\"firstName\":\"Max\",\"surName\":\"M\\u00c3\\u00bcller\"},\"sellTo\":{\"company\":\"schukai GmbH\",\"address1\":\"M\\u00c3\\u00bcnchenerstrasse 563\",\"address2\":\"\",\"zip\":\"80331\",\"city\":\"M\\u00c3\\u00bcnchen\",\"country\":\"de\"},\"positions\":[{\"iid\":\"10056\",\"optional\":\"40\",\"name\":\"T-Shirt\",\"itemNumber\":\"3265-632\",\"ean\":\"3625896514756\",\"customerNumber\":\"\",\"count\":1,\"gross\":4995,\"net\":4197,\"currency\":\"EUR\",\"vat\":1900,\"priceType\":\"\",\"custom1\":\"\",\"custom2\":\"\",\"custom3\":\"\",\"customized\":\"\",\"description\":\"\",\"salesman\":126}],\"sys\":{\"reserverStockPositions\":false,\"createDelivery\":true,\"createEdiOrder\":true}},\"sys\":{\"message\":\"201 Created\",\"code\":201}}],\"sys\":{\"message\":\"201 Created\",\"code\":201}}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Gutschein berechnen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
     }
   },
   "definitions": {
@@ -6304,6 +6487,142 @@
     },
     "BestellungErstellenMitRetoureresponse": {
       "title": "Bestellung erstellen mit RetoureResponse",
+      "example": {
+        "dataset": [
+          {
+            "dataset": {
+              "companyOrderID": "0001/01/616",
+              "notice": "Das ist eine Kassen Bestellung",
+              "shid": 1,
+              "dcid": 1,
+              "payments": [
+                {
+                  "type": 20,
+                  "owner": "",
+                  "number": "",
+                  "option1": "",
+                  "option2": "",
+                  "option3": "",
+                  "state": ""
+                }
+              ],
+              "user": {
+                "userName": "user@example.com",
+                "formOfAddress": "Herr",
+                "letterFormOfAddress": "Sehr geehrter Herr",
+                "birthday": "1977-01-04 00:00:00",
+                "custom1": "Das ist eine Information",
+                "custom2": "Das ist eine Beschreibung",
+                "phone": "02562 165984",
+                "email": "user@example.com",
+                "title": "Dr.",
+                "firstName": "Max",
+                "surName": "Müller"
+              },
+              "sellTo": {
+                "company": "schukai GmbH",
+                "address1": "Münchenerstrasse 563",
+                "address2": "",
+                "zip": "80331",
+                "city": "München",
+                "country": "de"
+              },
+              "positions": [
+                {
+                  "iid": "10056",
+                  "optional": "40",
+                  "name": "T-Shirt",
+                  "itemNumber": "3265-632",
+                  "ean": "3625896514756",
+                  "customerNumber": "",
+                  "count": 1,
+                  "gross": 4995,
+                  "net": 4197,
+                  "currency": "EUR",
+                  "vat": 1900,
+                  "priceType": "",
+                  "custom1": "",
+                  "custom2": "",
+                  "custom3": "",
+                  "customized": "",
+                  "description": "",
+                  "salesman": 126
+                }
+              ],
+              "sys": {
+                "reserverStockPositions": false,
+                "createDelivery": true,
+                "createEdiOrder": true
+              }
+            },
+            "sys": {
+              "message": "201 Created",
+              "code": 201
+            }
+          }
+        ],
+        "sys": {
+          "message": "201 Created",
+          "code": 201
+        }
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset66"
+          }
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys"
+        }
+      },
+      "required": [
+        "dataset",
+        "sys"
+      ]
+    },
+    "GutscheinBerechnenrequest": {
+      "title": "Gutschein berechnenRequest",
+      "example": {
+        "IID": "10083",
+        "price": 595,
+        "vat": 1900,
+        "count": 1
+      },
+      "type": "object",
+      "properties": {
+        "IID": {
+          "description": "",
+          "type": "string"
+        },
+        "price": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "vat": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "count": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "IID",
+        "price",
+        "vat",
+        "count"
+      ]
+    },
+    "GutscheinBerechnenresponse": {
+      "title": "Gutschein berechnenResponse",
       "example": {
         "dataset": [
           {
