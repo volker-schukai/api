@@ -6249,6 +6249,128 @@
         "createEdiOrder"
       ]
     },
+    "BestellungErstellenMitKaufgutscheinrequest": {
+      "title": "Bestellung erstellen mit KaufgutscheinRequest",
+      "example": {
+        "companyOrderID": "0001/01/26574",
+        "billNumber": "0001/01/26574",
+        "notice": "Das ist eine Kassen Bestellung",
+        "shid": 1,
+        "payments": [
+          {
+            "type": 20,
+            "owner": "",
+            "number": "",
+            "option1": "",
+            "option2": "",
+            "option3": "",
+            "state": ""
+          }
+        ],
+        "user": {
+          "userName": "POS_0001/01/26569",
+          "formOfAddress": "",
+          "letterFormOfAddress": "",
+          "birthday": "",
+          "custom1": "",
+          "custom2": "",
+          "company": ""
+        },
+        "sellTo": {
+          "address1": "",
+          "address2": "",
+          "zip": "",
+          "city": "",
+          "country": ""
+        },
+        "shipTo": "null",
+        "positions": [
+          {
+            "iid": "10026",
+            "optional": "S",
+            "ean": "4484442168293",
+            "count": 1,
+            "gross": 999,
+            "net": 839,
+            "currency": "EUR",
+            "vat": 1900,
+            "priceType": "",
+            "custom1": "",
+            "custom2": "",
+            "custom3": "",
+            "name": "T-Shirt - Baumwolle",
+            "itemNumber": "10026",
+            "salesman": 1
+          }
+        ],
+        "sys": {
+          "reserverStockPositions": true,
+          "createDelivery": true,
+          "setDelivered": true,
+          "setBillNumber": true,
+          "createEdiOrder": false
+        }
+      },
+      "type": "object",
+      "properties": {
+        "companyOrderID": {
+          "description": "",
+          "type": "string"
+        },
+        "billNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "notice": {
+          "description": "",
+          "type": "string"
+        },
+        "shid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "payments": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Payment"
+          }
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        },
+        "sellTo": {
+          "$ref": "#/definitions/SellTo"
+        },
+        "shipTo": {
+          "description": "",
+          "type": "string"
+        },
+        "positions": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Position"
+          }
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys64"
+        }
+      },
+      "required": [
+        "companyOrderID",
+        "billNumber",
+        "notice",
+        "shid",
+        "payments",
+        "user",
+        "sellTo",
+        "shipTo",
+        "positions",
+        "sys"
+      ]
+    },
     "BestellungErstellenMitRetourerequest": {
       "title": "Bestellung erstellen mit RetoureRequest",
       "example": {
@@ -6355,7 +6477,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position79"
+            "$ref": "#/definitions/Position85"
           }
         },
         "sys": {
@@ -6375,8 +6497,8 @@
         "sys"
       ]
     },
-    "Position79": {
-      "title": "Position79",
+    "Position85": {
+      "title": "Position85",
       "type": "object",
       "properties": {
         "iid": {
