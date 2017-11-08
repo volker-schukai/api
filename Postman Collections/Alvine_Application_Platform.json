@@ -1082,6 +1082,526 @@
         }
       }
     },
+    "/commerce/client": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Mandanten auslesen",
+        "tags": [
+          "client"
+        ],
+        "operationId": "Mandanten auslesen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/commerce/client",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Mandanten auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Mandant hinzufügen",
+        "tags": [
+          "client"
+        ],
+        "operationId": "Mandant hinzufügen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MandantHinzufügenrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/commerce/client",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\r\n    \"name\": \"Beispiel Mandant\",\r\n    \"type\":\"branch\"\r\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Mandant hinzufügen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/commerce/clientdata": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Mandanten Daten  auslesen",
+        "tags": [
+          "clientdata"
+        ],
+        "operationId": "Mandanten Daten  auslesen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/commerce/clientdata",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Mandanten Daten  auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Mandant Daten hinzufügen",
+        "tags": [
+          "clientdata"
+        ],
+        "operationId": "Mandant Daten hinzufügen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MandantDatenHinzufügenrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/commerce/clientdata",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"shid\":\"2\",\n    \"company_name\": \"Beispiel Mandant\",\n    \"company_address1\":\"Eichenstrasse 26\",\n    \"company_zipcode\":\"82290\",\n    \"company_city\":\"Landsberied\",\n    \"company_country\":\"de\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Mandant Daten hinzufügen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/commerce/pos/cashregister": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Kassen auslesen",
+        "tags": [
+          "cashregister"
+        ],
+        "operationId": "Kassen auslesen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/commerce/pos/cashregister",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Kassen auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Kasse hinzufügen",
+        "tags": [
+          "cashregister"
+        ],
+        "operationId": "Kasse hinzufügen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/KasseHinzufügenrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/commerce/pos/cashregister",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"name\":\"Beispiel Kasse\",\n    \"bonID\": 0,\n    \"shid\":3\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Kasse hinzufügen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/commerce/pos/cashdrawer": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Schubladen auslesen",
+        "tags": [
+          "cashdrawer"
+        ],
+        "operationId": "Schubladen auslesen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/commerce/pos/cashdrawer",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Schubladen auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Kasse hinzufügen",
+        "tags": [
+          "cashdrawer"
+        ],
+        "operationId": "Kasse hinzufügen1",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/KasseHinzufügenrequest31"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/commerce/pos/cashdrawer",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"name\":\"Beispiel Schublade\",\n    \"crid\": 1\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Kasse hinzufügen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/util/list/account_priority": {
       "get": {
         "description": "TODO: Add Description",
@@ -2761,15 +3281,136 @@
         "code"
       ]
     },
+    "MandantHinzufügenrequest": {
+      "title": "Mandant hinzufügenRequest",
+      "example": {
+        "name": "Beispiel Mandant",
+        "type": "branch"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "type": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ]
+    },
+    "MandantDatenHinzufügenrequest": {
+      "title": "Mandant Daten hinzufügenRequest",
+      "example": {
+        "shid": "2",
+        "company_name": "Beispiel Mandant",
+        "company_address1": "Eichenstrasse 26",
+        "company_zipcode": "82290",
+        "company_city": "Landsberied",
+        "company_country": "de"
+      },
+      "type": "object",
+      "properties": {
+        "shid": {
+          "description": "",
+          "type": "string"
+        },
+        "company_name": {
+          "description": "",
+          "type": "string"
+        },
+        "company_address1": {
+          "description": "",
+          "type": "string"
+        },
+        "company_zipcode": {
+          "description": "",
+          "type": "string"
+        },
+        "company_city": {
+          "description": "",
+          "type": "string"
+        },
+        "company_country": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "shid",
+        "company_name",
+        "company_address1",
+        "company_zipcode",
+        "company_city",
+        "company_country"
+      ]
+    },
+    "KasseHinzufügenrequest": {
+      "title": "Kasse hinzufügenRequest",
+      "example": {
+        "name": "Beispiel Kasse",
+        "bonID": 0,
+        "shid": 3
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "bonID": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "shid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "name",
+        "bonID",
+        "shid"
+      ]
+    },
+    "KasseHinzufügenrequest31": {
+      "title": "Kasse hinzufügenRequest31",
+      "example": {
+        "name": "Beispiel Schublade",
+        "crid": 1
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "crid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "name",
+        "crid"
+      ]
+    },
     "ProdukteAuslesenresponse": {
       "title": "Produkte auslesenResponse",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset29"
+          "$ref": "#/definitions/Dataset33"
         },
         "sys": {
-          "$ref": "#/definitions/Sys44"
+          "$ref": "#/definitions/Sys48"
         }
       },
       "required": [
@@ -2777,8 +3418,8 @@
         "sys"
       ]
     },
-    "Dataset29": {
-      "title": "Dataset29",
+    "Dataset33": {
+      "title": "Dataset33",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -3607,7 +4248,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject34"
+            "$ref": "#/definitions/GeneratedObject38"
           }
         },
         "brandLabel1": {
@@ -4254,8 +4895,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject34": {
-      "title": "generatedObject34",
+    "GeneratedObject38": {
+      "title": "generatedObject38",
       "type": "object",
       "properties": {
         "bid": {
@@ -4644,8 +5285,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys44": {
-      "title": "Sys44",
+    "Sys48": {
+      "title": "Sys48",
       "type": "object",
       "properties": {
         "pagination": {
@@ -4926,15 +5567,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset47"
+          "$ref": "#/definitions/Dataset51"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset47": {
-      "title": "Dataset47",
+    "Dataset51": {
+      "title": "Dataset51",
       "type": "object",
       "properties": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
@@ -4958,7 +5599,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants50"
+          "$ref": "#/definitions/Variants54"
         }
       },
       "required": [
@@ -5161,8 +5802,8 @@
         "original_percent"
       ]
     },
-    "Variants50": {
-      "title": "Variants50",
+    "Variants54": {
+      "title": "Variants54",
       "type": "object",
       "properties": {
         "S": {
@@ -5379,7 +6020,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys64"
+          "$ref": "#/definitions/Sys68"
         }
       },
       "required": [
@@ -5603,8 +6244,8 @@
         "salesman"
       ]
     },
-    "Sys64": {
-      "title": "Sys64",
+    "Sys68": {
+      "title": "Sys68",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -5644,7 +6285,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset66"
+            "$ref": "#/definitions/Dataset70"
           }
         },
         "sys": {
@@ -5656,12 +6297,12 @@
         "sys"
       ]
     },
-    "Dataset66": {
-      "title": "Dataset66",
+    "Dataset70": {
+      "title": "Dataset70",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset67"
+          "$ref": "#/definitions/Dataset71"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -5672,8 +6313,8 @@
         "sys"
       ]
     },
-    "Dataset67": {
-      "title": "Dataset67",
+    "Dataset71": {
+      "title": "Dataset71",
       "type": "object",
       "properties": {
         "OID": {
@@ -5835,7 +6476,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys64"
+          "$ref": "#/definitions/Sys68"
         }
       },
       "required": [
@@ -5859,7 +6500,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset66"
+            "$ref": "#/definitions/Dataset70"
           }
         },
         "sys": {
@@ -5913,11 +6554,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position85"
+            "$ref": "#/definitions/Position89"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys64"
+          "$ref": "#/definitions/Sys68"
         }
       },
       "required": [
@@ -5933,8 +6574,8 @@
         "sys"
       ]
     },
-    "Position85": {
-      "title": "Position85",
+    "Position89": {
+      "title": "Position89",
       "type": "object",
       "properties": {
         "iid": {
@@ -6041,7 +6682,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset66"
+            "$ref": "#/definitions/Dataset70"
           }
         },
         "sys": {
@@ -6180,11 +6821,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position96"
+            "$ref": "#/definitions/Position100"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys64"
+          "$ref": "#/definitions/Sys68"
         }
       },
       "required": [
@@ -6200,8 +6841,8 @@
         "sys"
       ]
     },
-    "Position96": {
-      "title": "Position96",
+    "Position100": {
+      "title": "Position100",
       "type": "object",
       "properties": {
         "iid": {
@@ -6355,7 +6996,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset101"
+            "$ref": "#/definitions/Dataset105"
           }
         }
       },
@@ -6363,8 +7004,8 @@
         "dataset"
       ]
     },
-    "Dataset101": {
-      "title": "Dataset101",
+    "Dataset105": {
+      "title": "Dataset105",
       "type": "object",
       "properties": {
         "IID": {
