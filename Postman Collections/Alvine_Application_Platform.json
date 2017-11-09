@@ -1602,6 +1602,136 @@
         }
       }
     },
+    "/commerce/pos/cashdraweramount": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Beträge auslesen",
+        "tags": [
+          "cashdraweramount"
+        ],
+        "operationId": "Beträge auslesen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/commerce/pos/cashdraweramount",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Beträge auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Beträge hinzufügen",
+        "tags": [
+          "cashdraweramount"
+        ],
+        "operationId": "Beträge hinzufügen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BeträgeHinzufügenrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/commerce/pos/cashdraweramount",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n\"dataset\":\n\t[\n\t\t{\n\t\t    \"amount\":12638,\n\t\t    \"currency\": \"EUR\",\n\t\t    \"cdid\":1\n\t\t},\n\t\t{\n\t\t    \"amount\":239,\n\t\t    \"currency\": \"USD\",\n\t\t    \"cdid\":1\n\t\t}\n\t]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Beträge hinzufügen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/util/list/account_priority": {
       "get": {
         "description": "TODO: Add Description",
@@ -3402,15 +3532,100 @@
         "crid"
       ]
     },
+    "BetragHinzufügenrequest": {
+      "title": "Betrag hinzufügenRequest",
+      "example": {
+        "amount": 12638,
+        "currency": "EUR",
+        "cdid": 1
+      },
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        },
+        "cdid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "amount",
+        "currency",
+        "cdid"
+      ]
+    },
+    "BeträgeHinzufügenrequest": {
+      "title": "Beträge hinzufügenRequest",
+      "example": {
+        "dataset": [
+          {
+            "amount": 12638,
+            "currency": "EUR",
+            "cdid": 1
+          },
+          {
+            "amount": 239,
+            "currency": "USD",
+            "cdid": 1
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset34"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "Dataset34": {
+      "title": "Dataset34",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        },
+        "cdid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "amount",
+        "currency",
+        "cdid"
+      ]
+    },
     "ProdukteAuslesenresponse": {
       "title": "Produkte auslesenResponse",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset33"
+          "$ref": "#/definitions/Dataset36"
         },
         "sys": {
-          "$ref": "#/definitions/Sys48"
+          "$ref": "#/definitions/Sys51"
         }
       },
       "required": [
@@ -3418,8 +3633,8 @@
         "sys"
       ]
     },
-    "Dataset33": {
-      "title": "Dataset33",
+    "Dataset36": {
+      "title": "Dataset36",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -4248,7 +4463,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject38"
+            "$ref": "#/definitions/GeneratedObject41"
           }
         },
         "brandLabel1": {
@@ -4895,8 +5110,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject38": {
-      "title": "generatedObject38",
+    "GeneratedObject41": {
+      "title": "generatedObject41",
       "type": "object",
       "properties": {
         "bid": {
@@ -5285,8 +5500,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys48": {
-      "title": "Sys48",
+    "Sys51": {
+      "title": "Sys51",
       "type": "object",
       "properties": {
         "pagination": {
@@ -5567,15 +5782,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset51"
+          "$ref": "#/definitions/Dataset54"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset51": {
-      "title": "Dataset51",
+    "Dataset54": {
+      "title": "Dataset54",
       "type": "object",
       "properties": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
@@ -5599,7 +5814,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants54"
+          "$ref": "#/definitions/Variants57"
         }
       },
       "required": [
@@ -5802,8 +6017,8 @@
         "original_percent"
       ]
     },
-    "Variants54": {
-      "title": "Variants54",
+    "Variants57": {
+      "title": "Variants57",
       "type": "object",
       "properties": {
         "S": {
@@ -6020,7 +6235,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys68"
+          "$ref": "#/definitions/Sys71"
         }
       },
       "required": [
@@ -6244,8 +6459,8 @@
         "salesman"
       ]
     },
-    "Sys68": {
-      "title": "Sys68",
+    "Sys71": {
+      "title": "Sys71",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -6285,7 +6500,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset70"
+            "$ref": "#/definitions/Dataset73"
           }
         },
         "sys": {
@@ -6297,12 +6512,12 @@
         "sys"
       ]
     },
-    "Dataset70": {
-      "title": "Dataset70",
+    "Dataset73": {
+      "title": "Dataset73",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset71"
+          "$ref": "#/definitions/Dataset74"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -6313,8 +6528,8 @@
         "sys"
       ]
     },
-    "Dataset71": {
-      "title": "Dataset71",
+    "Dataset74": {
+      "title": "Dataset74",
       "type": "object",
       "properties": {
         "OID": {
@@ -6368,6 +6583,148 @@
         "createEdiOrder",
         "reserverStockPositions",
         "setDelivered"
+      ]
+    },
+    "BestellungErstellenMitEigenschaftenrequest": {
+      "title": "Bestellung erstellen mit EigenschaftenRequest",
+      "example": {
+        "companyOrderID": "0001/01/00001",
+        "billNumber": "0001/01/00001",
+        "notice": "Das ist eine Kassen Bestellung",
+        "shid": 1,
+        "payments": [
+          {
+            "type": 20,
+            "owner": "",
+            "number": "",
+            "option1": "",
+            "option2": "",
+            "option3": "",
+            "state": ""
+          }
+        ],
+        "user": {
+          "userName": "b2c@example.com",
+          "formOfAddress": "",
+          "letterFormOfAddress": "",
+          "birthday": "04.01.1977",
+          "custom1": "",
+          "custom2": "",
+          "company": "schukai GmbH"
+        },
+        "sellTo": {
+          "address1": "Eichenstrasse 26",
+          "address2": "",
+          "zip": "82290",
+          "city": "Landsberied",
+          "country": "de"
+        },
+        "shipTo": "null",
+        "positions": [
+          {
+            "iid": "10026",
+            "optional": "S",
+            "ean": "4484442168293",
+            "count": 1,
+            "gross": 999,
+            "net": 839,
+            "currency": "EUR",
+            "vat": 1900,
+            "priceType": "",
+            "custom1": "",
+            "custom2": "",
+            "custom3": "",
+            "name": "T-Shirt - Baumwolle",
+            "itemNumber": "10026",
+            "salesman": 1
+          }
+        ],
+        "sys": {
+          "reserverStockPositions": true,
+          "createDelivery": true,
+          "setDelivered": true,
+          "setBillNumber": true,
+          "createEdiOrder": false
+        }
+      },
+      "type": "object",
+      "properties": {
+        "companyOrderID": {
+          "description": "",
+          "type": "string"
+        },
+        "billNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "notice": {
+          "description": "",
+          "type": "string"
+        },
+        "shid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "payments": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Payment"
+          }
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        },
+        "sellTo": {
+          "$ref": "#/definitions/SellTo"
+        },
+        "shipTo": {
+          "description": "",
+          "type": "string"
+        },
+        "positions": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Position"
+          }
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys71"
+        }
+      },
+      "required": [
+        "companyOrderID",
+        "billNumber",
+        "notice",
+        "shid",
+        "payments",
+        "user",
+        "sellTo",
+        "shipTo",
+        "positions",
+        "sys"
+      ]
+    },
+    "BestellungErstellenMitEigenschaftenresponse": {
+      "title": "Bestellung erstellen mit EigenschaftenResponse",
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset73"
+          }
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys"
+        }
+      },
+      "required": [
+        "dataset",
+        "sys"
       ]
     },
     "BestellungErstellenMitKaufgutscheinrequest": {
@@ -6476,7 +6833,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys68"
+          "$ref": "#/definitions/Sys71"
         }
       },
       "required": [
@@ -6500,7 +6857,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset70"
+            "$ref": "#/definitions/Dataset73"
           }
         },
         "sys": {
@@ -6554,11 +6911,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position89"
+            "$ref": "#/definitions/Position103"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys68"
+          "$ref": "#/definitions/Sys71"
         }
       },
       "required": [
@@ -6574,8 +6931,8 @@
         "sys"
       ]
     },
-    "Position89": {
-      "title": "Position89",
+    "Position103": {
+      "title": "Position103",
       "type": "object",
       "properties": {
         "iid": {
@@ -6682,7 +7039,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset70"
+            "$ref": "#/definitions/Dataset73"
           }
         },
         "sys": {
@@ -6821,11 +7178,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position100"
+            "$ref": "#/definitions/Position114"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys68"
+          "$ref": "#/definitions/Sys71"
         }
       },
       "required": [
@@ -6841,8 +7198,8 @@
         "sys"
       ]
     },
-    "Position100": {
-      "title": "Position100",
+    "Position114": {
+      "title": "Position114",
       "type": "object",
       "properties": {
         "iid": {
@@ -6996,7 +7353,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset105"
+            "$ref": "#/definitions/Dataset119"
           }
         }
       },
@@ -7004,8 +7361,8 @@
         "dataset"
       ]
     },
-    "Dataset105": {
-      "title": "Dataset105",
+    "Dataset119": {
+      "title": "Dataset119",
       "type": "object",
       "properties": {
         "IID": {
