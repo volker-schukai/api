@@ -2478,7 +2478,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\"companyOrderID\":\"0001/01/00004\",\"billNumber\":\"0001/01/00004\",\"notice\":\"Das ist eine Kassen Bestellung\",\"shid\":1,\"payments\":[{\"type\":20,\"owner\":\"\",\"number\":\"\",\"option1\":\"\",\"option2\":\"\",\"option3\":\"\",\"state\":\"\"}],\"user\":{\"userName\":\"b2c@example.com\",\"formOfAddress\":\"\",\"letterFormOfAddress\":\"\",\"birthday\":\"04.01.1977\",\"custom1\":\"\",\"custom2\":\"\",\"company\":\"schukai GmbH\"},\"sellTo\":{\"address1\":\"Eichenstrasse 26\",\"address2\":\"\",\"zip\":\"82290\",\"city\":\"Landsberied\",\"country\":\"de\"},\"shipTo\":\"null\",\"positions\":[{\"iid\":\"10076\",\"optional\":\"_UNIQUE_\",\"ean\":\"6985694862569\",\"count\":-1,\"gross\":32900,\"net\":27647,\"currency\":\"EUR\",\"vat\":1900,\"priceType\":\"\",\"custom1\":\"\",\"custom2\":\"\",\"custom3\":\"\",\"name\":\"Waschmaschine - W352\",\"itemNumber\":\"10076\",\"salesman\":1,\"turnoverInfo\":{\"orderReference\":\"0001/01/00003\",\"reason\":\"\"}},{\"iid\":\"501\",\"optional\":\"__UNIQUE__\",\"ean\":\"\",\"count\":-1,\"gross\":-5000,\"net\":-4202,\"currency\":\"EUR\",\"vat\":1900,\"priceType\":\"\",\"custom1\":\"\",\"custom2\":\"\",\"custom3\":\"\",\"name\":\"Gutschein\",\"itemNumber\":\"gutschein\",\"salesman\":1,\"turnoverInfo\":{\"orderReference\":\"0001/01/00003\",\"reason\":\"\"}}],\"sys\":{\"reserverStockPositions\":true,\"createDelivery\":true,\"setDelivered\":true,\"setBillNumber\":true,\"createEdiOrder\":false}}"
+              "body": "{\"companyOrderID\":\"0001/01/00004\",\"billNumber\":\"0001/01/00004\",\"notice\":\"Das ist eine Kassen Bestellung\",\"shid\":1,\"transactions\":[{\"provider\":\"alvine\",\"type\":\"\",\"id\":\"\",\"token\":\"\",\"amount\":\"1256\",\"currency\":\"EUR\",\"authcode\":\"CAPTURED\",\"authmsg\":\"CAPTURED\",\"result\":\"\",\"captureState\":\"CAPTURED\",\"captureAmount\":\"1256\",\"resultData\":\"\",\"resultText\":\"\",\"erpID\":\"\",\"paymentPTID\":20}],\"user\":{\"userName\":\"b2c@example.com\",\"formOfAddress\":\"\",\"letterFormOfAddress\":\"\",\"birthday\":\"04.01.1977\",\"custom1\":\"\",\"custom2\":\"\",\"company\":\"schukai GmbH\"},\"sellTo\":{\"address1\":\"Eichenstrasse 26\",\"address2\":\"\",\"zip\":\"82290\",\"city\":\"Landsberied\",\"country\":\"de\"},\"shipTo\":\"null\",\"positions\":[{\"iid\":\"10076\",\"optional\":\"_UNIQUE_\",\"ean\":\"6985694862569\",\"count\":-1,\"gross\":32900,\"net\":27647,\"currency\":\"EUR\",\"vat\":1900,\"priceType\":\"\",\"custom1\":\"\",\"custom2\":\"\",\"custom3\":\"\",\"name\":\"Waschmaschine - W352\",\"itemNumber\":\"10076\",\"salesman\":1,\"turnoverInfo\":{\"orderReference\":\"0001/01/00003\",\"reason\":\"\"}},{\"iid\":\"501\",\"optional\":\"__UNIQUE__\",\"ean\":\"\",\"count\":-1,\"gross\":-5000,\"net\":-4202,\"currency\":\"EUR\",\"vat\":1900,\"priceType\":\"\",\"custom1\":\"\",\"custom2\":\"\",\"custom3\":\"\",\"name\":\"Gutschein\",\"itemNumber\":\"gutschein\",\"salesman\":1,\"turnoverInfo\":{\"orderReference\":\"0001/01/00003\",\"reason\":\"\"}}],\"sys\":{\"reserverStockPositions\":true,\"createDelivery\":true,\"setDelivered\":true,\"setBillNumber\":true,\"createEdiOrder\":false}}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -6132,19 +6132,44 @@
     "BestellungErstellenrequest": {
       "title": "Bestellung erstellenRequest",
       "example": {
-        "companyOrderID": "0001/01/00001",
+        "companyOrderID": "0001/01/0f001",
         "billNumber": "0001/01/00001",
         "notice": "Das ist eine Kassen Bestellung",
         "shid": 1,
-        "payments": [
+        "transactions": [
           {
-            "type": 20,
-            "owner": "",
-            "number": "",
-            "option1": "",
-            "option2": "",
-            "option3": "",
-            "state": ""
+            "provider": "alvine",
+            "type": "",
+            "id": "",
+            "token": "",
+            "amount": "1256",
+            "currency": "EUR",
+            "authcode": "CAPTURED",
+            "authmsg": "CAPTURED",
+            "result": "",
+            "captureState": "CAPTURED",
+            "captureAmount": "1256",
+            "resultData": "",
+            "resultText": "",
+            "erpID": "",
+            "paymentPTID": 20
+          },
+          {
+            "provider": "alvine",
+            "type": "",
+            "id": "",
+            "token": "",
+            "amount": "5569",
+            "currency": "EUR",
+            "authcode": "CAPTURED",
+            "authmsg": "CAPTURED",
+            "result": "",
+            "captureState": "CAPTURED",
+            "captureAmount": "5569",
+            "resultData": "",
+            "resultText": "",
+            "erpID": "",
+            "paymentPTID": 30
           }
         ],
         "user": {
@@ -6210,11 +6235,11 @@
           "type": "integer",
           "format": "int32"
         },
-        "payments": {
+        "transactions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Payment"
+            "$ref": "#/definitions/Transaction"
           }
         },
         "user": {
@@ -6243,7 +6268,7 @@
         "billNumber",
         "notice",
         "shid",
-        "payments",
+        "transactions",
         "user",
         "sellTo",
         "shipTo",
@@ -6251,48 +6276,88 @@
         "sys"
       ]
     },
-    "Payment": {
-      "title": "Payment",
+    "Transaction": {
+      "title": "Transaction",
       "type": "object",
       "properties": {
+        "provider": {
+          "description": "",
+          "type": "string"
+        },
         "type": {
+          "description": "",
+          "type": "string"
+        },
+        "id": {
+          "description": "",
+          "type": "string"
+        },
+        "token": {
+          "description": "",
+          "type": "string"
+        },
+        "amount": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        },
+        "authcode": {
+          "description": "",
+          "type": "string"
+        },
+        "authmsg": {
+          "description": "",
+          "type": "string"
+        },
+        "result": {
+          "description": "",
+          "type": "string"
+        },
+        "captureState": {
+          "description": "",
+          "type": "string"
+        },
+        "captureAmount": {
+          "description": "",
+          "type": "string"
+        },
+        "resultData": {
+          "description": "",
+          "type": "string"
+        },
+        "resultText": {
+          "description": "",
+          "type": "string"
+        },
+        "erpID": {
+          "description": "",
+          "type": "string"
+        },
+        "paymentPTID": {
           "description": "",
           "type": "integer",
           "format": "int32"
-        },
-        "owner": {
-          "description": "",
-          "type": "string"
-        },
-        "number": {
-          "description": "",
-          "type": "string"
-        },
-        "option1": {
-          "description": "",
-          "type": "string"
-        },
-        "option2": {
-          "description": "",
-          "type": "string"
-        },
-        "option3": {
-          "description": "",
-          "type": "string"
-        },
-        "state": {
-          "description": "",
-          "type": "string"
         }
       },
       "required": [
+        "provider",
         "type",
-        "owner",
-        "number",
-        "option1",
-        "option2",
-        "option3",
-        "state"
+        "id",
+        "token",
+        "amount",
+        "currency",
+        "authcode",
+        "authmsg",
+        "result",
+        "captureState",
+        "captureAmount",
+        "resultData",
+        "resultText",
+        "erpID",
+        "paymentPTID"
       ]
     },
     "User": {
@@ -6494,6 +6559,85 @@
     },
     "BestellungErstellenresponse": {
       "title": "Bestellung erstellenResponse",
+      "example": {
+        "dataset": [
+          {
+            "dataset": {
+              "companyOrderID": "0001/01/616",
+              "notice": "Das ist eine Kassen Bestellung",
+              "shid": 1,
+              "dcid": 1,
+              "payments": [
+                {
+                  "type": 20,
+                  "owner": "",
+                  "number": "",
+                  "option1": "",
+                  "option2": "",
+                  "option3": "",
+                  "state": ""
+                }
+              ],
+              "user": {
+                "userName": "user@example.com",
+                "formOfAddress": "Herr",
+                "letterFormOfAddress": "Sehr geehrter Herr",
+                "birthday": "1977-01-04 00:00:00",
+                "custom1": "Das ist eine Information",
+                "custom2": "Das ist eine Beschreibung",
+                "phone": "02562 165984",
+                "email": "user@example.com",
+                "title": "Dr.",
+                "firstName": "Max",
+                "surName": "MÃ¼ller"
+              },
+              "sellTo": {
+                "company": "schukai GmbH",
+                "address1": "MÃ¼nchenerstrasse 563",
+                "address2": "",
+                "zip": "80331",
+                "city": "MÃ¼nchen",
+                "country": "de"
+              },
+              "positions": [
+                {
+                  "iid": "10056",
+                  "optional": "40",
+                  "name": "T-Shirt",
+                  "itemNumber": "3265-632",
+                  "ean": "3625896514756",
+                  "customerNumber": "",
+                  "count": 1,
+                  "gross": 4995,
+                  "net": 4197,
+                  "currency": "EUR",
+                  "vat": 1900,
+                  "priceType": "",
+                  "custom1": "",
+                  "custom2": "",
+                  "custom3": "",
+                  "customized": "",
+                  "description": "",
+                  "salesman": 126
+                }
+              ],
+              "sys": {
+                "reserverStockPositions": false,
+                "createDelivery": true,
+                "createEdiOrder": true
+              }
+            },
+            "sys": {
+              "message": "201 Created",
+              "code": 201
+            }
+          }
+        ],
+        "sys": {
+          "message": "201 Created",
+          "code": 201
+        }
+      },
       "type": "object",
       "properties": {
         "dataset": {
@@ -6532,75 +6676,355 @@
       "title": "Dataset74",
       "type": "object",
       "properties": {
-        "OID": {
+        "companyOrderID": {
+          "description": "",
+          "type": "string"
+        },
+        "notice": {
+          "description": "",
+          "type": "string"
+        },
+        "shid": {
           "description": "",
           "type": "integer",
           "format": "int32"
         },
-        "errorCode": {
+        "dcid": {
           "description": "",
-          "type": "string"
+          "type": "integer",
+          "format": "int32"
         },
-        "error": {
+        "payments": {
           "description": "",
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/Payment"
           }
         },
-        "createDelivery": {
-          "description": "",
-          "type": "boolean"
+        "user": {
+          "$ref": "#/definitions/User76"
         },
-        "orderStatus": {
+        "sellTo": {
+          "$ref": "#/definitions/SellTo77"
+        },
+        "positions": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Position78"
+          }
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys79"
+        }
+      },
+      "required": [
+        "companyOrderID",
+        "notice",
+        "shid",
+        "dcid",
+        "payments",
+        "user",
+        "sellTo",
+        "positions",
+        "sys"
+      ]
+    },
+    "Payment": {
+      "title": "Payment",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "owner": {
           "description": "",
           "type": "string"
         },
-        "setBillNumber": {
+        "number": {
+          "description": "",
+          "type": "string"
+        },
+        "option1": {
+          "description": "",
+          "type": "string"
+        },
+        "option2": {
+          "description": "",
+          "type": "string"
+        },
+        "option3": {
+          "description": "",
+          "type": "string"
+        },
+        "state": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "owner",
+        "number",
+        "option1",
+        "option2",
+        "option3",
+        "state"
+      ]
+    },
+    "User76": {
+      "title": "User76",
+      "type": "object",
+      "properties": {
+        "userName": {
+          "description": "",
+          "type": "string"
+        },
+        "formOfAddress": {
+          "description": "",
+          "type": "string"
+        },
+        "letterFormOfAddress": {
+          "description": "",
+          "type": "string"
+        },
+        "birthday": {
+          "description": "",
+          "type": "string"
+        },
+        "custom1": {
+          "description": "",
+          "type": "string"
+        },
+        "custom2": {
+          "description": "",
+          "type": "string"
+        },
+        "phone": {
+          "description": "",
+          "type": "string"
+        },
+        "email": {
+          "description": "",
+          "type": "string"
+        },
+        "title": {
+          "description": "",
+          "type": "string"
+        },
+        "firstName": {
+          "description": "",
+          "type": "string"
+        },
+        "surName": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "userName",
+        "formOfAddress",
+        "letterFormOfAddress",
+        "birthday",
+        "custom1",
+        "custom2",
+        "phone",
+        "email",
+        "title",
+        "firstName",
+        "surName"
+      ]
+    },
+    "SellTo77": {
+      "title": "SellTo77",
+      "type": "object",
+      "properties": {
+        "company": {
+          "description": "",
+          "type": "string"
+        },
+        "address1": {
+          "description": "",
+          "type": "string"
+        },
+        "address2": {
+          "description": "",
+          "type": "string"
+        },
+        "zip": {
+          "description": "",
+          "type": "string"
+        },
+        "city": {
+          "description": "",
+          "type": "string"
+        },
+        "country": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "company",
+        "address1",
+        "address2",
+        "zip",
+        "city",
+        "country"
+      ]
+    },
+    "Position78": {
+      "title": "Position78",
+      "type": "object",
+      "properties": {
+        "iid": {
+          "description": "",
+          "type": "string"
+        },
+        "optional": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "itemNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "ean": {
+          "description": "",
+          "type": "string"
+        },
+        "customerNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "count": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "gross": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "net": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        },
+        "vat": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "priceType": {
+          "description": "",
+          "type": "string"
+        },
+        "custom1": {
+          "description": "",
+          "type": "string"
+        },
+        "custom2": {
+          "description": "",
+          "type": "string"
+        },
+        "custom3": {
+          "description": "",
+          "type": "string"
+        },
+        "customized": {
+          "description": "",
+          "type": "string"
+        },
+        "description": {
+          "description": "",
+          "type": "string"
+        },
+        "salesman": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "iid",
+        "optional",
+        "name",
+        "itemNumber",
+        "ean",
+        "customerNumber",
+        "count",
+        "gross",
+        "net",
+        "currency",
+        "vat",
+        "priceType",
+        "custom1",
+        "custom2",
+        "custom3",
+        "customized",
+        "description",
+        "salesman"
+      ]
+    },
+    "Sys79": {
+      "title": "Sys79",
+      "type": "object",
+      "properties": {
+        "reserverStockPositions": {
+          "description": "",
+          "type": "boolean"
+        },
+        "createDelivery": {
           "description": "",
           "type": "boolean"
         },
         "createEdiOrder": {
           "description": "",
           "type": "boolean"
-        },
-        "reserverStockPositions": {
-          "description": "",
-          "type": "boolean"
-        },
-        "setDelivered": {
-          "description": "",
-          "type": "boolean"
         }
       },
       "required": [
-        "OID",
-        "errorCode",
-        "error",
-        "createDelivery",
-        "orderStatus",
-        "setBillNumber",
-        "createEdiOrder",
         "reserverStockPositions",
-        "setDelivered"
+        "createDelivery",
+        "createEdiOrder"
       ]
     },
     "BestellungErstellenMitEigenschaftenrequest": {
       "title": "Bestellung erstellen mit EigenschaftenRequest",
       "example": {
-        "companyOrderID": "0001/01/00001",
-        "billNumber": "0001/01/00001",
+        "companyOrderID": "0001/01/00010",
+        "billNumber": "0001/01/00010",
         "notice": "Das ist eine Kassen Bestellung",
         "shid": 1,
-        "payments": [
+        "transactions": [
           {
-            "type": 20,
-            "owner": "",
-            "number": "",
-            "option1": "",
-            "option2": "",
-            "option3": "",
-            "state": ""
+            "provider": "alvine",
+            "type": "",
+            "id": "",
+            "token": "",
+            "amount": "1256",
+            "currency": "EUR",
+            "authcode": "CAPTURED",
+            "authmsg": "CAPTURED",
+            "result": "",
+            "captureState": "CAPTURED",
+            "captureAmount": "1256",
+            "resultData": "",
+            "resultText": "",
+            "erpID": "",
+            "paymentPTID": 20
           }
         ],
         "user": {
@@ -6636,7 +7060,17 @@
             "custom3": "",
             "name": "T-Shirt - Baumwolle",
             "itemNumber": "10026",
-            "salesman": 1
+            "salesman": 1,
+            "properties": [
+              {
+                "name": "shoppingcard.erp.discounttype",
+                "value": "3"
+              },
+              {
+                "name": "my.propertie",
+                "value": "myValue"
+              }
+            ]
           }
         ],
         "sys": {
@@ -6666,11 +7100,11 @@
           "type": "integer",
           "format": "int32"
         },
-        "payments": {
+        "transactions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Payment"
+            "$ref": "#/definitions/Transaction"
           }
         },
         "user": {
@@ -6687,7 +7121,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position"
+            "$ref": "#/definitions/Position86"
           }
         },
         "sys": {
@@ -6699,7 +7133,7 @@
         "billNumber",
         "notice",
         "shid",
-        "payments",
+        "transactions",
         "user",
         "sellTo",
         "shipTo",
@@ -6707,24 +7141,118 @@
         "sys"
       ]
     },
-    "BestellungErstellenMitEigenschaftenresponse": {
-      "title": "Bestellung erstellen mit EigenschaftenResponse",
+    "Position86": {
+      "title": "Position86",
       "type": "object",
       "properties": {
-        "dataset": {
+        "iid": {
+          "description": "",
+          "type": "string"
+        },
+        "optional": {
+          "description": "",
+          "type": "string"
+        },
+        "ean": {
+          "description": "",
+          "type": "string"
+        },
+        "count": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "gross": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "net": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        },
+        "vat": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "priceType": {
+          "description": "",
+          "type": "string"
+        },
+        "custom1": {
+          "description": "",
+          "type": "string"
+        },
+        "custom2": {
+          "description": "",
+          "type": "string"
+        },
+        "custom3": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "itemNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "salesman": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "properties": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset73"
+            "$ref": "#/definitions/Property"
           }
-        },
-        "sys": {
-          "$ref": "#/definitions/Sys"
         }
       },
       "required": [
-        "dataset",
-        "sys"
+        "iid",
+        "optional",
+        "ean",
+        "count",
+        "gross",
+        "net",
+        "currency",
+        "vat",
+        "priceType",
+        "custom1",
+        "custom2",
+        "custom3",
+        "name",
+        "itemNumber",
+        "salesman",
+        "properties"
+      ]
+    },
+    "Property": {
+      "title": "Property",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "value": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value"
       ]
     },
     "BestellungErstellenMitKaufgutscheinrequest": {
@@ -6734,15 +7262,23 @@
         "billNumber": "0001/01/00002",
         "notice": "Das ist eine Kassen Bestellung",
         "shid": 1,
-        "payments": [
+        "transactions": [
           {
-            "type": 20,
-            "owner": "",
-            "number": "",
-            "option1": "",
-            "option2": "",
-            "option3": "",
-            "state": ""
+            "provider": "alvine",
+            "type": "",
+            "id": "",
+            "token": "",
+            "amount": "1256",
+            "currency": "EUR",
+            "authcode": "CAPTURED",
+            "authmsg": "CAPTURED",
+            "result": "",
+            "captureState": "CAPTURED",
+            "captureAmount": "1256",
+            "resultData": "",
+            "resultText": "",
+            "erpID": "",
+            "paymentPTID": 20
           }
         ],
         "user": {
@@ -6808,11 +7344,11 @@
           "type": "integer",
           "format": "int32"
         },
-        "payments": {
+        "transactions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Payment"
+            "$ref": "#/definitions/Transaction"
           }
         },
         "user": {
@@ -6841,31 +7377,11 @@
         "billNumber",
         "notice",
         "shid",
-        "payments",
+        "transactions",
         "user",
         "sellTo",
         "shipTo",
         "positions",
-        "sys"
-      ]
-    },
-    "BestellungErstellenMitKaufgutscheinresponse": {
-      "title": "Bestellung erstellen mit KaufgutscheinResponse",
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset73"
-          }
-        },
-        "sys": {
-          "$ref": "#/definitions/Sys"
-        }
-      },
-      "required": [
-        "dataset",
         "sys"
       ]
     },
@@ -6890,11 +7406,11 @@
           "type": "integer",
           "format": "int32"
         },
-        "payments": {
+        "transactions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Payment"
+            "$ref": "#/definitions/Transaction"
           }
         },
         "user": {
@@ -6911,7 +7427,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position103"
+            "$ref": "#/definitions/Position99"
           }
         },
         "sys": {
@@ -6923,7 +7439,7 @@
         "billNumber",
         "notice",
         "shid",
-        "payments",
+        "transactions",
         "user",
         "sellTo",
         "shipTo",
@@ -6931,8 +7447,8 @@
         "sys"
       ]
     },
-    "Position103": {
-      "title": "Position103",
+    "Position99": {
+      "title": "Position99",
       "type": "object",
       "properties": {
         "iid": {
@@ -7031,26 +7547,6 @@
         "salesman"
       ]
     },
-    "Bestellung erstellen  gutschein einlösenresponse": {
-      "title": "Bestellung erstellen - Gutschein einlösenResponse",
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset73"
-          }
-        },
-        "sys": {
-          "$ref": "#/definitions/Sys"
-        }
-      },
-      "required": [
-        "dataset",
-        "sys"
-      ]
-    },
     "BestellungErstellenMitRetourerequest": {
       "title": "Bestellung erstellen mit RetoureRequest",
       "example": {
@@ -7058,15 +7554,23 @@
         "billNumber": "0001/01/00004",
         "notice": "Das ist eine Kassen Bestellung",
         "shid": 1,
-        "payments": [
+        "transactions": [
           {
-            "type": 20,
-            "owner": "",
-            "number": "",
-            "option1": "",
-            "option2": "",
-            "option3": "",
-            "state": ""
+            "provider": "alvine",
+            "type": "",
+            "id": "",
+            "token": "",
+            "amount": "1256",
+            "currency": "EUR",
+            "authcode": "CAPTURED",
+            "authmsg": "CAPTURED",
+            "result": "",
+            "captureState": "CAPTURED",
+            "captureAmount": "1256",
+            "resultData": "",
+            "resultText": "",
+            "erpID": "",
+            "paymentPTID": 20
           }
         ],
         "user": {
@@ -7157,11 +7661,11 @@
           "type": "integer",
           "format": "int32"
         },
-        "payments": {
+        "transactions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Payment"
+            "$ref": "#/definitions/Transaction"
           }
         },
         "user": {
@@ -7178,7 +7682,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position114"
+            "$ref": "#/definitions/Position105"
           }
         },
         "sys": {
@@ -7190,7 +7694,7 @@
         "billNumber",
         "notice",
         "shid",
-        "payments",
+        "transactions",
         "user",
         "sellTo",
         "shipTo",
@@ -7198,8 +7702,8 @@
         "sys"
       ]
     },
-    "Position114": {
-      "title": "Position114",
+    "Position105": {
+      "title": "Position105",
       "type": "object",
       "properties": {
         "iid": {
@@ -7353,7 +7857,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset119"
+            "$ref": "#/definitions/Dataset110"
           }
         }
       },
@@ -7361,8 +7865,8 @@
         "dataset"
       ]
     },
-    "Dataset119": {
-      "title": "Dataset119",
+    "Dataset110": {
+      "title": "Dataset110",
       "type": "object",
       "properties": {
         "IID": {
