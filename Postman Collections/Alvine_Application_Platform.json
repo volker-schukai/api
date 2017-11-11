@@ -561,11 +561,11 @@
       },
       "put": {
         "description": "TODO: Add Description",
-        "summary": "Kategorien ändern",
+        "summary": "Kategorien suchen",
         "tags": [
           "Kategorien"
         ],
-        "operationId": "Kategorien ändern",
+        "operationId": "Kategorien suchen",
         "produces": [
           "application/json"
         ],
@@ -576,7 +576,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategorienÄndernrequest"
+              "$ref": "#/definitions/KategorienSuchenrequest"
             }
           },
           {
@@ -598,7 +598,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategorienÄndernresponse"
+              "$ref": "#/definitions/KategorienSuchenresponse"
             },
             "examples": {}
           },
@@ -1545,7 +1545,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KasseHinzufügenrequest31"
+              "$ref": "#/definitions/KasseHinzufügenrequest37"
             }
           },
           {
@@ -3204,6 +3204,52 @@
         "location"
       ]
     },
+    "KategorienSuchenrequest": {
+      "title": "Kategorien suchenRequest",
+      "example": {
+        "dataset": [
+          {
+            "cid": 50,
+            "erpName": "erp-name-1",
+            "name": "Software",
+            "flag": 2
+          },
+          {
+            "cid": 70,
+            "flag": 1
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset19"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "KategorienSuchenresponse": {
+      "title": "Kategorien suchenResponse",
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset21"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
     "KategoriefeldÄndernresponse": {
       "title": "Kategoriefeld ändernResponse",
       "example": {
@@ -3240,10 +3286,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset25"
+          "$ref": "#/definitions/Dataset31"
         },
         "sys": {
-          "$ref": "#/definitions/Sys27"
+          "$ref": "#/definitions/Sys33"
         }
       },
       "required": [
@@ -3251,8 +3297,8 @@
         "sys"
       ]
     },
-    "Dataset25": {
-      "title": "Dataset25",
+    "Dataset31": {
+      "title": "Dataset31",
       "type": "object",
       "properties": {
         "erpID": {
@@ -3387,8 +3433,8 @@
         "de"
       ]
     },
-    "Sys27": {
-      "title": "Sys27",
+    "Sys33": {
+      "title": "Sys33",
       "type": "object",
       "properties": {
         "updated": {
@@ -3509,8 +3555,8 @@
         "shid"
       ]
     },
-    "KasseHinzufügenrequest31": {
-      "title": "Kasse hinzufügenRequest31",
+    "KasseHinzufügenrequest37": {
+      "title": "Kasse hinzufügenRequest37",
       "example": {
         "name": "Beispiel Schublade",
         "crid": 1
@@ -3584,7 +3630,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset34"
+            "$ref": "#/definitions/Dataset40"
           }
         }
       },
@@ -3592,8 +3638,8 @@
         "dataset"
       ]
     },
-    "Dataset34": {
-      "title": "Dataset34",
+    "Dataset40": {
+      "title": "Dataset40",
       "type": "object",
       "properties": {
         "amount": {
@@ -3622,10 +3668,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset36"
+          "$ref": "#/definitions/Dataset42"
         },
         "sys": {
-          "$ref": "#/definitions/Sys51"
+          "$ref": "#/definitions/Sys57"
         }
       },
       "required": [
@@ -3633,8 +3679,8 @@
         "sys"
       ]
     },
-    "Dataset36": {
-      "title": "Dataset36",
+    "Dataset42": {
+      "title": "Dataset42",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -4463,7 +4509,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject41"
+            "$ref": "#/definitions/GeneratedObject47"
           }
         },
         "brandLabel1": {
@@ -5110,8 +5156,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject41": {
-      "title": "generatedObject41",
+    "GeneratedObject47": {
+      "title": "generatedObject47",
       "type": "object",
       "properties": {
         "bid": {
@@ -5500,8 +5546,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys51": {
-      "title": "Sys51",
+    "Sys57": {
+      "title": "Sys57",
       "type": "object",
       "properties": {
         "pagination": {
@@ -5782,15 +5828,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset54"
+          "$ref": "#/definitions/Dataset60"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset54": {
-      "title": "Dataset54",
+    "Dataset60": {
+      "title": "Dataset60",
       "type": "object",
       "properties": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
@@ -5814,7 +5860,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants57"
+          "$ref": "#/definitions/Variants63"
         }
       },
       "required": [
@@ -6017,8 +6063,8 @@
         "original_percent"
       ]
     },
-    "Variants57": {
-      "title": "Variants57",
+    "Variants63": {
+      "title": "Variants63",
       "type": "object",
       "properties": {
         "S": {
@@ -6260,7 +6306,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys71"
+          "$ref": "#/definitions/Sys77"
         }
       },
       "required": [
@@ -6524,8 +6570,8 @@
         "salesman"
       ]
     },
-    "Sys71": {
-      "title": "Sys71",
+    "Sys77": {
+      "title": "Sys77",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -6644,7 +6690,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset73"
+            "$ref": "#/definitions/Dataset79"
           }
         },
         "sys": {
@@ -6656,12 +6702,12 @@
         "sys"
       ]
     },
-    "Dataset73": {
-      "title": "Dataset73",
+    "Dataset79": {
+      "title": "Dataset79",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset74"
+          "$ref": "#/definitions/Dataset80"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -6672,8 +6718,8 @@
         "sys"
       ]
     },
-    "Dataset74": {
-      "title": "Dataset74",
+    "Dataset80": {
+      "title": "Dataset80",
       "type": "object",
       "properties": {
         "companyOrderID": {
@@ -6702,20 +6748,20 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User76"
+          "$ref": "#/definitions/User82"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo77"
+          "$ref": "#/definitions/SellTo83"
         },
         "positions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position78"
+            "$ref": "#/definitions/Position84"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys79"
+          "$ref": "#/definitions/Sys85"
         }
       },
       "required": [
@@ -6774,8 +6820,8 @@
         "state"
       ]
     },
-    "User76": {
-      "title": "User76",
+    "User82": {
+      "title": "User82",
       "type": "object",
       "properties": {
         "userName": {
@@ -6837,8 +6883,8 @@
         "surName"
       ]
     },
-    "SellTo77": {
-      "title": "SellTo77",
+    "SellTo83": {
+      "title": "SellTo83",
       "type": "object",
       "properties": {
         "company": {
@@ -6875,8 +6921,8 @@
         "country"
       ]
     },
-    "Position78": {
-      "title": "Position78",
+    "Position84": {
+      "title": "Position84",
       "type": "object",
       "properties": {
         "iid": {
@@ -6978,8 +7024,8 @@
         "salesman"
       ]
     },
-    "Sys79": {
-      "title": "Sys79",
+    "Sys85": {
+      "title": "Sys85",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -7121,11 +7167,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position86"
+            "$ref": "#/definitions/Position92"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys71"
+          "$ref": "#/definitions/Sys77"
         }
       },
       "required": [
@@ -7141,8 +7187,8 @@
         "sys"
       ]
     },
-    "Position86": {
-      "title": "Position86",
+    "Position92": {
+      "title": "Position92",
       "type": "object",
       "properties": {
         "iid": {
@@ -7369,7 +7415,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys71"
+          "$ref": "#/definitions/Sys77"
         }
       },
       "required": [
@@ -7427,11 +7473,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position99"
+            "$ref": "#/definitions/Position105"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys71"
+          "$ref": "#/definitions/Sys77"
         }
       },
       "required": [
@@ -7447,8 +7493,8 @@
         "sys"
       ]
     },
-    "Position99": {
-      "title": "Position99",
+    "Position105": {
+      "title": "Position105",
       "type": "object",
       "properties": {
         "iid": {
@@ -7682,11 +7728,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position105"
+            "$ref": "#/definitions/Position111"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys71"
+          "$ref": "#/definitions/Sys77"
         }
       },
       "required": [
@@ -7702,8 +7748,8 @@
         "sys"
       ]
     },
-    "Position105": {
-      "title": "Position105",
+    "Position111": {
+      "title": "Position111",
       "type": "object",
       "properties": {
         "iid": {
@@ -7857,7 +7903,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset110"
+            "$ref": "#/definitions/Dataset116"
           }
         }
       },
@@ -7865,8 +7911,8 @@
         "dataset"
       ]
     },
-    "Dataset110": {
-      "title": "Dataset110",
+    "Dataset116": {
+      "title": "Dataset116",
       "type": "object",
       "properties": {
         "IID": {
