@@ -1732,6 +1732,81 @@
         }
       }
     },
+    "/commerce/pos/cashdraweramount/8": {
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Betrag ändern",
+        "tags": [
+          "cashdraweramount"
+        ],
+        "operationId": "Betrag ändern",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BetragÄndernrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/commerce/pos/cashdraweramount/8",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"amount\":12638,\n    \"currency\": \"EUR\",\n    \"cdid\":1\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Betrag ändern",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/util/list/account_priority": {
       "get": {
         "description": "TODO: Add Description",
@@ -3608,6 +3683,36 @@
         "cdid"
       ]
     },
+    "BetragÄndernrequest": {
+      "title": "Betrag ändernRequest",
+      "example": {
+        "amount": 12638,
+        "currency": "EUR",
+        "cdid": 1
+      },
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        },
+        "cdid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "amount",
+        "currency",
+        "cdid"
+      ]
+    },
     "BeträgeHinzufügenrequest": {
       "title": "Beträge hinzufügenRequest",
       "example": {
@@ -3630,7 +3735,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset40"
+            "$ref": "#/definitions/Dataset41"
           }
         }
       },
@@ -3638,8 +3743,8 @@
         "dataset"
       ]
     },
-    "Dataset40": {
-      "title": "Dataset40",
+    "Dataset41": {
+      "title": "Dataset41",
       "type": "object",
       "properties": {
         "amount": {
@@ -3668,10 +3773,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset42"
+          "$ref": "#/definitions/Dataset43"
         },
         "sys": {
-          "$ref": "#/definitions/Sys57"
+          "$ref": "#/definitions/Sys58"
         }
       },
       "required": [
@@ -3679,8 +3784,8 @@
         "sys"
       ]
     },
-    "Dataset42": {
-      "title": "Dataset42",
+    "Dataset43": {
+      "title": "Dataset43",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -4509,7 +4614,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject47"
+            "$ref": "#/definitions/GeneratedObject48"
           }
         },
         "brandLabel1": {
@@ -5156,8 +5261,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject47": {
-      "title": "generatedObject47",
+    "GeneratedObject48": {
+      "title": "generatedObject48",
       "type": "object",
       "properties": {
         "bid": {
@@ -5546,8 +5651,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys57": {
-      "title": "Sys57",
+    "Sys58": {
+      "title": "Sys58",
       "type": "object",
       "properties": {
         "pagination": {
@@ -5828,15 +5933,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset60"
+          "$ref": "#/definitions/Dataset61"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset60": {
-      "title": "Dataset60",
+    "Dataset61": {
+      "title": "Dataset61",
       "type": "object",
       "properties": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
@@ -5860,7 +5965,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants63"
+          "$ref": "#/definitions/Variants64"
         }
       },
       "required": [
@@ -6063,8 +6168,8 @@
         "original_percent"
       ]
     },
-    "Variants63": {
-      "title": "Variants63",
+    "Variants64": {
+      "title": "Variants64",
       "type": "object",
       "properties": {
         "S": {
@@ -6306,7 +6411,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys77"
+          "$ref": "#/definitions/Sys78"
         }
       },
       "required": [
@@ -6570,8 +6675,8 @@
         "salesman"
       ]
     },
-    "Sys77": {
-      "title": "Sys77",
+    "Sys78": {
+      "title": "Sys78",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -6690,24 +6795,8 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset79"
+            "$ref": "#/definitions/Dataset80"
           }
-        },
-        "sys": {
-          "$ref": "#/definitions/Sys"
-        }
-      },
-      "required": [
-        "dataset",
-        "sys"
-      ]
-    },
-    "Dataset79": {
-      "title": "Dataset79",
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "$ref": "#/definitions/Dataset80"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -6720,6 +6809,22 @@
     },
     "Dataset80": {
       "title": "Dataset80",
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "$ref": "#/definitions/Dataset81"
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys"
+        }
+      },
+      "required": [
+        "dataset",
+        "sys"
+      ]
+    },
+    "Dataset81": {
+      "title": "Dataset81",
       "type": "object",
       "properties": {
         "companyOrderID": {
@@ -6748,20 +6853,20 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User82"
+          "$ref": "#/definitions/User83"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo83"
+          "$ref": "#/definitions/SellTo84"
         },
         "positions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position84"
+            "$ref": "#/definitions/Position85"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys85"
+          "$ref": "#/definitions/Sys86"
         }
       },
       "required": [
@@ -6820,8 +6925,8 @@
         "state"
       ]
     },
-    "User82": {
-      "title": "User82",
+    "User83": {
+      "title": "User83",
       "type": "object",
       "properties": {
         "userName": {
@@ -6883,8 +6988,8 @@
         "surName"
       ]
     },
-    "SellTo83": {
-      "title": "SellTo83",
+    "SellTo84": {
+      "title": "SellTo84",
       "type": "object",
       "properties": {
         "company": {
@@ -6921,8 +7026,8 @@
         "country"
       ]
     },
-    "Position84": {
-      "title": "Position84",
+    "Position85": {
+      "title": "Position85",
       "type": "object",
       "properties": {
         "iid": {
@@ -7024,8 +7129,8 @@
         "salesman"
       ]
     },
-    "Sys85": {
-      "title": "Sys85",
+    "Sys86": {
+      "title": "Sys86",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -7167,11 +7272,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position92"
+            "$ref": "#/definitions/Position93"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys77"
+          "$ref": "#/definitions/Sys78"
         }
       },
       "required": [
@@ -7187,8 +7292,8 @@
         "sys"
       ]
     },
-    "Position92": {
-      "title": "Position92",
+    "Position93": {
+      "title": "Position93",
       "type": "object",
       "properties": {
         "iid": {
@@ -7415,7 +7520,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys77"
+          "$ref": "#/definitions/Sys78"
         }
       },
       "required": [
@@ -7473,11 +7578,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position105"
+            "$ref": "#/definitions/Position106"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys77"
+          "$ref": "#/definitions/Sys78"
         }
       },
       "required": [
@@ -7493,8 +7598,8 @@
         "sys"
       ]
     },
-    "Position105": {
-      "title": "Position105",
+    "Position106": {
+      "title": "Position106",
       "type": "object",
       "properties": {
         "iid": {
@@ -7728,11 +7833,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position111"
+            "$ref": "#/definitions/Position112"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys77"
+          "$ref": "#/definitions/Sys78"
         }
       },
       "required": [
@@ -7748,8 +7853,8 @@
         "sys"
       ]
     },
-    "Position111": {
-      "title": "Position111",
+    "Position112": {
+      "title": "Position112",
       "type": "object",
       "properties": {
         "iid": {
@@ -7903,7 +8008,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset116"
+            "$ref": "#/definitions/Dataset117"
           }
         }
       },
@@ -7911,8 +8016,8 @@
         "dataset"
       ]
     },
-    "Dataset116": {
-      "title": "Dataset116",
+    "Dataset117": {
+      "title": "Dataset117",
       "type": "object",
       "properties": {
         "IID": {
