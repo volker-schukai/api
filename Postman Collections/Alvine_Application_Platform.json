@@ -497,61 +497,41 @@
     "/commerce/item/catalog/category": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Kategorien auslesen",
+        "summary": "Gruppenmitglieder suchen",
         "tags": [
-          "Kategorien"
+          "member"
         ],
-        "operationId": "Kategorien auslesen",
+        "operationId": "Gruppenmitglieder suchen",
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "description": ""
-          },
-          {
-            "name": "count",
-            "in": "query",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "description": ""
-          },
-          {
-            "name": "orderby",
-            "in": "query",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
-            "description": "",
-            "schema": {
-              "type": "object"
-            },
-            "examples": {}
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {}
+            "description": ""
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/commerce/item/catalog/category"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Gruppenmitglieder suchen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
