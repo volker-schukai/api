@@ -497,41 +497,61 @@
     "/commerce/item/catalog/category": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Gruppenmitglieder suchen",
+        "summary": "Kategorien auslesen",
         "tags": [
-          "member"
+          "Kategorien"
         ],
-        "operationId": "Gruppenmitglieder suchen",
+        "operationId": "Kategorien auslesen",
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
           }
         },
         "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "GET",
-              "uri": "/commerce/item/catalog/category"
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Gruppenmitglieder suchen",
-            "x-testDescription": "TODO: Add Description"
-          }
-        ],
+        "x-unitTests": [],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1452,6 +1472,81 @@
         }
       }
     },
+    "/commerce/pos/cashregister/1": {
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Kasse ändern",
+        "tags": [
+          "cashregister"
+        ],
+        "operationId": "Kasse ändern",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/KasseÄndernrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/commerce/pos/cashregister/1",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"bonID\": 3333\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Kasse ändern",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/commerce/pos/cashdrawer": {
       "get": {
         "description": "TODO: Add Description",
@@ -1525,7 +1620,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KasseHinzufügenrequest37"
+              "$ref": "#/definitions/KasseHinzufügenrequest38"
             }
           },
           {
@@ -1776,6 +1871,136 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Betrag ändern",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/commerce/pos/journal": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Einträge auslesen",
+        "tags": [
+          "journal"
+        ],
+        "operationId": "Einträge auslesen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/commerce/pos/journal",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Einträge auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Eintrag hinzufügen",
+        "tags": [
+          "journal"
+        ],
+        "operationId": "Eintrag hinzufügen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EintragHinzufügenrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/commerce/pos/journal",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"journalUUID\":\"ea7a59b6-18a1-47f5-992d-2a1fac927784\",\n    \"type\":20,\n    \"crid\": 1,\n    \"documentNumber\":\"0001/01/156282\",\n    \"currency\":\"EUR\",\n    \"credit\": 2562,\n    \"debit\": 0,\n    \"description\" : \"Test eintrag aus Postman\",\n    \"date\":1510900734,\n    \"uid\":32,\n    \"account\":2,\n    \"created\":1510900734\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Eintrag hinzufügen",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -2485,11 +2710,11 @@
       },
       "post": {
         "description": "TODO: Add Description",
-        "summary": "Bestellung erstellen mit Retoure",
+        "summary": "Eintrag erstellen",
         "tags": [
           "order"
         ],
-        "operationId": "Bestellung erstellen mit Retoure",
+        "operationId": "Eintrag erstellen",
         "produces": [
           "application/json"
         ],
@@ -2500,7 +2725,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/BestellungErstellenMitRetourerequest"
+              "$ref": "#/definitions/EintragErstellenrequest"
             }
           },
           {
@@ -2545,7 +2770,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Bestellung erstellen mit Retoure",
+            "x-testName": "Eintrag erstellen",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -2614,6 +2839,117 @@
         },
         "security": [],
         "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/account/group/8/member/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Gruppenmitglieder suchen",
+        "tags": [
+          "member"
+        ],
+        "operationId": "Gruppenmitglieder suchen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/account/group/8/member/search",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Gruppenmitglieder suchen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "//": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Wer bin ich",
+        "tags": [
+          "account"
+        ],
+        "operationId": "Wer bin ich",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "//"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Wer bin ich",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3610,8 +3946,25 @@
         "shid"
       ]
     },
-    "KasseHinzufügenrequest37": {
-      "title": "Kasse hinzufügenRequest37",
+    "KasseÄndernrequest": {
+      "title": "Kasse ändernRequest",
+      "example": {
+        "bonID": 3333
+      },
+      "type": "object",
+      "properties": {
+        "bonID": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "bonID"
+      ]
+    },
+    "KasseHinzufügenrequest38": {
+      "title": "Kasse hinzufügenRequest38",
       "example": {
         "name": "Beispiel Schublade",
         "crid": 1
@@ -3715,7 +4068,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset41"
+            "$ref": "#/definitions/Dataset42"
           }
         }
       },
@@ -3723,8 +4076,8 @@
         "dataset"
       ]
     },
-    "Dataset41": {
-      "title": "Dataset41",
+    "Dataset42": {
+      "title": "Dataset42",
       "type": "object",
       "properties": {
         "amount": {
@@ -3748,15 +4101,105 @@
         "cdid"
       ]
     },
+    "EintragHinzufügenrequest": {
+      "title": "Eintrag hinzufügenRequest",
+      "example": {
+        "journalUUID": "ea7a59b6-18a1-47f5-992d-2a1fac927784",
+        "type": 20,
+        "crid": 1,
+        "documentNumber": "0001/01/156282",
+        "currency": "EUR",
+        "credit": 2562,
+        "debit": 0,
+        "description": "Test eintrag aus Postman",
+        "date": 1510900734,
+        "uid": 32,
+        "account": 2,
+        "created": 1510900734
+      },
+      "type": "object",
+      "properties": {
+        "journalUUID": {
+          "description": "",
+          "type": "string"
+        },
+        "type": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "crid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "documentNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        },
+        "credit": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "debit": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "description": {
+          "description": "",
+          "type": "string"
+        },
+        "date": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "uid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "account": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "created": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "journalUUID",
+        "type",
+        "crid",
+        "documentNumber",
+        "currency",
+        "credit",
+        "debit",
+        "description",
+        "date",
+        "uid",
+        "account",
+        "created"
+      ]
+    },
     "ProdukteAuslesenresponse": {
       "title": "Produkte auslesenResponse",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset43"
+          "$ref": "#/definitions/Dataset45"
         },
         "sys": {
-          "$ref": "#/definitions/Sys58"
+          "$ref": "#/definitions/Sys60"
         }
       },
       "required": [
@@ -3764,8 +4207,8 @@
         "sys"
       ]
     },
-    "Dataset43": {
-      "title": "Dataset43",
+    "Dataset45": {
+      "title": "Dataset45",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -4594,7 +5037,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject48"
+            "$ref": "#/definitions/GeneratedObject50"
           }
         },
         "brandLabel1": {
@@ -5241,8 +5684,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject48": {
-      "title": "generatedObject48",
+    "GeneratedObject50": {
+      "title": "generatedObject50",
       "type": "object",
       "properties": {
         "bid": {
@@ -5631,8 +6074,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys58": {
-      "title": "Sys58",
+    "Sys60": {
+      "title": "Sys60",
       "type": "object",
       "properties": {
         "pagination": {
@@ -5913,15 +6356,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset61"
+          "$ref": "#/definitions/Dataset63"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset61": {
-      "title": "Dataset61",
+    "Dataset63": {
+      "title": "Dataset63",
       "type": "object",
       "properties": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
@@ -5945,7 +6388,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants64"
+          "$ref": "#/definitions/Variants66"
         }
       },
       "required": [
@@ -6148,8 +6591,8 @@
         "original_percent"
       ]
     },
-    "Variants64": {
-      "title": "Variants64",
+    "Variants66": {
+      "title": "Variants66",
       "type": "object",
       "properties": {
         "S": {
@@ -6391,7 +6834,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -6655,8 +7098,8 @@
         "salesman"
       ]
     },
-    "Sys78": {
-      "title": "Sys78",
+    "Sys80": {
+      "title": "Sys80",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -6775,7 +7218,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset80"
+            "$ref": "#/definitions/Dataset82"
           }
         },
         "sys": {
@@ -6787,12 +7230,12 @@
         "sys"
       ]
     },
-    "Dataset80": {
-      "title": "Dataset80",
+    "Dataset82": {
+      "title": "Dataset82",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset81"
+          "$ref": "#/definitions/Dataset83"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -6803,8 +7246,8 @@
         "sys"
       ]
     },
-    "Dataset81": {
-      "title": "Dataset81",
+    "Dataset83": {
+      "title": "Dataset83",
       "type": "object",
       "properties": {
         "companyOrderID": {
@@ -6833,20 +7276,20 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User83"
+          "$ref": "#/definitions/User85"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo84"
+          "$ref": "#/definitions/SellTo86"
         },
         "positions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position85"
+            "$ref": "#/definitions/Position87"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys86"
+          "$ref": "#/definitions/Sys88"
         }
       },
       "required": [
@@ -6905,8 +7348,8 @@
         "state"
       ]
     },
-    "User83": {
-      "title": "User83",
+    "User85": {
+      "title": "User85",
       "type": "object",
       "properties": {
         "userName": {
@@ -6968,8 +7411,8 @@
         "surName"
       ]
     },
-    "SellTo84": {
-      "title": "SellTo84",
+    "SellTo86": {
+      "title": "SellTo86",
       "type": "object",
       "properties": {
         "company": {
@@ -7006,8 +7449,8 @@
         "country"
       ]
     },
-    "Position85": {
-      "title": "Position85",
+    "Position87": {
+      "title": "Position87",
       "type": "object",
       "properties": {
         "iid": {
@@ -7109,8 +7552,8 @@
         "salesman"
       ]
     },
-    "Sys86": {
-      "title": "Sys86",
+    "Sys88": {
+      "title": "Sys88",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -7252,11 +7695,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position93"
+            "$ref": "#/definitions/Position95"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -7272,8 +7715,8 @@
         "sys"
       ]
     },
-    "Position93": {
-      "title": "Position93",
+    "Position95": {
+      "title": "Position95",
       "type": "object",
       "properties": {
         "iid": {
@@ -7500,7 +7943,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -7558,11 +8001,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position106"
+            "$ref": "#/definitions/Position108"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -7578,8 +8021,8 @@
         "sys"
       ]
     },
-    "Position106": {
-      "title": "Position106",
+    "Position108": {
+      "title": "Position108",
       "type": "object",
       "properties": {
         "iid": {
@@ -7678,8 +8121,8 @@
         "salesman"
       ]
     },
-    "BestellungErstellenMitRetourerequest": {
-      "title": "Bestellung erstellen mit RetoureRequest",
+    "EintragErstellenrequest": {
+      "title": "Eintrag erstellenRequest",
       "example": {
         "companyOrderID": "0001/01/00004",
         "billNumber": "0001/01/00004",
@@ -7813,11 +8256,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position112"
+            "$ref": "#/definitions/Position114"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -7833,8 +8276,8 @@
         "sys"
       ]
     },
-    "Position112": {
-      "title": "Position112",
+    "Position114": {
+      "title": "Position114",
       "type": "object",
       "properties": {
         "iid": {
@@ -7988,7 +8431,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset117"
+            "$ref": "#/definitions/Dataset119"
           }
         }
       },
@@ -7996,8 +8439,8 @@
         "dataset"
       ]
     },
-    "Dataset117": {
-      "title": "Dataset117",
+    "Dataset119": {
+      "title": "Dataset119",
       "type": "object",
       "properties": {
         "IID": {
