@@ -2912,7 +2912,7 @@
         }
       }
     },
-    "//": {
+    "/account/whoami": {
       "get": {
         "description": "TODO: Add Description",
         "summary": "Wer bin ich",
@@ -2923,33 +2923,26 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/WerBinIchresponse"
+            },
+            "examples": {}
           }
         },
         "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "GET",
-              "uri": "//"
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Wer bin ich",
-            "x-testDescription": "TODO: Add Description"
-          }
-        ],
+        "x-unitTests": [],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8576,6 +8569,342 @@
         "currency",
         "type",
         "offer_net"
+      ]
+    },
+    "WerBinIchresponse": {
+      "title": "Wer bin ichResponse",
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "$ref": "#/definitions/Dataset123"
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys"
+        }
+      },
+      "required": [
+        "dataset",
+        "sys"
+      ]
+    },
+    "Dataset123": {
+      "title": "Dataset123",
+      "type": "object",
+      "properties": {
+        "erpID": {
+          "description": "",
+          "type": "string"
+        },
+        "erpName": {
+          "description": "",
+          "type": "string"
+        },
+        "erpNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "erpLastUpdate": {
+          "description": "",
+          "type": "string"
+        },
+        "erpCreation": {
+          "description": "",
+          "type": "string"
+        },
+        "archived": {
+          "description": "",
+          "type": "string"
+        },
+        "uid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "state": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "creation": {
+          "description": "",
+          "type": "string"
+        },
+        "lastUpdate": {
+          "description": "",
+          "type": "string"
+        },
+        "ranking": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "addresses": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "personal": {
+          "$ref": "#/definitions/Personal"
+        },
+        "properties": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Property125"
+          }
+        },
+        "communication": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Communication"
+          }
+        }
+      },
+      "required": [
+        "erpID",
+        "erpName",
+        "erpNumber",
+        "erpLastUpdate",
+        "erpCreation",
+        "archived",
+        "uid",
+        "name",
+        "state",
+        "creation",
+        "lastUpdate",
+        "ranking",
+        "addresses",
+        "personal",
+        "properties",
+        "communication"
+      ]
+    },
+    "Personal": {
+      "title": "Personal",
+      "type": "object",
+      "properties": {
+        "erpID": {
+          "description": "",
+          "type": "string"
+        },
+        "erpName": {
+          "description": "",
+          "type": "string"
+        },
+        "erpNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "erpLastUpdate": {
+          "description": "",
+          "type": "string"
+        },
+        "erpCreation": {
+          "description": "",
+          "type": "string"
+        },
+        "pid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "uid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "alias": {
+          "description": "",
+          "type": "string"
+        },
+        "formOfAddress": {
+          "description": "",
+          "type": "string"
+        },
+        "salutation": {
+          "description": "",
+          "type": "string"
+        },
+        "firstname": {
+          "description": "",
+          "type": "string"
+        },
+        "name1": {
+          "description": "",
+          "type": "string"
+        },
+        "name2": {
+          "description": "",
+          "type": "string"
+        },
+        "title": {
+          "description": "",
+          "type": "string"
+        },
+        "custom1": {
+          "description": "",
+          "type": "string"
+        },
+        "custom2": {
+          "description": "",
+          "type": "string"
+        },
+        "birthday": {
+          "description": "",
+          "type": "string"
+        },
+        "lastUpdate": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "erpID",
+        "erpName",
+        "erpNumber",
+        "erpLastUpdate",
+        "erpCreation",
+        "pid",
+        "uid",
+        "alias",
+        "formOfAddress",
+        "salutation",
+        "firstname",
+        "name1",
+        "name2",
+        "title",
+        "custom1",
+        "custom2",
+        "birthday",
+        "lastUpdate"
+      ]
+    },
+    "Property125": {
+      "title": "Property125",
+      "type": "object",
+      "properties": {
+        "pid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "uid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "value": {
+          "description": "",
+          "type": "string"
+        },
+        "language": {
+          "description": "",
+          "type": "string"
+        },
+        "country": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pid",
+        "uid",
+        "name",
+        "value",
+        "language",
+        "country"
+      ]
+    },
+    "Communication": {
+      "title": "Communication",
+      "type": "object",
+      "properties": {
+        "erpID": {
+          "description": "",
+          "type": "string"
+        },
+        "erpName": {
+          "description": "",
+          "type": "string"
+        },
+        "erpNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "erpLastUpdate": {
+          "description": "",
+          "type": "string"
+        },
+        "erpCreation": {
+          "description": "",
+          "type": "string"
+        },
+        "cid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "uid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "description": {
+          "description": "",
+          "type": "string"
+        },
+        "locator": {
+          "description": "",
+          "type": "string"
+        },
+        "preset": {
+          "description": "",
+          "type": "string"
+        },
+        "private": {
+          "description": "",
+          "type": "string"
+        },
+        "scope": {
+          "description": "",
+          "type": "string"
+        },
+        "lastUpdate": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "erpID",
+        "erpName",
+        "erpNumber",
+        "erpLastUpdate",
+        "erpCreation",
+        "cid",
+        "uid",
+        "type",
+        "description",
+        "locator",
+        "preset",
+        "private",
+        "scope",
+        "lastUpdate"
       ]
     }
   }
