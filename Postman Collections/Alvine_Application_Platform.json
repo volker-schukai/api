@@ -2710,11 +2710,11 @@
       },
       "post": {
         "description": "TODO: Add Description",
-        "summary": "Eintrag erstellen",
+        "summary": "Bestellung erstellen mit Retoure",
         "tags": [
           "order"
         ],
-        "operationId": "Eintrag erstellen",
+        "operationId": "Bestellung erstellen mit Retoure",
         "produces": [
           "application/json"
         ],
@@ -2725,7 +2725,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/EintragErstellenrequest"
+              "$ref": "#/definitions/BestellungErstellenMitRetourerequest"
             }
           },
           {
@@ -2770,7 +2770,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eintrag erstellen",
+            "x-testName": "Bestellung erstellen mit Retoure",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -2924,6 +2924,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "facet",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
           {
             "name": "Accept",
             "in": "header",
@@ -8114,8 +8121,8 @@
         "salesman"
       ]
     },
-    "EintragErstellenrequest": {
-      "title": "Eintrag erstellenRequest",
+    "BestellungErstellenMitRetourerequest": {
+      "title": "Bestellung erstellen mit RetoureRequest",
       "example": {
         "companyOrderID": "0001/01/00004",
         "billNumber": "0001/01/00004",
