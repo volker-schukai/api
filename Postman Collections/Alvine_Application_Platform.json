@@ -2014,24 +2014,16 @@
     },
     "/util/list/account_priority": {
       "get": {
-        "description": "",
-        "summary": "Standard-/Projektliste holen",
+        "description": "Von der Konsole abmelden",
+        "summary": "Logout",
         "tags": [
-          "Listen"
+          "console"
         ],
-        "operationId": "Standard-/Projektliste holen",
+        "operationId": "Logout",
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": ""
@@ -2042,10 +2034,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/util/list/account_priority",
-              "headers": {
-                "Accept": "application/json"
-              }
+              "uri": "/util/list/account_priority"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -2057,8 +2046,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Standard-/Projektliste holen",
-            "x-testDescription": ""
+            "x-testName": "Logout",
+            "x-testDescription": "Von der Konsole abmelden"
           }
         ],
         "x-operation-settings": {
@@ -2270,6 +2259,52 @@
             "x-testEnabled": true,
             "x-testName": "Länder auslesen",
             "x-testDescription": "Daten einer oder mehrerer Länder auslesen."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/logged-in": {
+      "get": {
+        "description": "Mit diesem Aufruf kann geprüft werden, ob der aktuelle Benutzer angemeldet ist und über eine gültige Session verfügt.",
+        "summary": "LoggedIn",
+        "tags": [
+          "util"
+        ],
+        "operationId": "LoggedIn",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/logged-in"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "LoggedIn",
+            "x-testDescription": "Mit diesem Aufruf kann geprüft werden, ob der aktuelle Benutzer angemeldet ist und über eine gültige Session verfügt."
           }
         ],
         "x-operation-settings": {
