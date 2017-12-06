@@ -10,7 +10,7 @@
     }
   },
   "host": "example.com",
-  "basePath": "/api",
+  "basePath": "/",
   "schemes": [
     "http"
   ],
@@ -21,7 +21,7 @@
     "application/json"
   ],
   "paths": {
-    "/commerce/item/catalog/category/1/files": {
+    "/api/commerce/item/catalog/category/1/files": {
       "get": {
         "description": "",
         "summary": "Dateiliste",
@@ -51,7 +51,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/commerce/item/catalog/category/1/files",
+              "uri": "/api/commerce/item/catalog/category/1/files",
               "headers": {
                 "Accept": "application/json"
               }
@@ -78,7 +78,7 @@
         }
       }
     },
-    "/commerce/item/catalog/category/1/upload": {
+    "/api/commerce/item/catalog/category/1/upload": {
       "post": {
         "description": "",
         "summary": "Datei hinzufügen",
@@ -125,7 +125,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/commerce/item/catalog/category/1/upload",
+              "uri": "/api/commerce/item/catalog/category/1/upload",
               "headers": {
                 "Content-Type": "application/x-www-form-urlencoded",
                 "Accept": "application/json"
@@ -154,7 +154,7 @@
         }
       }
     },
-    "/commerce/item/catalog/category/1/schukai.gif": {
+    "/api/commerce/item/catalog/category/1/schukai.gif": {
       "delete": {
         "description": "",
         "summary": "Datei löschen",
@@ -184,7 +184,7 @@
           {
             "request": {
               "method": "DELETE",
-              "uri": "/commerce/item/catalog/category/1/schukai.gif",
+              "uri": "/api/commerce/item/catalog/category/1/schukai.gif",
               "headers": {
                 "Accept": "application/json"
               }
@@ -211,7 +211,7 @@
         }
       }
     },
-    "/commerce/item/catalog/category/9/property": {
+    "/api/commerce/item/catalog/category/9/property": {
       "get": {
         "description": "",
         "summary": "Eigenschaften auslesen",
@@ -248,7 +248,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/commerce/item/catalog/category/9/property?name=myname",
+              "uri": "/api/commerce/item/catalog/category/9/property?name=myname",
               "headers": {
                 "Accept": "application/json"
               }
@@ -319,7 +319,7 @@
           {
             "request": {
               "method": "PUT",
-              "uri": "/commerce/item/catalog/category/9/property",
+              "uri": "/api/commerce/item/catalog/category/9/property",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -392,7 +392,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/commerce/item/catalog/category/9/property",
+              "uri": "/api/commerce/item/catalog/category/9/property",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -465,7 +465,7 @@
           {
             "request": {
               "method": "DELETE",
-              "uri": "/commerce/item/catalog/category/9/property",
+              "uri": "/api/commerce/item/catalog/category/9/property",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -494,72 +494,8 @@
         }
       }
     },
-    "/commerce/item/catalog/category": {
+    "/api/commerce/item/catalog/category": {
       "get": {
-        "description": "",
-        "summary": "Kategorien auslesen",
-        "tags": [
-          "Kategorien"
-        ],
-        "operationId": "Kategorien auslesen",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "description": ""
-          },
-          {
-            "name": "count",
-            "in": "query",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "description": ""
-          },
-          {
-            "name": "orderby",
-            "in": "query",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object"
-            },
-            "examples": {}
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {}
-          }
-        },
-        "security": [],
-        "x-unitTests": [],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      },
-      "put": {
         "description": "",
         "summary": "Kategorien suchen",
         "tags": [
@@ -570,15 +506,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/KategorienSuchenrequest"
-            }
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -609,6 +536,79 @@
         },
         "security": [],
         "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Produkt suchen",
+        "tags": [
+          "item"
+        ],
+        "operationId": "Produkt suchen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProduktSuchenrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/api/commerce/item/catalog/category",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"dataset\": [\n      {\n          \"cid\": 50,\n            \"erpName\": \"erp-name-1\",\n            \"name\": \"Software\",\n            \"flag\":2\n        },\n        {\n          \"cid\": 70,\"flag\":1\n        }\n    ]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Produkt suchen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -661,7 +661,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/commerce/item/catalog/category",
+              "uri": "/api/commerce/item/catalog/category",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -755,7 +755,7 @@
           {
             "request": {
               "method": "DELETE",
-              "uri": "/commerce/item/catalog/category",
+              "uri": "/api/commerce/item/catalog/category",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -888,7 +888,7 @@
           {
             "request": {
               "method": "PATCH",
-              "uri": "/commerce/item/catalog/category",
+              "uri": "/api/commerce/item/catalog/category",
               "headers": {
                 "Content-Type": "application/x-www-form-urlencoded",
                 "Accept": "application/json"
@@ -927,7 +927,7 @@
         }
       }
     },
-    "/commerce/item/catalog/category/5": {
+    "/api/commerce/item/catalog/category/5": {
       "get": {
         "description": "",
         "summary": "Eine Kategorien auslesen",
@@ -957,7 +957,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/commerce/item/catalog/category/5",
+              "uri": "/api/commerce/item/catalog/category/5",
               "headers": {
                 "Accept": "application/json"
               }
@@ -984,7 +984,7 @@
         }
       }
     },
-    "/commerce/item/catalog/category/52": {
+    "/api/commerce/item/catalog/category/52": {
       "delete": {
         "description": "",
         "summary": "Kategorien löschen",
@@ -1044,7 +1044,7 @@
           {
             "request": {
               "method": "DELETE",
-              "uri": "/commerce/item/catalog/category/52",
+              "uri": "/api/commerce/item/catalog/category/52",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -1082,7 +1082,413 @@
         }
       }
     },
-    "/commerce/client": {
+    "/api/commerce/item": {
+      "get": {
+        "description": "Produktdatensätze auslesen",
+        "summary": "Produkt auslesen",
+        "tags": [
+          "item"
+        ],
+        "operationId": "Produkt auslesen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/item?offset=100&count=5",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Produkt auslesen",
+            "x-testDescription": "Produktdatensätze auslesen"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Produkt ändern",
+        "tags": [
+          "item"
+        ],
+        "operationId": "Produkt ändern",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProduktÄndernrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/api/commerce/item",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"dataset\": [\n      {\n          \"iid\": 1001,\n            \"erpName\": \"erp-name-1\",\n            \"masterNumber\": \"12345\"\n        },\n        {\n          \"iid\": 1000,\"masterName\":\"dsfsdfsdf\"\n        }\n    ]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Produkt ändern",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Produkt hinzufügen",
+        "tags": [
+          "item"
+        ],
+        "operationId": "Produkt hinzufügen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProduktHinzufügenrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/commerce/item",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"dataset\": [\n         {\n            \"masterName\": \"erp-name-1\",\n            \"active\":true\n        },{\n            \"erpName\": \"Neue Kategorie 2\",\n            \"active\":false\n        }\n    ]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Produkt hinzufügen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Produkte Mehrfachlöschung",
+        "tags": [
+          "item"
+        ],
+        "operationId": "Produkte Mehrfachlöschung",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProdukteMehrfachlöschungrequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/commerce/item",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n   \"dataset\": [\n     { \"iid\": 500 },\n     { \"iid\": 501 },\n     { \"iid\": 502 }\n   ]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Produkte Mehrfachlöschung",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/10000": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Ein Produkt auslesen",
+        "tags": [
+          "item"
+        ],
+        "operationId": "Ein Produkt auslesen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/item/10000",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Ein Produkt auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/1": {
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Produkt löschen",
+        "tags": [
+          "item"
+        ],
+        "operationId": "Produkt löschen",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/commerce/item/1",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Produkt löschen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/client": {
       "get": {
         "description": "",
         "summary": "Mandanten auslesen",
@@ -1112,7 +1518,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/commerce/client",
+              "uri": "/api/commerce/client",
               "headers": {
                 "Accept": "application/json"
               }
@@ -1183,7 +1589,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/commerce/client",
+              "uri": "/api/commerce/client",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -1212,7 +1618,7 @@
         }
       }
     },
-    "/commerce/clientdata": {
+    "/api/commerce/clientdata": {
       "get": {
         "description": "",
         "summary": "Mandanten Daten  auslesen",
@@ -1242,7 +1648,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/commerce/clientdata",
+              "uri": "/api/commerce/clientdata",
               "headers": {
                 "Accept": "application/json"
               }
@@ -1313,7 +1719,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/commerce/clientdata",
+              "uri": "/api/commerce/clientdata",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -1342,7 +1748,7 @@
         }
       }
     },
-    "/commerce/pos/cashregister": {
+    "/api/commerce/pos/cashregister": {
       "get": {
         "description": "",
         "summary": "Kassen auslesen",
@@ -1372,7 +1778,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/commerce/pos/cashregister",
+              "uri": "/api/commerce/pos/cashregister",
               "headers": {
                 "Accept": "application/json"
               }
@@ -1443,7 +1849,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/commerce/pos/cashregister",
+              "uri": "/api/commerce/pos/cashregister",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -1472,7 +1878,7 @@
         }
       }
     },
-    "/commerce/pos/cashregister/1": {
+    "/api/commerce/pos/cashregister/1": {
       "put": {
         "description": "",
         "summary": "Kasse ändern",
@@ -1518,7 +1924,7 @@
           {
             "request": {
               "method": "PUT",
-              "uri": "/commerce/pos/cashregister/1",
+              "uri": "/api/commerce/pos/cashregister/1",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -1547,7 +1953,7 @@
         }
       }
     },
-    "/commerce/pos/cashdrawer": {
+    "/api/commerce/pos/cashdrawer": {
       "get": {
         "description": "",
         "summary": "Schubladen auslesen",
@@ -1577,7 +1983,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/commerce/pos/cashdrawer",
+              "uri": "/api/commerce/pos/cashdrawer",
               "headers": {
                 "Accept": "application/json"
               }
@@ -1620,7 +2026,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KasseHinzufügenrequest38"
+              "$ref": "#/definitions/KasseHinzufügenrequest44"
             }
           },
           {
@@ -1648,7 +2054,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/commerce/pos/cashdrawer",
+              "uri": "/api/commerce/pos/cashdrawer",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -1677,7 +2083,7 @@
         }
       }
     },
-    "/commerce/pos/cashdraweramount": {
+    "/api/commerce/pos/cashdraweramount": {
       "get": {
         "description": "",
         "summary": "Beträge auslesen",
@@ -1707,7 +2113,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/commerce/pos/cashdraweramount",
+              "uri": "/api/commerce/pos/cashdraweramount",
               "headers": {
                 "Accept": "application/json"
               }
@@ -1778,7 +2184,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/commerce/pos/cashdraweramount",
+              "uri": "/api/commerce/pos/cashdraweramount",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -1807,7 +2213,7 @@
         }
       }
     },
-    "/commerce/pos/cashdraweramount/8": {
+    "/api/commerce/pos/cashdraweramount/8": {
       "put": {
         "description": "",
         "summary": "Betrag ändern",
@@ -1853,7 +2259,7 @@
           {
             "request": {
               "method": "PUT",
-              "uri": "/commerce/pos/cashdraweramount/8",
+              "uri": "/api/commerce/pos/cashdraweramount/8",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -1882,7 +2288,7 @@
         }
       }
     },
-    "/commerce/pos/journal": {
+    "/api/commerce/pos/journal": {
       "get": {
         "description": "",
         "summary": "Einträge auslesen",
@@ -1912,7 +2318,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/commerce/pos/journal",
+              "uri": "/api/commerce/pos/journal",
               "headers": {
                 "Accept": "application/json"
               }
@@ -1983,7 +2389,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/commerce/pos/journal",
+              "uri": "/api/commerce/pos/journal",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -2012,14 +2418,14 @@
         }
       }
     },
-    "/util/list/account_priority": {
+    "/api/util/list/account_priority": {
       "get": {
-        "description": "Von der Konsole abmelden",
-        "summary": "Logout",
+        "description": "Mit diesem Aufruf kann überprüft werden, ob die API Antwortet und Verfügbar ist. Aus Performancegründen, sollte dieser Aufruf sollte immer ohne Cookies durchgeführt werden.",
+        "summary": "Ping",
         "tags": [
-          "console"
+          "util"
         ],
-        "operationId": "Logout",
+        "operationId": "Ping",
         "produces": [
           "application/json"
         ],
@@ -2034,7 +2440,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/util/list/account_priority"
+              "uri": "/api/util/list/account_priority"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -2046,8 +2452,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Logout",
-            "x-testDescription": "Von der Konsole abmelden"
+            "x-testName": "Ping",
+            "x-testDescription": "Mit diesem Aufruf kann überprüft werden, ob die API Antwortet und Verfügbar ist. Aus Performancegründen, sollte dieser Aufruf sollte immer ohne Cookies durchgeführt werden."
           }
         ],
         "x-operation-settings": {
@@ -2105,7 +2511,7 @@
           {
             "request": {
               "method": "PUT",
-              "uri": "/util/list/account_priority",
+              "uri": "/api/util/list/account_priority",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -2162,7 +2568,7 @@
           {
             "request": {
               "method": "DELETE",
-              "uri": "/util/list/account_priority",
+              "uri": "/api/util/list/account_priority",
               "headers": {
                 "Accept": "application/json"
               }
@@ -2189,7 +2595,7 @@
         }
       }
     },
-    "/util/countries": {
+    "/api/util/countries": {
       "get": {
         "description": "Daten einer oder mehrerer Länder auslesen.",
         "summary": "Länder auslesen",
@@ -2242,7 +2648,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/util/countries?page=3&count=5&orderby=name ASC",
+              "uri": "/api/util/countries?page=3&count=5&orderby=name ASC",
               "headers": {
                 "Accept": "application/json"
               }
@@ -2269,7 +2675,7 @@
         }
       }
     },
-    "/logged-in": {
+    "/api/logged-in": {
       "get": {
         "description": "Mit diesem Aufruf kann geprüft werden, ob der aktuelle Benutzer angemeldet ist und über eine gültige Session verfügt.",
         "summary": "LoggedIn",
@@ -2291,7 +2697,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/logged-in"
+              "uri": "/api/logged-in"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -2315,7 +2721,7 @@
         }
       }
     },
-    "/legacy/item": {
+    "/api/legacy/item": {
       "get": {
         "description": "",
         "summary": "Produkte auslesen",
@@ -2369,7 +2775,7 @@
         }
       }
     },
-    "/legacy/price": {
+    "/api/legacy/price": {
       "get": {
         "description": "",
         "summary": "Preis auslesen",
@@ -2634,7 +3040,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/legacy/price?iid=10056",
+              "uri": "/api/legacy/price?iid=10056",
               "headers": {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
@@ -2672,7 +3078,7 @@
         }
       }
     },
-    "/legacy/order": {
+    "/api/legacy/order": {
       "get": {
         "description": "",
         "summary": "Bestellung auslesen",
@@ -2716,7 +3122,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/legacy/order?billNumber=0001/01/26594",
+              "uri": "/api/legacy/order?billNumber=0001/01/26594",
               "headers": {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
@@ -2788,7 +3194,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/legacy/order",
+              "uri": "/api/legacy/order",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -2817,7 +3223,7 @@
         }
       }
     },
-    "/legacy/voucher": {
+    "/api/legacy/voucher": {
       "post": {
         "description": "",
         "summary": "Gutschein berechnen",
@@ -2882,7 +3288,7 @@
         }
       }
     },
-    "/account/group/8/member/search": {
+    "/api/account/group/8/member/search": {
       "get": {
         "description": "",
         "summary": "Gruppenmitglieder suchen",
@@ -2919,7 +3325,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/account/group/8/member/search",
+              "uri": "/api/account/group/8/member/search",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -2947,7 +3353,7 @@
         }
       }
     },
-    "/account/whoami": {
+    "/api/account/whoami": {
       "get": {
         "description": "",
         "summary": "Wer bin ich",
@@ -2985,6 +3391,52 @@
         },
         "security": [],
         "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/admin/logout": {
+      "get": {
+        "description": "Von der Konsole abmelden",
+        "summary": "Logout",
+        "tags": [
+          "console"
+        ],
+        "operationId": "Logout",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/admin/logout"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Logout",
+            "x-testDescription": "Von der Konsole abmelden"
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3630,36 +4082,6 @@
         "location"
       ]
     },
-    "KategorienSuchenrequest": {
-      "title": "Kategorien suchenRequest",
-      "example": {
-        "dataset": [
-          {
-            "cid": 50,
-            "erpName": "erp-name-1",
-            "name": "Software",
-            "flag": 2
-          },
-          {
-            "cid": 70,
-            "flag": 1
-          }
-        ]
-      },
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset19"
-          }
-        }
-      },
-      "required": [
-        "dataset"
-      ]
-    },
     "KategorienSuchenresponse": {
       "title": "Kategorien suchenResponse",
       "type": "object",
@@ -3712,10 +4134,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset31"
+          "$ref": "#/definitions/Dataset29"
         },
         "sys": {
-          "$ref": "#/definitions/Sys33"
+          "$ref": "#/definitions/Sys31"
         }
       },
       "required": [
@@ -3723,8 +4145,8 @@
         "sys"
       ]
     },
-    "Dataset31": {
-      "title": "Dataset31",
+    "Dataset29": {
+      "title": "Dataset29",
       "type": "object",
       "properties": {
         "erpID": {
@@ -3859,8 +4281,8 @@
         "de"
       ]
     },
-    "Sys33": {
-      "title": "Sys33",
+    "Sys31": {
+      "title": "Sys31",
       "type": "object",
       "properties": {
         "updated": {
@@ -3881,6 +4303,183 @@
         "updated",
         "message",
         "code"
+      ]
+    },
+    "ProdukteMehrfachlöschungrequest": {
+      "title": "Produkte MehrfachlöschungRequest",
+      "example": {
+        "dataset": [
+          {
+            "iid": 500
+          },
+          {
+            "iid": 501
+          },
+          {
+            "iid": 502
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset33"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "Dataset33": {
+      "title": "Dataset33",
+      "type": "object",
+      "properties": {
+        "iid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "iid"
+      ]
+    },
+    "ProduktHinzufügenrequest": {
+      "title": "Produkt hinzufügenRequest",
+      "example": {
+        "dataset": [
+          {
+            "masterName": "erp-name-1",
+            "active": true
+          },
+          {
+            "erpName": "Neue Kategorie 2",
+            "active": false
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset35"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "Dataset35": {
+      "title": "Dataset35",
+      "type": "object",
+      "properties": {
+        "active": {
+          "description": "",
+          "type": "boolean"
+        },
+        "masterName": {
+          "description": "",
+          "type": "string"
+        },
+        "erpName": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "active"
+      ]
+    },
+    "ProduktÄndernrequest": {
+      "title": "Produkt ändernRequest",
+      "example": {
+        "dataset": [
+          {
+            "iid": 1001,
+            "erpName": "erp-name-1",
+            "masterNumber": "12345"
+          },
+          {
+            "iid": 1000,
+            "masterName": "dsfsdfsdf"
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset37"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "Dataset37": {
+      "title": "Dataset37",
+      "type": "object",
+      "properties": {
+        "iid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "erpName": {
+          "description": "",
+          "type": "string"
+        },
+        "masterNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "masterName": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "iid"
+      ]
+    },
+    "ProduktSuchenrequest": {
+      "title": "Produkt suchenRequest",
+      "example": {
+        "dataset": [
+          {
+            "cid": 50,
+            "erpName": "erp-name-1",
+            "name": "Software",
+            "flag": 2
+          },
+          {
+            "cid": 70,
+            "flag": 1
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset19"
+          }
+        }
+      },
+      "required": [
+        "dataset"
       ]
     },
     "MandantHinzufügenrequest": {
@@ -3998,8 +4597,8 @@
         "bonID"
       ]
     },
-    "KasseHinzufügenrequest38": {
-      "title": "Kasse hinzufügenRequest38",
+    "KasseHinzufügenrequest44": {
+      "title": "Kasse hinzufügenRequest44",
       "example": {
         "name": "Beispiel Schublade",
         "crid": 1
@@ -4103,7 +4702,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset42"
+            "$ref": "#/definitions/Dataset48"
           }
         }
       },
@@ -4111,8 +4710,8 @@
         "dataset"
       ]
     },
-    "Dataset42": {
-      "title": "Dataset42",
+    "Dataset48": {
+      "title": "Dataset48",
       "type": "object",
       "properties": {
         "amount": {
@@ -4231,10 +4830,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset45"
+          "$ref": "#/definitions/Dataset51"
         },
         "sys": {
-          "$ref": "#/definitions/Sys60"
+          "$ref": "#/definitions/Sys66"
         }
       },
       "required": [
@@ -4242,8 +4841,8 @@
         "sys"
       ]
     },
-    "Dataset45": {
-      "title": "Dataset45",
+    "Dataset51": {
+      "title": "Dataset51",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -5072,7 +5671,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject50"
+            "$ref": "#/definitions/GeneratedObject56"
           }
         },
         "brandLabel1": {
@@ -5719,8 +6318,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject50": {
-      "title": "generatedObject50",
+    "GeneratedObject56": {
+      "title": "generatedObject56",
       "type": "object",
       "properties": {
         "bid": {
@@ -6109,8 +6708,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys60": {
-      "title": "Sys60",
+    "Sys66": {
+      "title": "Sys66",
       "type": "object",
       "properties": {
         "pagination": {
@@ -6391,15 +6990,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset63"
+          "$ref": "#/definitions/Dataset69"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset63": {
-      "title": "Dataset63",
+    "Dataset69": {
+      "title": "Dataset69",
       "type": "object",
       "properties": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
@@ -6423,7 +7022,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants66"
+          "$ref": "#/definitions/Variants72"
         }
       },
       "required": [
@@ -6626,8 +7225,8 @@
         "original_percent"
       ]
     },
-    "Variants66": {
-      "title": "Variants66",
+    "Variants72": {
+      "title": "Variants72",
       "type": "object",
       "properties": {
         "S": {
@@ -6869,7 +7468,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80"
+          "$ref": "#/definitions/Sys86"
         }
       },
       "required": [
@@ -7133,8 +7732,8 @@
         "salesman"
       ]
     },
-    "Sys80": {
-      "title": "Sys80",
+    "Sys86": {
+      "title": "Sys86",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -7253,7 +7852,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset82"
+            "$ref": "#/definitions/Dataset88"
           }
         },
         "sys": {
@@ -7265,12 +7864,12 @@
         "sys"
       ]
     },
-    "Dataset82": {
-      "title": "Dataset82",
+    "Dataset88": {
+      "title": "Dataset88",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset83"
+          "$ref": "#/definitions/Dataset89"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -7281,8 +7880,8 @@
         "sys"
       ]
     },
-    "Dataset83": {
-      "title": "Dataset83",
+    "Dataset89": {
+      "title": "Dataset89",
       "type": "object",
       "properties": {
         "companyOrderID": {
@@ -7311,20 +7910,20 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User85"
+          "$ref": "#/definitions/User91"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo86"
+          "$ref": "#/definitions/SellTo92"
         },
         "positions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position87"
+            "$ref": "#/definitions/Position93"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys88"
+          "$ref": "#/definitions/Sys94"
         }
       },
       "required": [
@@ -7383,8 +7982,8 @@
         "state"
       ]
     },
-    "User85": {
-      "title": "User85",
+    "User91": {
+      "title": "User91",
       "type": "object",
       "properties": {
         "userName": {
@@ -7446,8 +8045,8 @@
         "surName"
       ]
     },
-    "SellTo86": {
-      "title": "SellTo86",
+    "SellTo92": {
+      "title": "SellTo92",
       "type": "object",
       "properties": {
         "company": {
@@ -7484,8 +8083,8 @@
         "country"
       ]
     },
-    "Position87": {
-      "title": "Position87",
+    "Position93": {
+      "title": "Position93",
       "type": "object",
       "properties": {
         "iid": {
@@ -7587,8 +8186,8 @@
         "salesman"
       ]
     },
-    "Sys88": {
-      "title": "Sys88",
+    "Sys94": {
+      "title": "Sys94",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -7730,11 +8329,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position95"
+            "$ref": "#/definitions/Position101"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80"
+          "$ref": "#/definitions/Sys86"
         }
       },
       "required": [
@@ -7750,8 +8349,8 @@
         "sys"
       ]
     },
-    "Position95": {
-      "title": "Position95",
+    "Position101": {
+      "title": "Position101",
       "type": "object",
       "properties": {
         "iid": {
@@ -7978,7 +8577,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80"
+          "$ref": "#/definitions/Sys86"
         }
       },
       "required": [
@@ -8036,11 +8635,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position108"
+            "$ref": "#/definitions/Position114"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80"
+          "$ref": "#/definitions/Sys86"
         }
       },
       "required": [
@@ -8056,8 +8655,8 @@
         "sys"
       ]
     },
-    "Position108": {
-      "title": "Position108",
+    "Position114": {
+      "title": "Position114",
       "type": "object",
       "properties": {
         "iid": {
@@ -8291,11 +8890,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position114"
+            "$ref": "#/definitions/Position120"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80"
+          "$ref": "#/definitions/Sys86"
         }
       },
       "required": [
@@ -8311,8 +8910,8 @@
         "sys"
       ]
     },
-    "Position114": {
-      "title": "Position114",
+    "Position120": {
+      "title": "Position120",
       "type": "object",
       "properties": {
         "iid": {
@@ -8466,7 +9065,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset119"
+            "$ref": "#/definitions/Dataset125"
           }
         }
       },
@@ -8474,8 +9073,8 @@
         "dataset"
       ]
     },
-    "Dataset119": {
-      "title": "Dataset119",
+    "Dataset125": {
+      "title": "Dataset125",
       "type": "object",
       "properties": {
         "IID": {
@@ -8618,7 +9217,7 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset123"
+          "$ref": "#/definitions/Dataset129"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -8629,8 +9228,8 @@
         "sys"
       ]
     },
-    "Dataset123": {
-      "title": "Dataset123",
+    "Dataset129": {
+      "title": "Dataset129",
       "type": "object",
       "properties": {
         "erpID": {
@@ -8698,7 +9297,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Property125"
+            "$ref": "#/definitions/Property131"
           }
         },
         "communication": {
@@ -8828,8 +9427,8 @@
         "lastUpdate"
       ]
     },
-    "Property125": {
-      "title": "Property125",
+    "Property131": {
+      "title": "Property131",
       "type": "object",
       "properties": {
         "pid": {
