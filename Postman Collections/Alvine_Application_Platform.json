@@ -28,7 +28,7 @@
         "tags": [
           "Dateien"
         ],
-        "operationId": "Dateiliste",
+        "operationId": "ApiCommerceItemCatalogCategory1FilesGet",
         "produces": [
           "application/json"
         ],
@@ -85,7 +85,7 @@
         "tags": [
           "Dateien"
         ],
-        "operationId": "Datei hinzufügen",
+        "operationId": "ApiCommerceItemCatalogCategory1UploadPost",
         "produces": [
           "application/json"
         ],
@@ -161,7 +161,7 @@
         "tags": [
           "Dateien"
         ],
-        "operationId": "Datei löschen",
+        "operationId": "ApiCommerceItemCatalogCategory1SchukaiGifDelete",
         "produces": [
           "application/json"
         ],
@@ -218,7 +218,7 @@
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "Eigenschaften auslesen",
+        "operationId": "ApiCommerceItemCatalogCategory9PropertyGet",
         "produces": [
           "application/json"
         ],
@@ -280,7 +280,7 @@
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "Eigenschaften ändern",
+        "operationId": "ApiCommerceItemCatalogCategory9PropertyPut",
         "produces": [
           "application/json"
         ],
@@ -353,7 +353,7 @@
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "Eigenschaften hinzufügen",
+        "operationId": "ApiCommerceItemCatalogCategory9PropertyPost",
         "produces": [
           "application/json"
         ],
@@ -426,7 +426,7 @@
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "Eigenschaften löschen",
+        "operationId": "ApiCommerceItemCatalogCategory9PropertyDelete",
         "produces": [
           "application/json"
         ],
@@ -501,7 +501,7 @@
         "tags": [
           "Kategorien"
         ],
-        "operationId": "Kategorien suchen",
+        "operationId": "ApiCommerceItemCatalogCategoryGet2",
         "produces": [
           "application/json"
         ],
@@ -544,12 +544,12 @@
         }
       },
       "put": {
-        "description": "TODO: Add Description",
-        "summary": "Produkt suchen",
+        "description": "",
+        "summary": "Kategorien ändern",
         "tags": [
-          "item"
+          "Kategorien"
         ],
-        "operationId": "Produkt suchen",
+        "operationId": "ApiCommerceItemCatalogCategoryPut",
         "produces": [
           "application/json"
         ],
@@ -560,7 +560,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ProduktSuchenrequest"
+              "$ref": "#/definitions/KategorienÄndernrequest"
             }
           },
           {
@@ -580,35 +580,19 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/KategorienÄndernresponse"
+            },
+            "examples": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {}
           }
         },
         "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "PUT",
-              "uri": "/api/commerce/item/catalog/category",
-              "headers": {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-              },
-              "body": "{\n    \"dataset\": [\n      {\n          \"cid\": 50,\n            \"erpName\": \"erp-name-1\",\n            \"name\": \"Software\",\n            \"flag\":2\n        },\n        {\n          \"cid\": 70,\"flag\":1\n        }\n    ]\n}"
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Produkt suchen",
-            "x-testDescription": "TODO: Add Description"
-          }
-        ],
+        "x-unitTests": [],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -622,7 +606,7 @@
         "tags": [
           "Kategorien"
         ],
-        "operationId": "Kategorien hinzufügen",
+        "operationId": "ApiCommerceItemCatalogCategoryPost",
         "produces": [
           "application/json"
         ],
@@ -695,7 +679,7 @@
         "tags": [
           "Kategorien"
         ],
-        "operationId": "Kategorien Mehrfachlöschung",
+        "operationId": "ApiCommerceItemCatalogCategoryDelete",
         "produces": [
           "application/json"
         ],
@@ -798,7 +782,7 @@
         "tags": [
           "Kategorien"
         ],
-        "operationId": "Kategoriefeld ändern",
+        "operationId": "ApiCommerceItemCatalogCategoryPatch",
         "produces": [
           "application/json"
         ],
@@ -934,7 +918,7 @@
         "tags": [
           "Kategorien"
         ],
-        "operationId": "Eine Kategorien auslesen",
+        "operationId": "ApiCommerceItemCatalogCategory5Get",
         "produces": [
           "application/json"
         ],
@@ -991,7 +975,7 @@
         "tags": [
           "Kategorien"
         ],
-        "operationId": "Kategorien löschen",
+        "operationId": "ApiCommerceItemCatalogCategory52Delete",
         "produces": [
           "application/json"
         ],
@@ -1089,7 +1073,7 @@
         "tags": [
           "item"
         ],
-        "operationId": "Produkt auslesen",
+        "operationId": "ApiCommerceItemGet",
         "produces": [
           "application/json"
         ],
@@ -1156,11 +1140,11 @@
       },
       "put": {
         "description": "TODO: Add Description",
-        "summary": "Produkt ändern",
+        "summary": "Produkte ändern",
         "tags": [
           "item"
         ],
-        "operationId": "Produkt ändern",
+        "operationId": "ApiCommerceItemPut",
         "produces": [
           "application/json"
         ],
@@ -1171,7 +1155,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ProduktÄndernrequest"
+              "$ref": "#/definitions/ProdukteÄndernrequest"
             }
           },
           {
@@ -1216,7 +1200,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Produkt ändern",
+            "x-testName": "Produkte ändern",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -1229,11 +1213,11 @@
       },
       "post": {
         "description": "TODO: Add Description",
-        "summary": "Produkt hinzufügen",
+        "summary": "Produkte hinzufügen",
         "tags": [
           "item"
         ],
-        "operationId": "Produkt hinzufügen",
+        "operationId": "ApiCommerceItemPost",
         "produces": [
           "application/json"
         ],
@@ -1244,7 +1228,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ProduktHinzufügenrequest"
+              "$ref": "#/definitions/ProdukteHinzufügenrequest"
             }
           },
           {
@@ -1289,7 +1273,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Produkt hinzufügen",
+            "x-testName": "Produkte hinzufügen",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -1306,7 +1290,7 @@
         "tags": [
           "item"
         ],
-        "operationId": "Produkte Mehrfachlöschung",
+        "operationId": "ApiCommerceItemDelete",
         "produces": [
           "application/json"
         ],
@@ -1381,7 +1365,7 @@
         "tags": [
           "item"
         ],
-        "operationId": "Ein Produkt auslesen",
+        "operationId": "ApiCommerceItem10000Get",
         "produces": [
           "application/json"
         ],
@@ -1438,7 +1422,7 @@
         "tags": [
           "item"
         ],
-        "operationId": "Produkt löschen",
+        "operationId": "ApiCommerceItem1Delete",
         "produces": [
           "application/json"
         ],
@@ -1488,6 +1472,107 @@
         }
       }
     },
+    "/api/commerce/item/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Produkt suchen",
+        "tags": [
+          "item"
+        ],
+        "operationId": "ApiCommerceItemSearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "table",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "facet",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/item/search?q=iid%3D10005&table=item&fields=masterName,masterNumber,variants&facet=stock,text,number,property,price&count=10&offset=0",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Produkt suchen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/api/commerce/client": {
       "get": {
         "description": "",
@@ -1495,7 +1580,7 @@
         "tags": [
           "client"
         ],
-        "operationId": "Mandanten auslesen",
+        "operationId": "ApiCommerceClientGet",
         "produces": [
           "application/json"
         ],
@@ -1550,7 +1635,7 @@
         "tags": [
           "client"
         ],
-        "operationId": "Mandant hinzufügen",
+        "operationId": "ApiCommerceClientPost",
         "produces": [
           "application/json"
         ],
@@ -1625,7 +1710,7 @@
         "tags": [
           "clientdata"
         ],
-        "operationId": "Mandanten Daten  auslesen",
+        "operationId": "ApiCommerceClientdataGet",
         "produces": [
           "application/json"
         ],
@@ -1680,7 +1765,7 @@
         "tags": [
           "clientdata"
         ],
-        "operationId": "Mandant Daten hinzufügen",
+        "operationId": "ApiCommerceClientdataPost",
         "produces": [
           "application/json"
         ],
@@ -1755,7 +1840,7 @@
         "tags": [
           "cashregister"
         ],
-        "operationId": "Kassen auslesen",
+        "operationId": "ApiCommercePosCashregisterGet",
         "produces": [
           "application/json"
         ],
@@ -1810,7 +1895,7 @@
         "tags": [
           "cashregister"
         ],
-        "operationId": "Kasse hinzufügen",
+        "operationId": "ApiCommercePosCashregisterPost",
         "produces": [
           "application/json"
         ],
@@ -1885,7 +1970,7 @@
         "tags": [
           "cashregister"
         ],
-        "operationId": "Kasse ändern",
+        "operationId": "ApiCommercePosCashregister1Put",
         "produces": [
           "application/json"
         ],
@@ -1960,7 +2045,7 @@
         "tags": [
           "cashdrawer"
         ],
-        "operationId": "Schubladen auslesen",
+        "operationId": "ApiCommercePosCashdrawerGet",
         "produces": [
           "application/json"
         ],
@@ -2015,7 +2100,7 @@
         "tags": [
           "cashdrawer"
         ],
-        "operationId": "Kasse hinzufügen1",
+        "operationId": "ApiCommercePosCashdrawerPost",
         "produces": [
           "application/json"
         ],
@@ -2026,7 +2111,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KasseHinzufügenrequest44"
+              "$ref": "#/definitions/KasseHinzufügenrequest42"
             }
           },
           {
@@ -2090,7 +2175,7 @@
         "tags": [
           "cashdraweramount"
         ],
-        "operationId": "Beträge auslesen",
+        "operationId": "ApiCommercePosCashdraweramountGet",
         "produces": [
           "application/json"
         ],
@@ -2145,7 +2230,7 @@
         "tags": [
           "cashdraweramount"
         ],
-        "operationId": "Beträge hinzufügen",
+        "operationId": "ApiCommercePosCashdraweramountPost2",
         "produces": [
           "application/json"
         ],
@@ -2220,7 +2305,7 @@
         "tags": [
           "cashdraweramount"
         ],
-        "operationId": "Betrag ändern",
+        "operationId": "ApiCommercePosCashdraweramount8Put",
         "produces": [
           "application/json"
         ],
@@ -2295,7 +2380,7 @@
         "tags": [
           "journal"
         ],
-        "operationId": "Einträge auslesen",
+        "operationId": "ApiCommercePosJournalGet",
         "produces": [
           "application/json"
         ],
@@ -2350,7 +2435,7 @@
         "tags": [
           "journal"
         ],
-        "operationId": "Eintrag hinzufügen",
+        "operationId": "ApiCommercePosJournalPost",
         "produces": [
           "application/json"
         ],
@@ -2425,7 +2510,7 @@
         "tags": [
           "util"
         ],
-        "operationId": "Ping",
+        "operationId": "ApiUtilListAccountPriorityGet2",
         "produces": [
           "application/json"
         ],
@@ -2469,7 +2554,7 @@
         "tags": [
           "Listen"
         ],
-        "operationId": "Projektliste schreiben",
+        "operationId": "ApiUtilListAccountPriorityPut",
         "produces": [
           "application/json"
         ],
@@ -2545,7 +2630,7 @@
         "tags": [
           "Listen"
         ],
-        "operationId": "Projektliste löschen",
+        "operationId": "ApiUtilListAccountPriorityDelete",
         "produces": [
           "application/json"
         ],
@@ -2602,7 +2687,7 @@
         "tags": [
           "Länder"
         ],
-        "operationId": "Länder auslesen",
+        "operationId": "ApiUtilCountriesGet",
         "produces": [
           "application/json"
         ],
@@ -2682,7 +2767,7 @@
         "tags": [
           "util"
         ],
-        "operationId": "LoggedIn",
+        "operationId": "ApiLoggedInGet",
         "produces": [
           "application/json"
         ],
@@ -2728,7 +2813,7 @@
         "tags": [
           "item"
         ],
-        "operationId": "Produkte auslesen",
+        "operationId": "ApiLegacyItemGet",
         "produces": [
           "application/json"
         ],
@@ -2782,7 +2867,7 @@
         "tags": [
           "price"
         ],
-        "operationId": "Preis auslesen",
+        "operationId": "ApiLegacyPriceGet",
         "produces": [
           "application/json"
         ],
@@ -3085,7 +3170,7 @@
         "tags": [
           "order"
         ],
-        "operationId": "Bestellung auslesen",
+        "operationId": "ApiLegacyOrderGet",
         "produces": [
           "application/json"
         ],
@@ -3155,7 +3240,7 @@
         "tags": [
           "order"
         ],
-        "operationId": "Bestellung erstellen mit Retoure",
+        "operationId": "ApiLegacyOrderPost5",
         "produces": [
           "application/json"
         ],
@@ -3230,7 +3315,7 @@
         "tags": [
           "voucher"
         ],
-        "operationId": "Gutschein berechnen",
+        "operationId": "ApiLegacyVoucherPost",
         "produces": [
           "application/json"
         ],
@@ -3290,16 +3375,30 @@
     },
     "/api/account/group/8/member/search": {
       "get": {
-        "description": "",
+        "description": "Suche nach Gruppenmitgliedern.",
         "summary": "Gruppenmitglieder suchen",
         "tags": [
           "member"
         ],
-        "operationId": "Gruppenmitglieder suchen",
+        "operationId": "ApiAccountGroup8MemberSearchGet",
         "produces": [
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "facet",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -3325,7 +3424,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/account/group/8/member/search",
+              "uri": "/api/account/group/8/member/search?q=name LIKE \"%25OL_b2c@example.com%25\"&facet=communication,personal",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -3342,7 +3441,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Gruppenmitglieder suchen",
-            "x-testDescription": ""
+            "x-testDescription": "Suche nach Gruppenmitgliedern."
           }
         ],
         "x-operation-settings": {
@@ -3360,7 +3459,7 @@
         "tags": [
           "account"
         ],
-        "operationId": "Wer bin ich",
+        "operationId": "ApiAccountWhoamiGet",
         "produces": [
           "application/json"
         ],
@@ -3406,7 +3505,7 @@
         "tags": [
           "console"
         ],
-        "operationId": "Logout",
+        "operationId": "AdminLogoutGet",
         "produces": [
           "application/json"
         ],
@@ -4348,8 +4447,8 @@
         "iid"
       ]
     },
-    "ProduktHinzufügenrequest": {
-      "title": "Produkt hinzufügenRequest",
+    "ProdukteHinzufügenrequest": {
+      "title": "Produkte hinzufügenRequest",
       "example": {
         "dataset": [
           {
@@ -4397,8 +4496,8 @@
         "active"
       ]
     },
-    "ProduktÄndernrequest": {
-      "title": "Produkt ändernRequest",
+    "ProdukteÄndernrequest": {
+      "title": "Produkte ändernRequest",
       "example": {
         "dataset": [
           {
@@ -4450,36 +4549,6 @@
       },
       "required": [
         "iid"
-      ]
-    },
-    "ProduktSuchenrequest": {
-      "title": "Produkt suchenRequest",
-      "example": {
-        "dataset": [
-          {
-            "cid": 50,
-            "erpName": "erp-name-1",
-            "name": "Software",
-            "flag": 2
-          },
-          {
-            "cid": 70,
-            "flag": 1
-          }
-        ]
-      },
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset19"
-          }
-        }
-      },
-      "required": [
-        "dataset"
       ]
     },
     "MandantHinzufügenrequest": {
@@ -4597,8 +4666,8 @@
         "bonID"
       ]
     },
-    "KasseHinzufügenrequest44": {
-      "title": "Kasse hinzufügenRequest44",
+    "KasseHinzufügenrequest42": {
+      "title": "Kasse hinzufügenRequest42",
       "example": {
         "name": "Beispiel Schublade",
         "crid": 1
@@ -4702,7 +4771,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset48"
+            "$ref": "#/definitions/Dataset46"
           }
         }
       },
@@ -4710,8 +4779,8 @@
         "dataset"
       ]
     },
-    "Dataset48": {
-      "title": "Dataset48",
+    "Dataset46": {
+      "title": "Dataset46",
       "type": "object",
       "properties": {
         "amount": {
@@ -4830,10 +4899,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset51"
+          "$ref": "#/definitions/Dataset49"
         },
         "sys": {
-          "$ref": "#/definitions/Sys66"
+          "$ref": "#/definitions/Sys64"
         }
       },
       "required": [
@@ -4841,8 +4910,8 @@
         "sys"
       ]
     },
-    "Dataset51": {
-      "title": "Dataset51",
+    "Dataset49": {
+      "title": "Dataset49",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -5671,7 +5740,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject56"
+            "$ref": "#/definitions/GeneratedObject54"
           }
         },
         "brandLabel1": {
@@ -6318,8 +6387,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject56": {
-      "title": "generatedObject56",
+    "GeneratedObject54": {
+      "title": "generatedObject54",
       "type": "object",
       "properties": {
         "bid": {
@@ -6708,8 +6777,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys66": {
-      "title": "Sys66",
+    "Sys64": {
+      "title": "Sys64",
       "type": "object",
       "properties": {
         "pagination": {
@@ -6990,15 +7059,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset69"
+          "$ref": "#/definitions/Dataset67"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset69": {
-      "title": "Dataset69",
+    "Dataset67": {
+      "title": "Dataset67",
       "type": "object",
       "properties": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
@@ -7022,7 +7091,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants72"
+          "$ref": "#/definitions/Variants70"
         }
       },
       "required": [
@@ -7225,8 +7294,8 @@
         "original_percent"
       ]
     },
-    "Variants72": {
-      "title": "Variants72",
+    "Variants70": {
+      "title": "Variants70",
       "type": "object",
       "properties": {
         "S": {
@@ -7468,7 +7537,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys86"
+          "$ref": "#/definitions/Sys84"
         }
       },
       "required": [
@@ -7732,8 +7801,8 @@
         "salesman"
       ]
     },
-    "Sys86": {
-      "title": "Sys86",
+    "Sys84": {
+      "title": "Sys84",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -7852,7 +7921,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset88"
+            "$ref": "#/definitions/Dataset86"
           }
         },
         "sys": {
@@ -7864,12 +7933,12 @@
         "sys"
       ]
     },
-    "Dataset88": {
-      "title": "Dataset88",
+    "Dataset86": {
+      "title": "Dataset86",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset89"
+          "$ref": "#/definitions/Dataset87"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -7880,8 +7949,8 @@
         "sys"
       ]
     },
-    "Dataset89": {
-      "title": "Dataset89",
+    "Dataset87": {
+      "title": "Dataset87",
       "type": "object",
       "properties": {
         "companyOrderID": {
@@ -7910,20 +7979,20 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User91"
+          "$ref": "#/definitions/User89"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo92"
+          "$ref": "#/definitions/SellTo90"
         },
         "positions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position93"
+            "$ref": "#/definitions/Position91"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys94"
+          "$ref": "#/definitions/Sys92"
         }
       },
       "required": [
@@ -7982,8 +8051,8 @@
         "state"
       ]
     },
-    "User91": {
-      "title": "User91",
+    "User89": {
+      "title": "User89",
       "type": "object",
       "properties": {
         "userName": {
@@ -8045,8 +8114,8 @@
         "surName"
       ]
     },
-    "SellTo92": {
-      "title": "SellTo92",
+    "SellTo90": {
+      "title": "SellTo90",
       "type": "object",
       "properties": {
         "company": {
@@ -8083,8 +8152,8 @@
         "country"
       ]
     },
-    "Position93": {
-      "title": "Position93",
+    "Position91": {
+      "title": "Position91",
       "type": "object",
       "properties": {
         "iid": {
@@ -8186,8 +8255,8 @@
         "salesman"
       ]
     },
-    "Sys94": {
-      "title": "Sys94",
+    "Sys92": {
+      "title": "Sys92",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -8329,11 +8398,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position101"
+            "$ref": "#/definitions/Position99"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys86"
+          "$ref": "#/definitions/Sys84"
         }
       },
       "required": [
@@ -8349,8 +8418,8 @@
         "sys"
       ]
     },
-    "Position101": {
-      "title": "Position101",
+    "Position99": {
+      "title": "Position99",
       "type": "object",
       "properties": {
         "iid": {
@@ -8577,7 +8646,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys86"
+          "$ref": "#/definitions/Sys84"
         }
       },
       "required": [
@@ -8635,11 +8704,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position114"
+            "$ref": "#/definitions/Position112"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys86"
+          "$ref": "#/definitions/Sys84"
         }
       },
       "required": [
@@ -8655,8 +8724,8 @@
         "sys"
       ]
     },
-    "Position114": {
-      "title": "Position114",
+    "Position112": {
+      "title": "Position112",
       "type": "object",
       "properties": {
         "iid": {
@@ -8890,11 +8959,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position120"
+            "$ref": "#/definitions/Position118"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys86"
+          "$ref": "#/definitions/Sys84"
         }
       },
       "required": [
@@ -8910,8 +8979,8 @@
         "sys"
       ]
     },
-    "Position120": {
-      "title": "Position120",
+    "Position118": {
+      "title": "Position118",
       "type": "object",
       "properties": {
         "iid": {
@@ -9065,7 +9134,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset125"
+            "$ref": "#/definitions/Dataset123"
           }
         }
       },
@@ -9073,8 +9142,8 @@
         "dataset"
       ]
     },
-    "Dataset125": {
-      "title": "Dataset125",
+    "Dataset123": {
+      "title": "Dataset123",
       "type": "object",
       "properties": {
         "IID": {
@@ -9217,7 +9286,7 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset129"
+          "$ref": "#/definitions/Dataset127"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -9228,8 +9297,8 @@
         "sys"
       ]
     },
-    "Dataset129": {
-      "title": "Dataset129",
+    "Dataset127": {
+      "title": "Dataset127",
       "type": "object",
       "properties": {
         "erpID": {
@@ -9297,7 +9366,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Property131"
+            "$ref": "#/definitions/Property129"
           }
         },
         "communication": {
@@ -9427,8 +9496,8 @@
         "lastUpdate"
       ]
     },
-    "Property131": {
-      "title": "Property131",
+    "Property129": {
+      "title": "Property129",
       "type": "object",
       "properties": {
         "pid": {
