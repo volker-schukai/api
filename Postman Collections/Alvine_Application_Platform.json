@@ -981,15 +981,6 @@
         ],
         "parameters": [
           {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/KategorienLöschenrequest"
-            }
-          },
-          {
             "name": "Accept",
             "in": "header",
             "required": true,
@@ -1030,10 +1021,8 @@
               "method": "DELETE",
               "uri": "/api/commerce/item/catalog/category/52",
               "headers": {
-                "Content-Type": "application/json",
                 "Accept": "application/json"
-              },
-              "body": "{\n   \"dataset\": [\n     { \"cid\": 1 },\n     { \"cid\": 2 },\n     { \"cid\": 3 },\n   ]\n}"
+              }
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -1069,11 +1058,11 @@
     "/api/commerce/item": {
       "get": {
         "description": "Produktdatensätze auslesen",
-        "summary": "Produkt auslesen",
+        "summary": "Lager auslesen",
         "tags": [
-          "item"
+          "stock"
         ],
-        "operationId": "ApiCommerceItemGet",
+        "operationId": "ApiCommerceItemGet2",
         "produces": [
           "application/json"
         ],
@@ -1127,7 +1116,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Produkt auslesen",
+            "x-testName": "Lager auslesen",
             "x-testDescription": "Produktdatensätze auslesen"
           }
         ],
@@ -1140,11 +1129,11 @@
       },
       "put": {
         "description": "TODO: Add Description",
-        "summary": "Produkte ändern",
+        "summary": "Benutzer ändern",
         "tags": [
-          "item"
+          "user"
         ],
-        "operationId": "ApiCommerceItemPut",
+        "operationId": "ApiCommerceItemPut2",
         "produces": [
           "application/json"
         ],
@@ -1155,7 +1144,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ProdukteÄndernrequest"
+              "$ref": "#/definitions/BenutzerÄndernrequest"
             }
           },
           {
@@ -1200,7 +1189,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Produkte ändern",
+            "x-testName": "Benutzer ändern",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -1213,11 +1202,11 @@
       },
       "post": {
         "description": "TODO: Add Description",
-        "summary": "Produkte hinzufügen",
+        "summary": "Benutzer hinzufügen",
         "tags": [
-          "item"
+          "user"
         ],
-        "operationId": "ApiCommerceItemPost",
+        "operationId": "ApiCommerceItemPost2",
         "produces": [
           "application/json"
         ],
@@ -1228,7 +1217,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ProdukteHinzufügenrequest"
+              "$ref": "#/definitions/BenutzerHinzufügenrequest"
             }
           },
           {
@@ -1273,80 +1262,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Produkte hinzufügen",
-            "x-testDescription": "TODO: Add Description"
-          }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      },
-      "delete": {
-        "description": "TODO: Add Description",
-        "summary": "Produkte Mehrfachlöschung",
-        "tags": [
-          "item"
-        ],
-        "operationId": "ApiCommerceItemDelete",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/ProdukteMehrfachlöschungrequest"
-            }
-          },
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "DELETE",
-              "uri": "/api/commerce/item",
-              "headers": {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-              },
-              "body": "{\n   \"dataset\": [\n     { \"iid\": 500 },\n     { \"iid\": 501 },\n     { \"iid\": 502 }\n   ]\n}"
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Produkte Mehrfachlöschung",
+            "x-testName": "Benutzer hinzufügen",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -1404,63 +1320,6 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Ein Produkt auslesen",
-            "x-testDescription": "TODO: Add Description"
-          }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      }
-    },
-    "/api/commerce/item/1": {
-      "delete": {
-        "description": "TODO: Add Description",
-        "summary": "Produkt löschen",
-        "tags": [
-          "item"
-        ],
-        "operationId": "ApiCommerceItem1Delete",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "DELETE",
-              "uri": "/api/commerce/item/1",
-              "headers": {
-                "Accept": "application/json"
-              }
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Produkt löschen",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -2111,7 +1970,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KasseHinzufügenrequest42"
+              "$ref": "#/definitions/KasseHinzufügenrequest38"
             }
           },
           {
@@ -3375,7 +3234,7 @@
     },
     "/api/account/group/8/member/search": {
       "get": {
-        "description": "Suche nach Gruppenmitgliedern.",
+        "description": "Suche nach den Mitglieder einer Gruppe. FürDie Gruppe wird in der URL über die Gruppen-ID GID representiert.",
         "summary": "Gruppenmitglieder suchen",
         "tags": [
           "member"
@@ -3399,6 +3258,78 @@
             "type": "string",
             "description": ""
           },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/account/group/8/member/search?q=name LIKE \"%25OL_b2c@example.com%25\"&facet=communication,personal,orders,notices,memberships,properties,addresses&fields=uid, username,state,ranking&offset=0",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Gruppenmitglieder suchen",
+            "x-testDescription": "Suche nach den Mitglieder einer Gruppe. FürDie Gruppe wird in der URL über die Gruppen-ID GID representiert."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/account/user/1": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Einen Benutzer auslesen",
+        "tags": [
+          "user"
+        ],
+        "operationId": "ApiAccountUser1Get2",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
           {
             "name": "Content-Type",
             "in": "header",
@@ -3424,7 +3355,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/account/group/8/member/search?q=name LIKE \"%25OL_b2c@example.com%25\"&facet=communication,personal",
+              "uri": "/api/account/user/1",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -3440,8 +3371,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Gruppenmitglieder suchen",
-            "x-testDescription": "Suche nach Gruppenmitgliedern."
+            "x-testName": "Einen Benutzer auslesen",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -3720,49 +3651,6 @@
         "propertyValue"
       ]
     },
-    "KategorienLöschenrequest": {
-      "title": "Kategorien löschenRequest",
-      "example": {
-        "dataset": [
-          {
-            "cid": 1
-          },
-          {
-            "cid": 2
-          },
-          {
-            "cid": 3
-          }
-        ]
-      },
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset7"
-          }
-        }
-      },
-      "required": [
-        "dataset"
-      ]
-    },
-    "Dataset7": {
-      "title": "Dataset7",
-      "type": "object",
-      "properties": {
-        "cid": {
-          "description": "",
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "required": [
-        "cid"
-      ]
-    },
     "KategorienLöschenresponse": {
       "title": "Kategorien löschenResponse",
       "example": {
@@ -3787,7 +3675,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset9"
+            "$ref": "#/definitions/Dataset7"
           }
         }
       },
@@ -3795,8 +3683,8 @@
         "dataset"
       ]
     },
-    "Dataset9": {
-      "title": "Dataset9",
+    "Dataset7": {
+      "title": "Dataset7",
       "type": "object",
       "properties": {
         "sys": {
@@ -3847,12 +3735,26 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset7"
+            "$ref": "#/definitions/Dataset10"
           }
         }
       },
       "required": [
         "dataset"
+      ]
+    },
+    "Dataset10": {
+      "title": "Dataset10",
+      "type": "object",
+      "properties": {
+        "cid": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "cid"
       ]
     },
     "KategorienMehrfachlöschungresponse": {
@@ -3879,7 +3781,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset9"
+            "$ref": "#/definitions/Dataset7"
           }
         }
       },
@@ -3908,7 +3810,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset15"
           }
         }
       },
@@ -3916,8 +3818,8 @@
         "dataset"
       ]
     },
-    "Dataset17": {
-      "title": "Dataset17",
+    "Dataset15": {
+      "title": "Dataset15",
       "type": "object",
       "properties": {
         "erpName": {
@@ -3961,7 +3863,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset19"
+            "$ref": "#/definitions/Dataset17"
           }
         }
       },
@@ -3969,8 +3871,8 @@
         "dataset"
       ]
     },
-    "Dataset19": {
-      "title": "Dataset19",
+    "Dataset17": {
+      "title": "Dataset17",
       "type": "object",
       "properties": {
         "cid": {
@@ -4005,7 +3907,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset21"
+            "$ref": "#/definitions/Dataset19"
           }
         }
       },
@@ -4013,15 +3915,15 @@
         "dataset"
       ]
     },
-    "Dataset21": {
-      "title": "Dataset21",
+    "Dataset19": {
+      "title": "Dataset19",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset22"
+          "$ref": "#/definitions/Dataset20"
         },
         "sys": {
-          "$ref": "#/definitions/Sys23"
+          "$ref": "#/definitions/Sys21"
         }
       },
       "required": [
@@ -4029,8 +3931,8 @@
         "sys"
       ]
     },
-    "Dataset22": {
-      "title": "Dataset22",
+    "Dataset20": {
+      "title": "Dataset20",
       "type": "object",
       "properties": {
         "erpID": {
@@ -4152,8 +4054,8 @@
         "parentCID"
       ]
     },
-    "Sys23": {
-      "title": "Sys23",
+    "Sys21": {
+      "title": "Sys21",
       "type": "object",
       "properties": {
         "updated": {
@@ -4189,7 +4091,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset21"
+            "$ref": "#/definitions/Dataset19"
           }
         }
       },
@@ -4233,10 +4135,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset29"
+          "$ref": "#/definitions/Dataset27"
         },
         "sys": {
-          "$ref": "#/definitions/Sys31"
+          "$ref": "#/definitions/Sys29"
         }
       },
       "required": [
@@ -4244,8 +4146,8 @@
         "sys"
       ]
     },
-    "Dataset29": {
-      "title": "Dataset29",
+    "Dataset27": {
+      "title": "Dataset27",
       "type": "object",
       "properties": {
         "erpID": {
@@ -4380,8 +4282,8 @@
         "de"
       ]
     },
-    "Sys31": {
-      "title": "Sys31",
+    "Sys29": {
+      "title": "Sys29",
       "type": "object",
       "properties": {
         "updated": {
@@ -4404,49 +4306,6 @@
         "code"
       ]
     },
-    "ProdukteMehrfachlöschungrequest": {
-      "title": "Produkte MehrfachlöschungRequest",
-      "example": {
-        "dataset": [
-          {
-            "iid": 500
-          },
-          {
-            "iid": 501
-          },
-          {
-            "iid": 502
-          }
-        ]
-      },
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset33"
-          }
-        }
-      },
-      "required": [
-        "dataset"
-      ]
-    },
-    "Dataset33": {
-      "title": "Dataset33",
-      "type": "object",
-      "properties": {
-        "iid": {
-          "description": "",
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "required": [
-        "iid"
-      ]
-    },
     "ProdukteHinzufügenrequest": {
       "title": "Produkte hinzufügenRequest",
       "example": {
@@ -4467,7 +4326,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset35"
+            "$ref": "#/definitions/Dataset31"
           }
         }
       },
@@ -4475,8 +4334,8 @@
         "dataset"
       ]
     },
-    "Dataset35": {
-      "title": "Dataset35",
+    "Dataset31": {
+      "title": "Dataset31",
       "type": "object",
       "properties": {
         "active": {
@@ -4517,7 +4376,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset37"
+            "$ref": "#/definitions/Dataset33"
           }
         }
       },
@@ -4525,8 +4384,8 @@
         "dataset"
       ]
     },
-    "Dataset37": {
-      "title": "Dataset37",
+    "Dataset33": {
+      "title": "Dataset33",
       "type": "object",
       "properties": {
         "iid": {
@@ -4666,8 +4525,8 @@
         "bonID"
       ]
     },
-    "KasseHinzufügenrequest42": {
-      "title": "Kasse hinzufügenRequest42",
+    "KasseHinzufügenrequest38": {
+      "title": "Kasse hinzufügenRequest38",
       "example": {
         "name": "Beispiel Schublade",
         "crid": 1
@@ -4771,7 +4630,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset46"
+            "$ref": "#/definitions/Dataset42"
           }
         }
       },
@@ -4779,8 +4638,8 @@
         "dataset"
       ]
     },
-    "Dataset46": {
-      "title": "Dataset46",
+    "Dataset42": {
+      "title": "Dataset42",
       "type": "object",
       "properties": {
         "amount": {
@@ -4899,10 +4758,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset49"
+          "$ref": "#/definitions/Dataset45"
         },
         "sys": {
-          "$ref": "#/definitions/Sys64"
+          "$ref": "#/definitions/Sys60"
         }
       },
       "required": [
@@ -4910,8 +4769,8 @@
         "sys"
       ]
     },
-    "Dataset49": {
-      "title": "Dataset49",
+    "Dataset45": {
+      "title": "Dataset45",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -5740,7 +5599,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject54"
+            "$ref": "#/definitions/GeneratedObject50"
           }
         },
         "brandLabel1": {
@@ -6387,8 +6246,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject54": {
-      "title": "generatedObject54",
+    "GeneratedObject50": {
+      "title": "generatedObject50",
       "type": "object",
       "properties": {
         "bid": {
@@ -6777,8 +6636,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys64": {
-      "title": "Sys64",
+    "Sys60": {
+      "title": "Sys60",
       "type": "object",
       "properties": {
         "pagination": {
@@ -7059,15 +6918,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset67"
+          "$ref": "#/definitions/Dataset63"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset67": {
-      "title": "Dataset67",
+    "Dataset63": {
+      "title": "Dataset63",
       "type": "object",
       "properties": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
@@ -7091,7 +6950,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants70"
+          "$ref": "#/definitions/Variants66"
         }
       },
       "required": [
@@ -7294,8 +7153,8 @@
         "original_percent"
       ]
     },
-    "Variants70": {
-      "title": "Variants70",
+    "Variants66": {
+      "title": "Variants66",
       "type": "object",
       "properties": {
         "S": {
@@ -7537,7 +7396,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys84"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -7801,8 +7660,8 @@
         "salesman"
       ]
     },
-    "Sys84": {
-      "title": "Sys84",
+    "Sys80": {
+      "title": "Sys80",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -7921,7 +7780,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset86"
+            "$ref": "#/definitions/Dataset82"
           }
         },
         "sys": {
@@ -7933,12 +7792,12 @@
         "sys"
       ]
     },
-    "Dataset86": {
-      "title": "Dataset86",
+    "Dataset82": {
+      "title": "Dataset82",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset87"
+          "$ref": "#/definitions/Dataset83"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -7949,8 +7808,8 @@
         "sys"
       ]
     },
-    "Dataset87": {
-      "title": "Dataset87",
+    "Dataset83": {
+      "title": "Dataset83",
       "type": "object",
       "properties": {
         "companyOrderID": {
@@ -7979,20 +7838,20 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User89"
+          "$ref": "#/definitions/User85"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo90"
+          "$ref": "#/definitions/SellTo86"
         },
         "positions": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position91"
+            "$ref": "#/definitions/Position87"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys92"
+          "$ref": "#/definitions/Sys88"
         }
       },
       "required": [
@@ -8051,8 +7910,8 @@
         "state"
       ]
     },
-    "User89": {
-      "title": "User89",
+    "User85": {
+      "title": "User85",
       "type": "object",
       "properties": {
         "userName": {
@@ -8114,8 +7973,8 @@
         "surName"
       ]
     },
-    "SellTo90": {
-      "title": "SellTo90",
+    "SellTo86": {
+      "title": "SellTo86",
       "type": "object",
       "properties": {
         "company": {
@@ -8152,8 +8011,8 @@
         "country"
       ]
     },
-    "Position91": {
-      "title": "Position91",
+    "Position87": {
+      "title": "Position87",
       "type": "object",
       "properties": {
         "iid": {
@@ -8255,8 +8114,8 @@
         "salesman"
       ]
     },
-    "Sys92": {
-      "title": "Sys92",
+    "Sys88": {
+      "title": "Sys88",
       "type": "object",
       "properties": {
         "reserverStockPositions": {
@@ -8398,11 +8257,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position99"
+            "$ref": "#/definitions/Position95"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys84"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -8418,8 +8277,8 @@
         "sys"
       ]
     },
-    "Position99": {
-      "title": "Position99",
+    "Position95": {
+      "title": "Position95",
       "type": "object",
       "properties": {
         "iid": {
@@ -8646,7 +8505,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys84"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -8704,11 +8563,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position112"
+            "$ref": "#/definitions/Position108"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys84"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -8724,8 +8583,8 @@
         "sys"
       ]
     },
-    "Position112": {
-      "title": "Position112",
+    "Position108": {
+      "title": "Position108",
       "type": "object",
       "properties": {
         "iid": {
@@ -8959,11 +8818,11 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position118"
+            "$ref": "#/definitions/Position114"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys84"
+          "$ref": "#/definitions/Sys80"
         }
       },
       "required": [
@@ -8979,8 +8838,8 @@
         "sys"
       ]
     },
-    "Position118": {
-      "title": "Position118",
+    "Position114": {
+      "title": "Position114",
       "type": "object",
       "properties": {
         "iid": {
@@ -9134,7 +8993,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset123"
+            "$ref": "#/definitions/Dataset119"
           }
         }
       },
@@ -9142,8 +9001,8 @@
         "dataset"
       ]
     },
-    "Dataset123": {
-      "title": "Dataset123",
+    "Dataset119": {
+      "title": "Dataset119",
       "type": "object",
       "properties": {
         "IID": {
@@ -9279,6 +9138,63 @@
         "currency",
         "type",
         "offer_net"
+      ]
+    },
+    "BenutzerHinzufügenrequest": {
+      "title": "Benutzer hinzufügenRequest",
+      "example": {
+        "dataset": [
+          {
+            "masterName": "erp-name-1",
+            "active": true
+          },
+          {
+            "erpName": "Neue Kategorie 2",
+            "active": false
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset31"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "BenutzerÄndernrequest": {
+      "title": "Benutzer ändernRequest",
+      "example": {
+        "dataset": [
+          {
+            "iid": 1001,
+            "erpName": "erp-name-1",
+            "masterNumber": "12345"
+          },
+          {
+            "iid": 1000,
+            "masterName": "dsfsdfsdf"
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset33"
+          }
+        }
+      },
+      "required": [
+        "dataset"
       ]
     },
     "WerBinIchresponse": {
