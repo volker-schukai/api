@@ -1334,11 +1334,11 @@
     "/api/commerce/item/search": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Produkt suchen",
+        "summary": "Produkt suchen1",
         "tags": [
           "item"
         ],
-        "operationId": "ApiCommerceItemSearchGet",
+        "operationId": "ApiCommerceItemSearchGet2",
         "produces": [
           "application/json"
         ],
@@ -1420,7 +1420,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Produkt suchen",
+            "x-testName": "Produkt suchen1",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -3325,7 +3325,7 @@
         "tags": [
           "user"
         ],
-        "operationId": "ApiAccountUser1Get2",
+        "operationId": "ApiAccountUser1Get",
         "produces": [
           "application/json"
         ],
