@@ -3291,7 +3291,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/account/group/8/member/search?q=name LIKE \"%25OL_b2c@example.com%25\"&facet=communication,personal,orders,notices,memberships,properties,addresses&fields=uid, username,state,ranking&offset=0",
+              "uri": "/api/account/group/8/member/search?q=username LIKE \"administrator\"&facet=communication,personal,orders,notices,memberships,property,addresses&fields=uid, username,state,ranking&offset=0",
               "headers": {
                 "Accept": "application/json"
               }
@@ -3318,18 +3318,25 @@
         }
       }
     },
-    "/api/account/user/1": {
+    "/api/account/user/29": {
       "get": {
         "description": "TODO: Add Description",
         "summary": "Einen Benutzer auslesen",
         "tags": [
           "user"
         ],
-        "operationId": "ApiAccountUser1Get",
+        "operationId": "ApiAccountUser29Get",
         "produces": [
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "facet",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -3355,7 +3362,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/account/user/1",
+              "uri": "/api/account/user/29?facet=personal,addresses,property",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
