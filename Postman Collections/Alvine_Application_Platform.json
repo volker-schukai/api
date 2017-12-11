@@ -2362,6 +2362,84 @@
         }
       }
     },
+    "/api/commerce/orders/1/search": {
+      "get": {
+        "description": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen.",
+        "summary": "Bestellungen suchen",
+        "tags": [
+          "company"
+        ],
+        "operationId": "ApiCommerceOrders1SearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "table",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "facet",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/orders/1/search?table=position&q=salesmanUID%3D\"20\"&facet=position",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Bestellungen suchen",
+            "x-testDescription": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/api/util/list/account_priority": {
       "get": {
         "description": "Mit diesem Aufruf kann überprüft werden, ob die API Antwortet und Verfügbar ist. Aus Performancegründen, sollte dieser Aufruf sollte immer ohne Cookies durchgeführt werden.",
