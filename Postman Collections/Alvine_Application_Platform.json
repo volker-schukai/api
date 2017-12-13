@@ -2362,14 +2362,14 @@
         }
       }
     },
-    "/api/commerce/orders/1/search": {
+    "/api/commerce/orders/search": {
       "get": {
         "description": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen.",
         "summary": "Bestellungen suchen",
         "tags": [
           "company"
         ],
-        "operationId": "ApiCommerceOrders1SearchGet",
+        "operationId": "ApiCommerceOrdersSearchGet",
         "produces": [
           "application/json"
         ],
@@ -2413,7 +2413,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/orders/1/search?table=position&q=salesmanUID%3D\"20\"&facet=position",
+              "uri": "/api/commerce/orders/search?table=position&q=salesmanUID%3D\"20\"&facet=position",
               "headers": {
                 "Accept": "application/json"
               }
