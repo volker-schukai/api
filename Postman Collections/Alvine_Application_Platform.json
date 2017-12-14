@@ -2362,6 +2362,60 @@
         }
       }
     },
+    "/api/commerce/pos/journal/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Journal suchen",
+        "tags": [
+          "journal"
+        ],
+        "operationId": "ApiCommercePosJournalSearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/pos/journal/search?q=currency=EUR"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Journal suchen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/api/commerce/orders/search": {
       "get": {
         "description": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen.",
@@ -3330,25 +3384,10 @@
             "description": ""
           },
           {
-            "name": "facet",
+            "name": "orderby",
             "in": "query",
             "required": true,
             "type": "string",
-            "description": ""
-          },
-          {
-            "name": "fields",
-            "in": "query",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
             "description": ""
           },
           {
@@ -3369,7 +3408,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/account/group/8/member/search?q=username LIKE \"administrator\"&facet=communication,personal,orders,notices,memberships,property,addresses&fields=uid, username,state,ranking&offset=0",
+              "uri": "/api/account/group/8/member/search?q=formOfAddress%3DHerr AND name1%3DMustermann AND city LIKE \"%25test%25\"&orderby=username",
               "headers": {
                 "Accept": "application/json"
               }
