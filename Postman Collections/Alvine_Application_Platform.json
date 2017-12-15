@@ -2421,7 +2421,7 @@
         "description": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen.",
         "summary": "Bestellungen suchen",
         "tags": [
-          "company"
+          "order"
         ],
         "operationId": "ApiCommerceOrdersSearchGet",
         "produces": [
