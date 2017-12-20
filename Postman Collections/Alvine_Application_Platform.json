@@ -1432,266 +1432,6 @@
         }
       }
     },
-    "/api/commerce/client": {
-      "get": {
-        "description": "",
-        "summary": "Mandanten auslesen",
-        "tags": [
-          "client"
-        ],
-        "operationId": "ApiCommerceClientGet",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "GET",
-              "uri": "/api/commerce/client",
-              "headers": {
-                "Accept": "application/json"
-              }
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Mandanten auslesen",
-            "x-testDescription": ""
-          }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      },
-      "post": {
-        "description": "",
-        "summary": "Mandant hinzufügen",
-        "tags": [
-          "client"
-        ],
-        "operationId": "ApiCommerceClientPost",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/MandantHinzufügenrequest"
-            }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "POST",
-              "uri": "/api/commerce/client",
-              "headers": {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-              },
-              "body": "{\r\n    \"name\": \"Beispiel Mandant\",\r\n    \"type\":\"branch\"\r\n}"
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Mandant hinzufügen",
-            "x-testDescription": ""
-          }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      }
-    },
-    "/api/commerce/clientdata": {
-      "get": {
-        "description": "",
-        "summary": "Mandanten Daten  auslesen",
-        "tags": [
-          "clientdata"
-        ],
-        "operationId": "ApiCommerceClientdataGet",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "GET",
-              "uri": "/api/commerce/clientdata",
-              "headers": {
-                "Accept": "application/json"
-              }
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Mandanten Daten  auslesen",
-            "x-testDescription": ""
-          }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      },
-      "post": {
-        "description": "",
-        "summary": "Mandant Daten hinzufügen",
-        "tags": [
-          "clientdata"
-        ],
-        "operationId": "ApiCommerceClientdataPost",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/MandantDatenHinzufügenrequest"
-            }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "POST",
-              "uri": "/api/commerce/clientdata",
-              "headers": {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-              },
-              "body": "{\n    \"shid\":\"2\",\n    \"company_name\": \"Beispiel Mandant\",\n    \"company_address1\":\"Eichenstrasse 26\",\n    \"company_zipcode\":\"82290\",\n    \"company_city\":\"Landsberied\",\n    \"company_country\":\"de\"\n}"
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Mandant Daten hinzufügen",
-            "x-testDescription": ""
-          }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      }
-    },
     "/api/commerce/pos/cashregister": {
       "get": {
         "description": "",
@@ -1970,7 +1710,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KasseHinzufügenrequest38"
+              "$ref": "#/definitions/KasseHinzufügenrequest36"
             }
           },
           {
@@ -3598,6 +3338,184 @@
           "IsMultiContentStreaming": false
         }
       }
+    },
+    "/api/company": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Firmendaten auslesen",
+        "tags": [
+          "company"
+        ],
+        "operationId": "ApiCompanyGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/company",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Firmendaten auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/company/1": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Einen Firmendatensatz auslesen",
+        "tags": [
+          "company"
+        ],
+        "operationId": "ApiCompany1Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/company/1",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Einen Firmendatensatz auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/company/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Firma suchen",
+        "tags": [
+          "company"
+        ],
+        "operationId": "ApiCompanySearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/company/search?q=shid%3D1",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Firma suchen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
     }
   },
   "definitions": {
@@ -4899,82 +4817,6 @@
         "iid"
       ]
     },
-    "MandantHinzufügenrequest": {
-      "title": "Mandant hinzufügenRequest",
-      "example": {
-        "name": "Beispiel Mandant",
-        "type": "branch"
-      },
-      "type": "object",
-      "properties": {
-        "name": {
-          "description": "",
-          "example": "Beispiel Mandant",
-          "type": "string"
-        },
-        "type": {
-          "description": "",
-          "example": "branch",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name",
-        "type"
-      ]
-    },
-    "MandantDatenHinzufügenrequest": {
-      "title": "Mandant Daten hinzufügenRequest",
-      "example": {
-        "shid": "2",
-        "company_name": "Beispiel Mandant",
-        "company_address1": "Eichenstrasse 26",
-        "company_zipcode": "82290",
-        "company_city": "Landsberied",
-        "company_country": "de"
-      },
-      "type": "object",
-      "properties": {
-        "shid": {
-          "description": "",
-          "example": "2",
-          "type": "string"
-        },
-        "company_name": {
-          "description": "",
-          "example": "Beispiel Mandant",
-          "type": "string"
-        },
-        "company_address1": {
-          "description": "",
-          "example": "Eichenstrasse 26",
-          "type": "string"
-        },
-        "company_zipcode": {
-          "description": "",
-          "example": "82290",
-          "type": "string"
-        },
-        "company_city": {
-          "description": "",
-          "example": "Landsberied",
-          "type": "string"
-        },
-        "company_country": {
-          "description": "",
-          "example": "de",
-          "type": "string"
-        }
-      },
-      "required": [
-        "shid",
-        "company_name",
-        "company_address1",
-        "company_zipcode",
-        "company_city",
-        "company_country"
-      ]
-    },
     "KasseHinzufügenrequest": {
       "title": "Kasse hinzufügenRequest",
       "example": {
@@ -5026,8 +4868,8 @@
         "bonID"
       ]
     },
-    "KasseHinzufügenrequest38": {
-      "title": "Kasse hinzufügenRequest38",
+    "KasseHinzufügenrequest36": {
+      "title": "Kasse hinzufügenRequest36",
       "example": {
         "name": "Beispiel Schublade",
         "crid": 1
@@ -5151,7 +4993,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset42"
+            "$ref": "#/definitions/Dataset40"
           }
         }
       },
@@ -5159,8 +5001,8 @@
         "dataset"
       ]
     },
-    "Dataset42": {
-      "title": "Dataset42",
+    "Dataset40": {
+      "title": "Dataset40",
       "example": {
         "amount": 12638,
         "currency": "EUR",
@@ -5299,10 +5141,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset45"
+          "$ref": "#/definitions/Dataset43"
         },
         "sys": {
-          "$ref": "#/definitions/Sys60",
+          "$ref": "#/definitions/Sys58",
           "example": {
             "pagination": {
               "total": 1,
@@ -5321,8 +5163,8 @@
         "sys"
       ]
     },
-    "Dataset45": {
-      "title": "Dataset45",
+    "Dataset43": {
+      "title": "Dataset43",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -6291,7 +6133,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject50"
+            "$ref": "#/definitions/GeneratedObject48"
           }
         },
         "brandLabel1": {
@@ -7138,8 +6980,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject50": {
-      "title": "generatedObject50",
+    "GeneratedObject48": {
+      "title": "generatedObject48",
       "example": {
         "bid": "8",
         "label": "Mode-Marke 1",
@@ -7825,8 +7667,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys60": {
-      "title": "Sys60",
+    "Sys58": {
+      "title": "Sys58",
       "example": {
         "pagination": {
           "total": 1,
@@ -8143,7 +7985,7 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset63",
+          "$ref": "#/definitions/Dataset61",
           "example": {
             "07fe19f7-54af-42a4-e59f-19f7833d309a": {
               "IID": 10033,
@@ -8363,8 +8205,8 @@
         "dataset"
       ]
     },
-    "Dataset63": {
-      "title": "Dataset63",
+    "Dataset61": {
+      "title": "Dataset61",
       "example": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
           "IID": 10033,
@@ -9062,7 +8904,7 @@
           }
         },
         "variants": {
-          "$ref": "#/definitions/Variants66",
+          "$ref": "#/definitions/Variants64",
           "example": {
             "S": {
               "ean": "5424155144857",
@@ -9504,8 +9346,8 @@
         "original_percent"
       ]
     },
-    "Variants66": {
-      "title": "Variants66",
+    "Variants64": {
+      "title": "Variants64",
       "example": {
         "S": {
           "ean": "5424155144857",
@@ -10488,7 +10330,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80",
+          "$ref": "#/definitions/Sys78",
           "example": {
             "reserverStockPositions": true,
             "createDelivery": true,
@@ -10835,8 +10677,8 @@
         "salesman"
       ]
     },
-    "Sys80": {
-      "title": "Sys80",
+    "Sys78": {
+      "title": "Sys78",
       "example": {
         "reserverStockPositions": true,
         "createDelivery": true,
@@ -11040,7 +10882,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset82"
+            "$ref": "#/definitions/Dataset80"
           }
         },
         "sys": {
@@ -11056,8 +10898,8 @@
         "sys"
       ]
     },
-    "Dataset82": {
-      "title": "Dataset82",
+    "Dataset80": {
+      "title": "Dataset80",
       "example": {
         "dataset": {
           "companyOrderID": "0001/01/616",
@@ -11132,7 +10974,7 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset83",
+          "$ref": "#/definitions/Dataset81",
           "example": {
             "companyOrderID": "0001/01/616",
             "notice": "Das ist eine Kassen Bestellung",
@@ -11212,8 +11054,8 @@
         "sys"
       ]
     },
-    "Dataset83": {
-      "title": "Dataset83",
+    "Dataset81": {
+      "title": "Dataset81",
       "example": {
         "companyOrderID": "0001/01/616",
         "notice": "Das ist eine Kassen Bestellung",
@@ -11322,7 +11164,7 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User85",
+          "$ref": "#/definitions/User83",
           "example": {
             "userName": "user@example.com",
             "formOfAddress": "Herr",
@@ -11338,7 +11180,7 @@
           }
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo86",
+          "$ref": "#/definitions/SellTo84",
           "example": {
             "company": "schukai GmbH",
             "address1": "MÃ¼nchenerstrasse 563",
@@ -11374,11 +11216,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position87"
+            "$ref": "#/definitions/Position85"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys88",
+          "$ref": "#/definitions/Sys86",
           "example": {
             "reserverStockPositions": false,
             "createDelivery": true,
@@ -11452,8 +11294,8 @@
         "state"
       ]
     },
-    "User85": {
-      "title": "User85",
+    "User83": {
+      "title": "User83",
       "example": {
         "userName": "user@example.com",
         "formOfAddress": "Herr",
@@ -11539,8 +11381,8 @@
         "surName"
       ]
     },
-    "SellTo86": {
-      "title": "SellTo86",
+    "SellTo84": {
+      "title": "SellTo84",
       "example": {
         "company": "schukai GmbH",
         "address1": "MÃ¼nchenerstrasse 563",
@@ -11590,8 +11432,8 @@
         "country"
       ]
     },
-    "Position87": {
-      "title": "Position87",
+    "Position85": {
+      "title": "Position85",
       "example": {
         "iid": "10056",
         "optional": "40",
@@ -11724,8 +11566,8 @@
         "salesman"
       ]
     },
-    "Sys88": {
-      "title": "Sys88",
+    "Sys86": {
+      "title": "Sys86",
       "example": {
         "reserverStockPositions": false,
         "createDelivery": true,
@@ -11943,11 +11785,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position95"
+            "$ref": "#/definitions/Position93"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80",
+          "$ref": "#/definitions/Sys78",
           "example": {
             "reserverStockPositions": true,
             "createDelivery": true,
@@ -11970,8 +11812,8 @@
         "sys"
       ]
     },
-    "Position95": {
-      "title": "Position95",
+    "Position93": {
+      "title": "Position93",
       "example": {
         "iid": "10026",
         "optional": "S",
@@ -12310,7 +12152,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80",
+          "$ref": "#/definitions/Sys78",
           "example": {
             "reserverStockPositions": true,
             "createDelivery": true,
@@ -12454,11 +12296,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position108"
+            "$ref": "#/definitions/Position106"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80",
+          "$ref": "#/definitions/Sys78",
           "example": {
             "reserverStockPositions": true,
             "createDelivery": true,
@@ -12481,8 +12323,8 @@
         "sys"
       ]
     },
-    "Position108": {
-      "title": "Position108",
+    "Position106": {
+      "title": "Position106",
       "example": {
         "iid": "10076",
         "optional": "_UNIQUE_",
@@ -12831,11 +12673,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position114"
+            "$ref": "#/definitions/Position112"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys80",
+          "$ref": "#/definitions/Sys78",
           "example": {
             "reserverStockPositions": true,
             "createDelivery": true,
@@ -12858,8 +12700,8 @@
         "sys"
       ]
     },
-    "Position114": {
-      "title": "Position114",
+    "Position112": {
+      "title": "Position112",
       "example": {
         "iid": "10076",
         "optional": "_UNIQUE_",
@@ -13058,7 +12900,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset119"
+            "$ref": "#/definitions/Dataset117"
           }
         }
       },
@@ -13066,8 +12908,8 @@
         "dataset"
       ]
     },
-    "Dataset119": {
-      "title": "Dataset119",
+    "Dataset117": {
+      "title": "Dataset117",
       "type": "object",
       "properties": {
         "IID": {
@@ -13331,7 +13173,7 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset127"
+          "$ref": "#/definitions/Dataset125"
         },
         "sys": {
           "$ref": "#/definitions/Sys",
@@ -13346,8 +13188,8 @@
         "sys"
       ]
     },
-    "Dataset127": {
-      "title": "Dataset127",
+    "Dataset125": {
+      "title": "Dataset125",
       "type": "object",
       "properties": {
         "erpID": {
@@ -13758,7 +13600,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Property129"
+            "$ref": "#/definitions/Property127"
           }
         },
         "communication": {
@@ -13935,8 +13777,8 @@
         "lastUpdate"
       ]
     },
-    "Property129": {
-      "title": "Property129",
+    "Property127": {
+      "title": "Property127",
       "example": {
         "pid": 890011,
         "uid": 75731,
