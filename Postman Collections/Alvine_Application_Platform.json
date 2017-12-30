@@ -531,7 +531,9 @@
           },
           "400": {
             "description": "Bad Request",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/KategorienSuchenerrorresponse"
+            }
           }
         },
         "security": [],
@@ -588,7 +590,9 @@
           },
           "400": {
             "description": "Bad Request",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/KategorienÄndernerrorresponse"
+            }
           }
         },
         "security": [],
@@ -1710,7 +1714,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KasseHinzufügenrequest36"
+              "$ref": "#/definitions/KasseHinzufügenrequest48"
             }
           },
           {
@@ -3820,11 +3824,7 @@
       "type": "object",
       "properties": {
         "sys": {
-          "$ref": "#/definitions/Sys",
-          "example": {
-            "message": "200 OK",
-            "code": 200
-          }
+          "$ref": "#/definitions/Sys"
         }
       },
       "required": [
@@ -4111,8 +4111,8 @@
         "flag"
       ]
     },
-    "KategorienÄndernresponse": {
-      "title": "Kategorien ändernResponse",
+    "KategorienÄndernerrorresponse": {
+      "title": "Kategorien ändernErrorResponse",
       "type": "object",
       "properties": {
         "dataset": {
@@ -4121,53 +4121,28 @@
           "items": {
             "$ref": "#/definitions/Dataset19"
           }
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys22"
         }
       },
       "required": [
-        "dataset"
+        "dataset",
+        "sys"
       ]
     },
     "Dataset19": {
       "title": "Dataset19",
       "type": "object",
       "properties": {
-        "dataset": {
-          "$ref": "#/definitions/Dataset20",
-          "example": {
-            "erpID": "",
-            "erpName": "erp-name-1",
-            "erpNumber": "",
-            "erpLastUpdate": "1970-01-01T00:59:59",
-            "erpCreation": "1970-01-01T00:59:59",
-            "archived": "0",
-            "cid": 2,
-            "name": "Neue Kategorie 12",
-            "token": "",
-            "ranking": "0",
-            "label": [],
-            "flag": 2,
-            "gpCoefficient": "0",
-            "specificationWeight": "0",
-            "specificationWeightUnit": "0",
-            "financesVat": [],
-            "locale": [],
-            "localeText": [],
-            "searchKeywords": "",
-            "parentCID": 0
-          }
-        },
         "sys": {
-          "$ref": "#/definitions/Sys21",
-          "example": {
-            "updated": "2017-10-21T16:15:35",
-            "message": "200 OK",
-            "code": 200,
-            "location": ""
-          }
+          "$ref": "#/definitions/Sys21"
+        },
+        "dataset": {
+          "$ref": "#/definitions/Dataset20"
         }
       },
       "required": [
-        "dataset",
         "sys"
       ]
     },
@@ -4181,7 +4156,7 @@
         "erpCreation": "1970-01-01T00:59:59",
         "archived": "0",
         "cid": 2,
-        "name": "Neue Kategorie 12",
+        "name": "Neuer Name",
         "token": "",
         "ranking": "0",
         "label": [],
@@ -4233,7 +4208,7 @@
         },
         "name": {
           "description": "",
-          "example": "Neue Kategorie 12",
+          "example": "Neuer Name",
           "type": "string"
         },
         "token": {
@@ -4335,7 +4310,7 @@
     "Sys21": {
       "title": "Sys21",
       "example": {
-        "updated": "2017-10-21T16:15:35",
+        "updated": "2017-10-21T16:30:31",
         "message": "200 OK",
         "code": 200,
         "location": ""
@@ -4344,7 +4319,7 @@
       "properties": {
         "updated": {
           "description": "",
-          "example": "10/21/2017 4:15:35 PM",
+          "example": "10/21/2017 4:30:31 PM",
           "type": "string"
         },
         "message": {
@@ -4368,6 +4343,85 @@
         "message",
         "code",
         "location"
+      ]
+    },
+    "Sys22": {
+      "title": "Sys22",
+      "example": {
+        "error": {
+          "code": 400,
+          "message": "400 Bad Request"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "error": {
+          "$ref": "#/definitions/Error"
+        }
+      },
+      "required": [
+        "error"
+      ]
+    },
+    "Error": {
+      "title": "Error",
+      "example": {
+        "code": 400,
+        "message": "400 Bad Request"
+      },
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "example": 400,
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "description": "",
+          "example": "400 Bad Request",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "KategorienÄndernresponse": {
+      "title": "Kategorien ändernResponse",
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset19"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "KategorienSuchenerrorresponse": {
+      "title": "Kategorien suchenErrorResponse",
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset19"
+          }
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys22"
+        }
+      },
+      "required": [
+        "dataset",
+        "sys"
       ]
     },
     "KategorienSuchenresponse": {
@@ -4422,39 +4476,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset27",
-          "example": {
-            "erpID": "",
-            "erpName": "Neue Kategorie 2",
-            "erpNumber": "123456",
-            "erpLastUpdate": "1970-01-01T00:59:59",
-            "erpCreation": "1970-01-01T00:59:59",
-            "archived": "",
-            "cid": 5,
-            "name": "name",
-            "token": "",
-            "ranking": 0,
-            "label": {
-              "de": "Hallo"
-            },
-            "flag": 2,
-            "gpCoefficient": 0,
-            "specificationWeight": 0,
-            "specificationWeightUnit": 0,
-            "financesVat": [],
-            "locale": [],
-            "localeText": [],
-            "searchKeywords": "",
-            "parentCID": 0
-          }
+          "$ref": "#/definitions/Dataset39"
         },
         "sys": {
-          "$ref": "#/definitions/Sys29",
-          "example": {
-            "updated": "2017-10-22T11:16:00",
-            "message": "200 OK",
-            "code": 200
-          }
+          "$ref": "#/definitions/Sys41"
         }
       },
       "required": [
@@ -4462,8 +4487,8 @@
         "sys"
       ]
     },
-    "Dataset27": {
-      "title": "Dataset27",
+    "Dataset39": {
+      "title": "Dataset39",
       "example": {
         "erpID": "",
         "erpName": "Neue Kategorie 2",
@@ -4540,10 +4565,7 @@
           "format": "int32"
         },
         "label": {
-          "$ref": "#/definitions/Label",
-          "example": {
-            "de": "Hallo"
-          }
+          "$ref": "#/definitions/Label"
         },
         "flag": {
           "description": "",
@@ -4644,8 +4666,8 @@
         "de"
       ]
     },
-    "Sys29": {
-      "title": "Sys29",
+    "Sys41": {
+      "title": "Sys41",
       "example": {
         "updated": "2017-10-22T11:16:00",
         "message": "200 OK",
@@ -4706,7 +4728,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset31"
+            "$ref": "#/definitions/Dataset43"
           }
         }
       },
@@ -4714,8 +4736,8 @@
         "dataset"
       ]
     },
-    "Dataset31": {
-      "title": "Dataset31",
+    "Dataset43": {
+      "title": "Dataset43",
       "example": {
         "masterName": "erp-name-1",
         "active": true
@@ -4774,7 +4796,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset33"
+            "$ref": "#/definitions/Dataset45"
           }
         }
       },
@@ -4782,8 +4804,8 @@
         "dataset"
       ]
     },
-    "Dataset33": {
-      "title": "Dataset33",
+    "Dataset45": {
+      "title": "Dataset45",
       "example": {
         "iid": 1001,
         "erpName": "erp-name-1",
@@ -4868,8 +4890,8 @@
         "bonID"
       ]
     },
-    "KasseHinzufügenrequest36": {
-      "title": "Kasse hinzufügenRequest36",
+    "KasseHinzufügenrequest48": {
+      "title": "Kasse hinzufügenRequest48",
       "example": {
         "name": "Beispiel Schublade",
         "crid": 1
@@ -4993,7 +5015,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset40"
+            "$ref": "#/definitions/Dataset52"
           }
         }
       },
@@ -5001,8 +5023,8 @@
         "dataset"
       ]
     },
-    "Dataset40": {
-      "title": "Dataset40",
+    "Dataset52": {
+      "title": "Dataset52",
       "example": {
         "amount": 12638,
         "currency": "EUR",
@@ -5141,21 +5163,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset43"
+          "$ref": "#/definitions/Dataset55"
         },
         "sys": {
-          "$ref": "#/definitions/Sys58",
-          "example": {
-            "pagination": {
-              "total": 1,
-              "currentPage": 1,
-              "objectsPerPage": 2,
-              "offset": 0,
-              "nextOffset": 2,
-              "prevOffset": 0,
-              "pages": 1
-            }
-          }
+          "$ref": "#/definitions/Sys70"
         }
       },
       "required": [
@@ -5163,8 +5174,8 @@
         "sys"
       ]
     },
-    "Dataset43": {
-      "title": "Dataset43",
+    "Dataset55": {
+      "title": "Dataset55",
       "type": "object",
       "properties": {
         "4959d99d-6479-4a68-9623-6865fd8916c2": {
@@ -6013,24 +6024,7 @@
           "type": "string"
         },
         "category1": {
-          "$ref": "#/definitions/Category1",
-          "example": {
-            "CID": "13",
-            "category": "Schuhe",
-            "label": "Schuhe",
-            "sys_PCID": "2",
-            "sys_ranking": "0",
-            "flag": "2",
-            "sys_erpName": "",
-            "sys_erpNumber": "",
-            "description": "null",
-            "cid": "13",
-            "activeFlag": false,
-            "pcid": "2",
-            "ranking": "0",
-            "erp_name": "",
-            "erp_number": ""
-          }
+          "$ref": "#/definitions/Category1"
         },
         "category2": {
           "description": "",
@@ -6133,7 +6127,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject48"
+            "$ref": "#/definitions/GeneratedObject60"
           }
         },
         "brandLabel1": {
@@ -6182,93 +6176,7 @@
           "format": "int32"
         },
         "variants": {
-          "$ref": "#/definitions/Variants",
-          "example": {
-            "40": {
-              "vid": "40",
-              "key": "40",
-              "label": "40",
-              "variantCount": "1",
-              "advisedVariantCount": "0",
-              "advisedVariantDate": "null",
-              "advisedFalg": "null",
-              "advisedFlag": "null",
-              "availableStockFlag": true,
-              "ean": "1775996487689",
-              "IID": "10056",
-              "sys_master_number": "10056",
-              "sys_ranking": "49",
-              "usedRegex": false,
-              "subkeys": [
-                {
-                  "key": "40",
-                  "label": "40",
-                  "index": 0,
-                  "ref": 40
-                }
-              ],
-              "subkey_0": "40",
-              "variant_key_part0": "40",
-              "info_decription": "",
-              "info_number": "",
-              "info_text": "null",
-              "info_hide": false,
-              "property_public_file_upload_path": "",
-              "property_public_file_upload_path1": "",
-              "property_public_file_upload_path2": "",
-              "property_public_file_upload_path3": "",
-              "property_public_file_upload_path4": "",
-              "property_public_file_upload_path5": "",
-              "property_public_file_upload_path6": "",
-              "property_public_file_upload_path7": "",
-              "property_public_file_upload_path8": "",
-              "property_public_file_upload_path9": "",
-              "property_public_file_upload_path10": "",
-              "property_shipping.preventfromcosts": ""
-            },
-            "41": {
-              "vid": "41",
-              "key": "41",
-              "label": "41",
-              "variantCount": "20",
-              "advisedVariantCount": "0",
-              "advisedVariantDate": "null",
-              "advisedFalg": "null",
-              "advisedFlag": "null",
-              "availableStockFlag": true,
-              "ean": "1775996487891",
-              "IID": "10056",
-              "sys_master_number": "10056",
-              "sys_ranking": "0",
-              "usedRegex": false,
-              "subkeys": [
-                {
-                  "key": "41",
-                  "label": "41",
-                  "index": 0,
-                  "ref": 41
-                }
-              ],
-              "subkey_0": "41",
-              "variant_key_part0": "41",
-              "info_decription": "",
-              "info_number": "",
-              "info_text": "null",
-              "info_hide": false,
-              "property_public_file_upload_path": "",
-              "property_public_file_upload_path1": "",
-              "property_public_file_upload_path2": "",
-              "property_public_file_upload_path3": "",
-              "property_public_file_upload_path4": "",
-              "property_public_file_upload_path5": "",
-              "property_public_file_upload_path6": "",
-              "property_public_file_upload_path7": "",
-              "property_public_file_upload_path8": "",
-              "property_public_file_upload_path9": "",
-              "property_public_file_upload_path10": "",
-              "property_shipping.preventfromcosts": ""
-            }
-          }
+          "$ref": "#/definitions/Variants"
         },
         "packingUnits": {
           "description": "",
@@ -6980,8 +6888,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject48": {
-      "title": "generatedObject48",
+    "GeneratedObject60": {
+      "title": "generatedObject60",
       "example": {
         "bid": "8",
         "label": "Mode-Marke 1",
@@ -7127,94 +7035,10 @@
       "type": "object",
       "properties": {
         "40": {
-          "$ref": "#/definitions/40",
-          "example": {
-            "vid": "40",
-            "key": "40",
-            "label": "40",
-            "variantCount": "1",
-            "advisedVariantCount": "0",
-            "advisedVariantDate": "null",
-            "advisedFalg": "null",
-            "advisedFlag": "null",
-            "availableStockFlag": true,
-            "ean": "1775996487689",
-            "IID": "10056",
-            "sys_master_number": "10056",
-            "sys_ranking": "49",
-            "usedRegex": false,
-            "subkeys": [
-              {
-                "key": "40",
-                "label": "40",
-                "index": 0,
-                "ref": 40
-              }
-            ],
-            "subkey_0": "40",
-            "variant_key_part0": "40",
-            "info_decription": "",
-            "info_number": "",
-            "info_text": "null",
-            "info_hide": false,
-            "property_public_file_upload_path": "",
-            "property_public_file_upload_path1": "",
-            "property_public_file_upload_path2": "",
-            "property_public_file_upload_path3": "",
-            "property_public_file_upload_path4": "",
-            "property_public_file_upload_path5": "",
-            "property_public_file_upload_path6": "",
-            "property_public_file_upload_path7": "",
-            "property_public_file_upload_path8": "",
-            "property_public_file_upload_path9": "",
-            "property_public_file_upload_path10": "",
-            "property_shipping.preventfromcosts": ""
-          }
+          "$ref": "#/definitions/40"
         },
         "41": {
-          "$ref": "#/definitions/40",
-          "example": {
-            "vid": "41",
-            "key": "41",
-            "label": "41",
-            "variantCount": "20",
-            "advisedVariantCount": "0",
-            "advisedVariantDate": "null",
-            "advisedFalg": "null",
-            "advisedFlag": "null",
-            "availableStockFlag": true,
-            "ean": "1775996487891",
-            "IID": "10056",
-            "sys_master_number": "10056",
-            "sys_ranking": "0",
-            "usedRegex": false,
-            "subkeys": [
-              {
-                "key": "41",
-                "label": "41",
-                "index": 0,
-                "ref": 41
-              }
-            ],
-            "subkey_0": "41",
-            "variant_key_part0": "41",
-            "info_decription": "",
-            "info_number": "",
-            "info_text": "null",
-            "info_hide": false,
-            "property_public_file_upload_path": "",
-            "property_public_file_upload_path1": "",
-            "property_public_file_upload_path2": "",
-            "property_public_file_upload_path3": "",
-            "property_public_file_upload_path4": "",
-            "property_public_file_upload_path5": "",
-            "property_public_file_upload_path6": "",
-            "property_public_file_upload_path7": "",
-            "property_public_file_upload_path8": "",
-            "property_public_file_upload_path9": "",
-            "property_public_file_upload_path10": "",
-            "property_shipping.preventfromcosts": ""
-          }
+          "$ref": "#/definitions/40"
         }
       },
       "required": [
@@ -7667,8 +7491,8 @@
         "ITEM_IID"
       ]
     },
-    "Sys58": {
-      "title": "Sys58",
+    "Sys70": {
+      "title": "Sys70",
       "example": {
         "pagination": {
           "total": 1,
@@ -7683,16 +7507,7 @@
       "type": "object",
       "properties": {
         "pagination": {
-          "$ref": "#/definitions/Pagination",
-          "example": {
-            "total": 1,
-            "currentPage": 1,
-            "objectsPerPage": 2,
-            "offset": 0,
-            "nextOffset": 2,
-            "prevOffset": 0,
-            "pages": 1
-          }
+          "$ref": "#/definitions/Pagination"
         }
       },
       "required": [
@@ -7985,228 +7800,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset61",
-          "example": {
-            "07fe19f7-54af-42a4-e59f-19f7833d309a": {
-              "IID": 10033,
-              "price": {
-                "gross": "499",
-                "net": 419,
-                "display": "499",
-                "vat": 1900,
-                "difference": 80,
-                "currency": "EUR",
-                "formatted_gross": "  4,99 EUR",
-                "formatted_net": "  4,19 EUR",
-                "formatted_vat": "19,00 %",
-                "formatted_difference": "  0,80 EUR",
-                "formatted_display": "  4,99 EUR",
-                "formatted_label": "null",
-                "pricelistID": "0",
-                "pricelistName": "",
-                "aggregateprice": "  4,99 EUR",
-                "volumeprice": "null",
-                "meta_multi": false,
-                "meta_scale": false,
-                "meta_time": false,
-                "meta_group": "null",
-                "meta_IID": "10033",
-                "meta_UID": "0",
-                "original_gross": "899",
-                "original_net": 755,
-                "original_display": "899",
-                "original_vat": 1900,
-                "original_difference": 144,
-                "original_currency": "EUR",
-                "original_formatted_gross": "  8,99 EUR",
-                "original_formatted_net": "  7,55 EUR",
-                "original_formatted_vat": "19,00 %",
-                "original_formatted_difference": "  1,44 EUR",
-                "original_formatted_display": "  8,99 EUR",
-                "original_formatted_label": "null",
-                "isOriginal": true,
-                "original_percent": "44"
-              },
-              "variants": {
-                "S": {
-                  "ean": "5424155144857",
-                  "key": "S",
-                  "price": {
-                    "gross": "499",
-                    "net": 419,
-                    "display": "499",
-                    "vat": 1900,
-                    "difference": 80,
-                    "currency": "EUR",
-                    "formatted_gross": "  4,99 EUR",
-                    "formatted_net": "  4,19 EUR",
-                    "formatted_vat": "19,00 %",
-                    "formatted_difference": "  0,80 EUR",
-                    "formatted_display": "  4,99 EUR",
-                    "formatted_label": "null",
-                    "pricelistID": "0",
-                    "pricelistName": "",
-                    "aggregateprice": "  4,99 EUR",
-                    "volumeprice": "null",
-                    "meta_multi": false,
-                    "meta_scale": false,
-                    "meta_time": false,
-                    "meta_group": "null",
-                    "meta_IID": "10033",
-                    "meta_UID": "0",
-                    "original_gross": "899",
-                    "original_net": 755,
-                    "original_display": "899",
-                    "original_vat": 1900,
-                    "original_difference": 144,
-                    "original_currency": "EUR",
-                    "original_formatted_gross": "  8,99 EUR",
-                    "original_formatted_net": "  7,55 EUR",
-                    "original_formatted_vat": "19,00 %",
-                    "original_formatted_difference": "  1,44 EUR",
-                    "original_formatted_display": "  8,99 EUR",
-                    "original_formatted_label": "null",
-                    "isOriginal": true,
-                    "original_percent": "44"
-                  }
-                },
-                "M": {
-                  "ean": "5769864186729",
-                  "key": "M",
-                  "price": {
-                    "gross": "499",
-                    "net": 419,
-                    "display": "499",
-                    "vat": 1900,
-                    "difference": 80,
-                    "currency": "EUR",
-                    "formatted_gross": "  4,99 EUR",
-                    "formatted_net": "  4,19 EUR",
-                    "formatted_vat": "19,00 %",
-                    "formatted_difference": "  0,80 EUR",
-                    "formatted_display": "  4,99 EUR",
-                    "formatted_label": "null",
-                    "pricelistID": "0",
-                    "pricelistName": "",
-                    "aggregateprice": "  4,99 EUR",
-                    "volumeprice": "null",
-                    "meta_multi": false,
-                    "meta_scale": false,
-                    "meta_time": false,
-                    "meta_group": "null",
-                    "meta_IID": "10033",
-                    "meta_UID": "0",
-                    "original_gross": "899",
-                    "original_net": 755,
-                    "original_display": "899",
-                    "original_vat": 1900,
-                    "original_difference": 144,
-                    "original_currency": "EUR",
-                    "original_formatted_gross": "  8,99 EUR",
-                    "original_formatted_net": "  7,55 EUR",
-                    "original_formatted_vat": "19,00 %",
-                    "original_formatted_difference": "  1,44 EUR",
-                    "original_formatted_display": "  8,99 EUR",
-                    "original_formatted_label": "null",
-                    "isOriginal": true,
-                    "original_percent": "44"
-                  }
-                },
-                "L": {
-                  "ean": "6876634633196",
-                  "key": "L",
-                  "price": {
-                    "gross": "499",
-                    "net": 419,
-                    "display": "499",
-                    "vat": 1900,
-                    "difference": 80,
-                    "currency": "EUR",
-                    "formatted_gross": "  4,99 EUR",
-                    "formatted_net": "  4,19 EUR",
-                    "formatted_vat": "19,00 %",
-                    "formatted_difference": "  0,80 EUR",
-                    "formatted_display": "  4,99 EUR",
-                    "formatted_label": "null",
-                    "pricelistID": "0",
-                    "pricelistName": "",
-                    "aggregateprice": "  4,99 EUR",
-                    "volumeprice": "null",
-                    "meta_multi": false,
-                    "meta_scale": false,
-                    "meta_time": false,
-                    "meta_group": "null",
-                    "meta_IID": "10033",
-                    "meta_UID": "0",
-                    "original_gross": "899",
-                    "original_net": 755,
-                    "original_display": "899",
-                    "original_vat": 1900,
-                    "original_difference": 144,
-                    "original_currency": "EUR",
-                    "original_formatted_gross": "  8,99 EUR",
-                    "original_formatted_net": "  7,55 EUR",
-                    "original_formatted_vat": "19,00 %",
-                    "original_formatted_difference": "  1,44 EUR",
-                    "original_formatted_display": "  8,99 EUR",
-                    "original_formatted_label": "null",
-                    "isOriginal": true,
-                    "original_percent": "44"
-                  }
-                },
-                "XL": {
-                  "ean": "5591665777547",
-                  "key": "XL",
-                  "price": {
-                    "gross": "499",
-                    "net": 419,
-                    "display": "499",
-                    "vat": 1900,
-                    "difference": 80,
-                    "currency": "EUR",
-                    "formatted_gross": "  4,99 EUR",
-                    "formatted_net": "  4,19 EUR",
-                    "formatted_vat": "19,00 %",
-                    "formatted_difference": "  0,80 EUR",
-                    "formatted_display": "  4,99 EUR",
-                    "formatted_label": "null",
-                    "pricelistID": "0",
-                    "pricelistName": "",
-                    "aggregateprice": "  4,99 EUR",
-                    "volumeprice": "null",
-                    "meta_multi": false,
-                    "meta_scale": false,
-                    "meta_time": false,
-                    "meta_group": "null",
-                    "meta_IID": "10033",
-                    "meta_UID": "0",
-                    "original_gross": "899",
-                    "original_net": 755,
-                    "original_display": "899",
-                    "original_vat": 1900,
-                    "original_difference": 144,
-                    "original_currency": "EUR",
-                    "original_formatted_gross": "  8,99 EUR",
-                    "original_formatted_net": "  7,55 EUR",
-                    "original_formatted_vat": "19,00 %",
-                    "original_formatted_difference": "  1,44 EUR",
-                    "original_formatted_display": "  8,99 EUR",
-                    "original_formatted_label": "null",
-                    "isOriginal": true,
-                    "original_percent": "44"
-                  }
-                }
-              }
-            }
-          }
+          "$ref": "#/definitions/Dataset73"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset61": {
-      "title": "Dataset61",
+    "Dataset73": {
+      "title": "Dataset73",
       "example": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
           "IID": 10033,
@@ -8423,218 +8025,7 @@
       "type": "object",
       "properties": {
         "07fe19f7-54af-42a4-e59f-19f7833d309a": {
-          "$ref": "#/definitions/07fe19f754af42a4e59f19f7833d309a",
-          "example": {
-            "IID": 10033,
-            "price": {
-              "gross": "499",
-              "net": 419,
-              "display": "499",
-              "vat": 1900,
-              "difference": 80,
-              "currency": "EUR",
-              "formatted_gross": "  4,99 EUR",
-              "formatted_net": "  4,19 EUR",
-              "formatted_vat": "19,00 %",
-              "formatted_difference": "  0,80 EUR",
-              "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
-              "pricelistID": "0",
-              "pricelistName": "",
-              "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
-              "meta_multi": false,
-              "meta_scale": false,
-              "meta_time": false,
-              "meta_group": "null",
-              "meta_IID": "10033",
-              "meta_UID": "0",
-              "original_gross": "899",
-              "original_net": 755,
-              "original_display": "899",
-              "original_vat": 1900,
-              "original_difference": 144,
-              "original_currency": "EUR",
-              "original_formatted_gross": "  8,99 EUR",
-              "original_formatted_net": "  7,55 EUR",
-              "original_formatted_vat": "19,00 %",
-              "original_formatted_difference": "  1,44 EUR",
-              "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
-              "isOriginal": true,
-              "original_percent": "44"
-            },
-            "variants": {
-              "S": {
-                "ean": "5424155144857",
-                "key": "S",
-                "price": {
-                  "gross": "499",
-                  "net": 419,
-                  "display": "499",
-                  "vat": 1900,
-                  "difference": 80,
-                  "currency": "EUR",
-                  "formatted_gross": "  4,99 EUR",
-                  "formatted_net": "  4,19 EUR",
-                  "formatted_vat": "19,00 %",
-                  "formatted_difference": "  0,80 EUR",
-                  "formatted_display": "  4,99 EUR",
-                  "formatted_label": "null",
-                  "pricelistID": "0",
-                  "pricelistName": "",
-                  "aggregateprice": "  4,99 EUR",
-                  "volumeprice": "null",
-                  "meta_multi": false,
-                  "meta_scale": false,
-                  "meta_time": false,
-                  "meta_group": "null",
-                  "meta_IID": "10033",
-                  "meta_UID": "0",
-                  "original_gross": "899",
-                  "original_net": 755,
-                  "original_display": "899",
-                  "original_vat": 1900,
-                  "original_difference": 144,
-                  "original_currency": "EUR",
-                  "original_formatted_gross": "  8,99 EUR",
-                  "original_formatted_net": "  7,55 EUR",
-                  "original_formatted_vat": "19,00 %",
-                  "original_formatted_difference": "  1,44 EUR",
-                  "original_formatted_display": "  8,99 EUR",
-                  "original_formatted_label": "null",
-                  "isOriginal": true,
-                  "original_percent": "44"
-                }
-              },
-              "M": {
-                "ean": "5769864186729",
-                "key": "M",
-                "price": {
-                  "gross": "499",
-                  "net": 419,
-                  "display": "499",
-                  "vat": 1900,
-                  "difference": 80,
-                  "currency": "EUR",
-                  "formatted_gross": "  4,99 EUR",
-                  "formatted_net": "  4,19 EUR",
-                  "formatted_vat": "19,00 %",
-                  "formatted_difference": "  0,80 EUR",
-                  "formatted_display": "  4,99 EUR",
-                  "formatted_label": "null",
-                  "pricelistID": "0",
-                  "pricelistName": "",
-                  "aggregateprice": "  4,99 EUR",
-                  "volumeprice": "null",
-                  "meta_multi": false,
-                  "meta_scale": false,
-                  "meta_time": false,
-                  "meta_group": "null",
-                  "meta_IID": "10033",
-                  "meta_UID": "0",
-                  "original_gross": "899",
-                  "original_net": 755,
-                  "original_display": "899",
-                  "original_vat": 1900,
-                  "original_difference": 144,
-                  "original_currency": "EUR",
-                  "original_formatted_gross": "  8,99 EUR",
-                  "original_formatted_net": "  7,55 EUR",
-                  "original_formatted_vat": "19,00 %",
-                  "original_formatted_difference": "  1,44 EUR",
-                  "original_formatted_display": "  8,99 EUR",
-                  "original_formatted_label": "null",
-                  "isOriginal": true,
-                  "original_percent": "44"
-                }
-              },
-              "L": {
-                "ean": "6876634633196",
-                "key": "L",
-                "price": {
-                  "gross": "499",
-                  "net": 419,
-                  "display": "499",
-                  "vat": 1900,
-                  "difference": 80,
-                  "currency": "EUR",
-                  "formatted_gross": "  4,99 EUR",
-                  "formatted_net": "  4,19 EUR",
-                  "formatted_vat": "19,00 %",
-                  "formatted_difference": "  0,80 EUR",
-                  "formatted_display": "  4,99 EUR",
-                  "formatted_label": "null",
-                  "pricelistID": "0",
-                  "pricelistName": "",
-                  "aggregateprice": "  4,99 EUR",
-                  "volumeprice": "null",
-                  "meta_multi": false,
-                  "meta_scale": false,
-                  "meta_time": false,
-                  "meta_group": "null",
-                  "meta_IID": "10033",
-                  "meta_UID": "0",
-                  "original_gross": "899",
-                  "original_net": 755,
-                  "original_display": "899",
-                  "original_vat": 1900,
-                  "original_difference": 144,
-                  "original_currency": "EUR",
-                  "original_formatted_gross": "  8,99 EUR",
-                  "original_formatted_net": "  7,55 EUR",
-                  "original_formatted_vat": "19,00 %",
-                  "original_formatted_difference": "  1,44 EUR",
-                  "original_formatted_display": "  8,99 EUR",
-                  "original_formatted_label": "null",
-                  "isOriginal": true,
-                  "original_percent": "44"
-                }
-              },
-              "XL": {
-                "ean": "5591665777547",
-                "key": "XL",
-                "price": {
-                  "gross": "499",
-                  "net": 419,
-                  "display": "499",
-                  "vat": 1900,
-                  "difference": 80,
-                  "currency": "EUR",
-                  "formatted_gross": "  4,99 EUR",
-                  "formatted_net": "  4,19 EUR",
-                  "formatted_vat": "19,00 %",
-                  "formatted_difference": "  0,80 EUR",
-                  "formatted_display": "  4,99 EUR",
-                  "formatted_label": "null",
-                  "pricelistID": "0",
-                  "pricelistName": "",
-                  "aggregateprice": "  4,99 EUR",
-                  "volumeprice": "null",
-                  "meta_multi": false,
-                  "meta_scale": false,
-                  "meta_time": false,
-                  "meta_group": "null",
-                  "meta_IID": "10033",
-                  "meta_UID": "0",
-                  "original_gross": "899",
-                  "original_net": 755,
-                  "original_display": "899",
-                  "original_vat": 1900,
-                  "original_difference": 144,
-                  "original_currency": "EUR",
-                  "original_formatted_gross": "  8,99 EUR",
-                  "original_formatted_net": "  7,55 EUR",
-                  "original_formatted_vat": "19,00 %",
-                  "original_formatted_difference": "  1,44 EUR",
-                  "original_formatted_display": "  8,99 EUR",
-                  "original_formatted_label": "null",
-                  "isOriginal": true,
-                  "original_percent": "44"
-                }
-              }
-            }
-          }
+          "$ref": "#/definitions/07fe19f754af42a4e59f19f7833d309a"
         }
       },
       "required": [
@@ -8863,218 +8254,10 @@
           "format": "int32"
         },
         "price": {
-          "$ref": "#/definitions/Price",
-          "example": {
-            "gross": "499",
-            "net": 419,
-            "display": "499",
-            "vat": 1900,
-            "difference": 80,
-            "currency": "EUR",
-            "formatted_gross": "  4,99 EUR",
-            "formatted_net": "  4,19 EUR",
-            "formatted_vat": "19,00 %",
-            "formatted_difference": "  0,80 EUR",
-            "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
-            "pricelistID": "0",
-            "pricelistName": "",
-            "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
-            "meta_multi": false,
-            "meta_scale": false,
-            "meta_time": false,
-            "meta_group": "null",
-            "meta_IID": "10033",
-            "meta_UID": "0",
-            "original_gross": "899",
-            "original_net": 755,
-            "original_display": "899",
-            "original_vat": 1900,
-            "original_difference": 144,
-            "original_currency": "EUR",
-            "original_formatted_gross": "  8,99 EUR",
-            "original_formatted_net": "  7,55 EUR",
-            "original_formatted_vat": "19,00 %",
-            "original_formatted_difference": "  1,44 EUR",
-            "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
-            "isOriginal": true,
-            "original_percent": "44"
-          }
+          "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants64",
-          "example": {
-            "S": {
-              "ean": "5424155144857",
-              "key": "S",
-              "price": {
-                "gross": "499",
-                "net": 419,
-                "display": "499",
-                "vat": 1900,
-                "difference": 80,
-                "currency": "EUR",
-                "formatted_gross": "  4,99 EUR",
-                "formatted_net": "  4,19 EUR",
-                "formatted_vat": "19,00 %",
-                "formatted_difference": "  0,80 EUR",
-                "formatted_display": "  4,99 EUR",
-                "formatted_label": "null",
-                "pricelistID": "0",
-                "pricelistName": "",
-                "aggregateprice": "  4,99 EUR",
-                "volumeprice": "null",
-                "meta_multi": false,
-                "meta_scale": false,
-                "meta_time": false,
-                "meta_group": "null",
-                "meta_IID": "10033",
-                "meta_UID": "0",
-                "original_gross": "899",
-                "original_net": 755,
-                "original_display": "899",
-                "original_vat": 1900,
-                "original_difference": 144,
-                "original_currency": "EUR",
-                "original_formatted_gross": "  8,99 EUR",
-                "original_formatted_net": "  7,55 EUR",
-                "original_formatted_vat": "19,00 %",
-                "original_formatted_difference": "  1,44 EUR",
-                "original_formatted_display": "  8,99 EUR",
-                "original_formatted_label": "null",
-                "isOriginal": true,
-                "original_percent": "44"
-              }
-            },
-            "M": {
-              "ean": "5769864186729",
-              "key": "M",
-              "price": {
-                "gross": "499",
-                "net": 419,
-                "display": "499",
-                "vat": 1900,
-                "difference": 80,
-                "currency": "EUR",
-                "formatted_gross": "  4,99 EUR",
-                "formatted_net": "  4,19 EUR",
-                "formatted_vat": "19,00 %",
-                "formatted_difference": "  0,80 EUR",
-                "formatted_display": "  4,99 EUR",
-                "formatted_label": "null",
-                "pricelistID": "0",
-                "pricelistName": "",
-                "aggregateprice": "  4,99 EUR",
-                "volumeprice": "null",
-                "meta_multi": false,
-                "meta_scale": false,
-                "meta_time": false,
-                "meta_group": "null",
-                "meta_IID": "10033",
-                "meta_UID": "0",
-                "original_gross": "899",
-                "original_net": 755,
-                "original_display": "899",
-                "original_vat": 1900,
-                "original_difference": 144,
-                "original_currency": "EUR",
-                "original_formatted_gross": "  8,99 EUR",
-                "original_formatted_net": "  7,55 EUR",
-                "original_formatted_vat": "19,00 %",
-                "original_formatted_difference": "  1,44 EUR",
-                "original_formatted_display": "  8,99 EUR",
-                "original_formatted_label": "null",
-                "isOriginal": true,
-                "original_percent": "44"
-              }
-            },
-            "L": {
-              "ean": "6876634633196",
-              "key": "L",
-              "price": {
-                "gross": "499",
-                "net": 419,
-                "display": "499",
-                "vat": 1900,
-                "difference": 80,
-                "currency": "EUR",
-                "formatted_gross": "  4,99 EUR",
-                "formatted_net": "  4,19 EUR",
-                "formatted_vat": "19,00 %",
-                "formatted_difference": "  0,80 EUR",
-                "formatted_display": "  4,99 EUR",
-                "formatted_label": "null",
-                "pricelistID": "0",
-                "pricelistName": "",
-                "aggregateprice": "  4,99 EUR",
-                "volumeprice": "null",
-                "meta_multi": false,
-                "meta_scale": false,
-                "meta_time": false,
-                "meta_group": "null",
-                "meta_IID": "10033",
-                "meta_UID": "0",
-                "original_gross": "899",
-                "original_net": 755,
-                "original_display": "899",
-                "original_vat": 1900,
-                "original_difference": 144,
-                "original_currency": "EUR",
-                "original_formatted_gross": "  8,99 EUR",
-                "original_formatted_net": "  7,55 EUR",
-                "original_formatted_vat": "19,00 %",
-                "original_formatted_difference": "  1,44 EUR",
-                "original_formatted_display": "  8,99 EUR",
-                "original_formatted_label": "null",
-                "isOriginal": true,
-                "original_percent": "44"
-              }
-            },
-            "XL": {
-              "ean": "5591665777547",
-              "key": "XL",
-              "price": {
-                "gross": "499",
-                "net": 419,
-                "display": "499",
-                "vat": 1900,
-                "difference": 80,
-                "currency": "EUR",
-                "formatted_gross": "  4,99 EUR",
-                "formatted_net": "  4,19 EUR",
-                "formatted_vat": "19,00 %",
-                "formatted_difference": "  0,80 EUR",
-                "formatted_display": "  4,99 EUR",
-                "formatted_label": "null",
-                "pricelistID": "0",
-                "pricelistName": "",
-                "aggregateprice": "  4,99 EUR",
-                "volumeprice": "null",
-                "meta_multi": false,
-                "meta_scale": false,
-                "meta_time": false,
-                "meta_group": "null",
-                "meta_IID": "10033",
-                "meta_UID": "0",
-                "original_gross": "899",
-                "original_net": 755,
-                "original_display": "899",
-                "original_vat": 1900,
-                "original_difference": 144,
-                "original_currency": "EUR",
-                "original_formatted_gross": "  8,99 EUR",
-                "original_formatted_net": "  7,55 EUR",
-                "original_formatted_vat": "19,00 %",
-                "original_formatted_difference": "  1,44 EUR",
-                "original_formatted_display": "  8,99 EUR",
-                "original_formatted_label": "null",
-                "isOriginal": true,
-                "original_percent": "44"
-              }
-            }
-          }
+          "$ref": "#/definitions/Variants76"
         }
       },
       "required": [
@@ -9346,8 +8529,8 @@
         "original_percent"
       ]
     },
-    "Variants64": {
-      "title": "Variants64",
+    "Variants76": {
+      "title": "Variants76",
       "example": {
         "S": {
           "ean": "5424155144857",
@@ -9521,184 +8704,16 @@
       "type": "object",
       "properties": {
         "S": {
-          "$ref": "#/definitions/S",
-          "example": {
-            "ean": "5424155144857",
-            "key": "S",
-            "price": {
-              "gross": "499",
-              "net": 419,
-              "display": "499",
-              "vat": 1900,
-              "difference": 80,
-              "currency": "EUR",
-              "formatted_gross": "  4,99 EUR",
-              "formatted_net": "  4,19 EUR",
-              "formatted_vat": "19,00 %",
-              "formatted_difference": "  0,80 EUR",
-              "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
-              "pricelistID": "0",
-              "pricelistName": "",
-              "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
-              "meta_multi": false,
-              "meta_scale": false,
-              "meta_time": false,
-              "meta_group": "null",
-              "meta_IID": "10033",
-              "meta_UID": "0",
-              "original_gross": "899",
-              "original_net": 755,
-              "original_display": "899",
-              "original_vat": 1900,
-              "original_difference": 144,
-              "original_currency": "EUR",
-              "original_formatted_gross": "  8,99 EUR",
-              "original_formatted_net": "  7,55 EUR",
-              "original_formatted_vat": "19,00 %",
-              "original_formatted_difference": "  1,44 EUR",
-              "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
-              "isOriginal": true,
-              "original_percent": "44"
-            }
-          }
+          "$ref": "#/definitions/S"
         },
         "M": {
-          "$ref": "#/definitions/M",
-          "example": {
-            "ean": "5769864186729",
-            "key": "M",
-            "price": {
-              "gross": "499",
-              "net": 419,
-              "display": "499",
-              "vat": 1900,
-              "difference": 80,
-              "currency": "EUR",
-              "formatted_gross": "  4,99 EUR",
-              "formatted_net": "  4,19 EUR",
-              "formatted_vat": "19,00 %",
-              "formatted_difference": "  0,80 EUR",
-              "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
-              "pricelistID": "0",
-              "pricelistName": "",
-              "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
-              "meta_multi": false,
-              "meta_scale": false,
-              "meta_time": false,
-              "meta_group": "null",
-              "meta_IID": "10033",
-              "meta_UID": "0",
-              "original_gross": "899",
-              "original_net": 755,
-              "original_display": "899",
-              "original_vat": 1900,
-              "original_difference": 144,
-              "original_currency": "EUR",
-              "original_formatted_gross": "  8,99 EUR",
-              "original_formatted_net": "  7,55 EUR",
-              "original_formatted_vat": "19,00 %",
-              "original_formatted_difference": "  1,44 EUR",
-              "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
-              "isOriginal": true,
-              "original_percent": "44"
-            }
-          }
+          "$ref": "#/definitions/M"
         },
         "L": {
-          "$ref": "#/definitions/L",
-          "example": {
-            "ean": "6876634633196",
-            "key": "L",
-            "price": {
-              "gross": "499",
-              "net": 419,
-              "display": "499",
-              "vat": 1900,
-              "difference": 80,
-              "currency": "EUR",
-              "formatted_gross": "  4,99 EUR",
-              "formatted_net": "  4,19 EUR",
-              "formatted_vat": "19,00 %",
-              "formatted_difference": "  0,80 EUR",
-              "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
-              "pricelistID": "0",
-              "pricelistName": "",
-              "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
-              "meta_multi": false,
-              "meta_scale": false,
-              "meta_time": false,
-              "meta_group": "null",
-              "meta_IID": "10033",
-              "meta_UID": "0",
-              "original_gross": "899",
-              "original_net": 755,
-              "original_display": "899",
-              "original_vat": 1900,
-              "original_difference": 144,
-              "original_currency": "EUR",
-              "original_formatted_gross": "  8,99 EUR",
-              "original_formatted_net": "  7,55 EUR",
-              "original_formatted_vat": "19,00 %",
-              "original_formatted_difference": "  1,44 EUR",
-              "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
-              "isOriginal": true,
-              "original_percent": "44"
-            }
-          }
+          "$ref": "#/definitions/L"
         },
         "XL": {
-          "$ref": "#/definitions/XL",
-          "example": {
-            "ean": "5591665777547",
-            "key": "XL",
-            "price": {
-              "gross": "499",
-              "net": 419,
-              "display": "499",
-              "vat": 1900,
-              "difference": 80,
-              "currency": "EUR",
-              "formatted_gross": "  4,99 EUR",
-              "formatted_net": "  4,19 EUR",
-              "formatted_vat": "19,00 %",
-              "formatted_difference": "  0,80 EUR",
-              "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
-              "pricelistID": "0",
-              "pricelistName": "",
-              "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
-              "meta_multi": false,
-              "meta_scale": false,
-              "meta_time": false,
-              "meta_group": "null",
-              "meta_IID": "10033",
-              "meta_UID": "0",
-              "original_gross": "899",
-              "original_net": 755,
-              "original_display": "899",
-              "original_vat": 1900,
-              "original_difference": 144,
-              "original_currency": "EUR",
-              "original_formatted_gross": "  8,99 EUR",
-              "original_formatted_net": "  7,55 EUR",
-              "original_formatted_vat": "19,00 %",
-              "original_formatted_difference": "  1,44 EUR",
-              "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
-              "isOriginal": true,
-              "original_percent": "44"
-            }
-          }
+          "$ref": "#/definitions/XL"
         }
       },
       "required": [
@@ -9765,45 +8780,7 @@
           "type": "string"
         },
         "price": {
-          "$ref": "#/definitions/Price",
-          "example": {
-            "gross": "499",
-            "net": 419,
-            "display": "499",
-            "vat": 1900,
-            "difference": 80,
-            "currency": "EUR",
-            "formatted_gross": "  4,99 EUR",
-            "formatted_net": "  4,19 EUR",
-            "formatted_vat": "19,00 %",
-            "formatted_difference": "  0,80 EUR",
-            "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
-            "pricelistID": "0",
-            "pricelistName": "",
-            "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
-            "meta_multi": false,
-            "meta_scale": false,
-            "meta_time": false,
-            "meta_group": "null",
-            "meta_IID": "10033",
-            "meta_UID": "0",
-            "original_gross": "899",
-            "original_net": 755,
-            "original_display": "899",
-            "original_vat": 1900,
-            "original_difference": 144,
-            "original_currency": "EUR",
-            "original_formatted_gross": "  8,99 EUR",
-            "original_formatted_net": "  7,55 EUR",
-            "original_formatted_vat": "19,00 %",
-            "original_formatted_difference": "  1,44 EUR",
-            "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
-            "isOriginal": true,
-            "original_percent": "44"
-          }
+          "$ref": "#/definitions/Price"
         }
       },
       "required": [
@@ -9869,45 +8846,7 @@
           "type": "string"
         },
         "price": {
-          "$ref": "#/definitions/Price",
-          "example": {
-            "gross": "499",
-            "net": 419,
-            "display": "499",
-            "vat": 1900,
-            "difference": 80,
-            "currency": "EUR",
-            "formatted_gross": "  4,99 EUR",
-            "formatted_net": "  4,19 EUR",
-            "formatted_vat": "19,00 %",
-            "formatted_difference": "  0,80 EUR",
-            "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
-            "pricelistID": "0",
-            "pricelistName": "",
-            "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
-            "meta_multi": false,
-            "meta_scale": false,
-            "meta_time": false,
-            "meta_group": "null",
-            "meta_IID": "10033",
-            "meta_UID": "0",
-            "original_gross": "899",
-            "original_net": 755,
-            "original_display": "899",
-            "original_vat": 1900,
-            "original_difference": 144,
-            "original_currency": "EUR",
-            "original_formatted_gross": "  8,99 EUR",
-            "original_formatted_net": "  7,55 EUR",
-            "original_formatted_vat": "19,00 %",
-            "original_formatted_difference": "  1,44 EUR",
-            "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
-            "isOriginal": true,
-            "original_percent": "44"
-          }
+          "$ref": "#/definitions/Price"
         }
       },
       "required": [
@@ -9973,45 +8912,7 @@
           "type": "string"
         },
         "price": {
-          "$ref": "#/definitions/Price",
-          "example": {
-            "gross": "499",
-            "net": 419,
-            "display": "499",
-            "vat": 1900,
-            "difference": 80,
-            "currency": "EUR",
-            "formatted_gross": "  4,99 EUR",
-            "formatted_net": "  4,19 EUR",
-            "formatted_vat": "19,00 %",
-            "formatted_difference": "  0,80 EUR",
-            "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
-            "pricelistID": "0",
-            "pricelistName": "",
-            "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
-            "meta_multi": false,
-            "meta_scale": false,
-            "meta_time": false,
-            "meta_group": "null",
-            "meta_IID": "10033",
-            "meta_UID": "0",
-            "original_gross": "899",
-            "original_net": 755,
-            "original_display": "899",
-            "original_vat": 1900,
-            "original_difference": 144,
-            "original_currency": "EUR",
-            "original_formatted_gross": "  8,99 EUR",
-            "original_formatted_net": "  7,55 EUR",
-            "original_formatted_vat": "19,00 %",
-            "original_formatted_difference": "  1,44 EUR",
-            "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
-            "isOriginal": true,
-            "original_percent": "44"
-          }
+          "$ref": "#/definitions/Price"
         }
       },
       "required": [
@@ -10077,45 +8978,7 @@
           "type": "string"
         },
         "price": {
-          "$ref": "#/definitions/Price",
-          "example": {
-            "gross": "499",
-            "net": 419,
-            "display": "499",
-            "vat": 1900,
-            "difference": 80,
-            "currency": "EUR",
-            "formatted_gross": "  4,99 EUR",
-            "formatted_net": "  4,19 EUR",
-            "formatted_vat": "19,00 %",
-            "formatted_difference": "  0,80 EUR",
-            "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
-            "pricelistID": "0",
-            "pricelistName": "",
-            "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
-            "meta_multi": false,
-            "meta_scale": false,
-            "meta_time": false,
-            "meta_group": "null",
-            "meta_IID": "10033",
-            "meta_UID": "0",
-            "original_gross": "899",
-            "original_net": 755,
-            "original_display": "899",
-            "original_vat": 1900,
-            "original_difference": 144,
-            "original_currency": "EUR",
-            "original_formatted_gross": "  8,99 EUR",
-            "original_formatted_net": "  7,55 EUR",
-            "original_formatted_vat": "19,00 %",
-            "original_formatted_difference": "  1,44 EUR",
-            "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
-            "isOriginal": true,
-            "original_percent": "44"
-          }
+          "$ref": "#/definitions/Price"
         }
       },
       "required": [
@@ -10278,26 +9141,10 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User",
-          "example": {
-            "userName": "b2c@example.com",
-            "formOfAddress": "",
-            "letterFormOfAddress": "",
-            "birthday": "04.01.1977",
-            "custom1": "",
-            "custom2": "",
-            "company": "schukai GmbH"
-          }
+          "$ref": "#/definitions/User"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo",
-          "example": {
-            "address1": "Eichenstrasse 26",
-            "address2": "",
-            "zip": "82290",
-            "city": "Landsberied",
-            "country": "de"
-          }
+          "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
           "description": "",
@@ -10330,14 +9177,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78",
-          "example": {
-            "reserverStockPositions": true,
-            "createDelivery": true,
-            "setDelivered": true,
-            "setBillNumber": true,
-            "createEdiOrder": false
-          }
+          "$ref": "#/definitions/Sys90"
         }
       },
       "required": [
@@ -10677,8 +9517,8 @@
         "salesman"
       ]
     },
-    "Sys78": {
-      "title": "Sys78",
+    "Sys90": {
+      "title": "Sys90",
       "example": {
         "reserverStockPositions": true,
         "createDelivery": true,
@@ -10882,15 +9722,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset80"
+            "$ref": "#/definitions/Dataset92"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys",
-          "example": {
-            "message": "201 Created",
-            "code": 201
-          }
+          "$ref": "#/definitions/Sys"
         }
       },
       "required": [
@@ -10898,8 +9734,8 @@
         "sys"
       ]
     },
-    "Dataset80": {
-      "title": "Dataset80",
+    "Dataset92": {
+      "title": "Dataset92",
       "example": {
         "dataset": {
           "companyOrderID": "0001/01/616",
@@ -10974,79 +9810,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset81",
-          "example": {
-            "companyOrderID": "0001/01/616",
-            "notice": "Das ist eine Kassen Bestellung",
-            "shid": 1,
-            "dcid": 1,
-            "payments": [
-              {
-                "type": 20,
-                "owner": "",
-                "number": "",
-                "option1": "",
-                "option2": "",
-                "option3": "",
-                "state": ""
-              }
-            ],
-            "user": {
-              "userName": "user@example.com",
-              "formOfAddress": "Herr",
-              "letterFormOfAddress": "Sehr geehrter Herr",
-              "birthday": "1977-01-04 00:00:00",
-              "custom1": "Das ist eine Information",
-              "custom2": "Das ist eine Beschreibung",
-              "phone": "02562 165984",
-              "email": "user@example.com",
-              "title": "Dr.",
-              "firstName": "Max",
-              "surName": "MÃ¼ller"
-            },
-            "sellTo": {
-              "company": "schukai GmbH",
-              "address1": "MÃ¼nchenerstrasse 563",
-              "address2": "",
-              "zip": "80331",
-              "city": "MÃ¼nchen",
-              "country": "de"
-            },
-            "positions": [
-              {
-                "iid": "10056",
-                "optional": "40",
-                "name": "T-Shirt",
-                "itemNumber": "3265-632",
-                "ean": "3625896514756",
-                "customerNumber": "",
-                "count": 1,
-                "gross": 4995,
-                "net": 4197,
-                "currency": "EUR",
-                "vat": 1900,
-                "priceType": "",
-                "custom1": "",
-                "custom2": "",
-                "custom3": "",
-                "customized": "",
-                "description": "",
-                "salesman": 126
-              }
-            ],
-            "sys": {
-              "reserverStockPositions": false,
-              "createDelivery": true,
-              "createEdiOrder": true
-            }
-          }
+          "$ref": "#/definitions/Dataset93"
         },
         "sys": {
-          "$ref": "#/definitions/Sys",
-          "example": {
-            "message": "201 Created",
-            "code": 201
-          }
+          "$ref": "#/definitions/Sys"
         }
       },
       "required": [
@@ -11054,8 +9821,8 @@
         "sys"
       ]
     },
-    "Dataset81": {
-      "title": "Dataset81",
+    "Dataset93": {
+      "title": "Dataset93",
       "example": {
         "companyOrderID": "0001/01/616",
         "notice": "Das ist eine Kassen Bestellung",
@@ -11164,31 +9931,10 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User83",
-          "example": {
-            "userName": "user@example.com",
-            "formOfAddress": "Herr",
-            "letterFormOfAddress": "Sehr geehrter Herr",
-            "birthday": "1977-01-04 00:00:00",
-            "custom1": "Das ist eine Information",
-            "custom2": "Das ist eine Beschreibung",
-            "phone": "02562 165984",
-            "email": "user@example.com",
-            "title": "Dr.",
-            "firstName": "Max",
-            "surName": "MÃ¼ller"
-          }
+          "$ref": "#/definitions/User95"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo84",
-          "example": {
-            "company": "schukai GmbH",
-            "address1": "MÃ¼nchenerstrasse 563",
-            "address2": "",
-            "zip": "80331",
-            "city": "MÃ¼nchen",
-            "country": "de"
-          }
+          "$ref": "#/definitions/SellTo96"
         },
         "positions": {
           "description": "",
@@ -11216,16 +9962,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position85"
+            "$ref": "#/definitions/Position97"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys86",
-          "example": {
-            "reserverStockPositions": false,
-            "createDelivery": true,
-            "createEdiOrder": true
-          }
+          "$ref": "#/definitions/Sys98"
         }
       },
       "required": [
@@ -11294,8 +10035,8 @@
         "state"
       ]
     },
-    "User83": {
-      "title": "User83",
+    "User95": {
+      "title": "User95",
       "example": {
         "userName": "user@example.com",
         "formOfAddress": "Herr",
@@ -11381,8 +10122,8 @@
         "surName"
       ]
     },
-    "SellTo84": {
-      "title": "SellTo84",
+    "SellTo96": {
+      "title": "SellTo96",
       "example": {
         "company": "schukai GmbH",
         "address1": "MÃ¼nchenerstrasse 563",
@@ -11432,8 +10173,8 @@
         "country"
       ]
     },
-    "Position85": {
-      "title": "Position85",
+    "Position97": {
+      "title": "Position97",
       "example": {
         "iid": "10056",
         "optional": "40",
@@ -11566,8 +10307,8 @@
         "salesman"
       ]
     },
-    "Sys86": {
-      "title": "Sys86",
+    "Sys98": {
+      "title": "Sys98",
       "example": {
         "reserverStockPositions": false,
         "createDelivery": true,
@@ -11727,26 +10468,10 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User",
-          "example": {
-            "userName": "b2c@example.com",
-            "formOfAddress": "",
-            "letterFormOfAddress": "",
-            "birthday": "04.01.1977",
-            "custom1": "",
-            "custom2": "",
-            "company": "schukai GmbH"
-          }
+          "$ref": "#/definitions/User"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo",
-          "example": {
-            "address1": "Eichenstrasse 26",
-            "address2": "",
-            "zip": "82290",
-            "city": "Landsberied",
-            "country": "de"
-          }
+          "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
           "description": "",
@@ -11785,18 +10510,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position93"
+            "$ref": "#/definitions/Position105"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78",
-          "example": {
-            "reserverStockPositions": true,
-            "createDelivery": true,
-            "setDelivered": true,
-            "setBillNumber": true,
-            "createEdiOrder": false
-          }
+          "$ref": "#/definitions/Sys90"
         }
       },
       "required": [
@@ -11812,8 +10530,8 @@
         "sys"
       ]
     },
-    "Position93": {
-      "title": "Position93",
+    "Position105": {
+      "title": "Position105",
       "example": {
         "iid": "10026",
         "optional": "S",
@@ -12100,26 +10818,10 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User",
-          "example": {
-            "userName": "b2c@example.com",
-            "formOfAddress": "",
-            "letterFormOfAddress": "",
-            "birthday": "04.01.1977",
-            "custom1": "",
-            "custom2": "",
-            "company": "schukai GmbH"
-          }
+          "$ref": "#/definitions/User"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo",
-          "example": {
-            "address1": "Eichenstrasse 26",
-            "address2": "",
-            "zip": "82290",
-            "city": "Landsberied",
-            "country": "de"
-          }
+          "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
           "description": "",
@@ -12152,14 +10854,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78",
-          "example": {
-            "reserverStockPositions": true,
-            "createDelivery": true,
-            "setDelivered": true,
-            "setBillNumber": true,
-            "createEdiOrder": false
-          }
+          "$ref": "#/definitions/Sys90"
         }
       },
       "required": [
@@ -12227,26 +10922,10 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User",
-          "example": {
-            "userName": "b2c@example.com",
-            "formOfAddress": "",
-            "letterFormOfAddress": "",
-            "birthday": "04.01.1977",
-            "custom1": "",
-            "custom2": "",
-            "company": "schukai GmbH"
-          }
+          "$ref": "#/definitions/User"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo",
-          "example": {
-            "address1": "Eichenstrasse 26",
-            "address2": "",
-            "zip": "82290",
-            "city": "Landsberied",
-            "country": "de"
-          }
+          "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
           "description": "",
@@ -12296,18 +10975,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position106"
+            "$ref": "#/definitions/Position118"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78",
-          "example": {
-            "reserverStockPositions": true,
-            "createDelivery": true,
-            "setDelivered": true,
-            "setBillNumber": true,
-            "createEdiOrder": false
-          }
+          "$ref": "#/definitions/Sys90"
         }
       },
       "required": [
@@ -12323,8 +10995,8 @@
         "sys"
       ]
     },
-    "Position106": {
-      "title": "Position106",
+    "Position118": {
+      "title": "Position118",
       "example": {
         "iid": "10076",
         "optional": "_UNIQUE_",
@@ -12600,26 +11272,10 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User",
-          "example": {
-            "userName": "b2c@example.com",
-            "formOfAddress": "",
-            "letterFormOfAddress": "",
-            "birthday": "04.01.1977",
-            "custom1": "",
-            "custom2": "",
-            "company": "schukai GmbH"
-          }
+          "$ref": "#/definitions/User"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo",
-          "example": {
-            "address1": "Eichenstrasse 26",
-            "address2": "",
-            "zip": "82290",
-            "city": "Landsberied",
-            "country": "de"
-          }
+          "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
           "description": "",
@@ -12673,18 +11329,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position112"
+            "$ref": "#/definitions/Position124"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys78",
-          "example": {
-            "reserverStockPositions": true,
-            "createDelivery": true,
-            "setDelivered": true,
-            "setBillNumber": true,
-            "createEdiOrder": false
-          }
+          "$ref": "#/definitions/Sys90"
         }
       },
       "required": [
@@ -12700,8 +11349,8 @@
         "sys"
       ]
     },
-    "Position112": {
-      "title": "Position112",
+    "Position124": {
+      "title": "Position124",
       "example": {
         "iid": "10076",
         "optional": "_UNIQUE_",
@@ -12802,11 +11451,7 @@
           "format": "int32"
         },
         "turnoverInfo": {
-          "$ref": "#/definitions/TurnoverInfo",
-          "example": {
-            "orderReference": "0001/01/00003",
-            "reason": ""
-          }
+          "$ref": "#/definitions/TurnoverInfo"
         }
       },
       "required": [
@@ -12900,7 +11545,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset117"
+            "$ref": "#/definitions/Dataset129"
           }
         }
       },
@@ -12908,8 +11553,8 @@
         "dataset"
       ]
     },
-    "Dataset117": {
-      "title": "Dataset117",
+    "Dataset129": {
+      "title": "Dataset129",
       "type": "object",
       "properties": {
         "IID": {
@@ -12972,16 +11617,7 @@
           "type": "string"
         },
         "meta": {
-          "$ref": "#/definitions/Meta",
-          "example": {
-            "soid": "3",
-            "min_order_value": "0",
-            "unit": "2",
-            "offer": "5000",
-            "currency": "EUR",
-            "type": "3",
-            "offer_net": 4202
-          }
+          "$ref": "#/definitions/Meta"
         },
         "type": {
           "description": "",
@@ -13120,7 +11756,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset31"
+            "$ref": "#/definitions/Dataset43"
           }
         }
       },
@@ -13160,7 +11796,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset33"
+            "$ref": "#/definitions/Dataset45"
           }
         }
       },
@@ -13173,14 +11809,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset125"
+          "$ref": "#/definitions/Dataset137"
         },
         "sys": {
-          "$ref": "#/definitions/Sys",
-          "example": {
-            "message": "200 OK",
-            "code": 200
-          }
+          "$ref": "#/definitions/Sys"
         }
       },
       "required": [
@@ -13188,8 +11820,8 @@
         "sys"
       ]
     },
-    "Dataset125": {
-      "title": "Dataset125",
+    "Dataset137": {
+      "title": "Dataset137",
       "type": "object",
       "properties": {
         "erpID": {
@@ -13260,27 +11892,7 @@
           }
         },
         "personal": {
-          "$ref": "#/definitions/Personal",
-          "example": {
-            "erpID": "",
-            "erpName": "",
-            "erpNumber": "",
-            "erpLastUpdate": "2011-10-06T08:55:11",
-            "erpCreation": "0000-01-01T00:00:00",
-            "pid": 74761,
-            "uid": 75731,
-            "alias": "",
-            "formOfAddress": "",
-            "salutation": "Sehr geehrte Damen und Herren,",
-            "firstname": "Mey",
-            "name1": "Administrator",
-            "name2": "",
-            "title": "",
-            "custom1": "",
-            "custom2": "",
-            "birthday": "0000-01-01T00:00:00",
-            "lastUpdate": "0000-01-01T00:00:00"
-          }
+          "$ref": "#/definitions/Personal"
         },
         "properties": {
           "description": "",
@@ -13600,7 +12212,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Property127"
+            "$ref": "#/definitions/Property139"
           }
         },
         "communication": {
@@ -13777,8 +12389,8 @@
         "lastUpdate"
       ]
     },
-    "Property127": {
-      "title": "Property127",
+    "Property139": {
+      "title": "Property139",
       "example": {
         "pid": 890011,
         "uid": 75731,
