@@ -2173,14 +2173,14 @@
         ],
         "parameters": [
           {
-            "name": "table",
+            "name": "q",
             "in": "query",
             "required": true,
             "type": "string",
             "description": ""
           },
           {
-            "name": "q",
+            "name": "orderby",
             "in": "query",
             "required": true,
             "type": "string",
@@ -2211,7 +2211,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/orders/search?table=position&q=salesmanUID%3D\"20\"&facet=position",
+              "uri": "/api/commerce/orders/search?q=oid>0&orderby=oid ASC&facet=position",
               "headers": {
                 "Accept": "application/json"
               }
