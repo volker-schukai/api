@@ -1133,11 +1133,11 @@
       },
       "put": {
         "description": "TODO: Add Description",
-        "summary": "Benutzer ändern",
+        "summary": "Produkte ändern",
         "tags": [
-          "user"
+          "item"
         ],
-        "operationId": "ApiCommerceItemPut2",
+        "operationId": "ApiCommerceItemPut",
         "produces": [
           "application/json"
         ],
@@ -1148,7 +1148,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/BenutzerÄndernrequest"
+              "$ref": "#/definitions/ProdukteÄndernrequest"
             }
           },
           {
@@ -1193,7 +1193,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Benutzer ändern",
+            "x-testName": "Produkte ändern",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -3240,6 +3240,81 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Einen Benutzer auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/account/user": {
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Benutzer ändern",
+        "tags": [
+          "user"
+        ],
+        "operationId": "ApiAccountUserPut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BenutzerÄndernrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/api/account/user",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n    \"dataset\": [\n      {\n          \"iid\": 1001,\n            \"erpName\": \"erp-name-1\",\n            \"masterNumber\": \"12345\"\n        },\n        {\n          \"iid\": 1000,\"masterName\":\"dsfsdfsdf\"\n        }\n    ]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Benutzer ändern",
             "x-testDescription": "TODO: Add Description"
           }
         ],
