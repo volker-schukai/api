@@ -2038,6 +2038,71 @@
         }
       }
     },
+    "/api/commerce/order/history": {
+      "get": {
+        "description": "Revenue \r\n---------------- = Average Order Value\r\nNumber of orders ",
+        "summary": "AverageOrderValue",
+        "tags": [
+          "report"
+        ],
+        "operationId": "ApiCommerceOrderHistoryGet2",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/order/history",
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "AverageOrderValue",
+            "x-testDescription": "Revenue \r\n---------------- = Average Order Value\r\nNumber of orders "
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/api/commerce/orders/search": {
       "get": {
         "description": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen.",
@@ -2072,6 +2137,14 @@
             "description": ""
           },
           {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
             "name": "Accept",
             "in": "header",
             "required": true,
@@ -2089,7 +2162,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/orders/search?q=oid>0&orderby=oid ASC&facet=position",
+              "uri": "/api/commerce/orders/search?q=oid>0&orderby=oid DESC&facet=position&count=2",
               "headers": {
                 "Accept": "application/json"
               }
@@ -2956,6 +3029,13 @@
             "description": ""
           },
           {
+            "name": "facet",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
             "name": "Accept",
             "in": "header",
             "required": true,
@@ -2973,7 +3053,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/account/group/8/member/search?q=formOfAddress%3DHerr AND name1%3DMustermann AND city LIKE \"%25test%25\"&orderby=username",
+              "uri": "/api/account/group/8/member/search?q=formOfAddress%3DHerr AND name1%3DMustermann AND city LIKE \"%25test%25\"&orderby=username&facet=personal,addresses,orders",
               "headers": {
                 "Accept": "application/json"
               }
@@ -3123,7 +3203,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"dataset\": [\n      {\n          \"iid\": 1001,\n            \"erpName\": \"erp-name-1\",\n            \"masterNumber\": \"12345\"\n        },\n        {\n          \"iid\": 1000,\"masterName\":\"dsfsdfsdf\"\n        }\n    ]\n}"
+              "body": "{\n    \"dataset\": [\n      {\n          \"uid\": 10,\n            \"erpName\": \"erp-name-1\",\n            \"username\":\"new-name\",\n            \"personal\": {\n                \"dataset\": {\n                \t\"pid\": 12,\n                    \"erpID\": \"personal-erp-id-1\"\n                }\n            }\n            \n        },\n        {\n          \"uid\": 20,\"erpName\":\"dsfsdfsdf\"\n        }\n    ]\n}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -3373,6 +3453,13 @@
             "description": ""
           },
           {
+            "name": "facet",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
             "name": "Accept",
             "in": "header",
             "required": true,
@@ -3390,7 +3477,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/company/search?q=shid%3D1",
+              "uri": "/api/company/search?q=company.shid%3D1&facet=data",
               "headers": {
                 "Accept": "application/json"
               }
@@ -11665,13 +11752,19 @@
       "example": {
         "dataset": [
           {
-            "iid": 1001,
+            "uid": 10,
             "erpName": "erp-name-1",
-            "masterNumber": "12345"
+            "username": "new-name",
+            "personal": {
+              "dataset": {
+                "pid": 12,
+                "erpID": "personal-erp-id-1"
+              }
+            }
           },
           {
-            "iid": 1000,
-            "masterName": "dsfsdfsdf"
+            "uid": 20,
+            "erpName": "dsfsdfsdf"
           }
         ]
       },
@@ -11681,18 +11774,24 @@
           "description": "",
           "example": [
             {
-              "iid": 1001,
+              "uid": 10,
               "erpName": "erp-name-1",
-              "masterNumber": "12345"
+              "username": "new-name",
+              "personal": {
+                "dataset": {
+                  "pid": 12,
+                  "erpID": "personal-erp-id-1"
+                }
+              }
             },
             {
-              "iid": 1000,
-              "masterName": "dsfsdfsdf"
+              "uid": 20,
+              "erpName": "dsfsdfsdf"
             }
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset45"
+            "$ref": "#/definitions/Dataset135"
           }
         }
       },
@@ -11700,12 +11799,95 @@
         "dataset"
       ]
     },
+    "Dataset135": {
+      "title": "Dataset135",
+      "example": {
+        "uid": 10,
+        "erpName": "erp-name-1",
+        "username": "new-name",
+        "personal": {
+          "dataset": {
+            "pid": 12,
+            "erpID": "personal-erp-id-1"
+          }
+        }
+      },
+      "type": "object",
+      "properties": {
+        "uid": {
+          "description": "",
+          "example": 10,
+          "type": "integer",
+          "format": "int32"
+        },
+        "erpName": {
+          "description": "",
+          "example": "erp-name-1",
+          "type": "string"
+        },
+        "username": {
+          "description": "",
+          "example": "new-name",
+          "type": "string"
+        },
+        "personal": {
+          "$ref": "#/definitions/Personal"
+        }
+      },
+      "required": [
+        "uid",
+        "erpName"
+      ]
+    },
+    "Personal": {
+      "title": "Personal",
+      "example": {
+        "dataset": {
+          "pid": 12,
+          "erpID": "personal-erp-id-1"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "$ref": "#/definitions/Dataset137"
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "Dataset137": {
+      "title": "Dataset137",
+      "example": {
+        "pid": 12,
+        "erpID": "personal-erp-id-1"
+      },
+      "type": "object",
+      "properties": {
+        "pid": {
+          "description": "",
+          "example": 12,
+          "type": "integer",
+          "format": "int32"
+        },
+        "erpID": {
+          "description": "",
+          "example": "personal-erp-id-1",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pid",
+        "erpID"
+      ]
+    },
     "WerBinIchresponse": {
       "title": "Wer bin ichResponse",
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset137"
+          "$ref": "#/definitions/Dataset139"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -11716,8 +11898,8 @@
         "sys"
       ]
     },
-    "Dataset137": {
-      "title": "Dataset137",
+    "Dataset139": {
+      "title": "Dataset139",
       "type": "object",
       "properties": {
         "erpID": {
@@ -11788,7 +11970,7 @@
           }
         },
         "personal": {
-          "$ref": "#/definitions/Personal"
+          "$ref": "#/definitions/Personal140"
         },
         "properties": {
           "description": "",
@@ -12108,7 +12290,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Property139"
+            "$ref": "#/definitions/Property141"
           }
         },
         "communication": {
@@ -12156,8 +12338,8 @@
         "communication"
       ]
     },
-    "Personal": {
-      "title": "Personal",
+    "Personal140": {
+      "title": "Personal140",
       "example": {
         "erpID": "",
         "erpName": "",
@@ -12285,8 +12467,8 @@
         "lastUpdate"
       ]
     },
-    "Property139": {
-      "title": "Property139",
+    "Property141": {
+      "title": "Property141",
       "example": {
         "pid": 890011,
         "uid": 75731,
