@@ -563,12 +563,6 @@
               "$ref": "#/definitions/KategorienÄndernresponse"
             },
             "examples": {}
-          },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/KategorienÄndernerrorresponse"
-            }
           }
         },
         "security": [],
@@ -902,33 +896,45 @@
           }
         ],
         "responses": {
-          "200": {
+          "204": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategorienLöschenresponse"
+              "type": "object"
             },
-            "examples": {
-              "application/json": {
-                "dataset": [
-                  {
-                    "sys": {
-                      "message": "200 OK",
-                      "code": 200
-                    }
-                  },
-                  {
-                    "sys": {
-                      "message": "200 OK",
-                      "code": 200
-                    }
-                  }
-                ]
-              }
-            }
+            "examples": {}
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/commerce/item/catalog/category/52",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "access-control-allow-origin": "*",
+                "connection": "keep-alive",
+                "content-type": "text/html; charset=UTF-8",
+                "date": "Sat, 21 Oct 2017 12:07:39 GMT",
+                "server": "nginx",
+                "x-powered-by": "Alvine Framework <http://alvine.io>"
+              }
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Kategorien löschen",
+            "x-testDescription": ""
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1592,7 +1598,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KasseHinzufügenrequest48"
+              "$ref": "#/definitions/KasseHinzufügenrequest39"
             }
           },
           {
@@ -2038,14 +2044,14 @@
         }
       }
     },
-    "/api/commerce/order/history": {
+    "/api/commerce/order/report/history": {
       "get": {
-        "description": "Revenue \r\n---------------- = Average Order Value\r\nNumber of orders ",
-        "summary": "AverageOrderValue",
+        "description": "TODO: Add Description",
+        "summary": "History",
         "tags": [
           "report"
         ],
-        "operationId": "ApiCommerceOrderHistoryGet2",
+        "operationId": "ApiCommerceOrderReportHistoryGet",
         "produces": [
           "application/json"
         ],
@@ -2075,7 +2081,72 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/order/history",
+              "uri": "/api/commerce/order/report/history",
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "History",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/order/report/averageordervalue/20100101/21180107": {
+      "get": {
+        "description": "Revenue \r\n---------------- = Average Order Value\r\nNumber of orders ",
+        "summary": "AverageOrderValue",
+        "tags": [
+          "report"
+        ],
+        "operationId": "ApiCommerceOrderReportAverageordervalue2010010121180107Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/order/report/averageordervalue/20100101/21180107",
               "headers": {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
@@ -2590,7 +2661,7 @@
             "examples": {
               "application/json": {
                 "dataset": {
-                  "07fe19f7-54af-42a4-e59f-19f7833d309a": {
+                  "525918f5-44a6-4f8e-95bb-7f372b5ab5cd": {
                     "IID": 10033,
                     "price": {
                       "gross": "499",
@@ -3750,95 +3821,6 @@
         "propertyValue"
       ]
     },
-    "KategorienLöschenresponse": {
-      "title": "Kategorien löschenResponse",
-      "example": {
-        "dataset": [
-          {
-            "sys": {
-              "message": "200 OK",
-              "code": 200
-            }
-          },
-          {
-            "sys": {
-              "message": "200 OK",
-              "code": 200
-            }
-          }
-        ]
-      },
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "example": [
-            {
-              "sys": {
-                "message": "200 OK",
-                "code": 200
-              }
-            },
-            {
-              "sys": {
-                "message": "200 OK",
-                "code": 200
-              }
-            }
-          ],
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset7"
-          }
-        }
-      },
-      "required": [
-        "dataset"
-      ]
-    },
-    "Dataset7": {
-      "title": "Dataset7",
-      "example": {
-        "sys": {
-          "message": "200 OK",
-          "code": 200
-        }
-      },
-      "type": "object",
-      "properties": {
-        "sys": {
-          "$ref": "#/definitions/Sys"
-        }
-      },
-      "required": [
-        "sys"
-      ]
-    },
-    "Sys": {
-      "title": "Sys",
-      "example": {
-        "message": "200 OK",
-        "code": 200
-      },
-      "type": "object",
-      "properties": {
-        "message": {
-          "description": "",
-          "example": "200 OK",
-          "type": "string"
-        },
-        "code": {
-          "description": "",
-          "example": 200,
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "required": [
-        "message",
-        "code"
-      ]
-    },
     "KategorienMehrfachlöschungrequest": {
       "title": "Kategorien MehrfachlöschungRequest",
       "example": {
@@ -3871,7 +3853,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset10"
+            "$ref": "#/definitions/Dataset7"
           }
         }
       },
@@ -3879,8 +3861,8 @@
         "dataset"
       ]
     },
-    "Dataset10": {
-      "title": "Dataset10",
+    "Dataset7": {
+      "title": "Dataset7",
       "example": {
         "cid": 53
       },
@@ -3935,12 +3917,55 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset7"
+            "$ref": "#/definitions/Dataset9"
           }
         }
       },
       "required": [
         "dataset"
+      ]
+    },
+    "Dataset9": {
+      "title": "Dataset9",
+      "example": {
+        "sys": {
+          "message": "200 OK",
+          "code": 200
+        }
+      },
+      "type": "object",
+      "properties": {
+        "sys": {
+          "$ref": "#/definitions/Sys"
+        }
+      },
+      "required": [
+        "sys"
+      ]
+    },
+    "Sys": {
+      "title": "Sys",
+      "example": {
+        "message": "200 OK",
+        "code": 200
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "description": "",
+          "example": "200 OK",
+          "type": "string"
+        },
+        "code": {
+          "description": "",
+          "example": 200,
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "message",
+        "code"
       ]
     },
     "KategorienHinzufügenrequest": {
@@ -3975,7 +4000,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset15"
+            "$ref": "#/definitions/Dataset12"
           }
         }
       },
@@ -3983,8 +4008,8 @@
         "dataset"
       ]
     },
-    "Dataset15": {
-      "title": "Dataset15",
+    "Dataset12": {
+      "title": "Dataset12",
       "example": {
         "erpName": "erp-name-1",
         "name": "Neue Kategorie 1",
@@ -4048,7 +4073,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset14"
           }
         }
       },
@@ -4056,8 +4081,8 @@
         "dataset"
       ]
     },
-    "Dataset17": {
-      "title": "Dataset17",
+    "Dataset14": {
+      "title": "Dataset14",
       "example": {
         "cid": 50,
         "erpName": "erp-name-1",
@@ -4094,19 +4119,31 @@
         "flag"
       ]
     },
-    "KategorienÄndernerrorresponse": {
-      "title": "Kategorien ändernErrorResponse",
+    "KategorienÄndernresponse": {
+      "title": "Kategorien ändernResponse",
       "type": "object",
       "properties": {
         "dataset": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset19"
+            "$ref": "#/definitions/Dataset16"
           }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "Dataset16": {
+      "title": "Dataset16",
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "$ref": "#/definitions/Dataset17"
         },
         "sys": {
-          "$ref": "#/definitions/Sys22"
+          "$ref": "#/definitions/Sys18"
         }
       },
       "required": [
@@ -4114,23 +4151,8 @@
         "sys"
       ]
     },
-    "Dataset19": {
-      "title": "Dataset19",
-      "type": "object",
-      "properties": {
-        "sys": {
-          "$ref": "#/definitions/Sys21"
-        },
-        "dataset": {
-          "$ref": "#/definitions/Dataset20"
-        }
-      },
-      "required": [
-        "sys"
-      ]
-    },
-    "Dataset20": {
-      "title": "Dataset20",
+    "Dataset17": {
+      "title": "Dataset17",
       "example": {
         "erpID": "",
         "erpName": "erp-name-1",
@@ -4139,7 +4161,7 @@
         "erpCreation": "1970-01-01T00:59:59",
         "archived": "0",
         "cid": 2,
-        "name": "Neuer Name",
+        "name": "Neue Kategorie 12",
         "token": "",
         "ranking": "0",
         "label": [],
@@ -4191,7 +4213,7 @@
         },
         "name": {
           "description": "",
-          "example": "Neuer Name",
+          "example": "Neue Kategorie 12",
           "type": "string"
         },
         "token": {
@@ -4290,10 +4312,10 @@
         "parentCID"
       ]
     },
-    "Sys21": {
-      "title": "Sys21",
+    "Sys18": {
+      "title": "Sys18",
       "example": {
-        "updated": "2017-10-21T16:30:31",
+        "updated": "2017-10-21T16:15:35",
         "message": "200 OK",
         "code": 200,
         "location": ""
@@ -4302,7 +4324,7 @@
       "properties": {
         "updated": {
           "description": "",
-          "example": "10/21/2017 4:30:31 PM",
+          "example": "10/21/2017 4:15:35 PM",
           "type": "string"
         },
         "message": {
@@ -4328,8 +4350,28 @@
         "location"
       ]
     },
-    "Sys22": {
-      "title": "Sys22",
+    "KategorienSuchenerrorresponse": {
+      "title": "Kategorien suchenErrorResponse",
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset16"
+          }
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys23"
+        }
+      },
+      "required": [
+        "dataset",
+        "sys"
+      ]
+    },
+    "Sys23": {
+      "title": "Sys23",
       "example": {
         "error": {
           "code": 400,
@@ -4371,42 +4413,6 @@
         "message"
       ]
     },
-    "KategorienÄndernresponse": {
-      "title": "Kategorien ändernResponse",
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset19"
-          }
-        }
-      },
-      "required": [
-        "dataset"
-      ]
-    },
-    "KategorienSuchenerrorresponse": {
-      "title": "Kategorien suchenErrorResponse",
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset19"
-          }
-        },
-        "sys": {
-          "$ref": "#/definitions/Sys22"
-        }
-      },
-      "required": [
-        "dataset",
-        "sys"
-      ]
-    },
     "KategorienSuchenresponse": {
       "title": "Kategorien suchenResponse",
       "type": "object",
@@ -4415,7 +4421,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset19"
+            "$ref": "#/definitions/Dataset16"
           }
         }
       },
@@ -4459,10 +4465,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset39"
+          "$ref": "#/definitions/Dataset30"
         },
         "sys": {
-          "$ref": "#/definitions/Sys41"
+          "$ref": "#/definitions/Sys32"
         }
       },
       "required": [
@@ -4470,8 +4476,8 @@
         "sys"
       ]
     },
-    "Dataset39": {
-      "title": "Dataset39",
+    "Dataset30": {
+      "title": "Dataset30",
       "example": {
         "erpID": "",
         "erpName": "Neue Kategorie 2",
@@ -4649,8 +4655,8 @@
         "de"
       ]
     },
-    "Sys41": {
-      "title": "Sys41",
+    "Sys32": {
+      "title": "Sys32",
       "example": {
         "updated": "2017-10-22T11:16:00",
         "message": "200 OK",
@@ -4711,7 +4717,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset43"
+            "$ref": "#/definitions/Dataset34"
           }
         }
       },
@@ -4719,8 +4725,8 @@
         "dataset"
       ]
     },
-    "Dataset43": {
-      "title": "Dataset43",
+    "Dataset34": {
+      "title": "Dataset34",
       "example": {
         "masterName": "erp-name-1",
         "active": true
@@ -4779,7 +4785,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset45"
+            "$ref": "#/definitions/Dataset36"
           }
         }
       },
@@ -4787,8 +4793,8 @@
         "dataset"
       ]
     },
-    "Dataset45": {
-      "title": "Dataset45",
+    "Dataset36": {
+      "title": "Dataset36",
       "example": {
         "iid": 1001,
         "erpName": "erp-name-1",
@@ -4873,8 +4879,8 @@
         "bonID"
       ]
     },
-    "KasseHinzufügenrequest48": {
-      "title": "Kasse hinzufügenRequest48",
+    "KasseHinzufügenrequest39": {
+      "title": "Kasse hinzufügenRequest39",
       "example": {
         "name": "Beispiel Schublade",
         "crid": 1
@@ -4998,7 +5004,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset52"
+            "$ref": "#/definitions/Dataset43"
           }
         }
       },
@@ -5006,8 +5012,8 @@
         "dataset"
       ]
     },
-    "Dataset52": {
-      "title": "Dataset52",
+    "Dataset43": {
+      "title": "Dataset43",
       "example": {
         "amount": 12638,
         "currency": "EUR",
@@ -5146,10 +5152,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset55"
+          "$ref": "#/definitions/Dataset46"
         },
         "sys": {
-          "$ref": "#/definitions/Sys70"
+          "$ref": "#/definitions/Sys203"
         }
       },
       "required": [
@@ -5157,30 +5163,34 @@
         "sys"
       ]
     },
-    "Dataset55": {
-      "title": "Dataset55",
+    "Dataset46": {
+      "title": "Dataset46",
       "type": "object",
       "properties": {
-        "4959d99d-6479-4a68-9623-6865fd8916c2": {
-          "$ref": "#/definitions/4959d99d64794a6896236865fd8916c2"
+        "70f6f40d-1642-4c7b-9193-4374ae49bfba": {
+          "$ref": "#/definitions/70f6f40d16424c7b91934374ae49bfba"
+        },
+        "079da8fc-2c8f-43af-e9dd-4f1028eb4df6": {
+          "$ref": "#/definitions/079da8fc2c8f43afe9dd4f1028eb4df6"
         }
       },
       "required": [
-        "4959d99d-6479-4a68-9623-6865fd8916c2"
+        "70f6f40d-1642-4c7b-9193-4374ae49bfba",
+        "079da8fc-2c8f-43af-e9dd-4f1028eb4df6"
       ]
     },
-    "4959d99d64794a6896236865fd8916c2": {
-      "title": "4959d99d64794a6896236865fd8916c2",
+    "70f6f40d16424c7b91934374ae49bfba": {
+      "title": "70f6f40d16424c7b91934374ae49bfba",
       "type": "object",
       "properties": {
         "IID": {
           "description": "",
-          "example": "10056",
+          "example": "10083",
           "type": "string"
         },
         "sys_master_name": {
           "description": "",
-          "example": "Herrenschuh - dunkelbraun",
+          "example": "T-Shirt - Leopard",
           "type": "string"
         },
         "sys_master_name_locale": {
@@ -5190,7 +5200,7 @@
         },
         "sys_master_number": {
           "description": "",
-          "example": "10056",
+          "example": "10083",
           "type": "string"
         },
         "sys_master_ean": {
@@ -5304,12 +5314,12 @@
         },
         "sys_variants": {
           "description": "",
-          "example": "40:1775996487689,41:1775996487891",
+          "example": "S:9815675981834,M:7598198156834,L:9818185675934,XL:9156759881834",
           "type": "string"
         },
         "sys_variants_info": {
           "description": "",
-          "example": "a:2:{i:0;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}i:1;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}}",
+          "example": "a:4:{i:0;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}i:1;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}i:2;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}i:3;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}}",
           "type": "string"
         },
         "sys_packingunit": {
@@ -5322,7 +5332,7 @@
         },
         "sys_cataloging_department_DID": {
           "description": "",
-          "example": "3",
+          "example": "2",
           "type": "string"
         },
         "sys_cataloging_department_DID1": {
@@ -5332,7 +5342,7 @@
         },
         "sys_cataloging_brand_BID": {
           "description": "",
-          "example": "8",
+          "example": "9",
           "type": "string"
         },
         "sys_cataloging_brand_BID2": {
@@ -5350,7 +5360,7 @@
         },
         "sys_cataloging_category_CID1": {
           "description": "",
-          "example": "13",
+          "example": "5",
           "type": "string"
         },
         "sys_cataloging_category_CID2": {
@@ -5369,7 +5379,7 @@
         },
         "CID_LIST": {
           "description": "",
-          "example": "13",
+          "example": "5",
           "type": "string"
         },
         "sys_cataloging_collection_CLID": {
@@ -5416,7 +5426,7 @@
         },
         "sys_cataloging_season_SAID": {
           "description": "",
-          "example": "0",
+          "example": "2",
           "type": "string"
         },
         "sys_cataloging_audience_AUID": {
@@ -5430,7 +5440,7 @@
         },
         "sys_specification_COID": {
           "description": "",
-          "example": "25",
+          "example": "27",
           "type": "string"
         },
         "sys_specification_COID2": {
@@ -5531,7 +5541,7 @@
         },
         "sys_specification_material_MAID": {
           "description": "",
-          "example": "8",
+          "example": "12",
           "type": "string"
         },
         "sys_specification_baseprice_reference": {
@@ -5606,7 +5616,7 @@
         },
         "sys_sourcing_stock_flag": {
           "description": "",
-          "example": "4",
+          "example": "18",
           "type": "string"
         },
         "sys_sourcing_preorder_hideorderform": {
@@ -5671,7 +5681,6 @@
         },
         "sys_finances_revenue_eu_ID": {
           "description": "",
-          "example": "0",
           "type": "string"
         },
         "sys_finances_cost_inland": {
@@ -5688,7 +5697,6 @@
         },
         "sys_finances_cost_eu_ID": {
           "description": "",
-          "example": "0",
           "type": "string"
         },
         "sys_marketing_alsobought": {
@@ -5713,7 +5721,7 @@
         },
         "sys_marketing_advertisement_html": {
           "description": "",
-          "example": "<head><style type=text/css> \t<!-- \t\t#innerRTEBodysys_marketing_advertisement_html td.rteTableTd { \t\t\tborder:4px dotted #dcdcdc; \t\t\tpadding:4px; \t\t}; \t\t//--> \t</style> \t \t</head><body id=innerRTEBodysys_marketing_advertisement_html style=margin:0px;>&lt;/b",
+          "example": "<head><style type=text/css> \t<!-- \t\t#innerRTEBodysys_marketing_advertisement_html td.rteTableTd { \t\t\tborder:4px dotted #dcdcdc; \t\t\tpadding:4px; \t\t}; \t\t//--> \t</style> \t \t</head><body id=innerRTEBodysys_marketing_advertisement_html style=margin:0px;>    <!",
           "type": "string"
         },
         "sys_marketing_advertisement_imagemap": {
@@ -5743,7 +5751,7 @@
         },
         "sys_publishing_count": {
           "description": "",
-          "example": "4",
+          "example": "1",
           "type": "string"
         },
         "sys_shipping_packaging": {
@@ -5762,22 +5770,22 @@
         },
         "sys_OUID": {
           "description": "",
-          "example": "0",
+          "example": "1",
           "type": "string"
         },
         "sys_WUID": {
           "description": "",
-          "example": "0",
+          "example": "1",
           "type": "string"
         },
         "sys_lastaccess": {
           "description": "",
-          "example": "2016-12-13 11:24:02",
+          "example": "2016-12-13 11:20:45",
           "type": "string"
         },
         "sys_creation": {
           "description": "",
-          "example": "2014-09-22 12:56:07",
+          "example": "2016-08-18 10:31:34",
           "type": "string"
         },
         "sys_archived": {
@@ -5847,11 +5855,12 @@
         },
         "sys_master_productfamily": {
           "description": "",
+          "example": "1001,10025,10026,10027,10028,10083",
           "type": "string"
         },
         "sys_master_productfamily_combine": {
           "description": "",
-          "example": "0",
+          "example": "1",
           "type": "string"
         },
         "sys_shipping_hideondocument": {
@@ -5865,27 +5874,27 @@
         },
         "GROUPINGID": {
           "description": "",
-          "example": "10056",
+          "example": "1001,10025,10026,10027,10028,10083",
           "type": "string"
         },
         "PID": {
           "description": "",
-          "example": "96",
+          "example": "163",
           "type": "string"
         },
         "publishingDescription": {
           "description": "",
-          "example": "Herrenschuhe in dunkelbraunem Kunstleder",
+          "example": "T-Shirt - Leopard",
           "type": "string"
         },
         "publishingStart": {
           "description": "",
-          "example": "2014-09-01 15:49:21",
+          "example": "2016-08-09 12:36:41",
           "type": "string"
         },
         "unixtime_publishingStart": {
           "description": "",
-          "example": "1409586561",
+          "example": "1470746201",
           "type": "string"
         },
         "DestinationDID": {
@@ -5900,7 +5909,7 @@
         },
         "position_start": {
           "description": "",
-          "example": "2016-08-01 12:11:20",
+          "example": "2016-08-09 12:36:41",
           "type": "string"
         },
         "new": {
@@ -5910,12 +5919,12 @@
         },
         "variantMax": {
           "description": "",
-          "example": "20",
+          "example": "116",
           "type": "string"
         },
         "variantCount": {
           "description": "",
-          "example": "84",
+          "example": "265",
           "type": "string"
         },
         "adviseddate_timestamp": {
@@ -5956,21 +5965,6 @@
           "type": "string"
         },
         "DestinationDID_1": {
-          "description": "",
-          "example": true,
-          "type": "boolean"
-        },
-        "DestinationDID_3": {
-          "description": "",
-          "example": true,
-          "type": "boolean"
-        },
-        "DestinationDID_7": {
-          "description": "",
-          "example": true,
-          "type": "boolean"
-        },
-        "DestinationDID_8": {
           "description": "",
           "example": true,
           "type": "boolean"
@@ -6019,12 +6013,12 @@
         },
         "categoryName1": {
           "description": "",
-          "example": "Schuhe",
+          "example": "Oberbekleidung",
           "type": "string"
         },
         "categoryLabel1": {
           "description": "",
-          "example": "Schuhe",
+          "example": "Oberbekleidung",
           "type": "string"
         },
         "categoryLabel2": {
@@ -6045,12 +6039,12 @@
         },
         "departmentName": {
           "description": "",
-          "example": "Herren",
+          "example": "Damen",
           "type": "string"
         },
         "departmentLabel": {
           "description": "",
-          "example": "Herren",
+          "example": "Damen",
           "type": "string"
         },
         "departmentLabel1": {
@@ -6059,6 +6053,7 @@
         },
         "seasonLabel": {
           "description": "",
+          "example": "Sommer",
           "type": "string"
         },
         "styleLabel1": {
@@ -6072,7 +6067,7 @@
         "sys_cataloging_category_list": {
           "description": "",
           "example": [
-            "13"
+            "5"
           ],
           "type": "array",
           "items": {
@@ -6081,7 +6076,7 @@
         },
         "category": {
           "description": "",
-          "example": "Schuhe",
+          "example": "Oberbekleidung",
           "type": "string"
         },
         "category_info": {
@@ -6103,19 +6098,19 @@
         },
         "brand": {
           "description": "",
-          "example": "Mode-Marke 1",
+          "example": "Mode-Marke 2",
           "type": "string"
         },
         "brand_info": {
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject60"
+            "$ref": "#/definitions/GeneratedObject51"
           }
         },
         "brandLabel1": {
           "description": "",
-          "example": "Mode-Marke 1",
+          "example": "Mode-Marke 2",
           "type": "string"
         },
         "description": {
@@ -6124,7 +6119,7 @@
         },
         "name": {
           "description": "",
-          "example": "Herrenschuh - dunkelbraun",
+          "example": "T-Shirt - Leopard",
           "type": "string"
         },
         "notTakeIntoAccountStock": {
@@ -6134,7 +6129,7 @@
         },
         "inventoryMaintenance": {
           "description": "",
-          "example": true,
+          "example": false,
           "type": "boolean"
         },
         "preOrderItem": {
@@ -6144,7 +6139,7 @@
         },
         "nosItem": {
           "description": "",
-          "example": false,
+          "example": true,
           "type": "boolean"
         },
         "__initVariantMap": {
@@ -6154,7 +6149,7 @@
         },
         "sys_variants_count": {
           "description": "",
-          "example": 2,
+          "example": 4,
           "type": "integer",
           "format": "int32"
         },
@@ -6180,7 +6175,7 @@
         },
         "material": {
           "description": "",
-          "example": "Kunstleder",
+          "example": "Baumwolle",
           "type": "string"
         },
         "deliverytime_info": {
@@ -6270,10 +6265,10 @@
             {
               "locale": "null",
               "locale_plain": "",
-              "htmlcode": "#3C382F",
-              "htmlcode2": "#3C382F",
-              "label": "dunkelbraun",
-              "ITEM_IID": "10056"
+              "htmlcode": "",
+              "htmlcode2": "",
+              "label": "multicolor",
+              "ITEM_IID": "10083"
             }
           ],
           "type": "array",
@@ -6291,12 +6286,11 @@
         },
         "color_htmlcode": {
           "description": "",
-          "example": "#3C382F",
           "type": "string"
         },
         "color_label_plain": {
           "description": "",
-          "example": "dunkelbraun",
+          "example": "multicolor",
           "type": "string"
         },
         "color_image_url": {
@@ -6323,7 +6317,7 @@
           "description": "",
           "example": [
             {
-              "ITEM_IID": "10056"
+              "ITEM_IID": "10083"
             }
           ],
           "type": "array",
@@ -6363,7 +6357,7 @@
           "description": "",
           "example": [
             {
-              "ITEM_IID": "10056"
+              "ITEM_IID": "10083"
             }
           ],
           "type": "array",
@@ -6580,9 +6574,6 @@
         "sales_announcement_price_show_price",
         "localeText",
         "DestinationDID_1",
-        "DestinationDID_3",
-        "DestinationDID_7",
-        "DestinationDID_8",
         "sys_marketing_advertisement_dimension",
         "marketing_commendation",
         "marketing_alsobought",
@@ -6666,16 +6657,16 @@
     "Category1": {
       "title": "Category1",
       "example": {
-        "CID": "13",
-        "category": "Schuhe",
-        "label": "Schuhe",
+        "CID": "5",
+        "category": "Oberbekleidung",
+        "label": "Oberbekleidung",
         "sys_PCID": "2",
         "sys_ranking": "0",
         "flag": "2",
         "sys_erpName": "",
         "sys_erpNumber": "",
         "description": "null",
-        "cid": "13",
+        "cid": "5",
         "activeFlag": false,
         "pcid": "2",
         "ranking": "0",
@@ -6686,17 +6677,17 @@
       "properties": {
         "CID": {
           "description": "",
-          "example": "13",
+          "example": "5",
           "type": "string"
         },
         "category": {
           "description": "",
-          "example": "Schuhe",
+          "example": "Oberbekleidung",
           "type": "string"
         },
         "label": {
           "description": "",
-          "example": "Schuhe",
+          "example": "Oberbekleidung",
           "type": "string"
         },
         "sys_PCID": {
@@ -6770,16 +6761,16 @@
     "GeneratedObject": {
       "title": "generatedObject",
       "example": {
-        "CID": "13",
-        "category": "Schuhe",
-        "label": "Schuhe",
+        "CID": "5",
+        "category": "Oberbekleidung",
+        "label": "Oberbekleidung",
         "sys_PCID": "2",
         "sys_ranking": "0",
         "flag": "2",
         "sys_erpName": "",
         "sys_erpNumber": "",
         "description": "null",
-        "cid": "13",
+        "cid": "5",
         "activeFlag": false,
         "pcid": "2",
         "ranking": "0",
@@ -6790,17 +6781,17 @@
       "properties": {
         "CID": {
           "description": "",
-          "example": "13",
+          "example": "5",
           "type": "string"
         },
         "category": {
           "description": "",
-          "example": "Schuhe",
+          "example": "Oberbekleidung",
           "type": "string"
         },
         "label": {
           "description": "",
-          "example": "Schuhe",
+          "example": "Oberbekleidung",
           "type": "string"
         },
         "sys_PCID": {
@@ -6871,11 +6862,11 @@
         "erp_number"
       ]
     },
-    "GeneratedObject60": {
-      "title": "generatedObject60",
+    "GeneratedObject51": {
+      "title": "generatedObject51",
       "example": {
-        "bid": "8",
-        "label": "Mode-Marke 1",
+        "bid": "9",
+        "label": "Mode-Marke 2",
         "description": "null",
         "activeFlag": true,
         "erp_name": "",
@@ -6886,12 +6877,12 @@
       "properties": {
         "bid": {
           "description": "",
-          "example": "8",
+          "example": "9",
           "type": "string"
         },
         "label": {
           "description": "",
-          "example": "Mode-Marke 1",
+          "example": "Mode-Marke 2",
           "type": "string"
         },
         "description": {
@@ -6930,31 +6921,73 @@
     "Variants": {
       "title": "Variants",
       "example": {
-        "40": {
-          "vid": "40",
-          "key": "40",
-          "label": "40",
-          "variantCount": "1",
-          "advisedVariantCount": "0",
-          "advisedVariantDate": "null",
-          "advisedFalg": "null",
-          "advisedFlag": "null",
+        "S": {
+          "label": "S",
+          "ean": "9815675981834",
+          "key": "S",
+          "info": {
+            "decription": "",
+            "number": "",
+            "text": {
+              "de": "",
+              "en": "",
+              "fr": ""
+            },
+            "hide": false,
+            "properties": {
+              "public_file_upload_path": {
+                "value": ""
+              },
+              "public_file_upload_path1": {
+                "value": ""
+              },
+              "public_file_upload_path2": {
+                "value": ""
+              },
+              "public_file_upload_path3": {
+                "value": ""
+              },
+              "public_file_upload_path4": {
+                "value": ""
+              },
+              "public_file_upload_path5": {
+                "value": ""
+              },
+              "public_file_upload_path6": {
+                "value": ""
+              },
+              "public_file_upload_path7": {
+                "value": ""
+              },
+              "public_file_upload_path8": {
+                "value": ""
+              },
+              "public_file_upload_path9": {
+                "value": ""
+              },
+              "public_file_upload_path10": {
+                "value": ""
+              },
+              "shipping.preventfromcosts": {
+                "value": ""
+              }
+            }
+          },
+          "sys_ranking": "10",
           "availableStockFlag": true,
-          "ean": "1775996487689",
-          "IID": "10056",
-          "sys_master_number": "10056",
-          "sys_ranking": "49",
+          "IID": "10083",
+          "sys_master_number": "10083",
           "usedRegex": false,
           "subkeys": [
             {
-              "key": "40",
-              "label": "40",
+              "key": "S",
+              "label": "S",
               "index": 0,
-              "ref": 40
+              "ref": "S"
             }
           ],
-          "subkey_0": "40",
-          "variant_key_part0": "40",
+          "subkey_0": "S",
+          "variant_key_part0": "S",
           "info_decription": "",
           "info_number": "",
           "info_text": "null",
@@ -6972,31 +7005,241 @@
           "property_public_file_upload_path10": "",
           "property_shipping.preventfromcosts": ""
         },
-        "41": {
-          "vid": "41",
-          "key": "41",
-          "label": "41",
-          "variantCount": "20",
-          "advisedVariantCount": "0",
-          "advisedVariantDate": "null",
-          "advisedFalg": "null",
-          "advisedFlag": "null",
+        "M": {
+          "label": "M",
+          "ean": "7598198156834",
+          "key": "M",
+          "info": {
+            "decription": "",
+            "number": "",
+            "text": {
+              "de": "",
+              "en": "",
+              "fr": ""
+            },
+            "hide": false,
+            "properties": {
+              "public_file_upload_path": {
+                "value": ""
+              },
+              "public_file_upload_path1": {
+                "value": ""
+              },
+              "public_file_upload_path2": {
+                "value": ""
+              },
+              "public_file_upload_path3": {
+                "value": ""
+              },
+              "public_file_upload_path4": {
+                "value": ""
+              },
+              "public_file_upload_path5": {
+                "value": ""
+              },
+              "public_file_upload_path6": {
+                "value": ""
+              },
+              "public_file_upload_path7": {
+                "value": ""
+              },
+              "public_file_upload_path8": {
+                "value": ""
+              },
+              "public_file_upload_path9": {
+                "value": ""
+              },
+              "public_file_upload_path10": {
+                "value": ""
+              },
+              "shipping.preventfromcosts": {
+                "value": ""
+              }
+            }
+          },
+          "sys_ranking": "10",
           "availableStockFlag": true,
-          "ean": "1775996487891",
-          "IID": "10056",
-          "sys_master_number": "10056",
-          "sys_ranking": "0",
+          "IID": "10083",
+          "sys_master_number": "10083",
           "usedRegex": false,
           "subkeys": [
             {
-              "key": "41",
-              "label": "41",
+              "key": "M",
+              "label": "M",
               "index": 0,
-              "ref": 41
+              "ref": "M"
             }
           ],
-          "subkey_0": "41",
-          "variant_key_part0": "41",
+          "subkey_0": "M",
+          "variant_key_part0": "M",
+          "info_decription": "",
+          "info_number": "",
+          "info_text": "null",
+          "info_hide": false,
+          "property_public_file_upload_path": "",
+          "property_public_file_upload_path1": "",
+          "property_public_file_upload_path2": "",
+          "property_public_file_upload_path3": "",
+          "property_public_file_upload_path4": "",
+          "property_public_file_upload_path5": "",
+          "property_public_file_upload_path6": "",
+          "property_public_file_upload_path7": "",
+          "property_public_file_upload_path8": "",
+          "property_public_file_upload_path9": "",
+          "property_public_file_upload_path10": "",
+          "property_shipping.preventfromcosts": ""
+        },
+        "L": {
+          "label": "L",
+          "ean": "9818185675934",
+          "key": "L",
+          "info": {
+            "decription": "",
+            "number": "",
+            "text": {
+              "de": "",
+              "en": "",
+              "fr": ""
+            },
+            "hide": false,
+            "properties": {
+              "public_file_upload_path": {
+                "value": ""
+              },
+              "public_file_upload_path1": {
+                "value": ""
+              },
+              "public_file_upload_path2": {
+                "value": ""
+              },
+              "public_file_upload_path3": {
+                "value": ""
+              },
+              "public_file_upload_path4": {
+                "value": ""
+              },
+              "public_file_upload_path5": {
+                "value": ""
+              },
+              "public_file_upload_path6": {
+                "value": ""
+              },
+              "public_file_upload_path7": {
+                "value": ""
+              },
+              "public_file_upload_path8": {
+                "value": ""
+              },
+              "public_file_upload_path9": {
+                "value": ""
+              },
+              "public_file_upload_path10": {
+                "value": ""
+              },
+              "shipping.preventfromcosts": {
+                "value": ""
+              }
+            }
+          },
+          "sys_ranking": "10",
+          "availableStockFlag": true,
+          "IID": "10083",
+          "sys_master_number": "10083",
+          "usedRegex": false,
+          "subkeys": [
+            {
+              "key": "L",
+              "label": "L",
+              "index": 0,
+              "ref": "L"
+            }
+          ],
+          "subkey_0": "L",
+          "variant_key_part0": "L",
+          "info_decription": "",
+          "info_number": "",
+          "info_text": "null",
+          "info_hide": false,
+          "property_public_file_upload_path": "",
+          "property_public_file_upload_path1": "",
+          "property_public_file_upload_path2": "",
+          "property_public_file_upload_path3": "",
+          "property_public_file_upload_path4": "",
+          "property_public_file_upload_path5": "",
+          "property_public_file_upload_path6": "",
+          "property_public_file_upload_path7": "",
+          "property_public_file_upload_path8": "",
+          "property_public_file_upload_path9": "",
+          "property_public_file_upload_path10": "",
+          "property_shipping.preventfromcosts": ""
+        },
+        "XL": {
+          "label": "XL",
+          "ean": "9156759881834",
+          "key": "XL",
+          "info": {
+            "decription": "",
+            "number": "",
+            "text": {
+              "de": "",
+              "en": "",
+              "fr": ""
+            },
+            "hide": false,
+            "properties": {
+              "public_file_upload_path": {
+                "value": ""
+              },
+              "public_file_upload_path1": {
+                "value": ""
+              },
+              "public_file_upload_path2": {
+                "value": ""
+              },
+              "public_file_upload_path3": {
+                "value": ""
+              },
+              "public_file_upload_path4": {
+                "value": ""
+              },
+              "public_file_upload_path5": {
+                "value": ""
+              },
+              "public_file_upload_path6": {
+                "value": ""
+              },
+              "public_file_upload_path7": {
+                "value": ""
+              },
+              "public_file_upload_path8": {
+                "value": ""
+              },
+              "public_file_upload_path9": {
+                "value": ""
+              },
+              "public_file_upload_path10": {
+                "value": ""
+              },
+              "shipping.preventfromcosts": {
+                "value": ""
+              }
+            }
+          },
+          "sys_ranking": "10",
+          "availableStockFlag": true,
+          "IID": "10083",
+          "sys_master_number": "10083",
+          "usedRegex": false,
+          "subkeys": [
+            {
+              "key": "XL",
+              "label": "XL",
+              "index": 0,
+              "ref": "XL"
+            }
+          ],
+          "subkey_0": "XL",
+          "variant_key_part0": "XL",
           "info_decription": "",
           "info_number": "",
           "info_text": "null",
@@ -7017,45 +7260,95 @@
       },
       "type": "object",
       "properties": {
-        "40": {
-          "$ref": "#/definitions/40"
+        "S": {
+          "$ref": "#/definitions/S"
         },
-        "41": {
-          "$ref": "#/definitions/40"
+        "M": {
+          "$ref": "#/definitions/M"
+        },
+        "L": {
+          "$ref": "#/definitions/L"
+        },
+        "XL": {
+          "$ref": "#/definitions/XL"
         }
       },
       "required": [
-        "40",
-        "41"
+        "S",
+        "M",
+        "L",
+        "XL"
       ]
     },
-    "40": {
-      "title": "40",
+    "S": {
+      "title": "S",
       "example": {
-        "vid": "40",
-        "key": "40",
-        "label": "40",
-        "variantCount": "1",
-        "advisedVariantCount": "0",
-        "advisedVariantDate": "null",
-        "advisedFalg": "null",
-        "advisedFlag": "null",
+        "label": "S",
+        "ean": "9815675981834",
+        "key": "S",
+        "info": {
+          "decription": "",
+          "number": "",
+          "text": {
+            "de": "",
+            "en": "",
+            "fr": ""
+          },
+          "hide": false,
+          "properties": {
+            "public_file_upload_path": {
+              "value": ""
+            },
+            "public_file_upload_path1": {
+              "value": ""
+            },
+            "public_file_upload_path2": {
+              "value": ""
+            },
+            "public_file_upload_path3": {
+              "value": ""
+            },
+            "public_file_upload_path4": {
+              "value": ""
+            },
+            "public_file_upload_path5": {
+              "value": ""
+            },
+            "public_file_upload_path6": {
+              "value": ""
+            },
+            "public_file_upload_path7": {
+              "value": ""
+            },
+            "public_file_upload_path8": {
+              "value": ""
+            },
+            "public_file_upload_path9": {
+              "value": ""
+            },
+            "public_file_upload_path10": {
+              "value": ""
+            },
+            "shipping.preventfromcosts": {
+              "value": ""
+            }
+          }
+        },
+        "sys_ranking": "10",
         "availableStockFlag": true,
-        "ean": "1775996487689",
-        "IID": "10056",
-        "sys_master_number": "10056",
-        "sys_ranking": "49",
+        "IID": "10083",
+        "sys_master_number": "10083",
         "usedRegex": false,
         "subkeys": [
           {
-            "key": "40",
-            "label": "40",
+            "key": "S",
+            "label": "S",
             "index": 0,
-            "ref": 40
+            "ref": "S"
           }
         ],
-        "subkey_0": "40",
-        "variant_key_part0": "40",
+        "subkey_0": "S",
+        "variant_key_part0": "S",
         "info_decription": "",
         "info_number": "",
         "info_text": "null",
@@ -7075,41 +7368,27 @@
       },
       "type": "object",
       "properties": {
-        "vid": {
+        "label": {
           "description": "",
-          "example": "40",
+          "example": "S",
+          "type": "string"
+        },
+        "ean": {
+          "description": "",
+          "example": "9815675981834",
           "type": "string"
         },
         "key": {
           "description": "",
-          "example": "40",
+          "example": "S",
           "type": "string"
         },
-        "label": {
-          "description": "",
-          "example": "40",
-          "type": "string"
+        "info": {
+          "$ref": "#/definitions/Info"
         },
-        "variantCount": {
+        "sys_ranking": {
           "description": "",
-          "example": "1",
-          "type": "string"
-        },
-        "advisedVariantCount": {
-          "description": "",
-          "example": "0",
-          "type": "string"
-        },
-        "advisedVariantDate": {
-          "description": "",
-          "type": "string"
-        },
-        "advisedFalg": {
-          "description": "",
-          "type": "string"
-        },
-        "advisedFlag": {
-          "description": "",
+          "example": "10",
           "type": "string"
         },
         "availableStockFlag": {
@@ -7117,24 +7396,14 @@
           "example": true,
           "type": "boolean"
         },
-        "ean": {
-          "description": "",
-          "example": "1775996487689",
-          "type": "string"
-        },
         "IID": {
           "description": "",
-          "example": "10056",
+          "example": "10083",
           "type": "string"
         },
         "sys_master_number": {
           "description": "",
-          "example": "10056",
-          "type": "string"
-        },
-        "sys_ranking": {
-          "description": "",
-          "example": "49",
+          "example": "10083",
           "type": "string"
         },
         "usedRegex": {
@@ -7146,10 +7415,10 @@
           "description": "",
           "example": [
             {
-              "key": "40",
-              "label": "40",
+              "key": "S",
+              "label": "S",
               "index": 0,
-              "ref": 40
+              "ref": "S"
             }
           ],
           "type": "array",
@@ -7159,12 +7428,12 @@
         },
         "subkey_0": {
           "description": "",
-          "example": "40",
+          "example": "S",
           "type": "string"
         },
         "variant_key_part0": {
           "description": "",
-          "example": "40",
+          "example": "S",
           "type": "string"
         },
         "info_decription": {
@@ -7234,19 +7503,14 @@
         }
       },
       "required": [
-        "vid",
-        "key",
         "label",
-        "variantCount",
-        "advisedVariantCount",
-        "advisedVariantDate",
-        "advisedFalg",
-        "advisedFlag",
-        "availableStockFlag",
         "ean",
+        "key",
+        "info",
+        "sys_ranking",
+        "availableStockFlag",
         "IID",
         "sys_master_number",
-        "sys_ranking",
         "usedRegex",
         "subkeys",
         "subkey_0",
@@ -7269,24 +7533,258 @@
         "property_shipping.preventfromcosts"
       ]
     },
+    "Info": {
+      "title": "Info",
+      "example": {
+        "decription": "",
+        "number": "",
+        "text": {
+          "de": "",
+          "en": "",
+          "fr": ""
+        },
+        "hide": false,
+        "properties": {
+          "public_file_upload_path": {
+            "value": ""
+          },
+          "public_file_upload_path1": {
+            "value": ""
+          },
+          "public_file_upload_path2": {
+            "value": ""
+          },
+          "public_file_upload_path3": {
+            "value": ""
+          },
+          "public_file_upload_path4": {
+            "value": ""
+          },
+          "public_file_upload_path5": {
+            "value": ""
+          },
+          "public_file_upload_path6": {
+            "value": ""
+          },
+          "public_file_upload_path7": {
+            "value": ""
+          },
+          "public_file_upload_path8": {
+            "value": ""
+          },
+          "public_file_upload_path9": {
+            "value": ""
+          },
+          "public_file_upload_path10": {
+            "value": ""
+          },
+          "shipping.preventfromcosts": {
+            "value": ""
+          }
+        }
+      },
+      "type": "object",
+      "properties": {
+        "decription": {
+          "description": "",
+          "type": "string"
+        },
+        "number": {
+          "description": "",
+          "type": "string"
+        },
+        "text": {
+          "$ref": "#/definitions/Text"
+        },
+        "hide": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "properties": {
+          "$ref": "#/definitions/Properties"
+        }
+      },
+      "required": [
+        "decription",
+        "number",
+        "text",
+        "hide",
+        "properties"
+      ]
+    },
+    "Text": {
+      "title": "Text",
+      "example": {
+        "de": "",
+        "en": "",
+        "fr": ""
+      },
+      "type": "object",
+      "properties": {
+        "de": {
+          "description": "",
+          "type": "string"
+        },
+        "en": {
+          "description": "",
+          "type": "string"
+        },
+        "fr": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "de",
+        "en",
+        "fr"
+      ]
+    },
+    "Properties": {
+      "title": "Properties",
+      "example": {
+        "public_file_upload_path": {
+          "value": ""
+        },
+        "public_file_upload_path1": {
+          "value": ""
+        },
+        "public_file_upload_path2": {
+          "value": ""
+        },
+        "public_file_upload_path3": {
+          "value": ""
+        },
+        "public_file_upload_path4": {
+          "value": ""
+        },
+        "public_file_upload_path5": {
+          "value": ""
+        },
+        "public_file_upload_path6": {
+          "value": ""
+        },
+        "public_file_upload_path7": {
+          "value": ""
+        },
+        "public_file_upload_path8": {
+          "value": ""
+        },
+        "public_file_upload_path9": {
+          "value": ""
+        },
+        "public_file_upload_path10": {
+          "value": ""
+        },
+        "shipping.preventfromcosts": {
+          "value": ""
+        }
+      },
+      "type": "object",
+      "properties": {
+        "public_file_upload_path": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path1": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path2": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path3": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path4": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path5": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path6": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path7": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path8": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path9": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "public_file_upload_path10": {
+          "$ref": "#/definitions/PublicFileUploadPath"
+        },
+        "shipping.preventfromcosts": {
+          "$ref": "#/definitions/ShippingPreventfromcosts"
+        }
+      },
+      "required": [
+        "public_file_upload_path",
+        "public_file_upload_path1",
+        "public_file_upload_path2",
+        "public_file_upload_path3",
+        "public_file_upload_path4",
+        "public_file_upload_path5",
+        "public_file_upload_path6",
+        "public_file_upload_path7",
+        "public_file_upload_path8",
+        "public_file_upload_path9",
+        "public_file_upload_path10",
+        "shipping.preventfromcosts"
+      ]
+    },
+    "PublicFileUploadPath": {
+      "title": "PublicFileUploadPath",
+      "example": {
+        "value": ""
+      },
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "ShippingPreventfromcosts": {
+      "title": "ShippingPreventfromcosts",
+      "example": {
+        "value": ""
+      },
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
     "Subkey": {
       "title": "Subkey",
       "example": {
-        "key": "40",
-        "label": "40",
+        "key": "S",
+        "label": "S",
         "index": 0,
-        "ref": 40
+        "ref": "S"
       },
       "type": "object",
       "properties": {
         "key": {
           "description": "",
-          "example": "40",
+          "example": "S",
           "type": "string"
         },
         "label": {
           "description": "",
-          "example": "40",
+          "example": "S",
           "type": "string"
         },
         "index": {
@@ -7297,9 +7795,8 @@
         },
         "ref": {
           "description": "",
-          "example": 40,
-          "type": "integer",
-          "format": "int32"
+          "example": "S",
+          "type": "string"
         }
       },
       "required": [
@@ -7307,6 +7804,765 @@
         "label",
         "index",
         "ref"
+      ]
+    },
+    "M": {
+      "title": "M",
+      "example": {
+        "label": "M",
+        "ean": "7598198156834",
+        "key": "M",
+        "info": {
+          "decription": "",
+          "number": "",
+          "text": {
+            "de": "",
+            "en": "",
+            "fr": ""
+          },
+          "hide": false,
+          "properties": {
+            "public_file_upload_path": {
+              "value": ""
+            },
+            "public_file_upload_path1": {
+              "value": ""
+            },
+            "public_file_upload_path2": {
+              "value": ""
+            },
+            "public_file_upload_path3": {
+              "value": ""
+            },
+            "public_file_upload_path4": {
+              "value": ""
+            },
+            "public_file_upload_path5": {
+              "value": ""
+            },
+            "public_file_upload_path6": {
+              "value": ""
+            },
+            "public_file_upload_path7": {
+              "value": ""
+            },
+            "public_file_upload_path8": {
+              "value": ""
+            },
+            "public_file_upload_path9": {
+              "value": ""
+            },
+            "public_file_upload_path10": {
+              "value": ""
+            },
+            "shipping.preventfromcosts": {
+              "value": ""
+            }
+          }
+        },
+        "sys_ranking": "10",
+        "availableStockFlag": true,
+        "IID": "10083",
+        "sys_master_number": "10083",
+        "usedRegex": false,
+        "subkeys": [
+          {
+            "key": "M",
+            "label": "M",
+            "index": 0,
+            "ref": "M"
+          }
+        ],
+        "subkey_0": "M",
+        "variant_key_part0": "M",
+        "info_decription": "",
+        "info_number": "",
+        "info_text": "null",
+        "info_hide": false,
+        "property_public_file_upload_path": "",
+        "property_public_file_upload_path1": "",
+        "property_public_file_upload_path2": "",
+        "property_public_file_upload_path3": "",
+        "property_public_file_upload_path4": "",
+        "property_public_file_upload_path5": "",
+        "property_public_file_upload_path6": "",
+        "property_public_file_upload_path7": "",
+        "property_public_file_upload_path8": "",
+        "property_public_file_upload_path9": "",
+        "property_public_file_upload_path10": "",
+        "property_shipping.preventfromcosts": ""
+      },
+      "type": "object",
+      "properties": {
+        "label": {
+          "description": "",
+          "example": "M",
+          "type": "string"
+        },
+        "ean": {
+          "description": "",
+          "example": "7598198156834",
+          "type": "string"
+        },
+        "key": {
+          "description": "",
+          "example": "M",
+          "type": "string"
+        },
+        "info": {
+          "$ref": "#/definitions/Info"
+        },
+        "sys_ranking": {
+          "description": "",
+          "example": "10",
+          "type": "string"
+        },
+        "availableStockFlag": {
+          "description": "",
+          "example": true,
+          "type": "boolean"
+        },
+        "IID": {
+          "description": "",
+          "example": "10083",
+          "type": "string"
+        },
+        "sys_master_number": {
+          "description": "",
+          "example": "10083",
+          "type": "string"
+        },
+        "usedRegex": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "subkeys": {
+          "description": "",
+          "example": [
+            {
+              "key": "M",
+              "label": "M",
+              "index": 0,
+              "ref": "M"
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Subkey"
+          }
+        },
+        "subkey_0": {
+          "description": "",
+          "example": "M",
+          "type": "string"
+        },
+        "variant_key_part0": {
+          "description": "",
+          "example": "M",
+          "type": "string"
+        },
+        "info_decription": {
+          "description": "",
+          "type": "string"
+        },
+        "info_number": {
+          "description": "",
+          "type": "string"
+        },
+        "info_text": {
+          "description": "",
+          "type": "string"
+        },
+        "info_hide": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "property_public_file_upload_path": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path1": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path2": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path3": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path4": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path5": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path6": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path7": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path8": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path9": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path10": {
+          "description": "",
+          "type": "string"
+        },
+        "property_shipping.preventfromcosts": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "ean",
+        "key",
+        "info",
+        "sys_ranking",
+        "availableStockFlag",
+        "IID",
+        "sys_master_number",
+        "usedRegex",
+        "subkeys",
+        "subkey_0",
+        "variant_key_part0",
+        "info_decription",
+        "info_number",
+        "info_text",
+        "info_hide",
+        "property_public_file_upload_path",
+        "property_public_file_upload_path1",
+        "property_public_file_upload_path2",
+        "property_public_file_upload_path3",
+        "property_public_file_upload_path4",
+        "property_public_file_upload_path5",
+        "property_public_file_upload_path6",
+        "property_public_file_upload_path7",
+        "property_public_file_upload_path8",
+        "property_public_file_upload_path9",
+        "property_public_file_upload_path10",
+        "property_shipping.preventfromcosts"
+      ]
+    },
+    "L": {
+      "title": "L",
+      "example": {
+        "label": "L",
+        "ean": "9818185675934",
+        "key": "L",
+        "info": {
+          "decription": "",
+          "number": "",
+          "text": {
+            "de": "",
+            "en": "",
+            "fr": ""
+          },
+          "hide": false,
+          "properties": {
+            "public_file_upload_path": {
+              "value": ""
+            },
+            "public_file_upload_path1": {
+              "value": ""
+            },
+            "public_file_upload_path2": {
+              "value": ""
+            },
+            "public_file_upload_path3": {
+              "value": ""
+            },
+            "public_file_upload_path4": {
+              "value": ""
+            },
+            "public_file_upload_path5": {
+              "value": ""
+            },
+            "public_file_upload_path6": {
+              "value": ""
+            },
+            "public_file_upload_path7": {
+              "value": ""
+            },
+            "public_file_upload_path8": {
+              "value": ""
+            },
+            "public_file_upload_path9": {
+              "value": ""
+            },
+            "public_file_upload_path10": {
+              "value": ""
+            },
+            "shipping.preventfromcosts": {
+              "value": ""
+            }
+          }
+        },
+        "sys_ranking": "10",
+        "availableStockFlag": true,
+        "IID": "10083",
+        "sys_master_number": "10083",
+        "usedRegex": false,
+        "subkeys": [
+          {
+            "key": "L",
+            "label": "L",
+            "index": 0,
+            "ref": "L"
+          }
+        ],
+        "subkey_0": "L",
+        "variant_key_part0": "L",
+        "info_decription": "",
+        "info_number": "",
+        "info_text": "null",
+        "info_hide": false,
+        "property_public_file_upload_path": "",
+        "property_public_file_upload_path1": "",
+        "property_public_file_upload_path2": "",
+        "property_public_file_upload_path3": "",
+        "property_public_file_upload_path4": "",
+        "property_public_file_upload_path5": "",
+        "property_public_file_upload_path6": "",
+        "property_public_file_upload_path7": "",
+        "property_public_file_upload_path8": "",
+        "property_public_file_upload_path9": "",
+        "property_public_file_upload_path10": "",
+        "property_shipping.preventfromcosts": ""
+      },
+      "type": "object",
+      "properties": {
+        "label": {
+          "description": "",
+          "example": "L",
+          "type": "string"
+        },
+        "ean": {
+          "description": "",
+          "example": "9818185675934",
+          "type": "string"
+        },
+        "key": {
+          "description": "",
+          "example": "L",
+          "type": "string"
+        },
+        "info": {
+          "$ref": "#/definitions/Info"
+        },
+        "sys_ranking": {
+          "description": "",
+          "example": "10",
+          "type": "string"
+        },
+        "availableStockFlag": {
+          "description": "",
+          "example": true,
+          "type": "boolean"
+        },
+        "IID": {
+          "description": "",
+          "example": "10083",
+          "type": "string"
+        },
+        "sys_master_number": {
+          "description": "",
+          "example": "10083",
+          "type": "string"
+        },
+        "usedRegex": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "subkeys": {
+          "description": "",
+          "example": [
+            {
+              "key": "L",
+              "label": "L",
+              "index": 0,
+              "ref": "L"
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Subkey"
+          }
+        },
+        "subkey_0": {
+          "description": "",
+          "example": "L",
+          "type": "string"
+        },
+        "variant_key_part0": {
+          "description": "",
+          "example": "L",
+          "type": "string"
+        },
+        "info_decription": {
+          "description": "",
+          "type": "string"
+        },
+        "info_number": {
+          "description": "",
+          "type": "string"
+        },
+        "info_text": {
+          "description": "",
+          "type": "string"
+        },
+        "info_hide": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "property_public_file_upload_path": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path1": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path2": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path3": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path4": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path5": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path6": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path7": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path8": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path9": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path10": {
+          "description": "",
+          "type": "string"
+        },
+        "property_shipping.preventfromcosts": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "ean",
+        "key",
+        "info",
+        "sys_ranking",
+        "availableStockFlag",
+        "IID",
+        "sys_master_number",
+        "usedRegex",
+        "subkeys",
+        "subkey_0",
+        "variant_key_part0",
+        "info_decription",
+        "info_number",
+        "info_text",
+        "info_hide",
+        "property_public_file_upload_path",
+        "property_public_file_upload_path1",
+        "property_public_file_upload_path2",
+        "property_public_file_upload_path3",
+        "property_public_file_upload_path4",
+        "property_public_file_upload_path5",
+        "property_public_file_upload_path6",
+        "property_public_file_upload_path7",
+        "property_public_file_upload_path8",
+        "property_public_file_upload_path9",
+        "property_public_file_upload_path10",
+        "property_shipping.preventfromcosts"
+      ]
+    },
+    "XL": {
+      "title": "XL",
+      "example": {
+        "label": "XL",
+        "ean": "9156759881834",
+        "key": "XL",
+        "info": {
+          "decription": "",
+          "number": "",
+          "text": {
+            "de": "",
+            "en": "",
+            "fr": ""
+          },
+          "hide": false,
+          "properties": {
+            "public_file_upload_path": {
+              "value": ""
+            },
+            "public_file_upload_path1": {
+              "value": ""
+            },
+            "public_file_upload_path2": {
+              "value": ""
+            },
+            "public_file_upload_path3": {
+              "value": ""
+            },
+            "public_file_upload_path4": {
+              "value": ""
+            },
+            "public_file_upload_path5": {
+              "value": ""
+            },
+            "public_file_upload_path6": {
+              "value": ""
+            },
+            "public_file_upload_path7": {
+              "value": ""
+            },
+            "public_file_upload_path8": {
+              "value": ""
+            },
+            "public_file_upload_path9": {
+              "value": ""
+            },
+            "public_file_upload_path10": {
+              "value": ""
+            },
+            "shipping.preventfromcosts": {
+              "value": ""
+            }
+          }
+        },
+        "sys_ranking": "10",
+        "availableStockFlag": true,
+        "IID": "10083",
+        "sys_master_number": "10083",
+        "usedRegex": false,
+        "subkeys": [
+          {
+            "key": "XL",
+            "label": "XL",
+            "index": 0,
+            "ref": "XL"
+          }
+        ],
+        "subkey_0": "XL",
+        "variant_key_part0": "XL",
+        "info_decription": "",
+        "info_number": "",
+        "info_text": "null",
+        "info_hide": false,
+        "property_public_file_upload_path": "",
+        "property_public_file_upload_path1": "",
+        "property_public_file_upload_path2": "",
+        "property_public_file_upload_path3": "",
+        "property_public_file_upload_path4": "",
+        "property_public_file_upload_path5": "",
+        "property_public_file_upload_path6": "",
+        "property_public_file_upload_path7": "",
+        "property_public_file_upload_path8": "",
+        "property_public_file_upload_path9": "",
+        "property_public_file_upload_path10": "",
+        "property_shipping.preventfromcosts": ""
+      },
+      "type": "object",
+      "properties": {
+        "label": {
+          "description": "",
+          "example": "XL",
+          "type": "string"
+        },
+        "ean": {
+          "description": "",
+          "example": "9156759881834",
+          "type": "string"
+        },
+        "key": {
+          "description": "",
+          "example": "XL",
+          "type": "string"
+        },
+        "info": {
+          "$ref": "#/definitions/Info"
+        },
+        "sys_ranking": {
+          "description": "",
+          "example": "10",
+          "type": "string"
+        },
+        "availableStockFlag": {
+          "description": "",
+          "example": true,
+          "type": "boolean"
+        },
+        "IID": {
+          "description": "",
+          "example": "10083",
+          "type": "string"
+        },
+        "sys_master_number": {
+          "description": "",
+          "example": "10083",
+          "type": "string"
+        },
+        "usedRegex": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "subkeys": {
+          "description": "",
+          "example": [
+            {
+              "key": "XL",
+              "label": "XL",
+              "index": 0,
+              "ref": "XL"
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Subkey"
+          }
+        },
+        "subkey_0": {
+          "description": "",
+          "example": "XL",
+          "type": "string"
+        },
+        "variant_key_part0": {
+          "description": "",
+          "example": "XL",
+          "type": "string"
+        },
+        "info_decription": {
+          "description": "",
+          "type": "string"
+        },
+        "info_number": {
+          "description": "",
+          "type": "string"
+        },
+        "info_text": {
+          "description": "",
+          "type": "string"
+        },
+        "info_hide": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "property_public_file_upload_path": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path1": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path2": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path3": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path4": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path5": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path6": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path7": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path8": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path9": {
+          "description": "",
+          "type": "string"
+        },
+        "property_public_file_upload_path10": {
+          "description": "",
+          "type": "string"
+        },
+        "property_shipping.preventfromcosts": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "ean",
+        "key",
+        "info",
+        "sys_ranking",
+        "availableStockFlag",
+        "IID",
+        "sys_master_number",
+        "usedRegex",
+        "subkeys",
+        "subkey_0",
+        "variant_key_part0",
+        "info_decription",
+        "info_number",
+        "info_text",
+        "info_hide",
+        "property_public_file_upload_path",
+        "property_public_file_upload_path1",
+        "property_public_file_upload_path2",
+        "property_public_file_upload_path3",
+        "property_public_file_upload_path4",
+        "property_public_file_upload_path5",
+        "property_public_file_upload_path6",
+        "property_public_file_upload_path7",
+        "property_public_file_upload_path8",
+        "property_public_file_upload_path9",
+        "property_public_file_upload_path10",
+        "property_shipping.preventfromcosts"
       ]
     },
     "PackingUnit": {
@@ -7412,10 +8668,10 @@
       "example": {
         "locale": "null",
         "locale_plain": "",
-        "htmlcode": "#3C382F",
-        "htmlcode2": "#3C382F",
-        "label": "dunkelbraun",
-        "ITEM_IID": "10056"
+        "htmlcode": "",
+        "htmlcode2": "",
+        "label": "multicolor",
+        "ITEM_IID": "10083"
       },
       "type": "object",
       "properties": {
@@ -7429,22 +8685,20 @@
         },
         "htmlcode": {
           "description": "",
-          "example": "#3C382F",
           "type": "string"
         },
         "htmlcode2": {
           "description": "",
-          "example": "#3C382F",
           "type": "string"
         },
         "label": {
           "description": "",
-          "example": "dunkelbraun",
+          "example": "multicolor",
           "type": "string"
         },
         "ITEM_IID": {
           "description": "",
-          "example": "10056",
+          "example": "10083",
           "type": "string"
         }
       },
@@ -7460,13 +8714,13 @@
     "ColorInfo2": {
       "title": "ColorInfo2",
       "example": {
-        "ITEM_IID": "10056"
+        "ITEM_IID": "10083"
       },
       "type": "object",
       "properties": {
         "ITEM_IID": {
           "description": "",
-          "example": "10056",
+          "example": "10083",
           "type": "string"
         }
       },
@@ -7474,17 +8728,1499 @@
         "ITEM_IID"
       ]
     },
-    "Sys70": {
-      "title": "Sys70",
+    "079da8fc2c8f43afe9dd4f1028eb4df6": {
+      "title": "079da8fc2c8f43afE9dd4f1028eb4df6",
+      "type": "object",
+      "properties": {
+        "IID": {
+          "description": "",
+          "example": "10026",
+          "type": "string"
+        },
+        "sys_master_name": {
+          "description": "",
+          "example": "T-Shirt - Baumwolle",
+          "type": "string"
+        },
+        "sys_master_name_locale": {
+          "description": "",
+          "example": "a:0:{}",
+          "type": "string"
+        },
+        "sys_master_number": {
+          "description": "",
+          "example": "10026",
+          "type": "string"
+        },
+        "sys_master_ean": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_master_notice": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_master_description": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sales_start": {
+          "description": "",
+          "example": "1970-01-01 00:59:59",
+          "type": "string"
+        },
+        "sys_sales_end": {
+          "description": "",
+          "example": "1970-01-01 00:59:59",
+          "type": "string"
+        },
+        "sys_sales_position": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sales_type": {
+          "description": "",
+          "example": "10",
+          "type": "string"
+        },
+        "sys_sales_country": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sales_country_mode": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sales_announcement_order_flag": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sales_announcement_order_group_GID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sales_announcement_order_to": {
+          "description": "",
+          "example": "1970-01-01 00:59:59",
+          "type": "string"
+        },
+        "sys_sales_announcement_order_from": {
+          "description": "",
+          "example": "1970-01-01 00:59:59",
+          "type": "string"
+        },
+        "sales_announcement_order_to_timestamp": {
+          "description": "",
+          "example": "3599",
+          "type": "string"
+        },
+        "sales_announcement_order_from_timestamp": {
+          "description": "",
+          "example": "3599",
+          "type": "string"
+        },
+        "sys_sales_announcement_order_timegroupflag": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sales_announcement_price_flag": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sales_affiliates_restriction": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sales_companies_restriction": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sales_group": {
+          "description": "",
+          "example": "1",
+          "type": "string"
+        },
+        "sys_sales_quantity_restriction": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sales_quantity_restrict_amount_per_order": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_erpID": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_variants": {
+          "description": "",
+          "example": "S:4484442168293,M:7513579973319,L:2847345954965,XL:5722384845341",
+          "type": "string"
+        },
+        "sys_variants_info": {
+          "description": "",
+          "example": "a:4:{i:0;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}i:1;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}i:2;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}i:3;a:5:{s:10:\"decription\";s:0:\"\";s:6:\"number\";s:0:\"\";s:4:\"text\";a:3:{s:2:\"de\";s:0:\"\";s:2:\"en\";s:0:\"\";s:2:\"fr\";s:0:\"\";}s:4:\"hide\";b:0;s:10:\"properties\";a:12:{s:23:\"public_file_upload_path\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path1\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path2\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path3\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path4\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path5\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path6\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path7\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path8\";a:1:{s:5:\"value\";s:0:\"\";}s:24:\"public_file_upload_path9\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"public_file_upload_path10\";a:1:{s:5:\"value\";s:0:\"\";}s:25:\"shipping.preventfromcosts\";a:1:{s:5:\"value\";s:0:\"\";}}}}",
+          "type": "string"
+        },
+        "sys_packingunit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_cataloging_keywords": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_cataloging_department_DID": {
+          "description": "",
+          "example": "2",
+          "type": "string"
+        },
+        "sys_cataloging_department_DID1": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_brand_BID": {
+          "description": "",
+          "example": "9",
+          "type": "string"
+        },
+        "sys_cataloging_brand_BID2": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_gender": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_cataloging_imagesource": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_cataloging_category_CID1": {
+          "description": "",
+          "example": "5",
+          "type": "string"
+        },
+        "sys_cataloging_category_CID2": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_category_CID3": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_category_CID4": {
+          "description": "",
+          "type": "string"
+        },
+        "CID_LIST": {
+          "description": "",
+          "example": "5",
+          "type": "string"
+        },
+        "sys_cataloging_collection_CLID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_collection_CLID2": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_assignment1_AAID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_assignment2_ABID": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_cataloging_assignment3_ACID": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_cataloging_style_SID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_style_SID2": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_raster_RID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_raster_RID2": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_cataloging_season_SAID": {
+          "description": "",
+          "example": "4",
+          "type": "string"
+        },
+        "sys_cataloging_audience_AUID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_cataloging_audience_AUID2": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_COID": {
+          "description": "",
+          "example": "16",
+          "type": "string"
+        },
+        "sys_specification_COID2": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_specification_COID3": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_specification_COID4": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_width": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_specification_width_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_width_view_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_height": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_specification_height_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_height_view_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_depth": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_specification_depth_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_depth_view_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_weight": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_specification_weight_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_weight_view_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_weight_net": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_specification_weight_net_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_weight_net_view_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_volume": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_specification_volume_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_volume_view_unit": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_material": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_specification_material_MAID": {
+          "description": "",
+          "example": "12",
+          "type": "string"
+        },
+        "sys_specification_baseprice_reference": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor1_name": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor1_UID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sourcing_distributor1_deliverytime": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor1_number": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor2_name": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor2_UID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sourcing_distributor2_deliverytime": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor2_number": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor3_name": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor3_UID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sourcing_distributor3_deliverytime": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor3_number": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor1_deliverytimeunit": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sourcing_distributor2_deliverytimeunit": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sourcing_distributor3_deliverytimeunit": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sourcing_stock_flag": {
+          "description": "",
+          "example": "18",
+          "type": "string"
+        },
+        "sys_sourcing_preorder_hideorderform": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sourcing_stock_min_count": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_sourcing_stock_estimated_balance": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_manufacturer_UID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_manufacturer_item_url": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_manufacturer_color": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_order_preorder": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_finances_vat": {
+          "description": "",
+          "example": "a:3:{s:2:\"de\";i:0;s:2:\"gb\";i:0;s:2:\"fr\";i:0;}",
+          "type": "string"
+        },
+        "sys_finances_bought": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_finances_discountable": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_finances_revenue_inland": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_finances_revenue_abroad": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_finances_revenue_eu": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_finances_revenue_eu_ID": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_finances_cost_inland": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_finances_cost_abroad": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_finances_cost_eu": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_finances_cost_eu_ID": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_marketing_alsobought": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_marketing_commendation": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_marketing_extra_url1": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_marketing_extra_url2": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_marketing_extra_page": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_marketing_advertisement_html": {
+          "description": "",
+          "example": "<head><style type=text/css> \t<!-- \t\t#innerRTEBodysys_marketing_advertisement_html td.rteTableTd { \t\t\tborder:4px dotted #dcdcdc; \t\t\tpadding:4px; \t\t}; \t\t//--> \t</style> \t \t</head><body id=innerRTEBodysys_marketing_advertisement_html style=margin:0px;>    <!",
+          "type": "string"
+        },
+        "sys_marketing_advertisement_imagemap": {
+          "description": "",
+          "example": "a:1:{s:17:\"renderHTMLButtons\";s:0:\"\";}",
+          "type": "string"
+        },
+        "sys_marketing_advertisement_width": {
+          "description": "",
+          "example": "1",
+          "type": "string"
+        },
+        "sys_marketing_advertisement_height": {
+          "description": "",
+          "example": "1",
+          "type": "string"
+        },
+        "sys_marketing_flag": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_publishing_state": {
+          "description": "",
+          "example": "3",
+          "type": "string"
+        },
+        "sys_publishing_count": {
+          "description": "",
+          "example": "2",
+          "type": "string"
+        },
+        "sys_shipping_packaging": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_shipping_preventfromcosts": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_flag": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_OUID": {
+          "description": "",
+          "example": "1",
+          "type": "string"
+        },
+        "sys_WUID": {
+          "description": "",
+          "example": "1",
+          "type": "string"
+        },
+        "sys_lastaccess": {
+          "description": "",
+          "example": "2016-12-13 11:25:39",
+          "type": "string"
+        },
+        "sys_creation": {
+          "description": "",
+          "example": "2013-12-20 10:02:54",
+          "type": "string"
+        },
+        "sys_archived": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_target_detailpage": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_company_SHID": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_erpName": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_erpNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_erpCreation": {
+          "description": "",
+          "example": "0000-00-00 00:00:00",
+          "type": "string"
+        },
+        "sys_erpLastUpdate": {
+          "description": "",
+          "example": "0000-00-00 00:00:00",
+          "type": "string"
+        },
+        "sys_manufacturer_origincountry": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_finances_customstariffnumber": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_sourcing_distributor1_erpnumber": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_manufacturer_name": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_master_following_IID": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_master_rootitem_IID": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_master_rootitem_combine": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_master_productfamily2": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_master_productfamily": {
+          "description": "",
+          "example": "1001,10025,10026,10027,10028,10083",
+          "type": "string"
+        },
+        "sys_master_productfamily_combine": {
+          "description": "",
+          "example": "1",
+          "type": "string"
+        },
+        "sys_shipping_hideondocument": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sys_erp_alvinepeering": {
+          "description": "",
+          "type": "string"
+        },
+        "GROUPINGID": {
+          "description": "",
+          "example": "1001,10025,10026,10027,10028,10083",
+          "type": "string"
+        },
+        "PID": {
+          "description": "",
+          "example": "24",
+          "type": "string"
+        },
+        "publishingDescription": {
+          "description": "",
+          "example": "T-Shirt",
+          "type": "string"
+        },
+        "publishingStart": {
+          "description": "",
+          "example": "2013-12-20 12:32:03",
+          "type": "string"
+        },
+        "unixtime_publishingStart": {
+          "description": "",
+          "example": "1387542723",
+          "type": "string"
+        },
+        "DestinationDID": {
+          "description": "",
+          "example": "1",
+          "type": "string"
+        },
+        "position_ranking": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "position_start": {
+          "description": "",
+          "example": "2016-08-01 12:13:51",
+          "type": "string"
+        },
+        "new": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "variantMax": {
+          "description": "",
+          "example": "75",
+          "type": "string"
+        },
+        "variantCount": {
+          "description": "",
+          "example": "318",
+          "type": "string"
+        },
+        "adviseddate_timestamp": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "preorderdeliverydays": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "advisedCount": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "sales_announcement_order_hide_orderform": {
+          "description": "",
+          "type": "string"
+        },
+        "sales_announcement_price_hide_price": {
+          "description": "",
+          "type": "string"
+        },
+        "sales_announcement_order_show_orderform": {
+          "description": "",
+          "example": true,
+          "type": "boolean"
+        },
+        "sales_announcement_price_show_price": {
+          "description": "",
+          "example": true,
+          "type": "boolean"
+        },
+        "localeText": {
+          "description": "",
+          "type": "string"
+        },
+        "DestinationDID_1": {
+          "description": "",
+          "example": true,
+          "type": "boolean"
+        },
+        "DestinationDID_8": {
+          "description": "",
+          "example": true,
+          "type": "boolean"
+        },
+        "sys_marketing_advertisement_dimension": {
+          "description": "",
+          "example": "w1h1",
+          "type": "string"
+        },
+        "marketing_commendation": {
+          "description": "",
+          "example": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "marketing_alsobought": {
+          "description": "",
+          "example": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "specification_volume": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "categoryParent": {
+          "description": "",
+          "example": "Mode",
+          "type": "string"
+        },
+        "category1": {
+          "$ref": "#/definitions/Category1"
+        },
+        "category2": {
+          "description": "",
+          "type": "string"
+        },
+        "category3": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName1": {
+          "description": "",
+          "example": "Oberbekleidung",
+          "type": "string"
+        },
+        "categoryLabel1": {
+          "description": "",
+          "example": "Oberbekleidung",
+          "type": "string"
+        },
+        "categoryLabel2": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryLabel3": {
+          "description": "",
+          "type": "string"
+        },
+        "audienceLabel1": {
+          "description": "",
+          "type": "string"
+        },
+        "collectionLabel": {
+          "description": "",
+          "type": "string"
+        },
+        "departmentName": {
+          "description": "",
+          "example": "Damen",
+          "type": "string"
+        },
+        "departmentLabel": {
+          "description": "",
+          "example": "Damen",
+          "type": "string"
+        },
+        "departmentLabel1": {
+          "description": "",
+          "type": "string"
+        },
+        "seasonLabel": {
+          "description": "",
+          "example": "Winter",
+          "type": "string"
+        },
+        "styleLabel1": {
+          "description": "",
+          "type": "string"
+        },
+        "styleLabel2": {
+          "description": "",
+          "type": "string"
+        },
+        "sys_cataloging_category_list": {
+          "description": "",
+          "example": [
+            "5"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "category": {
+          "description": "",
+          "example": "Oberbekleidung",
+          "type": "string"
+        },
+        "category_info": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GeneratedObject"
+          }
+        },
+        "sys_cataloging_brand_list": {
+          "description": "",
+          "example": [
+            ""
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "brand": {
+          "description": "",
+          "example": "Mode-Marke 2",
+          "type": "string"
+        },
+        "brand_info": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GeneratedObject51"
+          }
+        },
+        "brandLabel1": {
+          "description": "",
+          "example": "Mode-Marke 2",
+          "type": "string"
+        },
+        "description": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "example": "T-Shirt - Baumwolle",
+          "type": "string"
+        },
+        "notTakeIntoAccountStock": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "inventoryMaintenance": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "preOrderItem": {
+          "description": "",
+          "example": false,
+          "type": "boolean"
+        },
+        "nosItem": {
+          "description": "",
+          "example": true,
+          "type": "boolean"
+        },
+        "__initVariantMap": {
+          "description": "",
+          "example": true,
+          "type": "boolean"
+        },
+        "sys_variants_count": {
+          "description": "",
+          "example": 4,
+          "type": "integer",
+          "format": "int32"
+        },
+        "variants": {
+          "$ref": "#/definitions/Variants"
+        },
+        "packingUnits": {
+          "description": "",
+          "example": [
+            {
+              "articleNumber": "__PCE__",
+              "ean": "null",
+              "useable": true,
+              "breakable": false,
+              "details": "null",
+              "definition": "__PCE__()"
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PackingUnit"
+          }
+        },
+        "material": {
+          "description": "",
+          "example": "Baumwolle",
+          "type": "string"
+        },
+        "deliverytime_info": {
+          "description": "",
+          "example": [
+            {
+              "text": "#LOCALE_DELIVERYTIME_INFOTEXT#",
+              "stocktype": "inventoryMaintenance",
+              "min": 0,
+              "max": 0,
+              "deliverytime": 0
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeliverytimeInfo"
+          }
+        },
+        "deliveryUnit": {
+          "description": "",
+          "example": 1,
+          "type": "integer",
+          "format": "int32"
+        },
+        "quantityRestriction_quantityScale": {
+          "description": "",
+          "example": 1,
+          "type": "integer",
+          "format": "int32"
+        },
+        "quantityRestriction_minCount": {
+          "description": "",
+          "example": 1,
+          "type": "integer",
+          "format": "int32"
+        },
+        "quantityRestriction_maxCount": {
+          "description": "",
+          "type": "string"
+        },
+        "quantityRestriction_quantityList": {
+          "description": "",
+          "example": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "quantityRestriction_quantityHandler": {
+          "description": "",
+          "example": "input",
+          "type": "string"
+        },
+        "sys_specification_width_view": {
+          "description": "",
+          "example": "0 ",
+          "type": "string"
+        },
+        "sys_specification_height_view": {
+          "description": "",
+          "example": "0 ",
+          "type": "string"
+        },
+        "sys_specification_depth_view": {
+          "description": "",
+          "example": "0 ",
+          "type": "string"
+        },
+        "sys_specification_weight_view": {
+          "description": "",
+          "example": "0 ",
+          "type": "string"
+        },
+        "sys_specification_weight_net_view": {
+          "description": "",
+          "example": "0 ",
+          "type": "string"
+        },
+        "sys_specification_volume_view": {
+          "description": "",
+          "example": "0 ",
+          "type": "string"
+        },
+        "color_info": {
+          "description": "",
+          "example": [
+            {
+              "locale": "null",
+              "locale_plain": "",
+              "htmlcode": "#cbb0f0",
+              "htmlcode2": "#cbb0f0",
+              "label": "flieder",
+              "ITEM_IID": "10026"
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColorInfo"
+          }
+        },
+        "color_plain": {
+          "description": "",
+          "type": "string"
+        },
+        "color_html": {
+          "description": "",
+          "type": "string"
+        },
+        "color_htmlcode": {
+          "description": "",
+          "example": "#cbb0f0",
+          "type": "string"
+        },
+        "color_label_plain": {
+          "description": "",
+          "example": "flieder",
+          "type": "string"
+        },
+        "color_image_url": {
+          "description": "",
+          "type": "string"
+        },
+        "color_image_path": {
+          "description": "",
+          "type": "string"
+        },
+        "color_image_name": {
+          "description": "",
+          "type": "string"
+        },
+        "color_picture_path": {
+          "description": "",
+          "type": "string"
+        },
+        "color_picture_url": {
+          "description": "",
+          "type": "string"
+        },
+        "color_info2": {
+          "description": "",
+          "example": [
+            {
+              "ITEM_IID": "10026"
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColorInfo2"
+          }
+        },
+        "color_plain2": {
+          "description": "",
+          "type": "string"
+        },
+        "color_html2": {
+          "description": "",
+          "type": "string"
+        },
+        "color_htmlcode2": {
+          "description": "",
+          "type": "string"
+        },
+        "color_label_plain2": {
+          "description": "",
+          "type": "string"
+        },
+        "color_image_url2": {
+          "description": "",
+          "type": "string"
+        },
+        "color_image_path2": {
+          "description": "",
+          "type": "string"
+        },
+        "color_image_name2": {
+          "description": "",
+          "type": "string"
+        },
+        "color_info3": {
+          "description": "",
+          "example": [
+            {
+              "ITEM_IID": "10026"
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColorInfo2"
+          }
+        },
+        "color_plain3": {
+          "description": "",
+          "type": "string"
+        },
+        "color_html3": {
+          "description": "",
+          "type": "string"
+        },
+        "color_htmlcode3": {
+          "description": "",
+          "type": "string"
+        },
+        "color_label_plain3": {
+          "description": "",
+          "type": "string"
+        },
+        "color_image_url3": {
+          "description": "",
+          "type": "string"
+        },
+        "color_image_path3": {
+          "description": "",
+          "type": "string"
+        },
+        "color_image_name3": {
+          "description": "",
+          "type": "string"
+        },
+        "variantRaster": {
+          "description": "",
+          "example": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "IID",
+        "sys_master_name",
+        "sys_master_name_locale",
+        "sys_master_number",
+        "sys_master_ean",
+        "sys_master_notice",
+        "sys_master_description",
+        "sys_sales_start",
+        "sys_sales_end",
+        "sys_sales_position",
+        "sys_sales_type",
+        "sys_sales_country",
+        "sys_sales_country_mode",
+        "sys_sales_announcement_order_flag",
+        "sys_sales_announcement_order_group_GID",
+        "sys_sales_announcement_order_to",
+        "sys_sales_announcement_order_from",
+        "sales_announcement_order_to_timestamp",
+        "sales_announcement_order_from_timestamp",
+        "sys_sales_announcement_order_timegroupflag",
+        "sys_sales_announcement_price_flag",
+        "sys_sales_affiliates_restriction",
+        "sys_sales_companies_restriction",
+        "sys_sales_group",
+        "sys_sales_quantity_restriction",
+        "sys_sales_quantity_restrict_amount_per_order",
+        "sys_erpID",
+        "sys_variants",
+        "sys_variants_info",
+        "sys_packingunit",
+        "sys_cataloging_keywords",
+        "sys_cataloging_department_DID",
+        "sys_cataloging_department_DID1",
+        "sys_cataloging_brand_BID",
+        "sys_cataloging_brand_BID2",
+        "sys_cataloging_gender",
+        "sys_cataloging_imagesource",
+        "sys_cataloging_category_CID1",
+        "sys_cataloging_category_CID2",
+        "sys_cataloging_category_CID3",
+        "sys_cataloging_category_CID4",
+        "CID_LIST",
+        "sys_cataloging_collection_CLID",
+        "sys_cataloging_collection_CLID2",
+        "sys_cataloging_assignment1_AAID",
+        "sys_cataloging_assignment2_ABID",
+        "sys_cataloging_assignment3_ACID",
+        "sys_cataloging_style_SID",
+        "sys_cataloging_style_SID2",
+        "sys_cataloging_raster_RID",
+        "sys_cataloging_raster_RID2",
+        "sys_cataloging_season_SAID",
+        "sys_cataloging_audience_AUID",
+        "sys_cataloging_audience_AUID2",
+        "sys_specification_COID",
+        "sys_specification_COID2",
+        "sys_specification_COID3",
+        "sys_specification_COID4",
+        "sys_specification_width",
+        "sys_specification_width_unit",
+        "sys_specification_width_view_unit",
+        "sys_specification_height",
+        "sys_specification_height_unit",
+        "sys_specification_height_view_unit",
+        "sys_specification_depth",
+        "sys_specification_depth_unit",
+        "sys_specification_depth_view_unit",
+        "sys_specification_weight",
+        "sys_specification_weight_unit",
+        "sys_specification_weight_view_unit",
+        "sys_specification_weight_net",
+        "sys_specification_weight_net_unit",
+        "sys_specification_weight_net_view_unit",
+        "sys_specification_volume",
+        "sys_specification_volume_unit",
+        "sys_specification_volume_view_unit",
+        "sys_specification_material",
+        "sys_specification_material_MAID",
+        "sys_specification_baseprice_reference",
+        "sys_sourcing_distributor1_name",
+        "sys_sourcing_distributor1_UID",
+        "sys_sourcing_distributor1_deliverytime",
+        "sys_sourcing_distributor1_number",
+        "sys_sourcing_distributor2_name",
+        "sys_sourcing_distributor2_UID",
+        "sys_sourcing_distributor2_deliverytime",
+        "sys_sourcing_distributor2_number",
+        "sys_sourcing_distributor3_name",
+        "sys_sourcing_distributor3_UID",
+        "sys_sourcing_distributor3_deliverytime",
+        "sys_sourcing_distributor3_number",
+        "sys_sourcing_distributor1_deliverytimeunit",
+        "sys_sourcing_distributor2_deliverytimeunit",
+        "sys_sourcing_distributor3_deliverytimeunit",
+        "sys_sourcing_stock_flag",
+        "sys_sourcing_preorder_hideorderform",
+        "sys_sourcing_stock_min_count",
+        "sys_sourcing_stock_estimated_balance",
+        "sys_manufacturer_UID",
+        "sys_manufacturer_item_url",
+        "sys_manufacturer_color",
+        "sys_order_preorder",
+        "sys_finances_vat",
+        "sys_finances_bought",
+        "sys_finances_discountable",
+        "sys_finances_revenue_inland",
+        "sys_finances_revenue_abroad",
+        "sys_finances_revenue_eu",
+        "sys_finances_revenue_eu_ID",
+        "sys_finances_cost_inland",
+        "sys_finances_cost_abroad",
+        "sys_finances_cost_eu",
+        "sys_finances_cost_eu_ID",
+        "sys_marketing_alsobought",
+        "sys_marketing_commendation",
+        "sys_marketing_extra_url1",
+        "sys_marketing_extra_url2",
+        "sys_marketing_extra_page",
+        "sys_marketing_advertisement_html",
+        "sys_marketing_advertisement_imagemap",
+        "sys_marketing_advertisement_width",
+        "sys_marketing_advertisement_height",
+        "sys_marketing_flag",
+        "sys_publishing_state",
+        "sys_publishing_count",
+        "sys_shipping_packaging",
+        "sys_shipping_preventfromcosts",
+        "sys_flag",
+        "sys_OUID",
+        "sys_WUID",
+        "sys_lastaccess",
+        "sys_creation",
+        "sys_archived",
+        "sys_target_detailpage",
+        "sys_company_SHID",
+        "sys_erpName",
+        "sys_erpNumber",
+        "sys_erpCreation",
+        "sys_erpLastUpdate",
+        "sys_manufacturer_origincountry",
+        "sys_finances_customstariffnumber",
+        "sys_sourcing_distributor1_erpnumber",
+        "sys_manufacturer_name",
+        "sys_master_following_IID",
+        "sys_master_rootitem_IID",
+        "sys_master_rootitem_combine",
+        "sys_master_productfamily2",
+        "sys_master_productfamily",
+        "sys_master_productfamily_combine",
+        "sys_shipping_hideondocument",
+        "sys_erp_alvinepeering",
+        "GROUPINGID",
+        "PID",
+        "publishingDescription",
+        "publishingStart",
+        "unixtime_publishingStart",
+        "DestinationDID",
+        "position_ranking",
+        "position_start",
+        "new",
+        "variantMax",
+        "variantCount",
+        "adviseddate_timestamp",
+        "preorderdeliverydays",
+        "advisedCount",
+        "sales_announcement_order_hide_orderform",
+        "sales_announcement_price_hide_price",
+        "sales_announcement_order_show_orderform",
+        "sales_announcement_price_show_price",
+        "localeText",
+        "DestinationDID_1",
+        "DestinationDID_8",
+        "sys_marketing_advertisement_dimension",
+        "marketing_commendation",
+        "marketing_alsobought",
+        "specification_volume",
+        "categoryParent",
+        "category1",
+        "category2",
+        "category3",
+        "categoryName1",
+        "categoryLabel1",
+        "categoryLabel2",
+        "categoryLabel3",
+        "audienceLabel1",
+        "collectionLabel",
+        "departmentName",
+        "departmentLabel",
+        "departmentLabel1",
+        "seasonLabel",
+        "styleLabel1",
+        "styleLabel2",
+        "sys_cataloging_category_list",
+        "category",
+        "category_info",
+        "sys_cataloging_brand_list",
+        "brand",
+        "brand_info",
+        "brandLabel1",
+        "description",
+        "name",
+        "notTakeIntoAccountStock",
+        "inventoryMaintenance",
+        "preOrderItem",
+        "nosItem",
+        "__initVariantMap",
+        "sys_variants_count",
+        "variants",
+        "packingUnits",
+        "material",
+        "deliverytime_info",
+        "deliveryUnit",
+        "quantityRestriction_quantityScale",
+        "quantityRestriction_minCount",
+        "quantityRestriction_maxCount",
+        "quantityRestriction_quantityList",
+        "quantityRestriction_quantityHandler",
+        "sys_specification_width_view",
+        "sys_specification_height_view",
+        "sys_specification_depth_view",
+        "sys_specification_weight_view",
+        "sys_specification_weight_net_view",
+        "sys_specification_volume_view",
+        "color_info",
+        "color_plain",
+        "color_html",
+        "color_htmlcode",
+        "color_label_plain",
+        "color_image_url",
+        "color_image_path",
+        "color_image_name",
+        "color_picture_path",
+        "color_picture_url",
+        "color_info2",
+        "color_plain2",
+        "color_html2",
+        "color_htmlcode2",
+        "color_label_plain2",
+        "color_image_url2",
+        "color_image_path2",
+        "color_image_name2",
+        "color_info3",
+        "color_plain3",
+        "color_html3",
+        "color_htmlcode3",
+        "color_label_plain3",
+        "color_image_url3",
+        "color_image_path3",
+        "color_image_name3",
+        "variantRaster"
+      ]
+    },
+    "Sys203": {
+      "title": "Sys203",
       "example": {
         "pagination": {
-          "total": 1,
+          "total": 7,
           "currentPage": 1,
           "objectsPerPage": 2,
           "offset": 0,
           "nextOffset": 2,
           "prevOffset": 0,
-          "pages": 1
+          "pages": 4
         }
       },
       "type": "object",
@@ -7500,19 +10236,19 @@
     "Pagination": {
       "title": "Pagination",
       "example": {
-        "total": 1,
+        "total": 7,
         "currentPage": 1,
         "objectsPerPage": 2,
         "offset": 0,
         "nextOffset": 2,
         "prevOffset": 0,
-        "pages": 1
+        "pages": 4
       },
       "type": "object",
       "properties": {
         "total": {
           "description": "",
-          "example": 1,
+          "example": 7,
           "type": "integer",
           "format": "int32"
         },
@@ -7548,7 +10284,7 @@
         },
         "pages": {
           "description": "",
-          "example": 1,
+          "example": 4,
           "type": "integer",
           "format": "int32"
         }
@@ -7567,7 +10303,7 @@
       "title": "Preis auslesenResponse",
       "example": {
         "dataset": {
-          "07fe19f7-54af-42a4-e59f-19f7833d309a": {
+          "525918f5-44a6-4f8e-95bb-7f372b5ab5cd": {
             "IID": 10033,
             "price": {
               "gross": "499",
@@ -7783,17 +10519,17 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset73"
+          "$ref": "#/definitions/Dataset206"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset73": {
-      "title": "Dataset73",
+    "Dataset206": {
+      "title": "Dataset206",
       "example": {
-        "07fe19f7-54af-42a4-e59f-19f7833d309a": {
+        "525918f5-44a6-4f8e-95bb-7f372b5ab5cd": {
           "IID": 10033,
           "price": {
             "gross": "499",
@@ -8007,16 +10743,16 @@
       },
       "type": "object",
       "properties": {
-        "07fe19f7-54af-42a4-e59f-19f7833d309a": {
-          "$ref": "#/definitions/07fe19f754af42a4e59f19f7833d309a"
+        "525918f5-44a6-4f8e-95bb-7f372b5ab5cd": {
+          "$ref": "#/definitions/525918f544a64f8e95bb7f372b5ab5cd"
         }
       },
       "required": [
-        "07fe19f7-54af-42a4-e59f-19f7833d309a"
+        "525918f5-44a6-4f8e-95bb-7f372b5ab5cd"
       ]
     },
-    "07fe19f754af42a4e59f19f7833d309a": {
-      "title": "07fe19f754af42a4E59f19f7833d309a",
+    "525918f544a64f8e95bb7f372b5ab5cd": {
+      "title": "525918f544a64f8e95bb7f372b5ab5cd",
       "example": {
         "IID": 10033,
         "price": {
@@ -8240,7 +10976,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants76"
+          "$ref": "#/definitions/Variants209"
         }
       },
       "required": [
@@ -8512,8 +11248,8 @@
         "original_percent"
       ]
     },
-    "Variants76": {
-      "title": "Variants76",
+    "Variants209": {
+      "title": "Variants209",
       "example": {
         "S": {
           "ean": "5424155144857",
@@ -8687,16 +11423,16 @@
       "type": "object",
       "properties": {
         "S": {
-          "$ref": "#/definitions/S"
+          "$ref": "#/definitions/S210"
         },
         "M": {
-          "$ref": "#/definitions/M"
+          "$ref": "#/definitions/M212"
         },
         "L": {
-          "$ref": "#/definitions/L"
+          "$ref": "#/definitions/L214"
         },
         "XL": {
-          "$ref": "#/definitions/XL"
+          "$ref": "#/definitions/XL216"
         }
       },
       "required": [
@@ -8706,8 +11442,8 @@
         "XL"
       ]
     },
-    "S": {
-      "title": "S",
+    "S210": {
+      "title": "S210",
       "example": {
         "ean": "5424155144857",
         "key": "S",
@@ -8772,8 +11508,8 @@
         "price"
       ]
     },
-    "M": {
-      "title": "M",
+    "M212": {
+      "title": "M212",
       "example": {
         "ean": "5769864186729",
         "key": "M",
@@ -8838,8 +11574,8 @@
         "price"
       ]
     },
-    "L": {
-      "title": "L",
+    "L214": {
+      "title": "L214",
       "example": {
         "ean": "6876634633196",
         "key": "L",
@@ -8904,8 +11640,8 @@
         "price"
       ]
     },
-    "XL": {
-      "title": "XL",
+    "XL216": {
+      "title": "XL216",
       "example": {
         "ean": "5591665777547",
         "key": "XL",
@@ -9160,7 +11896,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys90"
+          "$ref": "#/definitions/Sys223"
         }
       },
       "required": [
@@ -9500,8 +12236,8 @@
         "salesman"
       ]
     },
-    "Sys90": {
-      "title": "Sys90",
+    "Sys223": {
+      "title": "Sys223",
       "example": {
         "reserverStockPositions": true,
         "createDelivery": true,
@@ -9543,6 +12279,74 @@
         "setDelivered",
         "setBillNumber",
         "createEdiOrder"
+      ]
+    },
+    "BestellungErstellenerrorresponse": {
+      "title": "Bestellung erstellenErrorResponse",
+      "example": {
+        "dataset": [
+          {
+            "sys": {
+              "error": {
+                "code": 409,
+                "message": "409 Conflict"
+              }
+            }
+          }
+        ],
+        "sys": {
+          "error": {
+            "code": 409,
+            "message": "409 Conflict"
+          }
+        }
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "sys": {
+                "error": {
+                  "code": 409,
+                  "message": "409 Conflict"
+                }
+              }
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset225"
+          }
+        },
+        "sys": {
+          "$ref": "#/definitions/Sys23"
+        }
+      },
+      "required": [
+        "dataset",
+        "sys"
+      ]
+    },
+    "Dataset225": {
+      "title": "Dataset225",
+      "example": {
+        "sys": {
+          "error": {
+            "code": 409,
+            "message": "409 Conflict"
+          }
+        }
+      },
+      "type": "object",
+      "properties": {
+        "sys": {
+          "$ref": "#/definitions/Sys23"
+        }
+      },
+      "required": [
+        "sys"
       ]
     },
     "BestellungErstellenresponse": {
@@ -9705,7 +12509,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset92"
+            "$ref": "#/definitions/Dataset231"
           }
         },
         "sys": {
@@ -9717,8 +12521,8 @@
         "sys"
       ]
     },
-    "Dataset92": {
-      "title": "Dataset92",
+    "Dataset231": {
+      "title": "Dataset231",
       "example": {
         "dataset": {
           "companyOrderID": "0001/01/616",
@@ -9793,7 +12597,7 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset93"
+          "$ref": "#/definitions/Dataset232"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -9804,8 +12608,8 @@
         "sys"
       ]
     },
-    "Dataset93": {
-      "title": "Dataset93",
+    "Dataset232": {
+      "title": "Dataset232",
       "example": {
         "companyOrderID": "0001/01/616",
         "notice": "Das ist eine Kassen Bestellung",
@@ -9914,10 +12718,10 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User95"
+          "$ref": "#/definitions/User234"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo96"
+          "$ref": "#/definitions/SellTo235"
         },
         "positions": {
           "description": "",
@@ -9945,11 +12749,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position97"
+            "$ref": "#/definitions/Position236"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys98"
+          "$ref": "#/definitions/Sys237"
         }
       },
       "required": [
@@ -10018,8 +12822,8 @@
         "state"
       ]
     },
-    "User95": {
-      "title": "User95",
+    "User234": {
+      "title": "User234",
       "example": {
         "userName": "user@example.com",
         "formOfAddress": "Herr",
@@ -10105,8 +12909,8 @@
         "surName"
       ]
     },
-    "SellTo96": {
-      "title": "SellTo96",
+    "SellTo235": {
+      "title": "SellTo235",
       "example": {
         "company": "schukai GmbH",
         "address1": "MÃ¼nchenerstrasse 563",
@@ -10156,8 +12960,8 @@
         "country"
       ]
     },
-    "Position97": {
-      "title": "Position97",
+    "Position236": {
+      "title": "Position236",
       "example": {
         "iid": "10056",
         "optional": "40",
@@ -10290,8 +13094,8 @@
         "salesman"
       ]
     },
-    "Sys98": {
-      "title": "Sys98",
+    "Sys237": {
+      "title": "Sys237",
       "example": {
         "reserverStockPositions": false,
         "createDelivery": true,
@@ -10493,11 +13297,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position105"
+            "$ref": "#/definitions/Position244"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys90"
+          "$ref": "#/definitions/Sys223"
         }
       },
       "required": [
@@ -10513,8 +13317,8 @@
         "sys"
       ]
     },
-    "Position105": {
-      "title": "Position105",
+    "Position244": {
+      "title": "Position244",
       "example": {
         "iid": "10026",
         "optional": "S",
@@ -10634,7 +13438,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Property"
+            "$ref": "#/definitions/Properties245"
           }
         }
       },
@@ -10657,8 +13461,8 @@
         "properties"
       ]
     },
-    "Property": {
-      "title": "Property",
+    "Properties245": {
+      "title": "Properties245",
       "example": {
         "name": "shoppingcard.erp.discounttype",
         "value": "3"
@@ -10837,7 +13641,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys90"
+          "$ref": "#/definitions/Sys223"
         }
       },
       "required": [
@@ -10958,11 +13762,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position118"
+            "$ref": "#/definitions/Position257"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys90"
+          "$ref": "#/definitions/Sys223"
         }
       },
       "required": [
@@ -10978,8 +13782,8 @@
         "sys"
       ]
     },
-    "Position118": {
-      "title": "Position118",
+    "Position257": {
+      "title": "Position257",
       "example": {
         "iid": "10076",
         "optional": "_UNIQUE_",
@@ -11312,11 +14116,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position124"
+            "$ref": "#/definitions/Position263"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys90"
+          "$ref": "#/definitions/Sys223"
         }
       },
       "required": [
@@ -11332,8 +14136,8 @@
         "sys"
       ]
     },
-    "Position124": {
-      "title": "Position124",
+    "Position263": {
+      "title": "Position263",
       "example": {
         "iid": "10076",
         "optional": "_UNIQUE_",
@@ -11528,7 +14332,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset129"
+            "$ref": "#/definitions/Dataset268"
           }
         }
       },
@@ -11536,8 +14340,8 @@
         "dataset"
       ]
     },
-    "Dataset129": {
-      "title": "Dataset129",
+    "Dataset268": {
+      "title": "Dataset268",
       "type": "object",
       "properties": {
         "IID": {
@@ -11739,7 +14543,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset43"
+            "$ref": "#/definitions/Dataset34"
           }
         }
       },
@@ -11791,7 +14595,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset135"
+            "$ref": "#/definitions/Dataset274"
           }
         }
       },
@@ -11799,8 +14603,8 @@
         "dataset"
       ]
     },
-    "Dataset135": {
-      "title": "Dataset135",
+    "Dataset274": {
+      "title": "Dataset274",
       "example": {
         "uid": 10,
         "erpName": "erp-name-1",
@@ -11850,15 +14654,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset137"
+          "$ref": "#/definitions/Dataset276"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset137": {
-      "title": "Dataset137",
+    "Dataset276": {
+      "title": "Dataset276",
       "example": {
         "pid": 12,
         "erpID": "personal-erp-id-1"
@@ -11887,7 +14691,7 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset139"
+          "$ref": "#/definitions/Dataset278"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -11898,8 +14702,8 @@
         "sys"
       ]
     },
-    "Dataset139": {
-      "title": "Dataset139",
+    "Dataset278": {
+      "title": "Dataset278",
       "type": "object",
       "properties": {
         "erpID": {
@@ -11970,7 +14774,7 @@
           }
         },
         "personal": {
-          "$ref": "#/definitions/Personal140"
+          "$ref": "#/definitions/Personal279"
         },
         "properties": {
           "description": "",
@@ -12290,7 +15094,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Property141"
+            "$ref": "#/definitions/Properties280"
           }
         },
         "communication": {
@@ -12338,8 +15142,8 @@
         "communication"
       ]
     },
-    "Personal140": {
-      "title": "Personal140",
+    "Personal279": {
+      "title": "Personal279",
       "example": {
         "erpID": "",
         "erpName": "",
@@ -12467,8 +15271,8 @@
         "lastUpdate"
       ]
     },
-    "Property141": {
-      "title": "Property141",
+    "Properties280": {
+      "title": "Properties280",
       "example": {
         "pid": 890011,
         "uid": 75731,
