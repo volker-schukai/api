@@ -2044,6 +2044,92 @@
         }
       }
     },
+    "/api/commerce/orders/search": {
+      "get": {
+        "description": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen.",
+        "summary": "Bestellungen suchen",
+        "tags": [
+          "order"
+        ],
+        "operationId": "ApiCommerceOrdersSearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "facet",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/orders/search?q=oid>0&orderby=oid DESC&facet=position&count=2",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Bestellungen suchen",
+            "x-testDescription": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/api/commerce/order/report/history": {
       "get": {
         "description": "TODO: Add Description",
@@ -2174,14 +2260,14 @@
         }
       }
     },
-    "/api/commerce/orders/search": {
+    "/api/account/group/8/member/search": {
       "get": {
-        "description": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen.",
-        "summary": "Bestellungen suchen",
+        "description": "Suche nach den Mitglieder einer Gruppe. FürDie Gruppe wird in der URL über die Gruppen-ID GID representiert.",
+        "summary": "Gruppenmitglieder suchen",
         "tags": [
-          "order"
+          "member"
         ],
-        "operationId": "ApiCommerceOrdersSearchGet",
+        "operationId": "ApiAccountGroup8MemberSearchGet2",
         "produces": [
           "application/json"
         ],
@@ -2208,14 +2294,6 @@
             "description": ""
           },
           {
-            "name": "count",
-            "in": "query",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "description": ""
-          },
-          {
             "name": "Accept",
             "in": "header",
             "required": true,
@@ -2233,7 +2311,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/orders/search?q=oid>0&orderby=oid DESC&facet=position&count=2",
+              "uri": "/api/account/group/8/member/search?q=formOfAddress%3DHerr AND name1%3DMustermann AND city LIKE \"%25test%25\"&orderby=username&facet=personal,addresses,orders",
               "headers": {
                 "Accept": "application/json"
               }
@@ -2248,8 +2326,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Bestellungen suchen",
-            "x-testDescription": "Nach Bestellungen eines Mandanten über die URL /api/commerce/orders/<companySHID>/search suchen."
+            "x-testName": "Gruppenmitglieder suchen",
+            "x-testDescription": "Suche nach den Mitglieder einer Gruppe. FürDie Gruppe wird in der URL über die Gruppen-ID GID representiert."
           }
         ],
         "x-operation-settings": {
@@ -3065,84 +3143,6 @@
         },
         "security": [],
         "x-unitTests": [],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      }
-    },
-    "/api/account/group/8/member/search": {
-      "get": {
-        "description": "Suche nach den Mitglieder einer Gruppe. FürDie Gruppe wird in der URL über die Gruppen-ID GID representiert.",
-        "summary": "Gruppenmitglieder suchen",
-        "tags": [
-          "member"
-        ],
-        "operationId": "ApiAccountGroup8MemberSearchGet",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "q",
-            "in": "query",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "orderby",
-            "in": "query",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "facet",
-            "in": "query",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Accept",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "GET",
-              "uri": "/api/account/group/8/member/search?q=formOfAddress%3DHerr AND name1%3DMustermann AND city LIKE \"%25test%25\"&orderby=username&facet=personal,addresses,orders",
-              "headers": {
-                "Accept": "application/json"
-              }
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Gruppenmitglieder suchen",
-            "x-testDescription": "Suche nach den Mitglieder einer Gruppe. FürDie Gruppe wird in der URL über die Gruppen-ID GID representiert."
-          }
-        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
