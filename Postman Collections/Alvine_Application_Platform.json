@@ -2753,15 +2753,15 @@
                       "formatted_vat": "19,00 %",
                       "formatted_difference": "  0,80 EUR",
                       "formatted_display": "  4,99 EUR",
-                      "formatted_label": "null",
+                      "formatted_label": null,
                       "pricelistID": "0",
                       "pricelistName": "",
                       "aggregateprice": "  4,99 EUR",
-                      "volumeprice": "null",
+                      "volumeprice": null,
                       "meta_multi": false,
                       "meta_scale": false,
                       "meta_time": false,
-                      "meta_group": "null",
+                      "meta_group": null,
                       "meta_IID": "10033",
                       "meta_UID": "0",
                       "original_gross": "899",
@@ -2775,7 +2775,7 @@
                       "original_formatted_vat": "19,00 %",
                       "original_formatted_difference": "  1,44 EUR",
                       "original_formatted_display": "  8,99 EUR",
-                      "original_formatted_label": "null",
+                      "original_formatted_label": null,
                       "isOriginal": true,
                       "original_percent": "44"
                     },
@@ -2795,15 +2795,15 @@
                           "formatted_vat": "19,00 %",
                           "formatted_difference": "  0,80 EUR",
                           "formatted_display": "  4,99 EUR",
-                          "formatted_label": "null",
+                          "formatted_label": null,
                           "pricelistID": "0",
                           "pricelistName": "",
                           "aggregateprice": "  4,99 EUR",
-                          "volumeprice": "null",
+                          "volumeprice": null,
                           "meta_multi": false,
                           "meta_scale": false,
                           "meta_time": false,
-                          "meta_group": "null",
+                          "meta_group": null,
                           "meta_IID": "10033",
                           "meta_UID": "0",
                           "original_gross": "899",
@@ -2817,7 +2817,7 @@
                           "original_formatted_vat": "19,00 %",
                           "original_formatted_difference": "  1,44 EUR",
                           "original_formatted_display": "  8,99 EUR",
-                          "original_formatted_label": "null",
+                          "original_formatted_label": null,
                           "isOriginal": true,
                           "original_percent": "44"
                         }
@@ -2837,15 +2837,15 @@
                           "formatted_vat": "19,00 %",
                           "formatted_difference": "  0,80 EUR",
                           "formatted_display": "  4,99 EUR",
-                          "formatted_label": "null",
+                          "formatted_label": null,
                           "pricelistID": "0",
                           "pricelistName": "",
                           "aggregateprice": "  4,99 EUR",
-                          "volumeprice": "null",
+                          "volumeprice": null,
                           "meta_multi": false,
                           "meta_scale": false,
                           "meta_time": false,
-                          "meta_group": "null",
+                          "meta_group": null,
                           "meta_IID": "10033",
                           "meta_UID": "0",
                           "original_gross": "899",
@@ -2859,7 +2859,7 @@
                           "original_formatted_vat": "19,00 %",
                           "original_formatted_difference": "  1,44 EUR",
                           "original_formatted_display": "  8,99 EUR",
-                          "original_formatted_label": "null",
+                          "original_formatted_label": null,
                           "isOriginal": true,
                           "original_percent": "44"
                         }
@@ -2879,15 +2879,15 @@
                           "formatted_vat": "19,00 %",
                           "formatted_difference": "  0,80 EUR",
                           "formatted_display": "  4,99 EUR",
-                          "formatted_label": "null",
+                          "formatted_label": null,
                           "pricelistID": "0",
                           "pricelistName": "",
                           "aggregateprice": "  4,99 EUR",
-                          "volumeprice": "null",
+                          "volumeprice": null,
                           "meta_multi": false,
                           "meta_scale": false,
                           "meta_time": false,
-                          "meta_group": "null",
+                          "meta_group": null,
                           "meta_IID": "10033",
                           "meta_UID": "0",
                           "original_gross": "899",
@@ -2901,7 +2901,7 @@
                           "original_formatted_vat": "19,00 %",
                           "original_formatted_difference": "  1,44 EUR",
                           "original_formatted_display": "  8,99 EUR",
-                          "original_formatted_label": "null",
+                          "original_formatted_label": null,
                           "isOriginal": true,
                           "original_percent": "44"
                         }
@@ -2921,15 +2921,15 @@
                           "formatted_vat": "19,00 %",
                           "formatted_difference": "  0,80 EUR",
                           "formatted_display": "  4,99 EUR",
-                          "formatted_label": "null",
+                          "formatted_label": null,
                           "pricelistID": "0",
                           "pricelistName": "",
                           "aggregateprice": "  4,99 EUR",
-                          "volumeprice": "null",
+                          "volumeprice": null,
                           "meta_multi": false,
                           "meta_scale": false,
                           "meta_time": false,
-                          "meta_group": "null",
+                          "meta_group": null,
                           "meta_IID": "10033",
                           "meta_UID": "0",
                           "original_gross": "899",
@@ -2943,7 +2943,7 @@
                           "original_formatted_vat": "19,00 %",
                           "original_formatted_difference": "  1,44 EUR",
                           "original_formatted_display": "  8,99 EUR",
-                          "original_formatted_label": "null",
+                          "original_formatted_label": null,
                           "isOriginal": true,
                           "original_percent": "44"
                         }
@@ -3077,7 +3077,31 @@
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/legacy/order",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n \"companyOrderID\": \"0001/01/00004\",\n  \"billNumber\": \"0001/01/00004\",\n  \"notice\": \"Das ist eine Kassen Bestellung\",\n  \"shid\": 1,\n  \"transactions\": [\n    {\n      \"provider\": \"alvine\",\n      \"type\": \"\",\n      \"id\": \"\",\n      \"token\": \"\",\n      \"amount\": \"1256\",\n      \"currency\": \"EUR\",\n      \"authcode\": \"CAPTURED\",\n      \"authmsg\": \"CAPTURED\",\n      \"result\": \"\",\n      \"captureState\": \"CAPTURED\",\n      \"captureAmount\": \"1256\",\n      \"resultData\": \"\",\n      \"resultText\": \"\",\n      \"erpID\": \"\",\n      \"paymentPTID\": 20\n    }\n  ],\n  \"user\": {\n    \"userName\": \"b2c@example.com\",\n    \"formOfAddress\": \"\",\n    \"letterFormOfAddress\": \"\",\n    \"birthday\": \"04.01.1977\",\n    \"custom1\": \"\",\n    \"custom2\": \"\",\n    \"company\": \"schukai GmbH\"\n  },\n  \"sellTo\": {\n    \"address1\": \"Eichenstrasse 26\",\n    \"address2\": \"\",\n    \"zip\": \"82290\",\n    \"city\": \"Landsberied\",\n    \"country\": \"de\"\n  },\n  \"shipTo\": null,\n  \"positions\": [\n  \t{\n      \"iid\": \"10076\",\n      \"optional\": \"_UNIQUE_\",\n      \"ean\": \"6985694862569\",\n      \"count\": -1,\n      \"gross\": 32900,\n      \"net\": 27647,\n      \"currency\": \"EUR\",\n      \"vat\": 1900,\n      \"priceType\": \"\",\n      \"custom1\": \"\",\n      \"custom2\": \"\",\n      \"custom3\": \"\",\n      \"name\": \"Waschmaschine - W352\",\n      \"itemNumber\": \"10076\",\n      \"salesman\": 1,\n      \"turnoverInfo\":{\n      \t\"orderReference\": \"0001/01/00003\",\n      \t\"reason\":\"\"\n      }\n    },\n    {\n      \"iid\": \"501\",\n      \"optional\": \"__UNIQUE__\",\n      \"ean\": \"\",\n      \"count\": -1,\n      \"gross\": -5000,\n      \"net\": -4202,\n      \"currency\": \"EUR\",\n      \"vat\": 1900,\n      \"priceType\": \"\",\n      \"custom1\": \"\",\n      \"custom2\": \"\",\n      \"custom3\": \"\",\n      \"name\": \"Gutschein\",\n      \"itemNumber\": \"gutschein\",\n      \"salesman\": 1,\n      \"turnoverInfo\":{\n      \t\"orderReference\": \"0001/01/00003\",\n      \t\"reason\":\"\"\n      }\n    }\n\n  ],\n  \"sys\": {\n    \"reserverStockPositions\": true,\n    \"createDelivery\": true,\n    \"setDelivered\":true,\n    \"setBillNumber\": true,\n    \"createEdiOrder\": false\n  }\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Bestellung erstellen mit Retoure",
+            "x-testDescription": ""
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3138,7 +3162,39 @@
             "schema": {
               "$ref": "#/definitions/GutscheinBerechnenresponse"
             },
-            "examples": {}
+            "examples": {
+              "application/json": {
+                "dataset": [
+                  {
+                    "IID": "501",
+                    "message": [
+                      {
+                        "text": "Der Gutschein wurde bereits eingelöst."
+                      }
+                    ],
+                    "ean": null,
+                    "label": "Kaufgutschein aus OID 432 (SCID 1446)",
+                    "digits": 2,
+                    "gross": -595,
+                    "net": -500,
+                    "diff": null,
+                    "vat": 1900,
+                    "currency": "EUR",
+                    "meta": {
+                      "soid": "3",
+                      "min_order_value": "0",
+                      "unit": "2",
+                      "offer": "5000",
+                      "currency": "EUR",
+                      "type": "3",
+                      "offer_net": 4202
+                    },
+                    "type": "voucher",
+                    "additional": []
+                  }
+                ]
+              }
+            }
           }
         },
         "security": [],
@@ -3331,7 +3387,381 @@
             "schema": {
               "$ref": "#/definitions/WerBinIchresponse"
             },
-            "examples": {}
+            "examples": {
+              "application/json": {
+                "dataset": {
+                  "erpID": "",
+                  "erpName": "",
+                  "erpNumber": "",
+                  "erpLastUpdate": "2011-07-11T11:10:23",
+                  "erpCreation": "0000-01-01T00:00:00",
+                  "archived": "0",
+                  "uid": 75731,
+                  "name": "mey_admin",
+                  "state": 0,
+                  "creation": null,
+                  "lastUpdate": "2017-11-14T15:49:43",
+                  "ranking": 0,
+                  "addresses": [],
+                  "personal": {
+                    "erpID": "",
+                    "erpName": "",
+                    "erpNumber": "",
+                    "erpLastUpdate": "2011-10-06T08:55:11",
+                    "erpCreation": "0000-01-01T00:00:00",
+                    "pid": 74761,
+                    "uid": 75731,
+                    "alias": "",
+                    "formOfAddress": "",
+                    "salutation": "Sehr geehrte Damen und Herren,",
+                    "firstname": "Mey",
+                    "name1": "Administrator",
+                    "name2": "",
+                    "title": "",
+                    "custom1": "",
+                    "custom2": "",
+                    "birthday": "0000-01-01T00:00:00",
+                    "lastUpdate": "0000-01-01T00:00:00"
+                  },
+                  "properties": [
+                    {
+                      "pid": 890011,
+                      "uid": 75731,
+                      "name": "core.interface.image.limitsize",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890031,
+                      "uid": 75731,
+                      "name": "core.interface.sheet.changerowcolor",
+                      "value": "1",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890041,
+                      "uid": 75731,
+                      "name": "core.interface.sheet.colheader.repeat",
+                      "value": "25",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890051,
+                      "uid": 75731,
+                      "name": "core.interface.sheet.geticon",
+                      "value": "2",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890061,
+                      "uid": 75731,
+                      "name": "core.interface.sheet.position.limit",
+                      "value": "1",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890071,
+                      "uid": 75731,
+                      "name": "core.interface.sheet.position.maxrows",
+                      "value": "50",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890081,
+                      "uid": 75731,
+                      "name": "core.interface.sheet.showhtml",
+                      "value": "1",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890091,
+                      "uid": 75731,
+                      "name": "core.interface.sheet.string.limit",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890101,
+                      "uid": 75731,
+                      "name": "core.interface.sheet.viewimage",
+                      "value": "1",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890121,
+                      "uid": 75731,
+                      "name": "core.interface.desktop.version",
+                      "value": "2",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890131,
+                      "uid": 75731,
+                      "name": "core.interface.desktop.applications",
+                      "value": "a:0:{}",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890141,
+                      "uid": 75731,
+                      "name": "core.locale.frontendlanguage",
+                      "value": "de",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890151,
+                      "uid": 75731,
+                      "name": "core.property.currency",
+                      "value": "EUR",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890161,
+                      "uid": 75731,
+                      "name": "core.property.currency.sign.prefix",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890171,
+                      "uid": 75731,
+                      "name": "core.property.currency.sign.suffix",
+                      "value": "¬",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890181,
+                      "uid": 75731,
+                      "name": "core.property.dateformat",
+                      "value": "d.m.Y",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890191,
+                      "uid": 75731,
+                      "name": "core.property.decimalcount",
+                      "value": "2",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890201,
+                      "uid": 75731,
+                      "name": "core.property.decimaldelimiter",
+                      "value": ".",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890211,
+                      "uid": 75731,
+                      "name": "core.property.digitsgrouping",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890221,
+                      "uid": 75731,
+                      "name": "core.property.export.cvs.delimiter",
+                      "value": ",",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890231,
+                      "uid": 75731,
+                      "name": "core.property.export.cvs.quote",
+                      "value": "2",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890251,
+                      "uid": 75731,
+                      "name": "core.property.myteam_subgroup",
+                      "value": "1",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890261,
+                      "uid": 75731,
+                      "name": "core.property.timeformat",
+                      "value": "H:i:s",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890271,
+                      "uid": 75731,
+                      "name": "shop.addon.crm.newsletter",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890281,
+                      "uid": 75731,
+                      "name": "shop.addon.crm.rating",
+                      "value": "C",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 890291,
+                      "uid": 75731,
+                      "name": "shop.customer.deliveryblock",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 1869292,
+                      "uid": 75731,
+                      "name": "core.interface.sheet.version",
+                      "value": "2",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 1934382,
+                      "uid": 75731,
+                      "name": "core.interface.intern.notice",
+                      "value": "<ul><li>transparenter und hochwertig bestickter Tülleinsatz im Decolletée</li><li>edler Glanz in den Zierstreifen</li><li>als sinnlicher Body-Dress mit schmalen, verstellbaren Träger</li><li>besonders weicher Fall, schmiegt sich perfekt an</li><li>für verführerische Momente</li></ul>",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 3305741,
+                      "uid": 75731,
+                      "name": "shop.extra.item.exportset",
+                      "value": "a:1:{s:11:\"zalando set\";a:7:{i:0;s:3:\"iid\";i:1;s:16:\"pb_item_text::50\";i:2;s:16:\"pb_item_text::51\";i:3;s:16:\"pb_item_text::53\";i:4;s:16:\"pb_item_text::52\";i:5;s:17:\"sys_variants_info\";i:6;s:17:\"export_properties\";}}",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 12737642,
+                      "uid": 75731,
+                      "name": "core.interface.standard.toolbar",
+                      "value": "a:11:{i:0;a:3:{s:1:\"u\";s:449:\" index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:28:\"toolbar_icon_visualcheck.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Freigaben</font></b>\";}i:1;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=52&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:21:\"toolbar_icon_lamp.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Teiloffen</b></font>\";}i:2;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=11&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:24:\"toolbar_icon_dispute.gif\";s:1:\"l\";s:37:\"<b><font color=green>B.Fehlerhaft</b>\";}i:3;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8007&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:23:\"toolbar_icon_reload.gif\";s:1:\"l\";s:40:\"<b><font color=green>B.Wiedervorlage</b>\";}i:4;a:3:{s:1:\"u\";s:243:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=214&sxx_filter_tid=&sxx_filter_sys_priority=&sxx_filter_sys_state=2%2C4%2C6&sxx_filter_sys_ouid=&sxx_filter_sys_description=&sxx_filter_freetext=&sxx_filter_sys_cuid_map=&sxx_filter_date=&submit=OK\";s:1:\"i\";s:22:\"toolbar_icon_mail2.gif\";s:1:\"l\";s:42:\"<b><font color=red>T.Sichtliste</b></font>\";}i:5;a:3:{s:1:\"u\";s:247:\"index.php?sxx_list_start=0&sxx_list_sort=&sxx_filter_incommingdate=&sxx_filter_sys_transaction_number=&cmd=9221&sxx_filter_rid=&sxx_filter_state=20&sxx_filter_action=&sxx_filter_payment=&sxx_filter_country=&sxx_customer=&sxx_filter_shid=&submit=OK\";s:1:\"i\";s:18:\"toolbar_icon_r.gif\";s:1:\"l\";s:46:\"<b><font color=purple>Retourenliste</b></font>\";}i:6;a:3:{s:1:\"u\";s:55:\"https://www.paypal.com/de/cgi-bin/webscr?cmd=_login-run\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:33:\"<b><font color=blue>Paypal</font>\";}i:7;a:3:{s:1:\"u\";s:20:\"https://pmi.pay1.de/\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:30:\"<font color=blue>Payone</font>\";}i:8;a:3:{s:1:\"u\";s:93:\"https://banking.saalesparkasse.de/portal/portal/StartenIPSTANDARD?IID=80053762&AID=IPSTANDARD\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:40:\"<font color=blue>DeutscheBank</font></b>\";}i:9;a:3:{s:1:\"u\";s:50:\"index.php?sxx_site=alvine&history=Liste&cmd=35012&\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:34:\"<b><font color=blue>CEG</b></font>\";}i:10;a:3:{s:1:\"u\";s:49:\"index.php?sxx_site=alvine&history=Liste&cmd=1023&\";s:1:\"i\";s:25:\"toolbar_icon_favorite.gif\";s:1:\"l\";s:38:\"<b><font color=purple>Lager</b></font>\";}}",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 16912242,
+                      "uid": 75731,
+                      "name": "alvine.cmd.history",
+                      "value": "0",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 16912252,
+                      "uid": 75731,
+                      "name": "alvine.cmd.history.label",
+                      "value": "Liste",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 26785152,
+                      "uid": 75731,
+                      "name": "core.language",
+                      "value": "de",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 26785153,
+                      "uid": 75731,
+                      "name": "public.file.upload.path",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 26785154,
+                      "uid": 75731,
+                      "name": "content.file.upload.extension",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 26785155,
+                      "uid": 75731,
+                      "name": "content.file.upload.excludedirs",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 26785156,
+                      "uid": 75731,
+                      "name": "content.file.content.path",
+                      "value": "",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 26785157,
+                      "uid": 75731,
+                      "name": "core.property.myteam",
+                      "value": "1,12,26,5,6,22,15,9,32,14,20,29,23,30,8,10,11,24,115,81,16,91,27,25,7,2,31,28,21,3,4,17",
+                      "language": "",
+                      "country": ""
+                    },
+                    {
+                      "pid": 26793650,
+                      "uid": 75731,
+                      "name": "core.interface.menu.selected",
+                      "value": "57",
+                      "language": "",
+                      "country": ""
+                    }
+                  ],
+                  "communication": [
+                    {
+                      "erpID": "",
+                      "erpName": "",
+                      "erpNumber": "",
+                      "erpLastUpdate": "2011-10-06T08:56:14",
+                      "erpCreation": "0000-01-01T00:00:00",
+                      "cid": 185882,
+                      "uid": 75731,
+                      "type": 1,
+                      "description": "",
+                      "locator": "support@schukai.de",
+                      "preset": "1",
+                      "private": "",
+                      "scope": "50",
+                      "lastUpdate": "0000-01-01T00:00:00"
+                    }
+                  ]
+                },
+                "sys": {
+                  "message": "200 OK",
+                  "code": 200
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -5545,8 +5975,7 @@
           "type": "string"
         },
         "sys_specification_baseprice_reference": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "sys_sourcing_distributor1_name": {
           "description": "",
@@ -5943,12 +6372,10 @@
           "type": "string"
         },
         "sales_announcement_order_hide_orderform": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "sales_announcement_price_hide_price": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "sales_announcement_order_show_orderform": {
           "description": "",
@@ -5961,8 +6388,7 @@
           "type": "boolean"
         },
         "localeText": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "DestinationDID_1": {
           "description": "",
@@ -6004,12 +6430,10 @@
           "$ref": "#/definitions/Category1"
         },
         "category2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "category3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "categoryName1": {
           "description": "",
@@ -6022,20 +6446,16 @@
           "type": "string"
         },
         "categoryLabel2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "categoryLabel3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "audienceLabel1": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "collectionLabel": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "departmentName": {
           "description": "",
@@ -6048,8 +6468,7 @@
           "type": "string"
         },
         "departmentLabel1": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "seasonLabel": {
           "description": "",
@@ -6057,12 +6476,10 @@
           "type": "string"
         },
         "styleLabel1": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "styleLabel2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "sys_cataloging_category_list": {
           "description": "",
@@ -6161,10 +6578,10 @@
           "example": [
             {
               "articleNumber": "__PCE__",
-              "ean": "null",
+              "ean": null,
               "useable": true,
               "breakable": false,
-              "details": "null",
+              "details": null,
               "definition": "__PCE__()"
             }
           ],
@@ -6213,8 +6630,7 @@
           "format": "int32"
         },
         "quantityRestriction_maxCount": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "quantityRestriction_quantityList": {
           "description": "",
@@ -6263,7 +6679,7 @@
           "description": "",
           "example": [
             {
-              "locale": "null",
+              "locale": null,
               "locale_plain": "",
               "htmlcode": "",
               "htmlcode2": "",
@@ -6281,8 +6697,7 @@
           "type": "string"
         },
         "color_html": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_htmlcode": {
           "description": "",
@@ -6294,24 +6709,19 @@
           "type": "string"
         },
         "color_image_url": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_path": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_name": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_picture_path": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_picture_url": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_info2": {
           "description": "",
@@ -6330,28 +6740,22 @@
           "type": "string"
         },
         "color_html2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_htmlcode2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_label_plain2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_url2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_path2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_name2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_info3": {
           "description": "",
@@ -6370,28 +6774,22 @@
           "type": "string"
         },
         "color_html3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_htmlcode3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_label_plain3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_url3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_path3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_name3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "variantRaster": {
           "description": "",
@@ -6665,7 +7063,7 @@
         "flag": "2",
         "sys_erpName": "",
         "sys_erpNumber": "",
-        "description": "null",
+        "description": null,
         "cid": "5",
         "activeFlag": false,
         "pcid": "2",
@@ -6714,8 +7112,7 @@
           "type": "string"
         },
         "description": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "activeFlag": {
           "description": "",
@@ -6769,7 +7166,7 @@
         "flag": "2",
         "sys_erpName": "",
         "sys_erpNumber": "",
-        "description": "null",
+        "description": null,
         "cid": "5",
         "activeFlag": false,
         "pcid": "2",
@@ -6818,8 +7215,7 @@
           "type": "string"
         },
         "description": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "activeFlag": {
           "description": "",
@@ -6867,7 +7263,7 @@
       "example": {
         "bid": "9",
         "label": "Mode-Marke 2",
-        "description": "null",
+        "description": null,
         "activeFlag": true,
         "erp_name": "",
         "erp_number": "",
@@ -6886,8 +7282,7 @@
           "type": "string"
         },
         "description": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "activeFlag": {
           "description": "",
@@ -6990,7 +7385,7 @@
           "variant_key_part0": "S",
           "info_decription": "",
           "info_number": "",
-          "info_text": "null",
+          "info_text": null,
           "info_hide": false,
           "property_public_file_upload_path": "",
           "property_public_file_upload_path1": "",
@@ -7074,7 +7469,7 @@
           "variant_key_part0": "M",
           "info_decription": "",
           "info_number": "",
-          "info_text": "null",
+          "info_text": null,
           "info_hide": false,
           "property_public_file_upload_path": "",
           "property_public_file_upload_path1": "",
@@ -7158,7 +7553,7 @@
           "variant_key_part0": "L",
           "info_decription": "",
           "info_number": "",
-          "info_text": "null",
+          "info_text": null,
           "info_hide": false,
           "property_public_file_upload_path": "",
           "property_public_file_upload_path1": "",
@@ -7242,7 +7637,7 @@
           "variant_key_part0": "XL",
           "info_decription": "",
           "info_number": "",
-          "info_text": "null",
+          "info_text": null,
           "info_hide": false,
           "property_public_file_upload_path": "",
           "property_public_file_upload_path1": "",
@@ -7351,7 +7746,7 @@
         "variant_key_part0": "S",
         "info_decription": "",
         "info_number": "",
-        "info_text": "null",
+        "info_text": null,
         "info_hide": false,
         "property_public_file_upload_path": "",
         "property_public_file_upload_path1": "",
@@ -7445,8 +7840,7 @@
           "type": "string"
         },
         "info_text": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "info_hide": {
           "description": "",
@@ -7877,7 +8271,7 @@
         "variant_key_part0": "M",
         "info_decription": "",
         "info_number": "",
-        "info_text": "null",
+        "info_text": null,
         "info_hide": false,
         "property_public_file_upload_path": "",
         "property_public_file_upload_path1": "",
@@ -7971,8 +8365,7 @@
           "type": "string"
         },
         "info_text": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "info_hide": {
           "description": "",
@@ -8130,7 +8523,7 @@
         "variant_key_part0": "L",
         "info_decription": "",
         "info_number": "",
-        "info_text": "null",
+        "info_text": null,
         "info_hide": false,
         "property_public_file_upload_path": "",
         "property_public_file_upload_path1": "",
@@ -8224,8 +8617,7 @@
           "type": "string"
         },
         "info_text": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "info_hide": {
           "description": "",
@@ -8383,7 +8775,7 @@
         "variant_key_part0": "XL",
         "info_decription": "",
         "info_number": "",
-        "info_text": "null",
+        "info_text": null,
         "info_hide": false,
         "property_public_file_upload_path": "",
         "property_public_file_upload_path1": "",
@@ -8477,8 +8869,7 @@
           "type": "string"
         },
         "info_text": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "info_hide": {
           "description": "",
@@ -8569,10 +8960,10 @@
       "title": "PackingUnit",
       "example": {
         "articleNumber": "__PCE__",
-        "ean": "null",
+        "ean": null,
         "useable": true,
         "breakable": false,
-        "details": "null",
+        "details": null,
         "definition": "__PCE__()"
       },
       "type": "object",
@@ -8583,8 +8974,7 @@
           "type": "string"
         },
         "ean": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "useable": {
           "description": "",
@@ -8597,8 +8987,7 @@
           "type": "boolean"
         },
         "details": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "definition": {
           "description": "",
@@ -8666,7 +9055,7 @@
     "ColorInfo": {
       "title": "ColorInfo",
       "example": {
-        "locale": "null",
+        "locale": null,
         "locale_plain": "",
         "htmlcode": "",
         "htmlcode2": "",
@@ -8676,8 +9065,7 @@
       "type": "object",
       "properties": {
         "locale": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "locale_plain": {
           "description": "",
@@ -9094,8 +9482,7 @@
           "type": "string"
         },
         "sys_specification_baseprice_reference": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "sys_sourcing_distributor1_name": {
           "description": "",
@@ -9492,12 +9879,10 @@
           "type": "string"
         },
         "sales_announcement_order_hide_orderform": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "sales_announcement_price_hide_price": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "sales_announcement_order_show_orderform": {
           "description": "",
@@ -9510,8 +9895,7 @@
           "type": "boolean"
         },
         "localeText": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "DestinationDID_1": {
           "description": "",
@@ -9558,12 +9942,10 @@
           "$ref": "#/definitions/Category1"
         },
         "category2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "category3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "categoryName1": {
           "description": "",
@@ -9576,20 +9958,16 @@
           "type": "string"
         },
         "categoryLabel2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "categoryLabel3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "audienceLabel1": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "collectionLabel": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "departmentName": {
           "description": "",
@@ -9602,8 +9980,7 @@
           "type": "string"
         },
         "departmentLabel1": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "seasonLabel": {
           "description": "",
@@ -9611,12 +9988,10 @@
           "type": "string"
         },
         "styleLabel1": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "styleLabel2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "sys_cataloging_category_list": {
           "description": "",
@@ -9715,10 +10090,10 @@
           "example": [
             {
               "articleNumber": "__PCE__",
-              "ean": "null",
+              "ean": null,
               "useable": true,
               "breakable": false,
-              "details": "null",
+              "details": null,
               "definition": "__PCE__()"
             }
           ],
@@ -9767,8 +10142,7 @@
           "format": "int32"
         },
         "quantityRestriction_maxCount": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "quantityRestriction_quantityList": {
           "description": "",
@@ -9817,7 +10191,7 @@
           "description": "",
           "example": [
             {
-              "locale": "null",
+              "locale": null,
               "locale_plain": "",
               "htmlcode": "#cbb0f0",
               "htmlcode2": "#cbb0f0",
@@ -9835,8 +10209,7 @@
           "type": "string"
         },
         "color_html": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_htmlcode": {
           "description": "",
@@ -9849,24 +10222,19 @@
           "type": "string"
         },
         "color_image_url": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_path": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_name": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_picture_path": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_picture_url": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_info2": {
           "description": "",
@@ -9885,28 +10253,22 @@
           "type": "string"
         },
         "color_html2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_htmlcode2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_label_plain2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_url2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_path2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_name2": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_info3": {
           "description": "",
@@ -9925,28 +10287,22 @@
           "type": "string"
         },
         "color_html3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_htmlcode3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_label_plain3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_url3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_path3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "color_image_name3": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "variantRaster": {
           "description": "",
@@ -10317,15 +10673,15 @@
               "formatted_vat": "19,00 %",
               "formatted_difference": "  0,80 EUR",
               "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
+              "formatted_label": null,
               "pricelistID": "0",
               "pricelistName": "",
               "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
+              "volumeprice": null,
               "meta_multi": false,
               "meta_scale": false,
               "meta_time": false,
-              "meta_group": "null",
+              "meta_group": null,
               "meta_IID": "10033",
               "meta_UID": "0",
               "original_gross": "899",
@@ -10339,7 +10695,7 @@
               "original_formatted_vat": "19,00 %",
               "original_formatted_difference": "  1,44 EUR",
               "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
+              "original_formatted_label": null,
               "isOriginal": true,
               "original_percent": "44"
             },
@@ -10359,15 +10715,15 @@
                   "formatted_vat": "19,00 %",
                   "formatted_difference": "  0,80 EUR",
                   "formatted_display": "  4,99 EUR",
-                  "formatted_label": "null",
+                  "formatted_label": null,
                   "pricelistID": "0",
                   "pricelistName": "",
                   "aggregateprice": "  4,99 EUR",
-                  "volumeprice": "null",
+                  "volumeprice": null,
                   "meta_multi": false,
                   "meta_scale": false,
                   "meta_time": false,
-                  "meta_group": "null",
+                  "meta_group": null,
                   "meta_IID": "10033",
                   "meta_UID": "0",
                   "original_gross": "899",
@@ -10381,7 +10737,7 @@
                   "original_formatted_vat": "19,00 %",
                   "original_formatted_difference": "  1,44 EUR",
                   "original_formatted_display": "  8,99 EUR",
-                  "original_formatted_label": "null",
+                  "original_formatted_label": null,
                   "isOriginal": true,
                   "original_percent": "44"
                 }
@@ -10401,15 +10757,15 @@
                   "formatted_vat": "19,00 %",
                   "formatted_difference": "  0,80 EUR",
                   "formatted_display": "  4,99 EUR",
-                  "formatted_label": "null",
+                  "formatted_label": null,
                   "pricelistID": "0",
                   "pricelistName": "",
                   "aggregateprice": "  4,99 EUR",
-                  "volumeprice": "null",
+                  "volumeprice": null,
                   "meta_multi": false,
                   "meta_scale": false,
                   "meta_time": false,
-                  "meta_group": "null",
+                  "meta_group": null,
                   "meta_IID": "10033",
                   "meta_UID": "0",
                   "original_gross": "899",
@@ -10423,7 +10779,7 @@
                   "original_formatted_vat": "19,00 %",
                   "original_formatted_difference": "  1,44 EUR",
                   "original_formatted_display": "  8,99 EUR",
-                  "original_formatted_label": "null",
+                  "original_formatted_label": null,
                   "isOriginal": true,
                   "original_percent": "44"
                 }
@@ -10443,15 +10799,15 @@
                   "formatted_vat": "19,00 %",
                   "formatted_difference": "  0,80 EUR",
                   "formatted_display": "  4,99 EUR",
-                  "formatted_label": "null",
+                  "formatted_label": null,
                   "pricelistID": "0",
                   "pricelistName": "",
                   "aggregateprice": "  4,99 EUR",
-                  "volumeprice": "null",
+                  "volumeprice": null,
                   "meta_multi": false,
                   "meta_scale": false,
                   "meta_time": false,
-                  "meta_group": "null",
+                  "meta_group": null,
                   "meta_IID": "10033",
                   "meta_UID": "0",
                   "original_gross": "899",
@@ -10465,7 +10821,7 @@
                   "original_formatted_vat": "19,00 %",
                   "original_formatted_difference": "  1,44 EUR",
                   "original_formatted_display": "  8,99 EUR",
-                  "original_formatted_label": "null",
+                  "original_formatted_label": null,
                   "isOriginal": true,
                   "original_percent": "44"
                 }
@@ -10485,15 +10841,15 @@
                   "formatted_vat": "19,00 %",
                   "formatted_difference": "  0,80 EUR",
                   "formatted_display": "  4,99 EUR",
-                  "formatted_label": "null",
+                  "formatted_label": null,
                   "pricelistID": "0",
                   "pricelistName": "",
                   "aggregateprice": "  4,99 EUR",
-                  "volumeprice": "null",
+                  "volumeprice": null,
                   "meta_multi": false,
                   "meta_scale": false,
                   "meta_time": false,
-                  "meta_group": "null",
+                  "meta_group": null,
                   "meta_IID": "10033",
                   "meta_UID": "0",
                   "original_gross": "899",
@@ -10507,7 +10863,7 @@
                   "original_formatted_vat": "19,00 %",
                   "original_formatted_difference": "  1,44 EUR",
                   "original_formatted_display": "  8,99 EUR",
-                  "original_formatted_label": "null",
+                  "original_formatted_label": null,
                   "isOriginal": true,
                   "original_percent": "44"
                 }
@@ -10543,15 +10899,15 @@
             "formatted_vat": "19,00 %",
             "formatted_difference": "  0,80 EUR",
             "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
+            "formatted_label": null,
             "pricelistID": "0",
             "pricelistName": "",
             "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
+            "volumeprice": null,
             "meta_multi": false,
             "meta_scale": false,
             "meta_time": false,
-            "meta_group": "null",
+            "meta_group": null,
             "meta_IID": "10033",
             "meta_UID": "0",
             "original_gross": "899",
@@ -10565,7 +10921,7 @@
             "original_formatted_vat": "19,00 %",
             "original_formatted_difference": "  1,44 EUR",
             "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
+            "original_formatted_label": null,
             "isOriginal": true,
             "original_percent": "44"
           },
@@ -10585,15 +10941,15 @@
                 "formatted_vat": "19,00 %",
                 "formatted_difference": "  0,80 EUR",
                 "formatted_display": "  4,99 EUR",
-                "formatted_label": "null",
+                "formatted_label": null,
                 "pricelistID": "0",
                 "pricelistName": "",
                 "aggregateprice": "  4,99 EUR",
-                "volumeprice": "null",
+                "volumeprice": null,
                 "meta_multi": false,
                 "meta_scale": false,
                 "meta_time": false,
-                "meta_group": "null",
+                "meta_group": null,
                 "meta_IID": "10033",
                 "meta_UID": "0",
                 "original_gross": "899",
@@ -10607,7 +10963,7 @@
                 "original_formatted_vat": "19,00 %",
                 "original_formatted_difference": "  1,44 EUR",
                 "original_formatted_display": "  8,99 EUR",
-                "original_formatted_label": "null",
+                "original_formatted_label": null,
                 "isOriginal": true,
                 "original_percent": "44"
               }
@@ -10627,15 +10983,15 @@
                 "formatted_vat": "19,00 %",
                 "formatted_difference": "  0,80 EUR",
                 "formatted_display": "  4,99 EUR",
-                "formatted_label": "null",
+                "formatted_label": null,
                 "pricelistID": "0",
                 "pricelistName": "",
                 "aggregateprice": "  4,99 EUR",
-                "volumeprice": "null",
+                "volumeprice": null,
                 "meta_multi": false,
                 "meta_scale": false,
                 "meta_time": false,
-                "meta_group": "null",
+                "meta_group": null,
                 "meta_IID": "10033",
                 "meta_UID": "0",
                 "original_gross": "899",
@@ -10649,7 +11005,7 @@
                 "original_formatted_vat": "19,00 %",
                 "original_formatted_difference": "  1,44 EUR",
                 "original_formatted_display": "  8,99 EUR",
-                "original_formatted_label": "null",
+                "original_formatted_label": null,
                 "isOriginal": true,
                 "original_percent": "44"
               }
@@ -10669,15 +11025,15 @@
                 "formatted_vat": "19,00 %",
                 "formatted_difference": "  0,80 EUR",
                 "formatted_display": "  4,99 EUR",
-                "formatted_label": "null",
+                "formatted_label": null,
                 "pricelistID": "0",
                 "pricelistName": "",
                 "aggregateprice": "  4,99 EUR",
-                "volumeprice": "null",
+                "volumeprice": null,
                 "meta_multi": false,
                 "meta_scale": false,
                 "meta_time": false,
-                "meta_group": "null",
+                "meta_group": null,
                 "meta_IID": "10033",
                 "meta_UID": "0",
                 "original_gross": "899",
@@ -10691,7 +11047,7 @@
                 "original_formatted_vat": "19,00 %",
                 "original_formatted_difference": "  1,44 EUR",
                 "original_formatted_display": "  8,99 EUR",
-                "original_formatted_label": "null",
+                "original_formatted_label": null,
                 "isOriginal": true,
                 "original_percent": "44"
               }
@@ -10711,15 +11067,15 @@
                 "formatted_vat": "19,00 %",
                 "formatted_difference": "  0,80 EUR",
                 "formatted_display": "  4,99 EUR",
-                "formatted_label": "null",
+                "formatted_label": null,
                 "pricelistID": "0",
                 "pricelistName": "",
                 "aggregateprice": "  4,99 EUR",
-                "volumeprice": "null",
+                "volumeprice": null,
                 "meta_multi": false,
                 "meta_scale": false,
                 "meta_time": false,
-                "meta_group": "null",
+                "meta_group": null,
                 "meta_IID": "10033",
                 "meta_UID": "0",
                 "original_gross": "899",
@@ -10733,7 +11089,7 @@
                 "original_formatted_vat": "19,00 %",
                 "original_formatted_difference": "  1,44 EUR",
                 "original_formatted_display": "  8,99 EUR",
-                "original_formatted_label": "null",
+                "original_formatted_label": null,
                 "isOriginal": true,
                 "original_percent": "44"
               }
@@ -10767,15 +11123,15 @@
           "formatted_vat": "19,00 %",
           "formatted_difference": "  0,80 EUR",
           "formatted_display": "  4,99 EUR",
-          "formatted_label": "null",
+          "formatted_label": null,
           "pricelistID": "0",
           "pricelistName": "",
           "aggregateprice": "  4,99 EUR",
-          "volumeprice": "null",
+          "volumeprice": null,
           "meta_multi": false,
           "meta_scale": false,
           "meta_time": false,
-          "meta_group": "null",
+          "meta_group": null,
           "meta_IID": "10033",
           "meta_UID": "0",
           "original_gross": "899",
@@ -10789,7 +11145,7 @@
           "original_formatted_vat": "19,00 %",
           "original_formatted_difference": "  1,44 EUR",
           "original_formatted_display": "  8,99 EUR",
-          "original_formatted_label": "null",
+          "original_formatted_label": null,
           "isOriginal": true,
           "original_percent": "44"
         },
@@ -10809,15 +11165,15 @@
               "formatted_vat": "19,00 %",
               "formatted_difference": "  0,80 EUR",
               "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
+              "formatted_label": null,
               "pricelistID": "0",
               "pricelistName": "",
               "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
+              "volumeprice": null,
               "meta_multi": false,
               "meta_scale": false,
               "meta_time": false,
-              "meta_group": "null",
+              "meta_group": null,
               "meta_IID": "10033",
               "meta_UID": "0",
               "original_gross": "899",
@@ -10831,7 +11187,7 @@
               "original_formatted_vat": "19,00 %",
               "original_formatted_difference": "  1,44 EUR",
               "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
+              "original_formatted_label": null,
               "isOriginal": true,
               "original_percent": "44"
             }
@@ -10851,15 +11207,15 @@
               "formatted_vat": "19,00 %",
               "formatted_difference": "  0,80 EUR",
               "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
+              "formatted_label": null,
               "pricelistID": "0",
               "pricelistName": "",
               "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
+              "volumeprice": null,
               "meta_multi": false,
               "meta_scale": false,
               "meta_time": false,
-              "meta_group": "null",
+              "meta_group": null,
               "meta_IID": "10033",
               "meta_UID": "0",
               "original_gross": "899",
@@ -10873,7 +11229,7 @@
               "original_formatted_vat": "19,00 %",
               "original_formatted_difference": "  1,44 EUR",
               "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
+              "original_formatted_label": null,
               "isOriginal": true,
               "original_percent": "44"
             }
@@ -10893,15 +11249,15 @@
               "formatted_vat": "19,00 %",
               "formatted_difference": "  0,80 EUR",
               "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
+              "formatted_label": null,
               "pricelistID": "0",
               "pricelistName": "",
               "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
+              "volumeprice": null,
               "meta_multi": false,
               "meta_scale": false,
               "meta_time": false,
-              "meta_group": "null",
+              "meta_group": null,
               "meta_IID": "10033",
               "meta_UID": "0",
               "original_gross": "899",
@@ -10915,7 +11271,7 @@
               "original_formatted_vat": "19,00 %",
               "original_formatted_difference": "  1,44 EUR",
               "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
+              "original_formatted_label": null,
               "isOriginal": true,
               "original_percent": "44"
             }
@@ -10935,15 +11291,15 @@
               "formatted_vat": "19,00 %",
               "formatted_difference": "  0,80 EUR",
               "formatted_display": "  4,99 EUR",
-              "formatted_label": "null",
+              "formatted_label": null,
               "pricelistID": "0",
               "pricelistName": "",
               "aggregateprice": "  4,99 EUR",
-              "volumeprice": "null",
+              "volumeprice": null,
               "meta_multi": false,
               "meta_scale": false,
               "meta_time": false,
-              "meta_group": "null",
+              "meta_group": null,
               "meta_IID": "10033",
               "meta_UID": "0",
               "original_gross": "899",
@@ -10957,7 +11313,7 @@
               "original_formatted_vat": "19,00 %",
               "original_formatted_difference": "  1,44 EUR",
               "original_formatted_display": "  8,99 EUR",
-              "original_formatted_label": "null",
+              "original_formatted_label": null,
               "isOriginal": true,
               "original_percent": "44"
             }
@@ -10999,15 +11355,15 @@
         "formatted_vat": "19,00 %",
         "formatted_difference": "  0,80 EUR",
         "formatted_display": "  4,99 EUR",
-        "formatted_label": "null",
+        "formatted_label": null,
         "pricelistID": "0",
         "pricelistName": "",
         "aggregateprice": "  4,99 EUR",
-        "volumeprice": "null",
+        "volumeprice": null,
         "meta_multi": false,
         "meta_scale": false,
         "meta_time": false,
-        "meta_group": "null",
+        "meta_group": null,
         "meta_IID": "10033",
         "meta_UID": "0",
         "original_gross": "899",
@@ -11021,7 +11377,7 @@
         "original_formatted_vat": "19,00 %",
         "original_formatted_difference": "  1,44 EUR",
         "original_formatted_display": "  8,99 EUR",
-        "original_formatted_label": "null",
+        "original_formatted_label": null,
         "isOriginal": true,
         "original_percent": "44"
       },
@@ -11086,8 +11442,7 @@
           "type": "string"
         },
         "formatted_label": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "pricelistID": {
           "description": "",
@@ -11104,8 +11459,7 @@
           "type": "string"
         },
         "volumeprice": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "meta_multi": {
           "description": "",
@@ -11123,8 +11477,7 @@
           "type": "boolean"
         },
         "meta_group": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "meta_IID": {
           "description": "",
@@ -11195,8 +11548,7 @@
           "type": "string"
         },
         "original_formatted_label": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "isOriginal": {
           "description": "",
@@ -11266,15 +11618,15 @@
             "formatted_vat": "19,00 %",
             "formatted_difference": "  0,80 EUR",
             "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
+            "formatted_label": null,
             "pricelistID": "0",
             "pricelistName": "",
             "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
+            "volumeprice": null,
             "meta_multi": false,
             "meta_scale": false,
             "meta_time": false,
-            "meta_group": "null",
+            "meta_group": null,
             "meta_IID": "10033",
             "meta_UID": "0",
             "original_gross": "899",
@@ -11288,7 +11640,7 @@
             "original_formatted_vat": "19,00 %",
             "original_formatted_difference": "  1,44 EUR",
             "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
+            "original_formatted_label": null,
             "isOriginal": true,
             "original_percent": "44"
           }
@@ -11308,15 +11660,15 @@
             "formatted_vat": "19,00 %",
             "formatted_difference": "  0,80 EUR",
             "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
+            "formatted_label": null,
             "pricelistID": "0",
             "pricelistName": "",
             "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
+            "volumeprice": null,
             "meta_multi": false,
             "meta_scale": false,
             "meta_time": false,
-            "meta_group": "null",
+            "meta_group": null,
             "meta_IID": "10033",
             "meta_UID": "0",
             "original_gross": "899",
@@ -11330,7 +11682,7 @@
             "original_formatted_vat": "19,00 %",
             "original_formatted_difference": "  1,44 EUR",
             "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
+            "original_formatted_label": null,
             "isOriginal": true,
             "original_percent": "44"
           }
@@ -11350,15 +11702,15 @@
             "formatted_vat": "19,00 %",
             "formatted_difference": "  0,80 EUR",
             "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
+            "formatted_label": null,
             "pricelistID": "0",
             "pricelistName": "",
             "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
+            "volumeprice": null,
             "meta_multi": false,
             "meta_scale": false,
             "meta_time": false,
-            "meta_group": "null",
+            "meta_group": null,
             "meta_IID": "10033",
             "meta_UID": "0",
             "original_gross": "899",
@@ -11372,7 +11724,7 @@
             "original_formatted_vat": "19,00 %",
             "original_formatted_difference": "  1,44 EUR",
             "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
+            "original_formatted_label": null,
             "isOriginal": true,
             "original_percent": "44"
           }
@@ -11392,15 +11744,15 @@
             "formatted_vat": "19,00 %",
             "formatted_difference": "  0,80 EUR",
             "formatted_display": "  4,99 EUR",
-            "formatted_label": "null",
+            "formatted_label": null,
             "pricelistID": "0",
             "pricelistName": "",
             "aggregateprice": "  4,99 EUR",
-            "volumeprice": "null",
+            "volumeprice": null,
             "meta_multi": false,
             "meta_scale": false,
             "meta_time": false,
-            "meta_group": "null",
+            "meta_group": null,
             "meta_IID": "10033",
             "meta_UID": "0",
             "original_gross": "899",
@@ -11414,7 +11766,7 @@
             "original_formatted_vat": "19,00 %",
             "original_formatted_difference": "  1,44 EUR",
             "original_formatted_display": "  8,99 EUR",
-            "original_formatted_label": "null",
+            "original_formatted_label": null,
             "isOriginal": true,
             "original_percent": "44"
           }
@@ -11459,15 +11811,15 @@
           "formatted_vat": "19,00 %",
           "formatted_difference": "  0,80 EUR",
           "formatted_display": "  4,99 EUR",
-          "formatted_label": "null",
+          "formatted_label": null,
           "pricelistID": "0",
           "pricelistName": "",
           "aggregateprice": "  4,99 EUR",
-          "volumeprice": "null",
+          "volumeprice": null,
           "meta_multi": false,
           "meta_scale": false,
           "meta_time": false,
-          "meta_group": "null",
+          "meta_group": null,
           "meta_IID": "10033",
           "meta_UID": "0",
           "original_gross": "899",
@@ -11481,7 +11833,7 @@
           "original_formatted_vat": "19,00 %",
           "original_formatted_difference": "  1,44 EUR",
           "original_formatted_display": "  8,99 EUR",
-          "original_formatted_label": "null",
+          "original_formatted_label": null,
           "isOriginal": true,
           "original_percent": "44"
         }
@@ -11525,15 +11877,15 @@
           "formatted_vat": "19,00 %",
           "formatted_difference": "  0,80 EUR",
           "formatted_display": "  4,99 EUR",
-          "formatted_label": "null",
+          "formatted_label": null,
           "pricelistID": "0",
           "pricelistName": "",
           "aggregateprice": "  4,99 EUR",
-          "volumeprice": "null",
+          "volumeprice": null,
           "meta_multi": false,
           "meta_scale": false,
           "meta_time": false,
-          "meta_group": "null",
+          "meta_group": null,
           "meta_IID": "10033",
           "meta_UID": "0",
           "original_gross": "899",
@@ -11547,7 +11899,7 @@
           "original_formatted_vat": "19,00 %",
           "original_formatted_difference": "  1,44 EUR",
           "original_formatted_display": "  8,99 EUR",
-          "original_formatted_label": "null",
+          "original_formatted_label": null,
           "isOriginal": true,
           "original_percent": "44"
         }
@@ -11591,15 +11943,15 @@
           "formatted_vat": "19,00 %",
           "formatted_difference": "  0,80 EUR",
           "formatted_display": "  4,99 EUR",
-          "formatted_label": "null",
+          "formatted_label": null,
           "pricelistID": "0",
           "pricelistName": "",
           "aggregateprice": "  4,99 EUR",
-          "volumeprice": "null",
+          "volumeprice": null,
           "meta_multi": false,
           "meta_scale": false,
           "meta_time": false,
-          "meta_group": "null",
+          "meta_group": null,
           "meta_IID": "10033",
           "meta_UID": "0",
           "original_gross": "899",
@@ -11613,7 +11965,7 @@
           "original_formatted_vat": "19,00 %",
           "original_formatted_difference": "  1,44 EUR",
           "original_formatted_display": "  8,99 EUR",
-          "original_formatted_label": "null",
+          "original_formatted_label": null,
           "isOriginal": true,
           "original_percent": "44"
         }
@@ -11657,15 +12009,15 @@
           "formatted_vat": "19,00 %",
           "formatted_difference": "  0,80 EUR",
           "formatted_display": "  4,99 EUR",
-          "formatted_label": "null",
+          "formatted_label": null,
           "pricelistID": "0",
           "pricelistName": "",
           "aggregateprice": "  4,99 EUR",
-          "volumeprice": "null",
+          "volumeprice": null,
           "meta_multi": false,
           "meta_scale": false,
           "meta_time": false,
-          "meta_group": "null",
+          "meta_group": null,
           "meta_IID": "10033",
           "meta_UID": "0",
           "original_gross": "899",
@@ -11679,7 +12031,7 @@
           "original_formatted_vat": "19,00 %",
           "original_formatted_difference": "  1,44 EUR",
           "original_formatted_display": "  8,99 EUR",
-          "original_formatted_label": "null",
+          "original_formatted_label": null,
           "isOriginal": true,
           "original_percent": "44"
         }
@@ -11765,7 +12117,7 @@
           "city": "Landsberied",
           "country": "de"
         },
-        "shipTo": "null",
+        "shipTo": null,
         "positions": [
           {
             "iid": "10026",
@@ -11866,8 +12218,7 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "positions": {
           "description": "",
@@ -13167,7 +13518,7 @@
           "city": "Landsberied",
           "country": "de"
         },
-        "shipTo": "null",
+        "shipTo": null,
         "positions": [
           {
             "iid": "10026",
@@ -13261,8 +13612,7 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "positions": {
           "description": "",
@@ -13527,7 +13877,7 @@
           "city": "Landsberied",
           "country": "de"
         },
-        "shipTo": "null",
+        "shipTo": null,
         "positions": [
           {
             "iid": "1018",
@@ -13611,8 +13961,7 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "positions": {
           "description": "",
@@ -13659,6 +14008,95 @@
     },
     "Bestellung erstellen  gutschein einlösenrequest": {
       "title": "Bestellung erstellen - Gutschein einlösenRequest",
+      "example": {
+        "companyOrderID": "0001/01/00003",
+        "billNumber": "0001/01/00003",
+        "notice": "Das ist eine Kassen Bestellung",
+        "shid": 1,
+        "transactions": [
+          {
+            "provider": "alvine",
+            "type": "",
+            "id": "",
+            "token": "",
+            "amount": "1256",
+            "currency": "EUR",
+            "authcode": "CAPTURED",
+            "authmsg": "CAPTURED",
+            "result": "",
+            "captureState": "CAPTURED",
+            "captureAmount": "1256",
+            "resultData": "",
+            "resultText": "",
+            "erpID": "",
+            "paymentPTID": 20
+          }
+        ],
+        "user": {
+          "userName": "b2c@example.com",
+          "formOfAddress": "",
+          "letterFormOfAddress": "",
+          "birthday": "04.01.1977",
+          "custom1": "",
+          "custom2": "",
+          "company": "schukai GmbH"
+        },
+        "sellTo": {
+          "address1": "Eichenstrasse 26",
+          "address2": "",
+          "zip": "82290",
+          "city": "Landsberied",
+          "country": "de"
+        },
+        "shipTo": null,
+        "positions": [
+          {
+            "iid": "10076",
+            "optional": "_UNIQUE_",
+            "ean": "6985694862569",
+            "count": 1,
+            "gross": 32900,
+            "net": 27647,
+            "currency": "EUR",
+            "vat": 1900,
+            "priceType": "",
+            "custom1": "",
+            "custom2": "",
+            "custom3": "",
+            "name": "Waschmaschine - W352",
+            "itemNumber": "10076",
+            "salesman": 1
+          },
+          {
+            "iid": "501",
+            "optional": "__UNIQUE__",
+            "ean": "",
+            "count": 1,
+            "gross": -5000,
+            "net": -4202,
+            "currency": "EUR",
+            "vat": 1900,
+            "priceType": "",
+            "custom1": "",
+            "custom2": "",
+            "custom3": "",
+            "name": "Gutschein",
+            "itemNumber": "gutschein",
+            "salesman": 1,
+            "voucherSOID": 3,
+            "voucherPasswords": [
+              "9e526b4b-86ed-4c51"
+            ]
+          }
+        ],
+        "sys": {
+          "reserverStockPositions": true,
+          "createDelivery": true,
+          "setDelivered": true,
+          "setBillNumber": true,
+          "createEdiOrder": false
+        }
+      },
       "type": "object",
       "properties": {
         "companyOrderID": {
@@ -13715,8 +14153,7 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "positions": {
           "description": "",
@@ -13956,7 +14393,7 @@
           "city": "Landsberied",
           "country": "de"
         },
-        "shipTo": "null",
+        "shipTo": null,
         "positions": [
           {
             "iid": "10076",
@@ -14065,8 +14502,7 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "positions": {
           "description": "",
@@ -14326,10 +14762,70 @@
     },
     "GutscheinBerechnenresponse": {
       "title": "Gutschein berechnenResponse",
+      "example": {
+        "dataset": [
+          {
+            "IID": "501",
+            "message": [
+              {
+                "text": "Der Gutschein wurde bereits eingelöst."
+              }
+            ],
+            "ean": null,
+            "label": "Kaufgutschein aus OID 432 (SCID 1446)",
+            "digits": 2,
+            "gross": -595,
+            "net": -500,
+            "diff": null,
+            "vat": 1900,
+            "currency": "EUR",
+            "meta": {
+              "soid": "3",
+              "min_order_value": "0",
+              "unit": "2",
+              "offer": "5000",
+              "currency": "EUR",
+              "type": "3",
+              "offer_net": 4202
+            },
+            "type": "voucher",
+            "additional": []
+          }
+        ]
+      },
       "type": "object",
       "properties": {
         "dataset": {
           "description": "",
+          "example": [
+            {
+              "IID": "501",
+              "message": [
+                {
+                  "text": "Der Gutschein wurde bereits eingelöst."
+                }
+              ],
+              "ean": null,
+              "label": "Kaufgutschein aus OID 432 (SCID 1446)",
+              "digits": 2,
+              "gross": -595,
+              "net": -500,
+              "diff": null,
+              "vat": 1900,
+              "currency": "EUR",
+              "meta": {
+                "soid": "3",
+                "min_order_value": "0",
+                "unit": "2",
+                "offer": "5000",
+                "currency": "EUR",
+                "type": "3",
+                "offer_net": 4202
+              },
+              "type": "voucher",
+              "additional": []
+            }
+          ],
           "type": "array",
           "items": {
             "$ref": "#/definitions/Dataset268"
@@ -14342,6 +14838,33 @@
     },
     "Dataset268": {
       "title": "Dataset268",
+      "example": {
+        "IID": "501",
+        "message": [
+          {
+            "text": "Der Gutschein wurde bereits eingelöst."
+          }
+        ],
+        "ean": null,
+        "label": "Kaufgutschein aus OID 432 (SCID 1446)",
+        "digits": 2,
+        "gross": -595,
+        "net": -500,
+        "diff": null,
+        "vat": 1900,
+        "currency": "EUR",
+        "meta": {
+          "soid": "3",
+          "min_order_value": "0",
+          "unit": "2",
+          "offer": "5000",
+          "currency": "EUR",
+          "type": "3",
+          "offer_net": 4202
+        },
+        "type": "voucher",
+        "additional": []
+      },
       "type": "object",
       "properties": {
         "IID": {
@@ -14362,8 +14885,7 @@
           }
         },
         "ean": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "label": {
           "description": "",
@@ -14389,8 +14911,7 @@
           "format": "int32"
         },
         "diff": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "vat": {
           "description": "",
@@ -14688,6 +15209,379 @@
     },
     "WerBinIchresponse": {
       "title": "Wer bin ichResponse",
+      "example": {
+        "dataset": {
+          "erpID": "",
+          "erpName": "",
+          "erpNumber": "",
+          "erpLastUpdate": "2011-07-11T11:10:23",
+          "erpCreation": "0000-01-01T00:00:00",
+          "archived": "0",
+          "uid": 75731,
+          "name": "mey_admin",
+          "state": 0,
+          "creation": null,
+          "lastUpdate": "2017-11-14T15:49:43",
+          "ranking": 0,
+          "addresses": [],
+          "personal": {
+            "erpID": "",
+            "erpName": "",
+            "erpNumber": "",
+            "erpLastUpdate": "2011-10-06T08:55:11",
+            "erpCreation": "0000-01-01T00:00:00",
+            "pid": 74761,
+            "uid": 75731,
+            "alias": "",
+            "formOfAddress": "",
+            "salutation": "Sehr geehrte Damen und Herren,",
+            "firstname": "Mey",
+            "name1": "Administrator",
+            "name2": "",
+            "title": "",
+            "custom1": "",
+            "custom2": "",
+            "birthday": "0000-01-01T00:00:00",
+            "lastUpdate": "0000-01-01T00:00:00"
+          },
+          "properties": [
+            {
+              "pid": 890011,
+              "uid": 75731,
+              "name": "core.interface.image.limitsize",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890031,
+              "uid": 75731,
+              "name": "core.interface.sheet.changerowcolor",
+              "value": "1",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890041,
+              "uid": 75731,
+              "name": "core.interface.sheet.colheader.repeat",
+              "value": "25",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890051,
+              "uid": 75731,
+              "name": "core.interface.sheet.geticon",
+              "value": "2",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890061,
+              "uid": 75731,
+              "name": "core.interface.sheet.position.limit",
+              "value": "1",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890071,
+              "uid": 75731,
+              "name": "core.interface.sheet.position.maxrows",
+              "value": "50",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890081,
+              "uid": 75731,
+              "name": "core.interface.sheet.showhtml",
+              "value": "1",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890091,
+              "uid": 75731,
+              "name": "core.interface.sheet.string.limit",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890101,
+              "uid": 75731,
+              "name": "core.interface.sheet.viewimage",
+              "value": "1",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890121,
+              "uid": 75731,
+              "name": "core.interface.desktop.version",
+              "value": "2",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890131,
+              "uid": 75731,
+              "name": "core.interface.desktop.applications",
+              "value": "a:0:{}",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890141,
+              "uid": 75731,
+              "name": "core.locale.frontendlanguage",
+              "value": "de",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890151,
+              "uid": 75731,
+              "name": "core.property.currency",
+              "value": "EUR",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890161,
+              "uid": 75731,
+              "name": "core.property.currency.sign.prefix",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890171,
+              "uid": 75731,
+              "name": "core.property.currency.sign.suffix",
+              "value": "¬",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890181,
+              "uid": 75731,
+              "name": "core.property.dateformat",
+              "value": "d.m.Y",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890191,
+              "uid": 75731,
+              "name": "core.property.decimalcount",
+              "value": "2",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890201,
+              "uid": 75731,
+              "name": "core.property.decimaldelimiter",
+              "value": ".",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890211,
+              "uid": 75731,
+              "name": "core.property.digitsgrouping",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890221,
+              "uid": 75731,
+              "name": "core.property.export.cvs.delimiter",
+              "value": ",",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890231,
+              "uid": 75731,
+              "name": "core.property.export.cvs.quote",
+              "value": "2",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890251,
+              "uid": 75731,
+              "name": "core.property.myteam_subgroup",
+              "value": "1",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890261,
+              "uid": 75731,
+              "name": "core.property.timeformat",
+              "value": "H:i:s",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890271,
+              "uid": 75731,
+              "name": "shop.addon.crm.newsletter",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890281,
+              "uid": 75731,
+              "name": "shop.addon.crm.rating",
+              "value": "C",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 890291,
+              "uid": 75731,
+              "name": "shop.customer.deliveryblock",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 1869292,
+              "uid": 75731,
+              "name": "core.interface.sheet.version",
+              "value": "2",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 1934382,
+              "uid": 75731,
+              "name": "core.interface.intern.notice",
+              "value": "<ul><li>transparenter und hochwertig bestickter Tülleinsatz im Decolletée</li><li>edler Glanz in den Zierstreifen</li><li>als sinnlicher Body-Dress mit schmalen, verstellbaren Träger</li><li>besonders weicher Fall, schmiegt sich perfekt an</li><li>für verführerische Momente</li></ul>",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 3305741,
+              "uid": 75731,
+              "name": "shop.extra.item.exportset",
+              "value": "a:1:{s:11:\"zalando set\";a:7:{i:0;s:3:\"iid\";i:1;s:16:\"pb_item_text::50\";i:2;s:16:\"pb_item_text::51\";i:3;s:16:\"pb_item_text::53\";i:4;s:16:\"pb_item_text::52\";i:5;s:17:\"sys_variants_info\";i:6;s:17:\"export_properties\";}}",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 12737642,
+              "uid": 75731,
+              "name": "core.interface.standard.toolbar",
+              "value": "a:11:{i:0;a:3:{s:1:\"u\";s:449:\" index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:28:\"toolbar_icon_visualcheck.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Freigaben</font></b>\";}i:1;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=52&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:21:\"toolbar_icon_lamp.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Teiloffen</b></font>\";}i:2;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=11&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:24:\"toolbar_icon_dispute.gif\";s:1:\"l\";s:37:\"<b><font color=green>B.Fehlerhaft</b>\";}i:3;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8007&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:23:\"toolbar_icon_reload.gif\";s:1:\"l\";s:40:\"<b><font color=green>B.Wiedervorlage</b>\";}i:4;a:3:{s:1:\"u\";s:243:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=214&sxx_filter_tid=&sxx_filter_sys_priority=&sxx_filter_sys_state=2%2C4%2C6&sxx_filter_sys_ouid=&sxx_filter_sys_description=&sxx_filter_freetext=&sxx_filter_sys_cuid_map=&sxx_filter_date=&submit=OK\";s:1:\"i\";s:22:\"toolbar_icon_mail2.gif\";s:1:\"l\";s:42:\"<b><font color=red>T.Sichtliste</b></font>\";}i:5;a:3:{s:1:\"u\";s:247:\"index.php?sxx_list_start=0&sxx_list_sort=&sxx_filter_incommingdate=&sxx_filter_sys_transaction_number=&cmd=9221&sxx_filter_rid=&sxx_filter_state=20&sxx_filter_action=&sxx_filter_payment=&sxx_filter_country=&sxx_customer=&sxx_filter_shid=&submit=OK\";s:1:\"i\";s:18:\"toolbar_icon_r.gif\";s:1:\"l\";s:46:\"<b><font color=purple>Retourenliste</b></font>\";}i:6;a:3:{s:1:\"u\";s:55:\"https://www.paypal.com/de/cgi-bin/webscr?cmd=_login-run\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:33:\"<b><font color=blue>Paypal</font>\";}i:7;a:3:{s:1:\"u\";s:20:\"https://pmi.pay1.de/\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:30:\"<font color=blue>Payone</font>\";}i:8;a:3:{s:1:\"u\";s:93:\"https://banking.saalesparkasse.de/portal/portal/StartenIPSTANDARD?IID=80053762&AID=IPSTANDARD\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:40:\"<font color=blue>DeutscheBank</font></b>\";}i:9;a:3:{s:1:\"u\";s:50:\"index.php?sxx_site=alvine&history=Liste&cmd=35012&\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:34:\"<b><font color=blue>CEG</b></font>\";}i:10;a:3:{s:1:\"u\";s:49:\"index.php?sxx_site=alvine&history=Liste&cmd=1023&\";s:1:\"i\";s:25:\"toolbar_icon_favorite.gif\";s:1:\"l\";s:38:\"<b><font color=purple>Lager</b></font>\";}}",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 16912242,
+              "uid": 75731,
+              "name": "alvine.cmd.history",
+              "value": "0",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 16912252,
+              "uid": 75731,
+              "name": "alvine.cmd.history.label",
+              "value": "Liste",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 26785152,
+              "uid": 75731,
+              "name": "core.language",
+              "value": "de",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 26785153,
+              "uid": 75731,
+              "name": "public.file.upload.path",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 26785154,
+              "uid": 75731,
+              "name": "content.file.upload.extension",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 26785155,
+              "uid": 75731,
+              "name": "content.file.upload.excludedirs",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 26785156,
+              "uid": 75731,
+              "name": "content.file.content.path",
+              "value": "",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 26785157,
+              "uid": 75731,
+              "name": "core.property.myteam",
+              "value": "1,12,26,5,6,22,15,9,32,14,20,29,23,30,8,10,11,24,115,81,16,91,27,25,7,2,31,28,21,3,4,17",
+              "language": "",
+              "country": ""
+            },
+            {
+              "pid": 26793650,
+              "uid": 75731,
+              "name": "core.interface.menu.selected",
+              "value": "57",
+              "language": "",
+              "country": ""
+            }
+          ],
+          "communication": [
+            {
+              "erpID": "",
+              "erpName": "",
+              "erpNumber": "",
+              "erpLastUpdate": "2011-10-06T08:56:14",
+              "erpCreation": "0000-01-01T00:00:00",
+              "cid": 185882,
+              "uid": 75731,
+              "type": 1,
+              "description": "",
+              "locator": "support@schukai.de",
+              "preset": "1",
+              "private": "",
+              "scope": "50",
+              "lastUpdate": "0000-01-01T00:00:00"
+            }
+          ]
+        },
+        "sys": {
+          "message": "200 OK",
+          "code": 200
+        }
+      },
       "type": "object",
       "properties": {
         "dataset": {
@@ -14704,6 +15598,373 @@
     },
     "Dataset278": {
       "title": "Dataset278",
+      "example": {
+        "erpID": "",
+        "erpName": "",
+        "erpNumber": "",
+        "erpLastUpdate": "2011-07-11T11:10:23",
+        "erpCreation": "0000-01-01T00:00:00",
+        "archived": "0",
+        "uid": 75731,
+        "name": "mey_admin",
+        "state": 0,
+        "creation": null,
+        "lastUpdate": "2017-11-14T15:49:43",
+        "ranking": 0,
+        "addresses": [],
+        "personal": {
+          "erpID": "",
+          "erpName": "",
+          "erpNumber": "",
+          "erpLastUpdate": "2011-10-06T08:55:11",
+          "erpCreation": "0000-01-01T00:00:00",
+          "pid": 74761,
+          "uid": 75731,
+          "alias": "",
+          "formOfAddress": "",
+          "salutation": "Sehr geehrte Damen und Herren,",
+          "firstname": "Mey",
+          "name1": "Administrator",
+          "name2": "",
+          "title": "",
+          "custom1": "",
+          "custom2": "",
+          "birthday": "0000-01-01T00:00:00",
+          "lastUpdate": "0000-01-01T00:00:00"
+        },
+        "properties": [
+          {
+            "pid": 890011,
+            "uid": 75731,
+            "name": "core.interface.image.limitsize",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890031,
+            "uid": 75731,
+            "name": "core.interface.sheet.changerowcolor",
+            "value": "1",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890041,
+            "uid": 75731,
+            "name": "core.interface.sheet.colheader.repeat",
+            "value": "25",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890051,
+            "uid": 75731,
+            "name": "core.interface.sheet.geticon",
+            "value": "2",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890061,
+            "uid": 75731,
+            "name": "core.interface.sheet.position.limit",
+            "value": "1",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890071,
+            "uid": 75731,
+            "name": "core.interface.sheet.position.maxrows",
+            "value": "50",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890081,
+            "uid": 75731,
+            "name": "core.interface.sheet.showhtml",
+            "value": "1",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890091,
+            "uid": 75731,
+            "name": "core.interface.sheet.string.limit",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890101,
+            "uid": 75731,
+            "name": "core.interface.sheet.viewimage",
+            "value": "1",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890121,
+            "uid": 75731,
+            "name": "core.interface.desktop.version",
+            "value": "2",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890131,
+            "uid": 75731,
+            "name": "core.interface.desktop.applications",
+            "value": "a:0:{}",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890141,
+            "uid": 75731,
+            "name": "core.locale.frontendlanguage",
+            "value": "de",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890151,
+            "uid": 75731,
+            "name": "core.property.currency",
+            "value": "EUR",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890161,
+            "uid": 75731,
+            "name": "core.property.currency.sign.prefix",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890171,
+            "uid": 75731,
+            "name": "core.property.currency.sign.suffix",
+            "value": "¬",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890181,
+            "uid": 75731,
+            "name": "core.property.dateformat",
+            "value": "d.m.Y",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890191,
+            "uid": 75731,
+            "name": "core.property.decimalcount",
+            "value": "2",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890201,
+            "uid": 75731,
+            "name": "core.property.decimaldelimiter",
+            "value": ".",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890211,
+            "uid": 75731,
+            "name": "core.property.digitsgrouping",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890221,
+            "uid": 75731,
+            "name": "core.property.export.cvs.delimiter",
+            "value": ",",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890231,
+            "uid": 75731,
+            "name": "core.property.export.cvs.quote",
+            "value": "2",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890251,
+            "uid": 75731,
+            "name": "core.property.myteam_subgroup",
+            "value": "1",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890261,
+            "uid": 75731,
+            "name": "core.property.timeformat",
+            "value": "H:i:s",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890271,
+            "uid": 75731,
+            "name": "shop.addon.crm.newsletter",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890281,
+            "uid": 75731,
+            "name": "shop.addon.crm.rating",
+            "value": "C",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 890291,
+            "uid": 75731,
+            "name": "shop.customer.deliveryblock",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 1869292,
+            "uid": 75731,
+            "name": "core.interface.sheet.version",
+            "value": "2",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 1934382,
+            "uid": 75731,
+            "name": "core.interface.intern.notice",
+            "value": "<ul><li>transparenter und hochwertig bestickter Tülleinsatz im Decolletée</li><li>edler Glanz in den Zierstreifen</li><li>als sinnlicher Body-Dress mit schmalen, verstellbaren Träger</li><li>besonders weicher Fall, schmiegt sich perfekt an</li><li>für verführerische Momente</li></ul>",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 3305741,
+            "uid": 75731,
+            "name": "shop.extra.item.exportset",
+            "value": "a:1:{s:11:\"zalando set\";a:7:{i:0;s:3:\"iid\";i:1;s:16:\"pb_item_text::50\";i:2;s:16:\"pb_item_text::51\";i:3;s:16:\"pb_item_text::53\";i:4;s:16:\"pb_item_text::52\";i:5;s:17:\"sys_variants_info\";i:6;s:17:\"export_properties\";}}",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 12737642,
+            "uid": 75731,
+            "name": "core.interface.standard.toolbar",
+            "value": "a:11:{i:0;a:3:{s:1:\"u\";s:449:\" index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:28:\"toolbar_icon_visualcheck.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Freigaben</font></b>\";}i:1;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=52&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:21:\"toolbar_icon_lamp.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Teiloffen</b></font>\";}i:2;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=11&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:24:\"toolbar_icon_dispute.gif\";s:1:\"l\";s:37:\"<b><font color=green>B.Fehlerhaft</b>\";}i:3;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8007&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:23:\"toolbar_icon_reload.gif\";s:1:\"l\";s:40:\"<b><font color=green>B.Wiedervorlage</b>\";}i:4;a:3:{s:1:\"u\";s:243:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=214&sxx_filter_tid=&sxx_filter_sys_priority=&sxx_filter_sys_state=2%2C4%2C6&sxx_filter_sys_ouid=&sxx_filter_sys_description=&sxx_filter_freetext=&sxx_filter_sys_cuid_map=&sxx_filter_date=&submit=OK\";s:1:\"i\";s:22:\"toolbar_icon_mail2.gif\";s:1:\"l\";s:42:\"<b><font color=red>T.Sichtliste</b></font>\";}i:5;a:3:{s:1:\"u\";s:247:\"index.php?sxx_list_start=0&sxx_list_sort=&sxx_filter_incommingdate=&sxx_filter_sys_transaction_number=&cmd=9221&sxx_filter_rid=&sxx_filter_state=20&sxx_filter_action=&sxx_filter_payment=&sxx_filter_country=&sxx_customer=&sxx_filter_shid=&submit=OK\";s:1:\"i\";s:18:\"toolbar_icon_r.gif\";s:1:\"l\";s:46:\"<b><font color=purple>Retourenliste</b></font>\";}i:6;a:3:{s:1:\"u\";s:55:\"https://www.paypal.com/de/cgi-bin/webscr?cmd=_login-run\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:33:\"<b><font color=blue>Paypal</font>\";}i:7;a:3:{s:1:\"u\";s:20:\"https://pmi.pay1.de/\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:30:\"<font color=blue>Payone</font>\";}i:8;a:3:{s:1:\"u\";s:93:\"https://banking.saalesparkasse.de/portal/portal/StartenIPSTANDARD?IID=80053762&AID=IPSTANDARD\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:40:\"<font color=blue>DeutscheBank</font></b>\";}i:9;a:3:{s:1:\"u\";s:50:\"index.php?sxx_site=alvine&history=Liste&cmd=35012&\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:34:\"<b><font color=blue>CEG</b></font>\";}i:10;a:3:{s:1:\"u\";s:49:\"index.php?sxx_site=alvine&history=Liste&cmd=1023&\";s:1:\"i\";s:25:\"toolbar_icon_favorite.gif\";s:1:\"l\";s:38:\"<b><font color=purple>Lager</b></font>\";}}",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 16912242,
+            "uid": 75731,
+            "name": "alvine.cmd.history",
+            "value": "0",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 16912252,
+            "uid": 75731,
+            "name": "alvine.cmd.history.label",
+            "value": "Liste",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 26785152,
+            "uid": 75731,
+            "name": "core.language",
+            "value": "de",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 26785153,
+            "uid": 75731,
+            "name": "public.file.upload.path",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 26785154,
+            "uid": 75731,
+            "name": "content.file.upload.extension",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 26785155,
+            "uid": 75731,
+            "name": "content.file.upload.excludedirs",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 26785156,
+            "uid": 75731,
+            "name": "content.file.content.path",
+            "value": "",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 26785157,
+            "uid": 75731,
+            "name": "core.property.myteam",
+            "value": "1,12,26,5,6,22,15,9,32,14,20,29,23,30,8,10,11,24,115,81,16,91,27,25,7,2,31,28,21,3,4,17",
+            "language": "",
+            "country": ""
+          },
+          {
+            "pid": 26793650,
+            "uid": 75731,
+            "name": "core.interface.menu.selected",
+            "value": "57",
+            "language": "",
+            "country": ""
+          }
+        ],
+        "communication": [
+          {
+            "erpID": "",
+            "erpName": "",
+            "erpNumber": "",
+            "erpLastUpdate": "2011-10-06T08:56:14",
+            "erpCreation": "0000-01-01T00:00:00",
+            "cid": 185882,
+            "uid": 75731,
+            "type": 1,
+            "description": "",
+            "locator": "support@schukai.de",
+            "preset": "1",
+            "private": "",
+            "scope": "50",
+            "lastUpdate": "0000-01-01T00:00:00"
+          }
+        ]
+      },
       "type": "object",
       "properties": {
         "erpID": {
@@ -14751,8 +16012,7 @@
           "format": "int32"
         },
         "creation": {
-          "description": "",
-          "type": "string"
+          "description": ""
         },
         "lastUpdate": {
           "description": "",
