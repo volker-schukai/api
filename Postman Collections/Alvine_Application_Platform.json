@@ -2195,14 +2195,14 @@
         }
       }
     },
-    "/api/commerce/order/report/averageordervalue/20100101/21180107": {
+    "/api/commerce/report/averageordervalue/20100101/21180107": {
       "get": {
         "description": "Revenue \r\n---------------- = Average Order Value\r\nNumber of orders ",
         "summary": "AverageOrderValue",
         "tags": [
           "report"
         ],
-        "operationId": "ApiCommerceOrderReportAverageordervalue2010010121180107Get",
+        "operationId": "ApiCommerceReportAverageordervalue2010010121180107Get",
         "produces": [
           "application/json"
         ],
@@ -2232,7 +2232,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/order/report/averageordervalue/20100101/21180107",
+              "uri": "/api/commerce/report/averageordervalue/20100101/21180107",
               "headers": {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
