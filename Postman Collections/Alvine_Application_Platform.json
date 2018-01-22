@@ -2334,11 +2334,11 @@
     "/api/commerce/report/item": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Produktreport",
+        "summary": "Warehouse Übersichtsreport",
         "tags": [
           "report"
         ],
-        "operationId": "ApiCommerceReportItemGet",
+        "operationId": "ApiCommerceReportItemGet2",
         "produces": [
           "application/json"
         ],
@@ -2383,7 +2383,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Produktreport",
+            "x-testName": "Warehouse Übersichtsreport",
             "x-testDescription": "TODO: Add Description"
           }
         ],
