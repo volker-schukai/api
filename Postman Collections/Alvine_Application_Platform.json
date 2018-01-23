@@ -121,7 +121,31 @@
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/commerce/item/catalog/category/1/upload",
+              "headers": {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept": "application/json"
+              },
+              "body": "image="
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Datei hinzufügen",
+            "x-testDescription": ""
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -709,7 +733,40 @@
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/commerce/item/catalog/category",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\n   \"dataset\": [\n     { \"cid\": 53 },\n     { \"cid\": 56 },\n     { \"cid\": 55 }\n   ]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "access-control-allow-origin": "*",
+                "connection": "keep-alive",
+                "content-length": "93",
+                "content-type": "application/json",
+                "date": "Sat, 21 Oct 2017 12:51:54 GMT",
+                "server": "nginx",
+                "x-powered-by": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":[{\"sys\":{\"message\":\"200 OK\",\"code\":200}},{\"sys\":{\"message\":\"200 OK\",\"code\":200}}]}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Kategorien Mehrfachlöschung",
+            "x-testDescription": ""
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -809,7 +866,41 @@
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PATCH",
+              "uri": "/api/commerce/item/catalog/category",
+              "headers": {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept": "application/json"
+              },
+              "body": "pk=5&name=erpNumber&value=123456"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "access-control-allow-origin": "*",
+                "connection": "keep-alive",
+                "content-encoding": "gzip",
+                "content-length": "294",
+                "content-type": "application/json",
+                "date": "Sun, 22 Oct 2017 11:16:00 GMT",
+                "server": "nginx",
+                "x-powered-by": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":{\"erpID\":\"\",\"erpName\":\"Neue Kategorie 2\",\"erpNumber\":\"123456\",\"erpLastUpdate\":\"1970-01-01T00:59:59\",\"erpCreation\":\"1970-01-01T00:59:59\",\"archived\":\"\",\"cid\":5,\"name\":\"name\",\"token\":\"\",\"ranking\":0,\"label\":{\"de\":\"Hallo\"},\"flag\":2,\"gpCoefficient\":0,\"specificationWeight\":0,\"specificationWeightUnit\":0,\"financesVat\":[],\"locale\":[],\"localeText\":[],\"searchKeywords\":\"\",\"parentCID\":0},\"sys\":{\"updated\":\"2017-10-22T11:16:00\",\"message\":\"200 OK\",\"code\":200}}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Kategoriefeld ändern",
+            "x-testDescription": ""
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3013,7 +3104,40 @@
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/legacy/price?iid=10056",
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Connection": "keep-alive",
+                "Content-Encoding": "gzip",
+                "Content-Length": "495",
+                "Content-Type": "application/json",
+                "Date": "Sun, 29 Oct 2017 19:08:32 GMT",
+                "Server": "nginx",
+                "X-Powered-By": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":{\"525918f5-44a6-4f8e-95bb-7f372b5ab5cd\":{\"IID\":10033,\"price\":{\"gross\":\"499\",\"net\":419,\"display\":\"499\",\"vat\":1900,\"difference\":80,\"currency\":\"EUR\",\"formatted_gross\":\"  4,99 EUR\",\"formatted_net\":\"  4,19 EUR\",\"formatted_vat\":\"19,00 %\",\"formatted_difference\":\"  0,80 EUR\",\"formatted_display\":\"  4,99 EUR\",\"formatted_label\":null,\"pricelistID\":\"0\",\"pricelistName\":\"\",\"aggregateprice\":\"  4,99 EUR\",\"volumeprice\":null,\"meta_multi\":false,\"meta_scale\":false,\"meta_time\":false,\"meta_group\":null,\"meta_IID\":\"10033\",\"meta_UID\":\"0\",\"original_gross\":\"899\",\"original_net\":755,\"original_display\":\"899\",\"original_vat\":1900,\"original_difference\":144,\"original_currency\":\"EUR\",\"original_formatted_gross\":\"  8,99 EUR\",\"original_formatted_net\":\"  7,55 EUR\",\"original_formatted_vat\":\"19,00 %\",\"original_formatted_difference\":\"  1,44 EUR\",\"original_formatted_display\":\"  8,99 EUR\",\"original_formatted_label\":null,\"isOriginal\":true,\"original_percent\":\"44\"},\"variants\":{\"S\":{\"ean\":\"5424155144857\",\"key\":\"S\",\"price\":{\"gross\":\"499\",\"net\":419,\"display\":\"499\",\"vat\":1900,\"difference\":80,\"currency\":\"EUR\",\"formatted_gross\":\"  4,99 EUR\",\"formatted_net\":\"  4,19 EUR\",\"formatted_vat\":\"19,00 %\",\"formatted_difference\":\"  0,80 EUR\",\"formatted_display\":\"  4,99 EUR\",\"formatted_label\":null,\"pricelistID\":\"0\",\"pricelistName\":\"\",\"aggregateprice\":\"  4,99 EUR\",\"volumeprice\":null,\"meta_multi\":false,\"meta_scale\":false,\"meta_time\":false,\"meta_group\":null,\"meta_IID\":\"10033\",\"meta_UID\":\"0\",\"original_gross\":\"899\",\"original_net\":755,\"original_display\":\"899\",\"original_vat\":1900,\"original_difference\":144,\"original_currency\":\"EUR\",\"original_formatted_gross\":\"  8,99 EUR\",\"original_formatted_net\":\"  7,55 EUR\",\"original_formatted_vat\":\"19,00 %\",\"original_formatted_difference\":\"  1,44 EUR\",\"original_formatted_display\":\"  8,99 EUR\",\"original_formatted_label\":null,\"isOriginal\":true,\"original_percent\":\"44\"}},\"M\":{\"ean\":\"5769864186729\",\"key\":\"M\",\"price\":{\"gross\":\"499\",\"net\":419,\"display\":\"499\",\"vat\":1900,\"difference\":80,\"currency\":\"EUR\",\"formatted_gross\":\"  4,99 EUR\",\"formatted_net\":\"  4,19 EUR\",\"formatted_vat\":\"19,00 %\",\"formatted_difference\":\"  0,80 EUR\",\"formatted_display\":\"  4,99 EUR\",\"formatted_label\":null,\"pricelistID\":\"0\",\"pricelistName\":\"\",\"aggregateprice\":\"  4,99 EUR\",\"volumeprice\":null,\"meta_multi\":false,\"meta_scale\":false,\"meta_time\":false,\"meta_group\":null,\"meta_IID\":\"10033\",\"meta_UID\":\"0\",\"original_gross\":\"899\",\"original_net\":755,\"original_display\":\"899\",\"original_vat\":1900,\"original_difference\":144,\"original_currency\":\"EUR\",\"original_formatted_gross\":\"  8,99 EUR\",\"original_formatted_net\":\"  7,55 EUR\",\"original_formatted_vat\":\"19,00 %\",\"original_formatted_difference\":\"  1,44 EUR\",\"original_formatted_display\":\"  8,99 EUR\",\"original_formatted_label\":null,\"isOriginal\":true,\"original_percent\":\"44\"}},\"L\":{\"ean\":\"6876634633196\",\"key\":\"L\",\"price\":{\"gross\":\"499\",\"net\":419,\"display\":\"499\",\"vat\":1900,\"difference\":80,\"currency\":\"EUR\",\"formatted_gross\":\"  4,99 EUR\",\"formatted_net\":\"  4,19 EUR\",\"formatted_vat\":\"19,00 %\",\"formatted_difference\":\"  0,80 EUR\",\"formatted_display\":\"  4,99 EUR\",\"formatted_label\":null,\"pricelistID\":\"0\",\"pricelistName\":\"\",\"aggregateprice\":\"  4,99 EUR\",\"volumeprice\":null,\"meta_multi\":false,\"meta_scale\":false,\"meta_time\":false,\"meta_group\":null,\"meta_IID\":\"10033\",\"meta_UID\":\"0\",\"original_gross\":\"899\",\"original_net\":755,\"original_display\":\"899\",\"original_vat\":1900,\"original_difference\":144,\"original_currency\":\"EUR\",\"original_formatted_gross\":\"  8,99 EUR\",\"original_formatted_net\":\"  7,55 EUR\",\"original_formatted_vat\":\"19,00 %\",\"original_formatted_difference\":\"  1,44 EUR\",\"original_formatted_display\":\"  8,99 EUR\",\"original_formatted_label\":null,\"isOriginal\":true,\"original_percent\":\"44\"}},\"XL\":{\"ean\":\"5591665777547\",\"key\":\"XL\",\"price\":{\"gross\":\"499\",\"net\":419,\"display\":\"499\",\"vat\":1900,\"difference\":80,\"currency\":\"EUR\",\"formatted_gross\":\"  4,99 EUR\",\"formatted_net\":\"  4,19 EUR\",\"formatted_vat\":\"19,00 %\",\"formatted_difference\":\"  0,80 EUR\",\"formatted_display\":\"  4,99 EUR\",\"formatted_label\":null,\"pricelistID\":\"0\",\"pricelistName\":\"\",\"aggregateprice\":\"  4,99 EUR\",\"volumeprice\":null,\"meta_multi\":false,\"meta_scale\":false,\"meta_time\":false,\"meta_group\":null,\"meta_IID\":\"10033\",\"meta_UID\":\"0\",\"original_gross\":\"899\",\"original_net\":755,\"original_display\":\"899\",\"original_vat\":1900,\"original_difference\":144,\"original_currency\":\"EUR\",\"original_formatted_gross\":\"  8,99 EUR\",\"original_formatted_net\":\"  7,55 EUR\",\"original_formatted_vat\":\"19,00 %\",\"original_formatted_difference\":\"  1,44 EUR\",\"original_formatted_display\":\"  8,99 EUR\",\"original_formatted_label\":null,\"isOriginal\":true,\"original_percent\":\"44\"}}}}}}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Preis auslesen",
+            "x-testDescription": ""
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3255,7 +3379,41 @@
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/legacy/voucher?password=MEYBIRTHDAY",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "[\n\t{\n\t\"IID\":\"10083\",\n\t\"price\":595,\n\t\"vat\":1900,\n\t\"count\":1\n\t}\n]"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Connection": "close",
+                "Content-Encoding": "gzip",
+                "Content-Length": "275",
+                "Content-Type": "application/json",
+                "Date": "Tue, 07 Nov 2017 05:50:49 +0000",
+                "Host": "localhost:8005",
+                "X-Powered-By": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":[{\"IID\":\"501\",\"message\":[{\"text\":\"Der Gutschein wurde bereits eingel\\u00f6st.\"}],\"ean\":null,\"label\":\"Kaufgutschein aus OID 432 (SCID 1446)\",\"digits\":2,\"gross\":-595,\"net\":-500,\"diff\":null,\"vat\":1900,\"currency\":\"EUR\",\"meta\":{\"soid\":\"3\",\"min_order_value\":\"0\",\"unit\":\"2\",\"offer\":\"5000\",\"currency\":\"EUR\",\"type\":\"3\",\"offer_net\":4202},\"type\":\"voucher\",\"additional\":[]}]}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Gutschein berechnen",
+            "x-testDescription": ""
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3900,7 +4058,41 @@
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/account/whoami?facet=addresses,property,orders",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Connection": "Keep-Alive",
+                "Content-Encoding": "gzip",
+                "Content-Length": "2264",
+                "Content-Type": "application/json",
+                "Date": "Sat, 18 Nov 2017 08:59:15 GMT",
+                "Keep-Alive": "timeout=3, max=100",
+                "Server": "Apache",
+                "Set-Cookie": "suid=1b126998-0195-45f2-bab0-6b819ec73b67; expires=Sat, 18-Nov-2017 12:59:15 GMT; Max-Age=14400; path=/; HttpOnly",
+                "X-Powered-By": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":{\"erpID\":\"\",\"erpName\":\"\",\"erpNumber\":\"\",\"erpLastUpdate\":\"2011-07-11T11:10:23\",\"erpCreation\":\"0000-01-01T00:00:00\",\"archived\":\"0\",\"uid\":75731,\"name\":\"mey_admin\",\"state\":0,\"creation\":null,\"lastUpdate\":\"2017-11-14T15:49:43\",\"ranking\":0,\"addresses\":[],\"personal\":{\"erpID\":\"\",\"erpName\":\"\",\"erpNumber\":\"\",\"erpLastUpdate\":\"2011-10-06T08:55:11\",\"erpCreation\":\"0000-01-01T00:00:00\",\"pid\":74761,\"uid\":75731,\"alias\":\"\",\"formOfAddress\":\"\",\"salutation\":\"Sehr geehrte Damen und Herren,\",\"firstname\":\"Mey\",\"name1\":\"Administrator\",\"name2\":\"\",\"title\":\"\",\"custom1\":\"\",\"custom2\":\"\",\"birthday\":\"0000-01-01T00:00:00\",\"lastUpdate\":\"0000-01-01T00:00:00\"},\"properties\":[{\"pid\":890011,\"uid\":75731,\"name\":\"core.interface.image.limitsize\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890031,\"uid\":75731,\"name\":\"core.interface.sheet.changerowcolor\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890041,\"uid\":75731,\"name\":\"core.interface.sheet.colheader.repeat\",\"value\":\"25\",\"language\":\"\",\"country\":\"\"},{\"pid\":890051,\"uid\":75731,\"name\":\"core.interface.sheet.geticon\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":890061,\"uid\":75731,\"name\":\"core.interface.sheet.position.limit\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890071,\"uid\":75731,\"name\":\"core.interface.sheet.position.maxrows\",\"value\":\"50\",\"language\":\"\",\"country\":\"\"},{\"pid\":890081,\"uid\":75731,\"name\":\"core.interface.sheet.showhtml\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890091,\"uid\":75731,\"name\":\"core.interface.sheet.string.limit\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890101,\"uid\":75731,\"name\":\"core.interface.sheet.viewimage\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890121,\"uid\":75731,\"name\":\"core.interface.desktop.version\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":890131,\"uid\":75731,\"name\":\"core.interface.desktop.applications\",\"value\":\"a:0:{}\",\"language\":\"\",\"country\":\"\"},{\"pid\":890141,\"uid\":75731,\"name\":\"core.locale.frontendlanguage\",\"value\":\"de\",\"language\":\"\",\"country\":\"\"},{\"pid\":890151,\"uid\":75731,\"name\":\"core.property.currency\",\"value\":\"EUR\",\"language\":\"\",\"country\":\"\"},{\"pid\":890161,\"uid\":75731,\"name\":\"core.property.currency.sign.prefix\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890171,\"uid\":75731,\"name\":\"core.property.currency.sign.suffix\",\"value\":\"\\u20ac\",\"language\":\"\",\"country\":\"\"},{\"pid\":890181,\"uid\":75731,\"name\":\"core.property.dateformat\",\"value\":\"d.m.Y\",\"language\":\"\",\"country\":\"\"},{\"pid\":890191,\"uid\":75731,\"name\":\"core.property.decimalcount\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":890201,\"uid\":75731,\"name\":\"core.property.decimaldelimiter\",\"value\":\".\",\"language\":\"\",\"country\":\"\"},{\"pid\":890211,\"uid\":75731,\"name\":\"core.property.digitsgrouping\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890221,\"uid\":75731,\"name\":\"core.property.export.cvs.delimiter\",\"value\":\",\",\"language\":\"\",\"country\":\"\"},{\"pid\":890231,\"uid\":75731,\"name\":\"core.property.export.cvs.quote\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":890251,\"uid\":75731,\"name\":\"core.property.myteam_subgroup\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890261,\"uid\":75731,\"name\":\"core.property.timeformat\",\"value\":\"H:i:s\",\"language\":\"\",\"country\":\"\"},{\"pid\":890271,\"uid\":75731,\"name\":\"shop.addon.crm.newsletter\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890281,\"uid\":75731,\"name\":\"shop.addon.crm.rating\",\"value\":\"C\",\"language\":\"\",\"country\":\"\"},{\"pid\":890291,\"uid\":75731,\"name\":\"shop.customer.deliveryblock\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":1869292,\"uid\":75731,\"name\":\"core.interface.sheet.version\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":1934382,\"uid\":75731,\"name\":\"core.interface.intern.notice\",\"value\":\"<ul><li>transparenter und hochwertig bestickter T\\u00fclleinsatz im Decollet\\u00e9e<\\/li><li>edler Glanz in den Zierstreifen<\\/li><li>als sinnlicher Body-Dress mit schmalen, verstellbaren Tr\\u00e4ger<\\/li><li>besonders weicher Fall, schmiegt sich perfekt an<\\/li><li>f\\u00fcr verf\\u00fchrerische Momente<\\/li><\\/ul>\",\"language\":\"\",\"country\":\"\"},{\"pid\":3305741,\"uid\":75731,\"name\":\"shop.extra.item.exportset\",\"value\":\"a:1:{s:11:\\\"zalando set\\\";a:7:{i:0;s:3:\\\"iid\\\";i:1;s:16:\\\"pb_item_text::50\\\";i:2;s:16:\\\"pb_item_text::51\\\";i:3;s:16:\\\"pb_item_text::53\\\";i:4;s:16:\\\"pb_item_text::52\\\";i:5;s:17:\\\"sys_variants_info\\\";i:6;s:17:\\\"export_properties\\\";}}\",\"language\":\"\",\"country\":\"\"},{\"pid\":12737642,\"uid\":75731,\"name\":\"core.interface.standard.toolbar\",\"value\":\"a:11:{i:0;a:3:{s:1:\\\"u\\\";s:449:\\\" index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\\\";s:1:\\\"i\\\";s:28:\\\"toolbar_icon_visualcheck.gif\\\";s:1:\\\"l\\\";s:43:\\\"<b><font color=green>B.Freigaben<\\/font><\\/b>\\\";}i:1;a:3:{s:1:\\\"u\\\";s:448:\\\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=52&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\\\";s:1:\\\"i\\\";s:21:\\\"toolbar_icon_lamp.gif\\\";s:1:\\\"l\\\";s:43:\\\"<b><font color=green>B.Teiloffen<\\/b><\\/font>\\\";}i:2;a:3:{s:1:\\\"u\\\";s:448:\\\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=11&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\\\";s:1:\\\"i\\\";s:24:\\\"toolbar_icon_dispute.gif\\\";s:1:\\\"l\\\";s:37:\\\"<b><font color=green>B.Fehlerhaft<\\/b>\\\";}i:3;a:3:{s:1:\\\"u\\\";s:448:\\\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8007&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\\\";s:1:\\\"i\\\";s:23:\\\"toolbar_icon_reload.gif\\\";s:1:\\\"l\\\";s:40:\\\"<b><font color=green>B.Wiedervorlage<\\/b>\\\";}i:4;a:3:{s:1:\\\"u\\\";s:243:\\\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=214&sxx_filter_tid=&sxx_filter_sys_priority=&sxx_filter_sys_state=2%2C4%2C6&sxx_filter_sys_ouid=&sxx_filter_sys_description=&sxx_filter_freetext=&sxx_filter_sys_cuid_map=&sxx_filter_date=&submit=OK\\\";s:1:\\\"i\\\";s:22:\\\"toolbar_icon_mail2.gif\\\";s:1:\\\"l\\\";s:42:\\\"<b><font color=red>T.Sichtliste<\\/b><\\/font>\\\";}i:5;a:3:{s:1:\\\"u\\\";s:247:\\\"index.php?sxx_list_start=0&sxx_list_sort=&sxx_filter_incommingdate=&sxx_filter_sys_transaction_number=&cmd=9221&sxx_filter_rid=&sxx_filter_state=20&sxx_filter_action=&sxx_filter_payment=&sxx_filter_country=&sxx_customer=&sxx_filter_shid=&submit=OK\\\";s:1:\\\"i\\\";s:18:\\\"toolbar_icon_r.gif\\\";s:1:\\\"l\\\";s:46:\\\"<b><font color=purple>Retourenliste<\\/b><\\/font>\\\";}i:6;a:3:{s:1:\\\"u\\\";s:55:\\\"https:\\/\\/www.paypal.com\\/de\\/cgi-bin\\/webscr?cmd=_login-run\\\";s:1:\\\"i\\\";s:20:\\\"toolbar_icon_pay.gif\\\";s:1:\\\"l\\\";s:33:\\\"<b><font color=blue>Paypal<\\/font>\\\";}i:7;a:3:{s:1:\\\"u\\\";s:20:\\\"https:\\/\\/pmi.pay1.de\\/\\\";s:1:\\\"i\\\";s:20:\\\"toolbar_icon_pay.gif\\\";s:1:\\\"l\\\";s:30:\\\"<font color=blue>Payone<\\/font>\\\";}i:8;a:3:{s:1:\\\"u\\\";s:93:\\\"https:\\/\\/banking.saalesparkasse.de\\/portal\\/portal\\/StartenIPSTANDARD?IID=80053762&AID=IPSTANDARD\\\";s:1:\\\"i\\\";s:20:\\\"toolbar_icon_pay.gif\\\";s:1:\\\"l\\\";s:40:\\\"<font color=blue>DeutscheBank<\\/font><\\/b>\\\";}i:9;a:3:{s:1:\\\"u\\\";s:50:\\\"index.php?sxx_site=alvine&history=Liste&cmd=35012&\\\";s:1:\\\"i\\\";s:20:\\\"toolbar_icon_pay.gif\\\";s:1:\\\"l\\\";s:34:\\\"<b><font color=blue>CEG<\\/b><\\/font>\\\";}i:10;a:3:{s:1:\\\"u\\\";s:49:\\\"index.php?sxx_site=alvine&history=Liste&cmd=1023&\\\";s:1:\\\"i\\\";s:25:\\\"toolbar_icon_favorite.gif\\\";s:1:\\\"l\\\";s:38:\\\"<b><font color=purple>Lager<\\/b><\\/font>\\\";}}\",\"language\":\"\",\"country\":\"\"},{\"pid\":16912242,\"uid\":75731,\"name\":\"alvine.cmd.history\",\"value\":\"0\",\"language\":\"\",\"country\":\"\"},{\"pid\":16912252,\"uid\":75731,\"name\":\"alvine.cmd.history.label\",\"value\":\"Liste\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785152,\"uid\":75731,\"name\":\"core.language\",\"value\":\"de\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785153,\"uid\":75731,\"name\":\"public.file.upload.path\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785154,\"uid\":75731,\"name\":\"content.file.upload.extension\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785155,\"uid\":75731,\"name\":\"content.file.upload.excludedirs\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785156,\"uid\":75731,\"name\":\"content.file.content.path\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785157,\"uid\":75731,\"name\":\"core.property.myteam\",\"value\":\"1,12,26,5,6,22,15,9,32,14,20,29,23,30,8,10,11,24,115,81,16,91,27,25,7,2,31,28,21,3,4,17\",\"language\":\"\",\"country\":\"\"},{\"pid\":26793650,\"uid\":75731,\"name\":\"core.interface.menu.selected\",\"value\":\"57\",\"language\":\"\",\"country\":\"\"}],\"communication\":[{\"erpID\":\"\",\"erpName\":\"\",\"erpNumber\":\"\",\"erpLastUpdate\":\"2011-10-06T08:56:14\",\"erpCreation\":\"0000-01-01T00:00:00\",\"cid\":185882,\"uid\":75731,\"type\":1,\"description\":\"\",\"locator\":\"support@schukai.de\",\"preset\":\"1\",\"private\":\"\",\"scope\":\"50\",\"lastUpdate\":\"0000-01-01T00:00:00\"}]},\"sys\":{\"message\":\"200 OK\",\"code\":200}}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Wer bin ich",
+            "x-testDescription": ""
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
