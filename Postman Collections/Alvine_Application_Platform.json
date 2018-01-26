@@ -2425,11 +2425,91 @@
     "/api/commerce/report/item": {
       "get": {
         "description": "TODO: Add Description",
+        "summary": "Produktreport",
+        "tags": [
+          "report"
+        ],
+        "operationId": "ApiCommerceReportItemGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "reports",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "item-count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "category-count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/report/item?reports=itemCount,publishedItemCount,topItems,topCategories&item-count=3&category-count=2",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Produktreport",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/report/warehouseoverview": {
+      "get": {
+        "description": "TODO: Add Description",
         "summary": "Warehouse Übersichtsreport",
         "tags": [
           "report"
         ],
-        "operationId": "ApiCommerceReportItemGet2",
+        "operationId": "ApiCommerceReportWarehouseoverviewGet",
         "produces": [
           "application/json"
         ],
@@ -2459,7 +2539,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/report/item?reports=topItems,topCategories,itemCount",
+              "uri": "/api/commerce/report/warehouseoverview?reports=pieces",
               "headers": {
                 "Accept": "application/json"
               }
