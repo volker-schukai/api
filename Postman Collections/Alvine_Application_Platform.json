@@ -2823,6 +2823,52 @@
         }
       }
     },
+    "/api/documentation/upload": {
+      "post": {
+        "description": "Mit diesem Aufruf kann geprüft werden, ob der aktuelle Benutzer angemeldet ist und über eine gültige Session verfügt.",
+        "summary": "Dokument hochladen",
+        "tags": [
+          "Dokumentation"
+        ],
+        "operationId": "ApiDocumentationUploadPost",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "File",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "format": "file",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/api/logged-in": {
       "get": {
         "description": "Mit diesem Aufruf kann geprüft werden, ob der aktuelle Benutzer angemeldet ist und über eine gültige Session verfügt.",
