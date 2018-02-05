@@ -1107,7 +1107,7 @@
         }
       },
       "put": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Produkte ändern",
         "tags": [
           "item"
@@ -1169,7 +1169,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Produkte ändern",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -1180,7 +1180,7 @@
         }
       },
       "post": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Benutzer hinzufügen",
         "tags": [
           "user"
@@ -1242,7 +1242,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Benutzer hinzufügen",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -1255,7 +1255,7 @@
     },
     "/api/commerce/item/10000": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Ein Produkt auslesen",
         "tags": [
           "item"
@@ -1299,7 +1299,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Ein Produkt auslesen",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -1312,7 +1312,7 @@
     },
     "/api/commerce/item/search": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Produkt suchen1",
         "tags": [
           "item"
@@ -1400,7 +1400,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Produkt suchen1",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -2083,7 +2083,7 @@
     },
     "/api/commerce/pos/journal/search": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Journal suchen",
         "tags": [
           "journal"
@@ -2124,7 +2124,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Journal suchen",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -2360,7 +2360,7 @@
     },
     "/api/commerce/report/customer": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Kundenreport",
         "tags": [
           "report"
@@ -2411,7 +2411,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Kundenreport",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -2424,7 +2424,7 @@
     },
     "/api/commerce/report/item": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Produktreport",
         "tags": [
           "report"
@@ -2491,7 +2491,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Produktreport",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -2504,7 +2504,7 @@
     },
     "/api/commerce/report/warehouseoverview": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Warehouse Übersichtsreport",
         "tags": [
           "report"
@@ -2555,7 +2555,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Warehouse Übersichtsreport",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -2891,14 +2891,115 @@
         }
       }
     },
-    "/api/documentation/upload/readme.md": {
+    "/api/documentation": {
+      "get": {
+        "description": "Mit diesem Aufruf kann geprüft werden, ob der aktuelle Benutzer angemeldet ist und über eine gültige Session verfügt.",
+        "summary": "Dokumentenliste",
+        "tags": [
+          "Dokumentation"
+        ],
+        "operationId": "ApiDocumentationGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/documentation",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Dokumentenliste",
+            "x-testDescription": "Mit diesem Aufruf kann geprüft werden, ob der aktuelle Benutzer angemeldet ist und über eine gültige Session verfügt."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/documentation/readme.md": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Dokumenten holen",
+        "tags": [
+          "Dokumentation"
+        ],
+        "operationId": "ApiDocumentationReadmeMdGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/documentation/readme.md"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Dokumenten holen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
       "delete": {
         "description": "Mit diesem Aufruf kann geprüft werden, ob der aktuelle Benutzer angemeldet ist und über eine gültige Session verfügt.",
         "summary": "Dokument löschen",
         "tags": [
           "Dokumentation"
         ],
-        "operationId": "ApiDocumentationUploadReadmeMdDelete",
+        "operationId": "ApiDocumentationReadmeMdDelete",
         "produces": [
           "application/json"
         ],
@@ -2919,6 +3020,13 @@
             "required": true,
             "type": "string",
             "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
           }
         ],
         "responses": {
@@ -2931,9 +3039,10 @@
           {
             "request": {
               "method": "DELETE",
-              "uri": "/api/documentation/upload/readme.md",
+              "uri": "/api/documentation/readme.md",
               "headers": {
-                "Content-Type": "application/x-www-form-urlencoded"
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept": "application/json"
               },
               "body": "file="
             },
@@ -3718,7 +3827,7 @@
     },
     "/api/account/user/29": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Einen Benutzer auslesen",
         "tags": [
           "user"
@@ -3777,7 +3886,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Einen Benutzer auslesen",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -3790,7 +3899,7 @@
     },
     "/api/account/user": {
       "put": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Benutzer ändern",
         "tags": [
           "user"
@@ -3852,7 +3961,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Benutzer ändern",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -4365,7 +4474,7 @@
     },
     "/api/company": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Firmendaten auslesen",
         "tags": [
           "company"
@@ -4409,7 +4518,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Firmendaten auslesen",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -4422,7 +4531,7 @@
     },
     "/api/company/1": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Einen Firmendatensatz auslesen",
         "tags": [
           "company"
@@ -4466,7 +4575,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Einen Firmendatensatz auslesen",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
@@ -4479,7 +4588,7 @@
     },
     "/api/company/search": {
       "get": {
-        "description": "TODO: Add Description",
+        "description": "",
         "summary": "Firma suchen",
         "tags": [
           "company"
@@ -4537,7 +4646,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Firma suchen",
-            "x-testDescription": "TODO: Add Description"
+            "x-testDescription": ""
           }
         ],
         "x-operation-settings": {
