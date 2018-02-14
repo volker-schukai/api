@@ -3,11 +3,7 @@
   "info": {
     "version": "1.0",
     "title": "Alvine Application Platform",
-    "description": "TODO: Add Description",
-    "license": {
-      "name": "MIT",
-      "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
-    }
+    "description": "TODO: Add Description"
   },
   "host": "example.com",
   "basePath": "/",
