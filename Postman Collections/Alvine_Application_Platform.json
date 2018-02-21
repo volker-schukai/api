@@ -521,14 +521,14 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategorienSuchenresponse"
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
             },
             "examples": {}
           },
           "400": {
             "description": "Bad Request",
             "schema": {
-              "$ref": "#/definitions/KategorienSuchenerrorresponse"
+              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
             }
           }
         },
@@ -580,7 +580,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategorienÄndernresponse"
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
             },
             "examples": {}
           }
@@ -706,7 +706,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategorienMehrfachlöschungresponse"
+              "$ref": "#/definitions/MehrfachKategorienLöschen"
             },
             "examples": {
               "application/json": {
@@ -824,7 +824,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategoriefeldÄndernresponse"
+              "$ref": "#/definitions/EinFeldInEinemDatensatzÄndern"
             },
             "examples": {
               "application/json": {
@@ -3149,7 +3149,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ProdukteAuslesenresponse"
+              "$ref": "#/definitions/AllgemeineSuche"
             },
             "examples": {}
           }
@@ -3203,7 +3203,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/PreisAuslesenresponse"
+              "$ref": "#/definitions/PreisAuslesenEinerIid"
             },
             "examples": {
               "application/json": {
@@ -3662,7 +3662,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/GutscheinBerechnenresponse"
+              "$ref": "#/definitions/GutscheinWurdeBereitsEingelöst"
             },
             "examples": {
               "application/json": {
@@ -3999,7 +3999,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/WerBinIchresponse"
+              "$ref": "#/definitions/WerBinIch"
             },
             "examples": {
               "application/json": {
@@ -4957,8 +4957,8 @@
         "cid"
       ]
     },
-    "KategorienMehrfachlöschungresponse": {
-      "title": "Kategorien MehrfachlöschungResponse",
+    "MehrfachKategorienLöschen": {
+      "title": "Mehrfach Kategorien löschen",
       "example": {
         "dataset": [
           {
@@ -5197,8 +5197,8 @@
         "flag"
       ]
     },
-    "KategorienÄndernresponse": {
-      "title": "Kategorien ändernResponse",
+    "ZweiKategorienÜberJsonÄndern": {
+      "title": "Zwei Kategorien über JSON ändern",
       "type": "object",
       "properties": {
         "dataset": {
@@ -5428,8 +5428,8 @@
         "location"
       ]
     },
-    "KategorienSuchenerrorresponse": {
-      "title": "Kategorien suchenErrorResponse",
+    "EineErfolgreicheUndEineFehlerhafteÄnderung": {
+      "title": "Eine erfolgreiche und eine fehlerhafte Änderung",
       "type": "object",
       "properties": {
         "dataset": {
@@ -5491,24 +5491,8 @@
         "message"
       ]
     },
-    "KategorienSuchenresponse": {
-      "title": "Kategorien suchenResponse",
-      "type": "object",
-      "properties": {
-        "dataset": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dataset16"
-          }
-        }
-      },
-      "required": [
-        "dataset"
-      ]
-    },
-    "KategoriefeldÄndernresponse": {
-      "title": "Kategoriefeld ändernResponse",
+    "EinFeldInEinemDatensatzÄndern": {
+      "title": "Ein Feld in einem Datensatz ändern",
       "example": {
         "dataset": {
           "erpID": "",
@@ -6225,8 +6209,8 @@
         "created"
       ]
     },
-    "ProdukteAuslesenresponse": {
-      "title": "Produkte auslesenResponse",
+    "AllgemeineSuche": {
+      "title": "Allgemeine Suche",
       "type": "object",
       "properties": {
         "dataset": {
@@ -11303,8 +11287,8 @@
         "pages"
       ]
     },
-    "PreisAuslesenresponse": {
-      "title": "Preis auslesenResponse",
+    "PreisAuslesenEinerIid": {
+      "title": "Preis auslesen einer IID",
       "example": {
         "dataset": {
           "525918f5-44a6-4f8e-95bb-7f372b5ab5cd": {
@@ -13280,8 +13264,8 @@
         "createEdiOrder"
       ]
     },
-    "BestellungErstellenerrorresponse": {
-      "title": "Bestellung erstellenErrorResponse",
+    "BestellungErstellenMitKonflikt": {
+      "title": "Bestellung erstellen mit konflikt",
       "example": {
         "dataset": [
           {
@@ -13348,8 +13332,8 @@
         "sys"
       ]
     },
-    "BestellungErstellenresponse": {
-      "title": "Bestellung erstellenResponse",
+    "BestellungErstellenErfolgreich": {
+      "title": "Bestellung erstellen erfolgreich",
       "example": {
         "dataset": [
           {
@@ -15408,8 +15392,8 @@
         "count"
       ]
     },
-    "GutscheinBerechnenresponse": {
-      "title": "Gutschein berechnenResponse",
+    "GutscheinWurdeBereitsEingelöst": {
+      "title": "Gutschein wurde bereits eingelöst",
       "example": {
         "dataset": [
           {
@@ -15855,8 +15839,8 @@
         "erpID"
       ]
     },
-    "WerBinIchresponse": {
-      "title": "Wer bin ichResponse",
+    "WerBinIch": {
+      "title": "Wer bin ich",
       "example": {
         "dataset": {
           "erpID": "",
