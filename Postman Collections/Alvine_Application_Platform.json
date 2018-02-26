@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0",
     "title": "Alvine Application Platform",
-    "description": "TODO: Add Description"
+    "description": "Die Alvine Platform REST API stellt Funktionen und Daten der Alvine Platform über eine einheitliche Schnittstelle zur Verfügung. Über einfache HTTP Aufrufe können Funktionen ausgeführt, Geschäftsvorfälle gesteuert, Daten im JSON-Format abgerufen und manipuliert werden.\r\n\r\nDie Verwendung der API erfordert grundlegende Kenntnisse der Softwareentwicklung, der Webdienste und der Alvine Platform Benutzeroberfläche. Zur Einarbeitung empfiehlt es sich die ersten Schritte in der Dokumentation auf doc.alvine.io anzuschauen.\r\n\r\nIn der Dokumentation sind Aufrufe und Beispiele für unterschiedlichen Sprachen und Systeme zu finden. Als Entwicklungs- und Testumgebung empfehlen wir Postman. Über den \"Run in Postman\"-Button oben rechts - lässt sich die API direkt in Postman verwenden.\r\n\r\nFür die meisten Endpunkte ist eine Zugangsberechtigung notwendig. Diese Berechtigung wird durch eine gültige Autorisierung und Gruppenzuweisung erteilt. Für einfache und zeitlich unabhängige Abfragen reicht es aus, die Anmeldung über BaseAuth durchzuführen. \r\n\r\nFür die Autorisation mehrere aufeinanderfolgender Abfragen sollte vor jedem Request über den /api/login Endpunkt ein Zugangstoken (Cookie; suid=) geholt werden. Dieser wird im Anschluß in den folgenden Anfragen mitgegeben. Dieses Vorgehen reduziert den Aufwand der Authentifikation und kann zur Beschleunigung bei Reihenabfragen führen.\r\n\r\nIn der Dokumentation werden folgende Platzhalter verwendet:\r\n\r\n<table>\r\n<tr>\r\n  <td>{{domain}}</td>\r\n  <td>Domain der Alvine Platform</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<i>Für Fragen zur Alvine Platform und der REST API steht Ihnen auch Ihr Integrationsspezialist zur Verfügung.<i>\r\n\r\n"
   },
   "host": "example.com",
   "basePath": "/",
@@ -19,12 +19,12 @@
   "paths": {
     "/api/commerce/item/catalog/category/1/files": {
       "get": {
-        "description": "",
-        "summary": "Dateiliste",
+        "description": "TODO: Add Description",
+        "summary": "Dateiliste1",
         "tags": [
           "Dateien"
         ],
-        "operationId": "ApiCommerceItemCatalogCategory1FilesGet",
+        "operationId": "ApiCommerceItemCatalogCategory1FilesGet2",
         "produces": [
           "application/json"
         ],
@@ -62,8 +62,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Dateiliste",
-            "x-testDescription": ""
+            "x-testName": "Dateiliste1",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -76,12 +76,12 @@
     },
     "/api/commerce/item/catalog/category/1/upload": {
       "post": {
-        "description": "",
-        "summary": "Datei hinzufügen",
+        "description": "TODO: Add Description",
+        "summary": "Datei hinzufügen1",
         "tags": [
           "Dateien"
         ],
-        "operationId": "ApiCommerceItemCatalogCategory1UploadPost",
+        "operationId": "ApiCommerceItemCatalogCategory1UploadPost2",
         "produces": [
           "application/json"
         ],
@@ -138,8 +138,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Datei hinzufügen",
-            "x-testDescription": ""
+            "x-testName": "Datei hinzufügen1",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -152,12 +152,12 @@
     },
     "/api/commerce/item/catalog/category/1/schukai.gif": {
       "delete": {
-        "description": "",
-        "summary": "Datei löschen",
+        "description": "TODO: Add Description",
+        "summary": "Datei löschen1",
         "tags": [
           "Dateien"
         ],
-        "operationId": "ApiCommerceItemCatalogCategory1SchukaiGifDelete",
+        "operationId": "ApiCommerceItemCatalogCategory1SchukaiGifDelete2",
         "produces": [
           "application/json"
         ],
@@ -195,8 +195,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Datei löschen",
-            "x-testDescription": ""
+            "x-testName": "Datei löschen1",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -209,12 +209,12 @@
     },
     "/api/commerce/item/catalog/category/9/property": {
       "get": {
-        "description": "",
-        "summary": "Eigenschaften auslesen",
+        "description": "TODO: Add Description",
+        "summary": "Eigenschaften auslesen1",
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "ApiCommerceItemCatalogCategory9PropertyGet",
+        "operationId": "ApiCommerceItemCatalogCategory9PropertyGet2",
         "produces": [
           "application/json"
         ],
@@ -259,8 +259,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften auslesen",
-            "x-testDescription": ""
+            "x-testName": "Eigenschaften auslesen1",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -271,12 +271,12 @@
         }
       },
       "put": {
-        "description": "",
-        "summary": "Eigenschaften ändern",
+        "description": "TODO: Add Description",
+        "summary": "Eigenschaften ändern1",
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "ApiCommerceItemCatalogCategory9PropertyPut",
+        "operationId": "ApiCommerceItemCatalogCategory9PropertyPut2",
         "produces": [
           "application/json"
         ],
@@ -332,8 +332,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften ändern",
-            "x-testDescription": ""
+            "x-testName": "Eigenschaften ändern1",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -344,12 +344,12 @@
         }
       },
       "post": {
-        "description": "",
-        "summary": "Eigenschaften hinzufügen",
+        "description": "TODO: Add Description",
+        "summary": "Eigenschaften hinzufügen1",
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "ApiCommerceItemCatalogCategory9PropertyPost",
+        "operationId": "ApiCommerceItemCatalogCategory9PropertyPost2",
         "produces": [
           "application/json"
         ],
@@ -405,8 +405,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften hinzufügen",
-            "x-testDescription": ""
+            "x-testName": "Eigenschaften hinzufügen1",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -417,12 +417,12 @@
         }
       },
       "delete": {
-        "description": "",
-        "summary": "Eigenschaften löschen",
+        "description": "TODO: Add Description",
+        "summary": "Eigenschaften löschen1",
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "ApiCommerceItemCatalogCategory9PropertyDelete",
+        "operationId": "ApiCommerceItemCatalogCategory9PropertyDelete2",
         "produces": [
           "application/json"
         ],
@@ -478,8 +478,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften löschen",
-            "x-testDescription": ""
+            "x-testName": "Eigenschaften löschen1",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -492,12 +492,12 @@
     },
     "/api/commerce/item/catalog/category": {
       "get": {
-        "description": "",
-        "summary": "Kategorien suchen",
+        "description": "TODO: Add Description",
+        "summary": "Template suchen",
         "tags": [
-          "Kategorien"
+          "Dokumente"
         ],
-        "operationId": "ApiCommerceItemCatalogCategoryGet2",
+        "operationId": "ApiCommerceItemCatalogCategoryGet3",
         "produces": [
           "application/json"
         ],
@@ -524,12 +524,6 @@
               "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
             },
             "examples": {}
-          },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
-            }
           }
         },
         "security": [],
@@ -542,12 +536,12 @@
         }
       },
       "put": {
-        "description": "",
-        "summary": "Kategorien ändern",
+        "description": "TODO: Add Description",
+        "summary": "Template ändern",
         "tags": [
-          "Kategorien"
+          "Dokumente"
         ],
-        "operationId": "ApiCommerceItemCatalogCategoryPut",
+        "operationId": "ApiCommerceItemCatalogCategoryPut2",
         "produces": [
           "application/json"
         ],
@@ -558,7 +552,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategorienÄndernrequest"
+              "$ref": "#/definitions/TemplateÄndernrequest"
             }
           },
           {
@@ -595,12 +589,12 @@
         }
       },
       "post": {
-        "description": "",
-        "summary": "Kategorien hinzufügen",
+        "description": "TODO: Add Description",
+        "summary": "Template hinzufügen",
         "tags": [
-          "Kategorien"
+          "Dokumente"
         ],
-        "operationId": "ApiCommerceItemCatalogCategoryPost",
+        "operationId": "ApiCommerceItemCatalogCategoryPost2",
         "produces": [
           "application/json"
         ],
@@ -611,7 +605,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategorienHinzufügenrequest"
+              "$ref": "#/definitions/TemplateHinzufügenrequest"
             }
           },
           {
@@ -656,8 +650,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Kategorien hinzufügen",
-            "x-testDescription": ""
+            "x-testName": "Template hinzufügen",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -668,12 +662,12 @@
         }
       },
       "delete": {
-        "description": "",
-        "summary": "Kategorien Mehrfachlöschung",
+        "description": "TODO: Add Description",
+        "summary": "Template  Mehrfachlöschung",
         "tags": [
-          "Kategorien"
+          "Dokumente"
         ],
-        "operationId": "ApiCommerceItemCatalogCategoryDelete",
+        "operationId": "ApiCommerceItemCatalogCategoryDelete2",
         "produces": [
           "application/json"
         ],
@@ -684,7 +678,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KategorienMehrfachlöschungrequest"
+              "$ref": "#/definitions/TemplateMehrfachlöschungrequest"
             }
           },
           {
@@ -759,8 +753,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Kategorien Mehrfachlöschung",
-            "x-testDescription": ""
+            "x-testName": "Template  Mehrfachlöschung",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -771,12 +765,12 @@
         }
       },
       "patch": {
-        "description": "",
-        "summary": "Kategoriefeld ändern",
+        "description": "TODO: Add Description",
+        "summary": "Template ändern",
         "tags": [
-          "Kategorien"
+          "Dokumente"
         ],
-        "operationId": "ApiCommerceItemCatalogCategoryPatch",
+        "operationId": "ApiCommerceItemCatalogCategoryPatch2",
         "produces": [
           "application/json"
         ],
@@ -893,8 +887,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Kategoriefeld ändern",
-            "x-testDescription": ""
+            "x-testName": "Template ändern",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -964,12 +958,12 @@
     },
     "/api/commerce/item/catalog/category/52": {
       "delete": {
-        "description": "",
-        "summary": "Kategorien löschen",
+        "description": "TODO: Add Description",
+        "summary": "Template löschen",
         "tags": [
-          "Kategorien"
+          "Dokumente"
         ],
-        "operationId": "ApiCommerceItemCatalogCategory52Delete",
+        "operationId": "ApiCommerceItemCatalogCategory52Delete2",
         "produces": [
           "application/json"
         ],
@@ -983,12 +977,29 @@
           }
         ],
         "responses": {
-          "204": {
+          "200": {
             "description": "",
             "schema": {
-              "type": "object"
+              "$ref": "#/definitions/MehrfachKategorienLöschen"
             },
-            "examples": {}
+            "examples": {
+              "application/json": {
+                "dataset": [
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  },
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  }
+                ]
+              }
+            }
           }
         },
         "security": [],
@@ -1003,23 +1014,25 @@
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
+              "x-bodyMatchMode": "RAW",
               "x-arrayOrderedMatching": false,
               "x-arrayCheckCount": false,
               "x-matchResponseSchema": true,
               "headers": {
                 "access-control-allow-origin": "*",
                 "connection": "keep-alive",
-                "content-type": "text/html; charset=UTF-8",
-                "date": "Sat, 21 Oct 2017 12:07:39 GMT",
+                "content-length": "93",
+                "content-type": "application/json",
+                "date": "Sat, 21 Oct 2017 12:51:54 GMT",
                 "server": "nginx",
                 "x-powered-by": "Alvine Framework <http://alvine.io>"
-              }
+              },
+              "body": "{\"dataset\":[{\"sys\":{\"message\":\"200 OK\",\"code\":200}},{\"sys\":{\"message\":\"200 OK\",\"code\":200}}]}"
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Kategorien löschen",
-            "x-testDescription": ""
+            "x-testName": "Template löschen",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -3970,7 +3983,7 @@
     },
     "/api/account/whoami": {
       "get": {
-        "description": "",
+        "description": "Mit dieser API kann ein angemeldeter Benutzer die Daten über seine Person abrufen. Dies kann zum Beispiel für die Darstellung eine Konto-Seite verwendet werden.\n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* account-data-manager\n* account-data-consumer",
         "summary": "Wer bin ich",
         "tags": [
           "account"
@@ -3999,7 +4012,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/WerBinIch"
+              "$ref": "#/definitions/200Ok"
             },
             "examples": {
               "application/json": {
@@ -4007,368 +4020,55 @@
                   "erpID": "",
                   "erpName": "",
                   "erpNumber": "",
-                  "erpLastUpdate": "2011-07-11T11:10:23",
+                  "erpLastUpdate": "0000-01-01T00:00:00",
                   "erpCreation": "0000-01-01T00:00:00",
                   "archived": "0",
-                  "uid": 75731,
-                  "name": "mey_admin",
+                  "ranking": "0",
+                  "uid": 123213,
+                  "username": "info@example.com",
                   "state": 0,
-                  "creation": null,
-                  "lastUpdate": "2017-11-14T15:49:43",
-                  "ranking": 0,
-                  "addresses": [],
-                  "personal": {
-                    "erpID": "",
-                    "erpName": "",
-                    "erpNumber": "",
-                    "erpLastUpdate": "2011-10-06T08:55:11",
-                    "erpCreation": "0000-01-01T00:00:00",
-                    "pid": 74761,
-                    "uid": 75731,
-                    "alias": "",
-                    "formOfAddress": "",
-                    "salutation": "Sehr geehrte Damen und Herren,",
-                    "firstname": "Mey",
-                    "name1": "Administrator",
-                    "name2": "",
-                    "title": "",
-                    "custom1": "",
-                    "custom2": "",
-                    "birthday": "0000-01-01T00:00:00",
-                    "lastUpdate": "0000-01-01T00:00:00"
+                  "addresses": {
+                    "dataset": [
+                      {
+                        "erpID": "",
+                        "erpName": "",
+                        "erpNumber": "",
+                        "erpLastUpdate": "0000-01-01T00:00:00",
+                        "erpCreation": "0000-01-01T00:00:00",
+                        "aid": 1,
+                        "uid": 1,
+                        "contact": "",
+                        "company": "",
+                        "address1": "",
+                        "address2": "",
+                        "normStatus": "0",
+                        "city": "",
+                        "state": "",
+                        "zipcode": "",
+                        "country": "de",
+                        "description": "",
+                        "type": "4",
+                        "preset": 1,
+                        "systemUsage": "",
+                        "lastUpdate": "2017-02-01T17:36:15"
+                      }
+                    ]
                   },
-                  "properties": [
-                    {
-                      "pid": 890011,
-                      "uid": 75731,
-                      "name": "core.interface.image.limitsize",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890031,
-                      "uid": 75731,
-                      "name": "core.interface.sheet.changerowcolor",
-                      "value": "1",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890041,
-                      "uid": 75731,
-                      "name": "core.interface.sheet.colheader.repeat",
-                      "value": "25",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890051,
-                      "uid": 75731,
-                      "name": "core.interface.sheet.geticon",
-                      "value": "2",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890061,
-                      "uid": 75731,
-                      "name": "core.interface.sheet.position.limit",
-                      "value": "1",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890071,
-                      "uid": 75731,
-                      "name": "core.interface.sheet.position.maxrows",
-                      "value": "50",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890081,
-                      "uid": 75731,
-                      "name": "core.interface.sheet.showhtml",
-                      "value": "1",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890091,
-                      "uid": 75731,
-                      "name": "core.interface.sheet.string.limit",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890101,
-                      "uid": 75731,
-                      "name": "core.interface.sheet.viewimage",
-                      "value": "1",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890121,
-                      "uid": 75731,
-                      "name": "core.interface.desktop.version",
-                      "value": "2",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890131,
-                      "uid": 75731,
-                      "name": "core.interface.desktop.applications",
-                      "value": "a:0:{}",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890141,
-                      "uid": 75731,
-                      "name": "core.locale.frontendlanguage",
-                      "value": "de",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890151,
-                      "uid": 75731,
-                      "name": "core.property.currency",
-                      "value": "EUR",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890161,
-                      "uid": 75731,
-                      "name": "core.property.currency.sign.prefix",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890171,
-                      "uid": 75731,
-                      "name": "core.property.currency.sign.suffix",
-                      "value": "¬",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890181,
-                      "uid": 75731,
-                      "name": "core.property.dateformat",
-                      "value": "d.m.Y",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890191,
-                      "uid": 75731,
-                      "name": "core.property.decimalcount",
-                      "value": "2",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890201,
-                      "uid": 75731,
-                      "name": "core.property.decimaldelimiter",
-                      "value": ".",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890211,
-                      "uid": 75731,
-                      "name": "core.property.digitsgrouping",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890221,
-                      "uid": 75731,
-                      "name": "core.property.export.cvs.delimiter",
-                      "value": ",",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890231,
-                      "uid": 75731,
-                      "name": "core.property.export.cvs.quote",
-                      "value": "2",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890251,
-                      "uid": 75731,
-                      "name": "core.property.myteam_subgroup",
-                      "value": "1",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890261,
-                      "uid": 75731,
-                      "name": "core.property.timeformat",
-                      "value": "H:i:s",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890271,
-                      "uid": 75731,
-                      "name": "shop.addon.crm.newsletter",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890281,
-                      "uid": 75731,
-                      "name": "shop.addon.crm.rating",
-                      "value": "C",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 890291,
-                      "uid": 75731,
-                      "name": "shop.customer.deliveryblock",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 1869292,
-                      "uid": 75731,
-                      "name": "core.interface.sheet.version",
-                      "value": "2",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 1934382,
-                      "uid": 75731,
-                      "name": "core.interface.intern.notice",
-                      "value": "<ul><li>transparenter und hochwertig bestickter Tülleinsatz im Decolletée</li><li>edler Glanz in den Zierstreifen</li><li>als sinnlicher Body-Dress mit schmalen, verstellbaren Träger</li><li>besonders weicher Fall, schmiegt sich perfekt an</li><li>für verführerische Momente</li></ul>",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 3305741,
-                      "uid": 75731,
-                      "name": "shop.extra.item.exportset",
-                      "value": "a:1:{s:11:\"zalando set\";a:7:{i:0;s:3:\"iid\";i:1;s:16:\"pb_item_text::50\";i:2;s:16:\"pb_item_text::51\";i:3;s:16:\"pb_item_text::53\";i:4;s:16:\"pb_item_text::52\";i:5;s:17:\"sys_variants_info\";i:6;s:17:\"export_properties\";}}",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 12737642,
-                      "uid": 75731,
-                      "name": "core.interface.standard.toolbar",
-                      "value": "a:11:{i:0;a:3:{s:1:\"u\";s:449:\" index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:28:\"toolbar_icon_visualcheck.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Freigaben</font></b>\";}i:1;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=52&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:21:\"toolbar_icon_lamp.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Teiloffen</b></font>\";}i:2;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=11&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:24:\"toolbar_icon_dispute.gif\";s:1:\"l\";s:37:\"<b><font color=green>B.Fehlerhaft</b>\";}i:3;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8007&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:23:\"toolbar_icon_reload.gif\";s:1:\"l\";s:40:\"<b><font color=green>B.Wiedervorlage</b>\";}i:4;a:3:{s:1:\"u\";s:243:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=214&sxx_filter_tid=&sxx_filter_sys_priority=&sxx_filter_sys_state=2%2C4%2C6&sxx_filter_sys_ouid=&sxx_filter_sys_description=&sxx_filter_freetext=&sxx_filter_sys_cuid_map=&sxx_filter_date=&submit=OK\";s:1:\"i\";s:22:\"toolbar_icon_mail2.gif\";s:1:\"l\";s:42:\"<b><font color=red>T.Sichtliste</b></font>\";}i:5;a:3:{s:1:\"u\";s:247:\"index.php?sxx_list_start=0&sxx_list_sort=&sxx_filter_incommingdate=&sxx_filter_sys_transaction_number=&cmd=9221&sxx_filter_rid=&sxx_filter_state=20&sxx_filter_action=&sxx_filter_payment=&sxx_filter_country=&sxx_customer=&sxx_filter_shid=&submit=OK\";s:1:\"i\";s:18:\"toolbar_icon_r.gif\";s:1:\"l\";s:46:\"<b><font color=purple>Retourenliste</b></font>\";}i:6;a:3:{s:1:\"u\";s:55:\"https://www.paypal.com/de/cgi-bin/webscr?cmd=_login-run\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:33:\"<b><font color=blue>Paypal</font>\";}i:7;a:3:{s:1:\"u\";s:20:\"https://pmi.pay1.de/\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:30:\"<font color=blue>Payone</font>\";}i:8;a:3:{s:1:\"u\";s:93:\"https://banking.saalesparkasse.de/portal/portal/StartenIPSTANDARD?IID=80053762&AID=IPSTANDARD\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:40:\"<font color=blue>DeutscheBank</font></b>\";}i:9;a:3:{s:1:\"u\";s:50:\"index.php?sxx_site=alvine&history=Liste&cmd=35012&\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:34:\"<b><font color=blue>CEG</b></font>\";}i:10;a:3:{s:1:\"u\";s:49:\"index.php?sxx_site=alvine&history=Liste&cmd=1023&\";s:1:\"i\";s:25:\"toolbar_icon_favorite.gif\";s:1:\"l\";s:38:\"<b><font color=purple>Lager</b></font>\";}}",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 16912242,
-                      "uid": 75731,
-                      "name": "alvine.cmd.history",
-                      "value": "0",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 16912252,
-                      "uid": 75731,
-                      "name": "alvine.cmd.history.label",
-                      "value": "Liste",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 26785152,
-                      "uid": 75731,
-                      "name": "core.language",
-                      "value": "de",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 26785153,
-                      "uid": 75731,
-                      "name": "public.file.upload.path",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 26785154,
-                      "uid": 75731,
-                      "name": "content.file.upload.extension",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 26785155,
-                      "uid": 75731,
-                      "name": "content.file.upload.excludedirs",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 26785156,
-                      "uid": 75731,
-                      "name": "content.file.content.path",
-                      "value": "",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 26785157,
-                      "uid": 75731,
-                      "name": "core.property.myteam",
-                      "value": "1,12,26,5,6,22,15,9,32,14,20,29,23,30,8,10,11,24,115,81,16,91,27,25,7,2,31,28,21,3,4,17",
-                      "language": "",
-                      "country": ""
-                    },
-                    {
-                      "pid": 26793650,
-                      "uid": 75731,
-                      "name": "core.interface.menu.selected",
-                      "value": "57",
-                      "language": "",
-                      "country": ""
-                    }
-                  ],
-                  "communication": [
-                    {
-                      "erpID": "",
-                      "erpName": "",
-                      "erpNumber": "",
-                      "erpLastUpdate": "2011-10-06T08:56:14",
-                      "erpCreation": "0000-01-01T00:00:00",
-                      "cid": 185882,
-                      "uid": 75731,
-                      "type": 1,
-                      "description": "",
-                      "locator": "support@schukai.de",
-                      "preset": "1",
-                      "private": "",
-                      "scope": "50",
-                      "lastUpdate": "0000-01-01T00:00:00"
-                    }
-                  ]
+                  "property": {
+                    "dataset": [
+                      {
+                        "pid": 1,
+                        "uid": 1,
+                        "name": "property.name",
+                        "value": "value",
+                        "language": "",
+                        "country": ""
+                      }
+                    ]
+                  },
+                  "orders": {
+                    "dataset": []
+                  }
                 },
                 "sys": {
                   "message": "200 OK",
@@ -4396,22 +4096,230 @@
               "x-matchResponseSchema": true,
               "headers": {
                 "Access-Control-Allow-Origin": "*",
-                "Connection": "Keep-Alive",
+                "Connection": "keep-alive",
                 "Content-Encoding": "gzip",
-                "Content-Length": "2264",
+                "Content-Length": "12916",
                 "Content-Type": "application/json",
-                "Date": "Sat, 18 Nov 2017 08:59:15 GMT",
-                "Keep-Alive": "timeout=3, max=100",
-                "Server": "Apache",
-                "Set-Cookie": "suid=1b126998-0195-45f2-bab0-6b819ec73b67; expires=Sat, 18-Nov-2017 12:59:15 GMT; Max-Age=14400; path=/; HttpOnly",
+                "Date": "Sun, 25 Feb 2018 15:55:10 GMT",
+                "Server": "nginx",
+                "Set-Cookie": "suid=15b9957f-c435-4a3a-b4f3-0bcbe4ae1393; expires=Sun, 25-Feb-2018 19:55:07 GMT; Max-Age=14400; path=/; HttpOnly",
                 "X-Powered-By": "Alvine Framework <http://alvine.io>"
               },
-              "body": "{\"dataset\":{\"erpID\":\"\",\"erpName\":\"\",\"erpNumber\":\"\",\"erpLastUpdate\":\"2011-07-11T11:10:23\",\"erpCreation\":\"0000-01-01T00:00:00\",\"archived\":\"0\",\"uid\":75731,\"name\":\"mey_admin\",\"state\":0,\"creation\":null,\"lastUpdate\":\"2017-11-14T15:49:43\",\"ranking\":0,\"addresses\":[],\"personal\":{\"erpID\":\"\",\"erpName\":\"\",\"erpNumber\":\"\",\"erpLastUpdate\":\"2011-10-06T08:55:11\",\"erpCreation\":\"0000-01-01T00:00:00\",\"pid\":74761,\"uid\":75731,\"alias\":\"\",\"formOfAddress\":\"\",\"salutation\":\"Sehr geehrte Damen und Herren,\",\"firstname\":\"Mey\",\"name1\":\"Administrator\",\"name2\":\"\",\"title\":\"\",\"custom1\":\"\",\"custom2\":\"\",\"birthday\":\"0000-01-01T00:00:00\",\"lastUpdate\":\"0000-01-01T00:00:00\"},\"properties\":[{\"pid\":890011,\"uid\":75731,\"name\":\"core.interface.image.limitsize\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890031,\"uid\":75731,\"name\":\"core.interface.sheet.changerowcolor\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890041,\"uid\":75731,\"name\":\"core.interface.sheet.colheader.repeat\",\"value\":\"25\",\"language\":\"\",\"country\":\"\"},{\"pid\":890051,\"uid\":75731,\"name\":\"core.interface.sheet.geticon\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":890061,\"uid\":75731,\"name\":\"core.interface.sheet.position.limit\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890071,\"uid\":75731,\"name\":\"core.interface.sheet.position.maxrows\",\"value\":\"50\",\"language\":\"\",\"country\":\"\"},{\"pid\":890081,\"uid\":75731,\"name\":\"core.interface.sheet.showhtml\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890091,\"uid\":75731,\"name\":\"core.interface.sheet.string.limit\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890101,\"uid\":75731,\"name\":\"core.interface.sheet.viewimage\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890121,\"uid\":75731,\"name\":\"core.interface.desktop.version\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":890131,\"uid\":75731,\"name\":\"core.interface.desktop.applications\",\"value\":\"a:0:{}\",\"language\":\"\",\"country\":\"\"},{\"pid\":890141,\"uid\":75731,\"name\":\"core.locale.frontendlanguage\",\"value\":\"de\",\"language\":\"\",\"country\":\"\"},{\"pid\":890151,\"uid\":75731,\"name\":\"core.property.currency\",\"value\":\"EUR\",\"language\":\"\",\"country\":\"\"},{\"pid\":890161,\"uid\":75731,\"name\":\"core.property.currency.sign.prefix\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890171,\"uid\":75731,\"name\":\"core.property.currency.sign.suffix\",\"value\":\"\\u20ac\",\"language\":\"\",\"country\":\"\"},{\"pid\":890181,\"uid\":75731,\"name\":\"core.property.dateformat\",\"value\":\"d.m.Y\",\"language\":\"\",\"country\":\"\"},{\"pid\":890191,\"uid\":75731,\"name\":\"core.property.decimalcount\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":890201,\"uid\":75731,\"name\":\"core.property.decimaldelimiter\",\"value\":\".\",\"language\":\"\",\"country\":\"\"},{\"pid\":890211,\"uid\":75731,\"name\":\"core.property.digitsgrouping\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890221,\"uid\":75731,\"name\":\"core.property.export.cvs.delimiter\",\"value\":\",\",\"language\":\"\",\"country\":\"\"},{\"pid\":890231,\"uid\":75731,\"name\":\"core.property.export.cvs.quote\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":890251,\"uid\":75731,\"name\":\"core.property.myteam_subgroup\",\"value\":\"1\",\"language\":\"\",\"country\":\"\"},{\"pid\":890261,\"uid\":75731,\"name\":\"core.property.timeformat\",\"value\":\"H:i:s\",\"language\":\"\",\"country\":\"\"},{\"pid\":890271,\"uid\":75731,\"name\":\"shop.addon.crm.newsletter\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":890281,\"uid\":75731,\"name\":\"shop.addon.crm.rating\",\"value\":\"C\",\"language\":\"\",\"country\":\"\"},{\"pid\":890291,\"uid\":75731,\"name\":\"shop.customer.deliveryblock\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":1869292,\"uid\":75731,\"name\":\"core.interface.sheet.version\",\"value\":\"2\",\"language\":\"\",\"country\":\"\"},{\"pid\":1934382,\"uid\":75731,\"name\":\"core.interface.intern.notice\",\"value\":\"<ul><li>transparenter und hochwertig bestickter T\\u00fclleinsatz im Decollet\\u00e9e<\\/li><li>edler Glanz in den Zierstreifen<\\/li><li>als sinnlicher Body-Dress mit schmalen, verstellbaren Tr\\u00e4ger<\\/li><li>besonders weicher Fall, schmiegt sich perfekt an<\\/li><li>f\\u00fcr verf\\u00fchrerische Momente<\\/li><\\/ul>\",\"language\":\"\",\"country\":\"\"},{\"pid\":3305741,\"uid\":75731,\"name\":\"shop.extra.item.exportset\",\"value\":\"a:1:{s:11:\\\"zalando set\\\";a:7:{i:0;s:3:\\\"iid\\\";i:1;s:16:\\\"pb_item_text::50\\\";i:2;s:16:\\\"pb_item_text::51\\\";i:3;s:16:\\\"pb_item_text::53\\\";i:4;s:16:\\\"pb_item_text::52\\\";i:5;s:17:\\\"sys_variants_info\\\";i:6;s:17:\\\"export_properties\\\";}}\",\"language\":\"\",\"country\":\"\"},{\"pid\":12737642,\"uid\":75731,\"name\":\"core.interface.standard.toolbar\",\"value\":\"a:11:{i:0;a:3:{s:1:\\\"u\\\";s:449:\\\" index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\\\";s:1:\\\"i\\\";s:28:\\\"toolbar_icon_visualcheck.gif\\\";s:1:\\\"l\\\";s:43:\\\"<b><font color=green>B.Freigaben<\\/font><\\/b>\\\";}i:1;a:3:{s:1:\\\"u\\\";s:448:\\\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=52&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\\\";s:1:\\\"i\\\";s:21:\\\"toolbar_icon_lamp.gif\\\";s:1:\\\"l\\\";s:43:\\\"<b><font color=green>B.Teiloffen<\\/b><\\/font>\\\";}i:2;a:3:{s:1:\\\"u\\\";s:448:\\\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=11&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\\\";s:1:\\\"i\\\";s:24:\\\"toolbar_icon_dispute.gif\\\";s:1:\\\"l\\\";s:37:\\\"<b><font color=green>B.Fehlerhaft<\\/b>\\\";}i:3;a:3:{s:1:\\\"u\\\";s:448:\\\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8007&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\\\";s:1:\\\"i\\\";s:23:\\\"toolbar_icon_reload.gif\\\";s:1:\\\"l\\\";s:40:\\\"<b><font color=green>B.Wiedervorlage<\\/b>\\\";}i:4;a:3:{s:1:\\\"u\\\";s:243:\\\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=214&sxx_filter_tid=&sxx_filter_sys_priority=&sxx_filter_sys_state=2%2C4%2C6&sxx_filter_sys_ouid=&sxx_filter_sys_description=&sxx_filter_freetext=&sxx_filter_sys_cuid_map=&sxx_filter_date=&submit=OK\\\";s:1:\\\"i\\\";s:22:\\\"toolbar_icon_mail2.gif\\\";s:1:\\\"l\\\";s:42:\\\"<b><font color=red>T.Sichtliste<\\/b><\\/font>\\\";}i:5;a:3:{s:1:\\\"u\\\";s:247:\\\"index.php?sxx_list_start=0&sxx_list_sort=&sxx_filter_incommingdate=&sxx_filter_sys_transaction_number=&cmd=9221&sxx_filter_rid=&sxx_filter_state=20&sxx_filter_action=&sxx_filter_payment=&sxx_filter_country=&sxx_customer=&sxx_filter_shid=&submit=OK\\\";s:1:\\\"i\\\";s:18:\\\"toolbar_icon_r.gif\\\";s:1:\\\"l\\\";s:46:\\\"<b><font color=purple>Retourenliste<\\/b><\\/font>\\\";}i:6;a:3:{s:1:\\\"u\\\";s:55:\\\"https:\\/\\/www.paypal.com\\/de\\/cgi-bin\\/webscr?cmd=_login-run\\\";s:1:\\\"i\\\";s:20:\\\"toolbar_icon_pay.gif\\\";s:1:\\\"l\\\";s:33:\\\"<b><font color=blue>Paypal<\\/font>\\\";}i:7;a:3:{s:1:\\\"u\\\";s:20:\\\"https:\\/\\/pmi.pay1.de\\/\\\";s:1:\\\"i\\\";s:20:\\\"toolbar_icon_pay.gif\\\";s:1:\\\"l\\\";s:30:\\\"<font color=blue>Payone<\\/font>\\\";}i:8;a:3:{s:1:\\\"u\\\";s:93:\\\"https:\\/\\/banking.saalesparkasse.de\\/portal\\/portal\\/StartenIPSTANDARD?IID=80053762&AID=IPSTANDARD\\\";s:1:\\\"i\\\";s:20:\\\"toolbar_icon_pay.gif\\\";s:1:\\\"l\\\";s:40:\\\"<font color=blue>DeutscheBank<\\/font><\\/b>\\\";}i:9;a:3:{s:1:\\\"u\\\";s:50:\\\"index.php?sxx_site=alvine&history=Liste&cmd=35012&\\\";s:1:\\\"i\\\";s:20:\\\"toolbar_icon_pay.gif\\\";s:1:\\\"l\\\";s:34:\\\"<b><font color=blue>CEG<\\/b><\\/font>\\\";}i:10;a:3:{s:1:\\\"u\\\";s:49:\\\"index.php?sxx_site=alvine&history=Liste&cmd=1023&\\\";s:1:\\\"i\\\";s:25:\\\"toolbar_icon_favorite.gif\\\";s:1:\\\"l\\\";s:38:\\\"<b><font color=purple>Lager<\\/b><\\/font>\\\";}}\",\"language\":\"\",\"country\":\"\"},{\"pid\":16912242,\"uid\":75731,\"name\":\"alvine.cmd.history\",\"value\":\"0\",\"language\":\"\",\"country\":\"\"},{\"pid\":16912252,\"uid\":75731,\"name\":\"alvine.cmd.history.label\",\"value\":\"Liste\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785152,\"uid\":75731,\"name\":\"core.language\",\"value\":\"de\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785153,\"uid\":75731,\"name\":\"public.file.upload.path\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785154,\"uid\":75731,\"name\":\"content.file.upload.extension\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785155,\"uid\":75731,\"name\":\"content.file.upload.excludedirs\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785156,\"uid\":75731,\"name\":\"content.file.content.path\",\"value\":\"\",\"language\":\"\",\"country\":\"\"},{\"pid\":26785157,\"uid\":75731,\"name\":\"core.property.myteam\",\"value\":\"1,12,26,5,6,22,15,9,32,14,20,29,23,30,8,10,11,24,115,81,16,91,27,25,7,2,31,28,21,3,4,17\",\"language\":\"\",\"country\":\"\"},{\"pid\":26793650,\"uid\":75731,\"name\":\"core.interface.menu.selected\",\"value\":\"57\",\"language\":\"\",\"country\":\"\"}],\"communication\":[{\"erpID\":\"\",\"erpName\":\"\",\"erpNumber\":\"\",\"erpLastUpdate\":\"2011-10-06T08:56:14\",\"erpCreation\":\"0000-01-01T00:00:00\",\"cid\":185882,\"uid\":75731,\"type\":1,\"description\":\"\",\"locator\":\"support@schukai.de\",\"preset\":\"1\",\"private\":\"\",\"scope\":\"50\",\"lastUpdate\":\"0000-01-01T00:00:00\"}]},\"sys\":{\"message\":\"200 OK\",\"code\":200}}"
+              "body": "{\r\n    \"dataset\": {\r\n        \"erpID\": \"\",\r\n        \"erpName\": \"\",\r\n        \"erpNumber\": \"\",\r\n        \"erpLastUpdate\": \"0000-01-01T00:00:00\",\r\n        \"erpCreation\": \"0000-01-01T00:00:00\",\r\n        \"archived\": \"0\",\r\n        \"ranking\": \"0\",\r\n        \"uid\": 123213,\r\n        \"username\": \"info@example.com\",\r\n        \"state\": 0,\r\n        \"addresses\": {\r\n            \"dataset\": [\r\n                {\r\n                    \"erpID\": \"\",\r\n                    \"erpName\": \"\",\r\n                    \"erpNumber\": \"\",\r\n                    \"erpLastUpdate\": \"0000-01-01T00:00:00\",\r\n                    \"erpCreation\": \"0000-01-01T00:00:00\",\r\n                    \"aid\": 1,\r\n                    \"uid\": 1,\r\n                    \"contact\": \"\",\r\n                    \"company\": \"\",\r\n                    \"address1\": \"\",\r\n                    \"address2\": \"\",\r\n                    \"normStatus\": \"0\",\r\n                    \"city\": \"\",\r\n                    \"state\": \"\",\r\n                    \"zipcode\": \"\",\r\n                    \"country\": \"de\",\r\n                    \"description\": \"\",\r\n                    \"type\": \"4\",\r\n                    \"preset\": 1,\r\n                    \"systemUsage\": \"\",\r\n                    \"lastUpdate\": \"2017-02-01T17:36:15\"\r\n                }\r\n            ]\r\n        },\r\n        \"property\": {\r\n            \"dataset\": [\r\n                {\r\n                    \"pid\": 1,\r\n                    \"uid\": 1,\r\n                    \"name\": \"property.name\",\r\n                    \"value\": \"value\",\r\n                    \"language\": \"\",\r\n                    \"country\": \"\"\r\n                }\r\n            ]\r\n        },\r\n        \"orders\": {\r\n            \"dataset\": []\r\n        }\r\n    },\r\n    \"sys\": {\r\n        \"message\": \"200 OK\",\r\n        \"code\": 200\r\n    }\r\n}"
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Wer bin ich",
-            "x-testDescription": ""
+            "x-testDescription": "Mit dieser API kann ein angemeldeter Benutzer die Daten über seine Person abrufen. Dies kann zum Beispiel für die Darstellung eine Konto-Seite verwendet werden.\n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* account-data-manager\n* account-data-consumer"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/logout": {
+      "delete": {
+        "description": "Die aktuelle Session beenden und den Benutzer abmelden.",
+        "summary": "Logout",
+        "tags": [
+          "account"
+        ],
+        "operationId": "ApiLogoutDelete",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/logout"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Logout",
+            "x-testDescription": "Die aktuelle Session beenden und den Benutzer abmelden."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/login": {
+      "post": {
+        "description": "Authentifiziert den Benutzer und liefert einen Zugangstoken zurück. Dieser Zugangstoken kann in der folgenden Kommunikation mit der Alvine Platform als Ersatz für die Anmeldung mit Benutzername und Passwort verwendet werden.",
+        "summary": "Login",
+        "tags": [
+          "account"
+        ],
+        "operationId": "ApiLoginPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {}
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/login",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n\t\"username\": \"api-user\",\n\t\"password\": \"geheim\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Connection": "keep-alive",
+                "Content-Length": "0",
+                "Content-Type": "text/html; charset=UTF-8",
+                "Date": "Sun, 25 Feb 2018 14:53:59 GMT",
+                "Server": "nginx",
+                "X-Powered-By": "Alvine Framework <http://alvine.io>",
+                "Set-Cookie": "21f3fffd-20f2-4c55-f22e-f7f68751418f; expires=Sun, 25-Feb-2018 19:14:29 GMT; Max-Age=14400; path=/; HttpOnly"
+              }
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Login",
+            "x-testDescription": "Authentifiziert den Benutzer und liefert einen Zugangstoken zurück. Dieser Zugangstoken kann in der folgenden Kommunikation mit der Alvine Platform als Ersatz für die Anmeldung mit Benutzername und Passwort verwendet werden."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/request-access-token": {
+      "post": {
+        "description": "Nicht angemeldete Benutzer können einen Access-Token anfordern. Mit Hilfe dieses Token ist es möglich sich ohne Passwort anzumelden. Der Token wird an die im Benutzer hinterlegte E-Mail-Adresse gesendet.",
+        "summary": "Access-Token anfordern",
+        "tags": [
+          "account"
+        ],
+        "operationId": "ApiRequestAccessTokenPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AccessToken anfordernrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {}
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/request-access-token",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n\t\"username\": \"administrator\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Connection": "keep-alive",
+                "Content-Length": "0",
+                "Content-Type": "text/html; charset=UTF-8",
+                "Date": "Sun, 25 Feb 2018 14:53:59 GMT",
+                "Server": "nginx",
+                "X-Powered-By": "Alvine Framework <http://alvine.io>",
+                "Set-Cookie": "21f3fffd-20f2-4c55-f22e-f7f68751418f; expires=Sun, 25-Feb-2018 19:14:29 GMT; Max-Age=14400; path=/; HttpOnly"
+              }
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Access-Token anfordern",
+            "x-testDescription": "Nicht angemeldete Benutzer können einen Access-Token anfordern. Mit Hilfe dieses Token ist es möglich sich ohne Passwort anzumelden. Der Token wird an die im Benutzer hinterlegte E-Mail-Adresse gesendet."
           }
         ],
         "x-operation-settings": {
@@ -4424,8 +4332,8 @@
     },
     "/admin/logout": {
       "get": {
-        "description": "Von der Konsole abmelden",
-        "summary": "Logout",
+        "description": "Von der Konsole abmelden und das Anmeldeformular für die Konsole anzeigen.",
+        "summary": "Logout mit Redirect",
         "tags": [
           "console"
         ],
@@ -4456,8 +4364,54 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Logout",
-            "x-testDescription": "Von der Konsole abmelden"
+            "x-testName": "Logout mit Redirect",
+            "x-testDescription": "Von der Konsole abmelden und das Anmeldeformular für die Konsole anzeigen."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/admin/login": {
+      "get": {
+        "description": "Logindialog der Konsole.",
+        "summary": "Logindialog",
+        "tags": [
+          "console"
+        ],
+        "operationId": "AdminLoginGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/admin/login"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Logindialog",
+            "x-testDescription": "Logindialog der Konsole."
           }
         ],
         "x-operation-settings": {
@@ -4643,6 +4597,143 @@
             "x-testEnabled": true,
             "x-testName": "Firma suchen",
             "x-testDescription": ""
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/content/document/template": {
+      "get": {
+        "description": "Auslesen von Dokumentenvorlagen \n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* manager\n* document-template-data-manager\n* document-template-data-consumer",
+        "summary": "Template auslesen",
+        "tags": [
+          "Dokumente"
+        ],
+        "operationId": "ApiContentDocumentTemplateGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/content/document/template?page=3&count=5&orderby=language DESC",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Template auslesen",
+            "x-testDescription": "Auslesen von Dokumentenvorlagen \n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* manager\n* document-template-data-manager\n* document-template-data-consumer"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/content/document/template/110": {
+      "get": {
+        "description": "Auslesen einer Dokumentenvorlage\n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* manager\n* document-template-data-manager\n* document-template-data-consumer",
+        "summary": "Ein Template auslesen",
+        "tags": [
+          "Dokumente"
+        ],
+        "operationId": "ApiContentDocumentTemplate110Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/content/document/template/110",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Ein Template auslesen",
+            "x-testDescription": "Auslesen einer Dokumentenvorlage\n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* manager\n* document-template-data-manager\n* document-template-data-consumer"
           }
         ],
         "x-operation-settings": {
@@ -15839,375 +15930,62 @@
         "erpID"
       ]
     },
-    "WerBinIch": {
-      "title": "Wer bin ich",
+    "200Ok": {
+      "title": "200 OK",
       "example": {
         "dataset": {
           "erpID": "",
           "erpName": "",
           "erpNumber": "",
-          "erpLastUpdate": "2011-07-11T11:10:23",
+          "erpLastUpdate": "0000-01-01T00:00:00",
           "erpCreation": "0000-01-01T00:00:00",
           "archived": "0",
-          "uid": 75731,
-          "name": "mey_admin",
+          "ranking": "0",
+          "uid": 123213,
+          "username": "info@example.com",
           "state": 0,
-          "creation": null,
-          "lastUpdate": "2017-11-14T15:49:43",
-          "ranking": 0,
-          "addresses": [],
-          "personal": {
-            "erpID": "",
-            "erpName": "",
-            "erpNumber": "",
-            "erpLastUpdate": "2011-10-06T08:55:11",
-            "erpCreation": "0000-01-01T00:00:00",
-            "pid": 74761,
-            "uid": 75731,
-            "alias": "",
-            "formOfAddress": "",
-            "salutation": "Sehr geehrte Damen und Herren,",
-            "firstname": "Mey",
-            "name1": "Administrator",
-            "name2": "",
-            "title": "",
-            "custom1": "",
-            "custom2": "",
-            "birthday": "0000-01-01T00:00:00",
-            "lastUpdate": "0000-01-01T00:00:00"
+          "addresses": {
+            "dataset": [
+              {
+                "erpID": "",
+                "erpName": "",
+                "erpNumber": "",
+                "erpLastUpdate": "0000-01-01T00:00:00",
+                "erpCreation": "0000-01-01T00:00:00",
+                "aid": 1,
+                "uid": 1,
+                "contact": "",
+                "company": "",
+                "address1": "",
+                "address2": "",
+                "normStatus": "0",
+                "city": "",
+                "state": "",
+                "zipcode": "",
+                "country": "de",
+                "description": "",
+                "type": "4",
+                "preset": 1,
+                "systemUsage": "",
+                "lastUpdate": "2017-02-01T17:36:15"
+              }
+            ]
           },
-          "properties": [
-            {
-              "pid": 890011,
-              "uid": 75731,
-              "name": "core.interface.image.limitsize",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890031,
-              "uid": 75731,
-              "name": "core.interface.sheet.changerowcolor",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890041,
-              "uid": 75731,
-              "name": "core.interface.sheet.colheader.repeat",
-              "value": "25",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890051,
-              "uid": 75731,
-              "name": "core.interface.sheet.geticon",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890061,
-              "uid": 75731,
-              "name": "core.interface.sheet.position.limit",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890071,
-              "uid": 75731,
-              "name": "core.interface.sheet.position.maxrows",
-              "value": "50",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890081,
-              "uid": 75731,
-              "name": "core.interface.sheet.showhtml",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890091,
-              "uid": 75731,
-              "name": "core.interface.sheet.string.limit",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890101,
-              "uid": 75731,
-              "name": "core.interface.sheet.viewimage",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890121,
-              "uid": 75731,
-              "name": "core.interface.desktop.version",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890131,
-              "uid": 75731,
-              "name": "core.interface.desktop.applications",
-              "value": "a:0:{}",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890141,
-              "uid": 75731,
-              "name": "core.locale.frontendlanguage",
-              "value": "de",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890151,
-              "uid": 75731,
-              "name": "core.property.currency",
-              "value": "EUR",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890161,
-              "uid": 75731,
-              "name": "core.property.currency.sign.prefix",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890171,
-              "uid": 75731,
-              "name": "core.property.currency.sign.suffix",
-              "value": "¬",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890181,
-              "uid": 75731,
-              "name": "core.property.dateformat",
-              "value": "d.m.Y",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890191,
-              "uid": 75731,
-              "name": "core.property.decimalcount",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890201,
-              "uid": 75731,
-              "name": "core.property.decimaldelimiter",
-              "value": ".",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890211,
-              "uid": 75731,
-              "name": "core.property.digitsgrouping",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890221,
-              "uid": 75731,
-              "name": "core.property.export.cvs.delimiter",
-              "value": ",",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890231,
-              "uid": 75731,
-              "name": "core.property.export.cvs.quote",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890251,
-              "uid": 75731,
-              "name": "core.property.myteam_subgroup",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890261,
-              "uid": 75731,
-              "name": "core.property.timeformat",
-              "value": "H:i:s",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890271,
-              "uid": 75731,
-              "name": "shop.addon.crm.newsletter",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890281,
-              "uid": 75731,
-              "name": "shop.addon.crm.rating",
-              "value": "C",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890291,
-              "uid": 75731,
-              "name": "shop.customer.deliveryblock",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 1869292,
-              "uid": 75731,
-              "name": "core.interface.sheet.version",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 1934382,
-              "uid": 75731,
-              "name": "core.interface.intern.notice",
-              "value": "<ul><li>transparenter und hochwertig bestickter Tülleinsatz im Decolletée</li><li>edler Glanz in den Zierstreifen</li><li>als sinnlicher Body-Dress mit schmalen, verstellbaren Träger</li><li>besonders weicher Fall, schmiegt sich perfekt an</li><li>für verführerische Momente</li></ul>",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 3305741,
-              "uid": 75731,
-              "name": "shop.extra.item.exportset",
-              "value": "a:1:{s:11:\"zalando set\";a:7:{i:0;s:3:\"iid\";i:1;s:16:\"pb_item_text::50\";i:2;s:16:\"pb_item_text::51\";i:3;s:16:\"pb_item_text::53\";i:4;s:16:\"pb_item_text::52\";i:5;s:17:\"sys_variants_info\";i:6;s:17:\"export_properties\";}}",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 12737642,
-              "uid": 75731,
-              "name": "core.interface.standard.toolbar",
-              "value": "a:11:{i:0;a:3:{s:1:\"u\";s:449:\" index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:28:\"toolbar_icon_visualcheck.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Freigaben</font></b>\";}i:1;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=52&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:21:\"toolbar_icon_lamp.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Teiloffen</b></font>\";}i:2;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=11&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:24:\"toolbar_icon_dispute.gif\";s:1:\"l\";s:37:\"<b><font color=green>B.Fehlerhaft</b>\";}i:3;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8007&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:23:\"toolbar_icon_reload.gif\";s:1:\"l\";s:40:\"<b><font color=green>B.Wiedervorlage</b>\";}i:4;a:3:{s:1:\"u\";s:243:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=214&sxx_filter_tid=&sxx_filter_sys_priority=&sxx_filter_sys_state=2%2C4%2C6&sxx_filter_sys_ouid=&sxx_filter_sys_description=&sxx_filter_freetext=&sxx_filter_sys_cuid_map=&sxx_filter_date=&submit=OK\";s:1:\"i\";s:22:\"toolbar_icon_mail2.gif\";s:1:\"l\";s:42:\"<b><font color=red>T.Sichtliste</b></font>\";}i:5;a:3:{s:1:\"u\";s:247:\"index.php?sxx_list_start=0&sxx_list_sort=&sxx_filter_incommingdate=&sxx_filter_sys_transaction_number=&cmd=9221&sxx_filter_rid=&sxx_filter_state=20&sxx_filter_action=&sxx_filter_payment=&sxx_filter_country=&sxx_customer=&sxx_filter_shid=&submit=OK\";s:1:\"i\";s:18:\"toolbar_icon_r.gif\";s:1:\"l\";s:46:\"<b><font color=purple>Retourenliste</b></font>\";}i:6;a:3:{s:1:\"u\";s:55:\"https://www.paypal.com/de/cgi-bin/webscr?cmd=_login-run\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:33:\"<b><font color=blue>Paypal</font>\";}i:7;a:3:{s:1:\"u\";s:20:\"https://pmi.pay1.de/\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:30:\"<font color=blue>Payone</font>\";}i:8;a:3:{s:1:\"u\";s:93:\"https://banking.saalesparkasse.de/portal/portal/StartenIPSTANDARD?IID=80053762&AID=IPSTANDARD\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:40:\"<font color=blue>DeutscheBank</font></b>\";}i:9;a:3:{s:1:\"u\";s:50:\"index.php?sxx_site=alvine&history=Liste&cmd=35012&\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:34:\"<b><font color=blue>CEG</b></font>\";}i:10;a:3:{s:1:\"u\";s:49:\"index.php?sxx_site=alvine&history=Liste&cmd=1023&\";s:1:\"i\";s:25:\"toolbar_icon_favorite.gif\";s:1:\"l\";s:38:\"<b><font color=purple>Lager</b></font>\";}}",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 16912242,
-              "uid": 75731,
-              "name": "alvine.cmd.history",
-              "value": "0",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 16912252,
-              "uid": 75731,
-              "name": "alvine.cmd.history.label",
-              "value": "Liste",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785152,
-              "uid": 75731,
-              "name": "core.language",
-              "value": "de",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785153,
-              "uid": 75731,
-              "name": "public.file.upload.path",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785154,
-              "uid": 75731,
-              "name": "content.file.upload.extension",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785155,
-              "uid": 75731,
-              "name": "content.file.upload.excludedirs",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785156,
-              "uid": 75731,
-              "name": "content.file.content.path",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785157,
-              "uid": 75731,
-              "name": "core.property.myteam",
-              "value": "1,12,26,5,6,22,15,9,32,14,20,29,23,30,8,10,11,24,115,81,16,91,27,25,7,2,31,28,21,3,4,17",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26793650,
-              "uid": 75731,
-              "name": "core.interface.menu.selected",
-              "value": "57",
-              "language": "",
-              "country": ""
-            }
-          ],
-          "communication": [
-            {
-              "erpID": "",
-              "erpName": "",
-              "erpNumber": "",
-              "erpLastUpdate": "2011-10-06T08:56:14",
-              "erpCreation": "0000-01-01T00:00:00",
-              "cid": 185882,
-              "uid": 75731,
-              "type": 1,
-              "description": "",
-              "locator": "support@schukai.de",
-              "preset": "1",
-              "private": "",
-              "scope": "50",
-              "lastUpdate": "0000-01-01T00:00:00"
-            }
-          ]
+          "property": {
+            "dataset": [
+              {
+                "pid": 1,
+                "uid": 1,
+                "name": "property.name",
+                "value": "value",
+                "language": "",
+                "country": ""
+              }
+            ]
+          },
+          "orders": {
+            "dataset": []
+          }
         },
         "sys": {
           "message": "200 OK",
@@ -16234,368 +16012,55 @@
         "erpID": "",
         "erpName": "",
         "erpNumber": "",
-        "erpLastUpdate": "2011-07-11T11:10:23",
+        "erpLastUpdate": "0000-01-01T00:00:00",
         "erpCreation": "0000-01-01T00:00:00",
         "archived": "0",
-        "uid": 75731,
-        "name": "mey_admin",
+        "ranking": "0",
+        "uid": 123213,
+        "username": "info@example.com",
         "state": 0,
-        "creation": null,
-        "lastUpdate": "2017-11-14T15:49:43",
-        "ranking": 0,
-        "addresses": [],
-        "personal": {
-          "erpID": "",
-          "erpName": "",
-          "erpNumber": "",
-          "erpLastUpdate": "2011-10-06T08:55:11",
-          "erpCreation": "0000-01-01T00:00:00",
-          "pid": 74761,
-          "uid": 75731,
-          "alias": "",
-          "formOfAddress": "",
-          "salutation": "Sehr geehrte Damen und Herren,",
-          "firstname": "Mey",
-          "name1": "Administrator",
-          "name2": "",
-          "title": "",
-          "custom1": "",
-          "custom2": "",
-          "birthday": "0000-01-01T00:00:00",
-          "lastUpdate": "0000-01-01T00:00:00"
+        "addresses": {
+          "dataset": [
+            {
+              "erpID": "",
+              "erpName": "",
+              "erpNumber": "",
+              "erpLastUpdate": "0000-01-01T00:00:00",
+              "erpCreation": "0000-01-01T00:00:00",
+              "aid": 1,
+              "uid": 1,
+              "contact": "",
+              "company": "",
+              "address1": "",
+              "address2": "",
+              "normStatus": "0",
+              "city": "",
+              "state": "",
+              "zipcode": "",
+              "country": "de",
+              "description": "",
+              "type": "4",
+              "preset": 1,
+              "systemUsage": "",
+              "lastUpdate": "2017-02-01T17:36:15"
+            }
+          ]
         },
-        "properties": [
-          {
-            "pid": 890011,
-            "uid": 75731,
-            "name": "core.interface.image.limitsize",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890031,
-            "uid": 75731,
-            "name": "core.interface.sheet.changerowcolor",
-            "value": "1",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890041,
-            "uid": 75731,
-            "name": "core.interface.sheet.colheader.repeat",
-            "value": "25",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890051,
-            "uid": 75731,
-            "name": "core.interface.sheet.geticon",
-            "value": "2",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890061,
-            "uid": 75731,
-            "name": "core.interface.sheet.position.limit",
-            "value": "1",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890071,
-            "uid": 75731,
-            "name": "core.interface.sheet.position.maxrows",
-            "value": "50",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890081,
-            "uid": 75731,
-            "name": "core.interface.sheet.showhtml",
-            "value": "1",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890091,
-            "uid": 75731,
-            "name": "core.interface.sheet.string.limit",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890101,
-            "uid": 75731,
-            "name": "core.interface.sheet.viewimage",
-            "value": "1",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890121,
-            "uid": 75731,
-            "name": "core.interface.desktop.version",
-            "value": "2",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890131,
-            "uid": 75731,
-            "name": "core.interface.desktop.applications",
-            "value": "a:0:{}",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890141,
-            "uid": 75731,
-            "name": "core.locale.frontendlanguage",
-            "value": "de",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890151,
-            "uid": 75731,
-            "name": "core.property.currency",
-            "value": "EUR",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890161,
-            "uid": 75731,
-            "name": "core.property.currency.sign.prefix",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890171,
-            "uid": 75731,
-            "name": "core.property.currency.sign.suffix",
-            "value": "¬",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890181,
-            "uid": 75731,
-            "name": "core.property.dateformat",
-            "value": "d.m.Y",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890191,
-            "uid": 75731,
-            "name": "core.property.decimalcount",
-            "value": "2",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890201,
-            "uid": 75731,
-            "name": "core.property.decimaldelimiter",
-            "value": ".",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890211,
-            "uid": 75731,
-            "name": "core.property.digitsgrouping",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890221,
-            "uid": 75731,
-            "name": "core.property.export.cvs.delimiter",
-            "value": ",",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890231,
-            "uid": 75731,
-            "name": "core.property.export.cvs.quote",
-            "value": "2",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890251,
-            "uid": 75731,
-            "name": "core.property.myteam_subgroup",
-            "value": "1",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890261,
-            "uid": 75731,
-            "name": "core.property.timeformat",
-            "value": "H:i:s",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890271,
-            "uid": 75731,
-            "name": "shop.addon.crm.newsletter",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890281,
-            "uid": 75731,
-            "name": "shop.addon.crm.rating",
-            "value": "C",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 890291,
-            "uid": 75731,
-            "name": "shop.customer.deliveryblock",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 1869292,
-            "uid": 75731,
-            "name": "core.interface.sheet.version",
-            "value": "2",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 1934382,
-            "uid": 75731,
-            "name": "core.interface.intern.notice",
-            "value": "<ul><li>transparenter und hochwertig bestickter Tülleinsatz im Decolletée</li><li>edler Glanz in den Zierstreifen</li><li>als sinnlicher Body-Dress mit schmalen, verstellbaren Träger</li><li>besonders weicher Fall, schmiegt sich perfekt an</li><li>für verführerische Momente</li></ul>",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 3305741,
-            "uid": 75731,
-            "name": "shop.extra.item.exportset",
-            "value": "a:1:{s:11:\"zalando set\";a:7:{i:0;s:3:\"iid\";i:1;s:16:\"pb_item_text::50\";i:2;s:16:\"pb_item_text::51\";i:3;s:16:\"pb_item_text::53\";i:4;s:16:\"pb_item_text::52\";i:5;s:17:\"sys_variants_info\";i:6;s:17:\"export_properties\";}}",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 12737642,
-            "uid": 75731,
-            "name": "core.interface.standard.toolbar",
-            "value": "a:11:{i:0;a:3:{s:1:\"u\";s:449:\" index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:28:\"toolbar_icon_visualcheck.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Freigaben</font></b>\";}i:1;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=52&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:21:\"toolbar_icon_lamp.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Teiloffen</b></font>\";}i:2;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=11&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:24:\"toolbar_icon_dispute.gif\";s:1:\"l\";s:37:\"<b><font color=green>B.Fehlerhaft</b>\";}i:3;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8007&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:23:\"toolbar_icon_reload.gif\";s:1:\"l\";s:40:\"<b><font color=green>B.Wiedervorlage</b>\";}i:4;a:3:{s:1:\"u\";s:243:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=214&sxx_filter_tid=&sxx_filter_sys_priority=&sxx_filter_sys_state=2%2C4%2C6&sxx_filter_sys_ouid=&sxx_filter_sys_description=&sxx_filter_freetext=&sxx_filter_sys_cuid_map=&sxx_filter_date=&submit=OK\";s:1:\"i\";s:22:\"toolbar_icon_mail2.gif\";s:1:\"l\";s:42:\"<b><font color=red>T.Sichtliste</b></font>\";}i:5;a:3:{s:1:\"u\";s:247:\"index.php?sxx_list_start=0&sxx_list_sort=&sxx_filter_incommingdate=&sxx_filter_sys_transaction_number=&cmd=9221&sxx_filter_rid=&sxx_filter_state=20&sxx_filter_action=&sxx_filter_payment=&sxx_filter_country=&sxx_customer=&sxx_filter_shid=&submit=OK\";s:1:\"i\";s:18:\"toolbar_icon_r.gif\";s:1:\"l\";s:46:\"<b><font color=purple>Retourenliste</b></font>\";}i:6;a:3:{s:1:\"u\";s:55:\"https://www.paypal.com/de/cgi-bin/webscr?cmd=_login-run\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:33:\"<b><font color=blue>Paypal</font>\";}i:7;a:3:{s:1:\"u\";s:20:\"https://pmi.pay1.de/\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:30:\"<font color=blue>Payone</font>\";}i:8;a:3:{s:1:\"u\";s:93:\"https://banking.saalesparkasse.de/portal/portal/StartenIPSTANDARD?IID=80053762&AID=IPSTANDARD\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:40:\"<font color=blue>DeutscheBank</font></b>\";}i:9;a:3:{s:1:\"u\";s:50:\"index.php?sxx_site=alvine&history=Liste&cmd=35012&\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:34:\"<b><font color=blue>CEG</b></font>\";}i:10;a:3:{s:1:\"u\";s:49:\"index.php?sxx_site=alvine&history=Liste&cmd=1023&\";s:1:\"i\";s:25:\"toolbar_icon_favorite.gif\";s:1:\"l\";s:38:\"<b><font color=purple>Lager</b></font>\";}}",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 16912242,
-            "uid": 75731,
-            "name": "alvine.cmd.history",
-            "value": "0",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 16912252,
-            "uid": 75731,
-            "name": "alvine.cmd.history.label",
-            "value": "Liste",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 26785152,
-            "uid": 75731,
-            "name": "core.language",
-            "value": "de",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 26785153,
-            "uid": 75731,
-            "name": "public.file.upload.path",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 26785154,
-            "uid": 75731,
-            "name": "content.file.upload.extension",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 26785155,
-            "uid": 75731,
-            "name": "content.file.upload.excludedirs",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 26785156,
-            "uid": 75731,
-            "name": "content.file.content.path",
-            "value": "",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 26785157,
-            "uid": 75731,
-            "name": "core.property.myteam",
-            "value": "1,12,26,5,6,22,15,9,32,14,20,29,23,30,8,10,11,24,115,81,16,91,27,25,7,2,31,28,21,3,4,17",
-            "language": "",
-            "country": ""
-          },
-          {
-            "pid": 26793650,
-            "uid": 75731,
-            "name": "core.interface.menu.selected",
-            "value": "57",
-            "language": "",
-            "country": ""
-          }
-        ],
-        "communication": [
-          {
-            "erpID": "",
-            "erpName": "",
-            "erpNumber": "",
-            "erpLastUpdate": "2011-10-06T08:56:14",
-            "erpCreation": "0000-01-01T00:00:00",
-            "cid": 185882,
-            "uid": 75731,
-            "type": 1,
-            "description": "",
-            "locator": "support@schukai.de",
-            "preset": "1",
-            "private": "",
-            "scope": "50",
-            "lastUpdate": "0000-01-01T00:00:00"
-          }
-        ]
+        "property": {
+          "dataset": [
+            {
+              "pid": 1,
+              "uid": 1,
+              "name": "property.name",
+              "value": "value",
+              "language": "",
+              "country": ""
+            }
+          ]
+        },
+        "orders": {
+          "dataset": []
+        }
       },
       "type": "object",
       "properties": {
@@ -16613,7 +16078,7 @@
         },
         "erpLastUpdate": {
           "description": "",
-          "example": "7/11/2011 11:10:23 AM",
+          "example": "0000-01-01T00:00:00",
           "type": "string"
         },
         "erpCreation": {
@@ -16626,15 +16091,20 @@
           "example": "0",
           "type": "string"
         },
+        "ranking": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
         "uid": {
           "description": "",
-          "example": 75731,
+          "example": 123213,
           "type": "integer",
           "format": "int32"
         },
-        "name": {
+        "username": {
           "description": "",
-          "example": "mey_admin",
+          "example": "info@example.com",
           "type": "string"
         },
         "state": {
@@ -16643,376 +16113,14 @@
           "type": "integer",
           "format": "int32"
         },
-        "creation": {
-          "description": ""
-        },
-        "lastUpdate": {
-          "description": "",
-          "example": "11/14/2017 3:49:43 PM",
-          "type": "string"
-        },
-        "ranking": {
-          "description": "",
-          "example": 0,
-          "type": "integer",
-          "format": "int32"
-        },
         "addresses": {
-          "description": "",
-          "example": [],
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/Addresses"
         },
-        "personal": {
-          "$ref": "#/definitions/Personal279"
+        "property": {
+          "$ref": "#/definitions/Property"
         },
-        "properties": {
-          "description": "",
-          "example": [
-            {
-              "pid": 890011,
-              "uid": 75731,
-              "name": "core.interface.image.limitsize",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890031,
-              "uid": 75731,
-              "name": "core.interface.sheet.changerowcolor",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890041,
-              "uid": 75731,
-              "name": "core.interface.sheet.colheader.repeat",
-              "value": "25",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890051,
-              "uid": 75731,
-              "name": "core.interface.sheet.geticon",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890061,
-              "uid": 75731,
-              "name": "core.interface.sheet.position.limit",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890071,
-              "uid": 75731,
-              "name": "core.interface.sheet.position.maxrows",
-              "value": "50",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890081,
-              "uid": 75731,
-              "name": "core.interface.sheet.showhtml",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890091,
-              "uid": 75731,
-              "name": "core.interface.sheet.string.limit",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890101,
-              "uid": 75731,
-              "name": "core.interface.sheet.viewimage",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890121,
-              "uid": 75731,
-              "name": "core.interface.desktop.version",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890131,
-              "uid": 75731,
-              "name": "core.interface.desktop.applications",
-              "value": "a:0:{}",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890141,
-              "uid": 75731,
-              "name": "core.locale.frontendlanguage",
-              "value": "de",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890151,
-              "uid": 75731,
-              "name": "core.property.currency",
-              "value": "EUR",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890161,
-              "uid": 75731,
-              "name": "core.property.currency.sign.prefix",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890171,
-              "uid": 75731,
-              "name": "core.property.currency.sign.suffix",
-              "value": "¬",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890181,
-              "uid": 75731,
-              "name": "core.property.dateformat",
-              "value": "d.m.Y",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890191,
-              "uid": 75731,
-              "name": "core.property.decimalcount",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890201,
-              "uid": 75731,
-              "name": "core.property.decimaldelimiter",
-              "value": ".",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890211,
-              "uid": 75731,
-              "name": "core.property.digitsgrouping",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890221,
-              "uid": 75731,
-              "name": "core.property.export.cvs.delimiter",
-              "value": ",",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890231,
-              "uid": 75731,
-              "name": "core.property.export.cvs.quote",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890251,
-              "uid": 75731,
-              "name": "core.property.myteam_subgroup",
-              "value": "1",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890261,
-              "uid": 75731,
-              "name": "core.property.timeformat",
-              "value": "H:i:s",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890271,
-              "uid": 75731,
-              "name": "shop.addon.crm.newsletter",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890281,
-              "uid": 75731,
-              "name": "shop.addon.crm.rating",
-              "value": "C",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 890291,
-              "uid": 75731,
-              "name": "shop.customer.deliveryblock",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 1869292,
-              "uid": 75731,
-              "name": "core.interface.sheet.version",
-              "value": "2",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 1934382,
-              "uid": 75731,
-              "name": "core.interface.intern.notice",
-              "value": "<ul><li>transparenter und hochwertig bestickter Tülleinsatz im Decolletée</li><li>edler Glanz in den Zierstreifen</li><li>als sinnlicher Body-Dress mit schmalen, verstellbaren Träger</li><li>besonders weicher Fall, schmiegt sich perfekt an</li><li>für verführerische Momente</li></ul>",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 3305741,
-              "uid": 75731,
-              "name": "shop.extra.item.exportset",
-              "value": "a:1:{s:11:\"zalando set\";a:7:{i:0;s:3:\"iid\";i:1;s:16:\"pb_item_text::50\";i:2;s:16:\"pb_item_text::51\";i:3;s:16:\"pb_item_text::53\";i:4;s:16:\"pb_item_text::52\";i:5;s:17:\"sys_variants_info\";i:6;s:17:\"export_properties\";}}",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 12737642,
-              "uid": 75731,
-              "name": "core.interface.standard.toolbar",
-              "value": "a:11:{i:0;a:3:{s:1:\"u\";s:449:\" index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:28:\"toolbar_icon_visualcheck.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Freigaben</font></b>\";}i:1;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=52&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:21:\"toolbar_icon_lamp.gif\";s:1:\"l\";s:43:\"<b><font color=green>B.Teiloffen</b></font>\";}i:2;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8004&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=11&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:24:\"toolbar_icon_dispute.gif\";s:1:\"l\";s:37:\"<b><font color=green>B.Fehlerhaft</b>\";}i:3;a:3:{s:1:\"u\";s:448:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=8007&sxx_firstname=&sxx_surname=&sxx_owner=&sxx_number=&sxx_iid=&sxx_startdate_y=&sxx_startdate_d=&sxx_startdate_m=&sxx_date=&sxx_enddate_y=&sxx_enddate_d=&sxx_enddate_m=&sxx_oid=&sxx_did=&sxx_filter_iid=&sxx_personal=&sxx_filter_amount=&sxx_city=&sxx_zipcode=&sxx_filter_freetext=&sxx_country=0&sxx_state=51&sxx_billnumber=&sxx_filter_company_orderid=&sxx_filter_shid=&sxx_p_state=&sxx_type=&submit=OK\";s:1:\"i\";s:23:\"toolbar_icon_reload.gif\";s:1:\"l\";s:40:\"<b><font color=green>B.Wiedervorlage</b>\";}i:4;a:3:{s:1:\"u\";s:243:\"index.php?sxx_list_start=0&sxx_list_sort=&cmd=214&sxx_filter_tid=&sxx_filter_sys_priority=&sxx_filter_sys_state=2%2C4%2C6&sxx_filter_sys_ouid=&sxx_filter_sys_description=&sxx_filter_freetext=&sxx_filter_sys_cuid_map=&sxx_filter_date=&submit=OK\";s:1:\"i\";s:22:\"toolbar_icon_mail2.gif\";s:1:\"l\";s:42:\"<b><font color=red>T.Sichtliste</b></font>\";}i:5;a:3:{s:1:\"u\";s:247:\"index.php?sxx_list_start=0&sxx_list_sort=&sxx_filter_incommingdate=&sxx_filter_sys_transaction_number=&cmd=9221&sxx_filter_rid=&sxx_filter_state=20&sxx_filter_action=&sxx_filter_payment=&sxx_filter_country=&sxx_customer=&sxx_filter_shid=&submit=OK\";s:1:\"i\";s:18:\"toolbar_icon_r.gif\";s:1:\"l\";s:46:\"<b><font color=purple>Retourenliste</b></font>\";}i:6;a:3:{s:1:\"u\";s:55:\"https://www.paypal.com/de/cgi-bin/webscr?cmd=_login-run\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:33:\"<b><font color=blue>Paypal</font>\";}i:7;a:3:{s:1:\"u\";s:20:\"https://pmi.pay1.de/\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:30:\"<font color=blue>Payone</font>\";}i:8;a:3:{s:1:\"u\";s:93:\"https://banking.saalesparkasse.de/portal/portal/StartenIPSTANDARD?IID=80053762&AID=IPSTANDARD\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:40:\"<font color=blue>DeutscheBank</font></b>\";}i:9;a:3:{s:1:\"u\";s:50:\"index.php?sxx_site=alvine&history=Liste&cmd=35012&\";s:1:\"i\";s:20:\"toolbar_icon_pay.gif\";s:1:\"l\";s:34:\"<b><font color=blue>CEG</b></font>\";}i:10;a:3:{s:1:\"u\";s:49:\"index.php?sxx_site=alvine&history=Liste&cmd=1023&\";s:1:\"i\";s:25:\"toolbar_icon_favorite.gif\";s:1:\"l\";s:38:\"<b><font color=purple>Lager</b></font>\";}}",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 16912242,
-              "uid": 75731,
-              "name": "alvine.cmd.history",
-              "value": "0",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 16912252,
-              "uid": 75731,
-              "name": "alvine.cmd.history.label",
-              "value": "Liste",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785152,
-              "uid": 75731,
-              "name": "core.language",
-              "value": "de",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785153,
-              "uid": 75731,
-              "name": "public.file.upload.path",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785154,
-              "uid": 75731,
-              "name": "content.file.upload.extension",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785155,
-              "uid": 75731,
-              "name": "content.file.upload.excludedirs",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785156,
-              "uid": 75731,
-              "name": "content.file.content.path",
-              "value": "",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26785157,
-              "uid": 75731,
-              "name": "core.property.myteam",
-              "value": "1,12,26,5,6,22,15,9,32,14,20,29,23,30,8,10,11,24,115,81,16,91,27,25,7,2,31,28,21,3,4,17",
-              "language": "",
-              "country": ""
-            },
-            {
-              "pid": 26793650,
-              "uid": 75731,
-              "name": "core.interface.menu.selected",
-              "value": "57",
-              "language": "",
-              "country": ""
-            }
-          ],
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Properties280"
-          }
-        },
-        "communication": {
-          "description": "",
-          "example": [
-            {
-              "erpID": "",
-              "erpName": "",
-              "erpNumber": "",
-              "erpLastUpdate": "2011-10-06T08:56:14",
-              "erpCreation": "0000-01-01T00:00:00",
-              "cid": 185882,
-              "uid": 75731,
-              "type": 1,
-              "description": "",
-              "locator": "support@schukai.de",
-              "preset": "1",
-              "private": "",
-              "scope": "50",
-              "lastUpdate": "0000-01-01T00:00:00"
-            }
-          ],
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Communication"
-          }
+        "orders": {
+          "$ref": "#/definitions/Orders"
         }
       },
       "required": [
@@ -17022,39 +16130,107 @@
         "erpLastUpdate",
         "erpCreation",
         "archived",
-        "uid",
-        "name",
-        "state",
-        "creation",
-        "lastUpdate",
         "ranking",
+        "uid",
+        "username",
+        "state",
         "addresses",
-        "personal",
-        "properties",
-        "communication"
+        "property",
+        "orders"
       ]
     },
-    "Personal279": {
-      "title": "Personal279",
+    "Addresses": {
+      "title": "Addresses",
+      "example": {
+        "dataset": [
+          {
+            "erpID": "",
+            "erpName": "",
+            "erpNumber": "",
+            "erpLastUpdate": "0000-01-01T00:00:00",
+            "erpCreation": "0000-01-01T00:00:00",
+            "aid": 1,
+            "uid": 1,
+            "contact": "",
+            "company": "",
+            "address1": "",
+            "address2": "",
+            "normStatus": "0",
+            "city": "",
+            "state": "",
+            "zipcode": "",
+            "country": "de",
+            "description": "",
+            "type": "4",
+            "preset": 1,
+            "systemUsage": "",
+            "lastUpdate": "2017-02-01T17:36:15"
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "erpID": "",
+              "erpName": "",
+              "erpNumber": "",
+              "erpLastUpdate": "0000-01-01T00:00:00",
+              "erpCreation": "0000-01-01T00:00:00",
+              "aid": 1,
+              "uid": 1,
+              "contact": "",
+              "company": "",
+              "address1": "",
+              "address2": "",
+              "normStatus": "0",
+              "city": "",
+              "state": "",
+              "zipcode": "",
+              "country": "de",
+              "description": "",
+              "type": "4",
+              "preset": 1,
+              "systemUsage": "",
+              "lastUpdate": "2017-02-01T17:36:15"
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset280"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "Dataset280": {
+      "title": "Dataset280",
       "example": {
         "erpID": "",
         "erpName": "",
         "erpNumber": "",
-        "erpLastUpdate": "2011-10-06T08:55:11",
+        "erpLastUpdate": "0000-01-01T00:00:00",
         "erpCreation": "0000-01-01T00:00:00",
-        "pid": 74761,
-        "uid": 75731,
-        "alias": "",
-        "formOfAddress": "",
-        "salutation": "Sehr geehrte Damen und Herren,",
-        "firstname": "Mey",
-        "name1": "Administrator",
-        "name2": "",
-        "title": "",
-        "custom1": "",
-        "custom2": "",
-        "birthday": "0000-01-01T00:00:00",
-        "lastUpdate": "0000-01-01T00:00:00"
+        "aid": 1,
+        "uid": 1,
+        "contact": "",
+        "company": "",
+        "address1": "",
+        "address2": "",
+        "normStatus": "0",
+        "city": "",
+        "state": "",
+        "zipcode": "",
+        "country": "de",
+        "description": "",
+        "type": "4",
+        "preset": 1,
+        "systemUsage": "",
+        "lastUpdate": "2017-02-01T17:36:15"
       },
       "type": "object",
       "properties": {
@@ -17072,7 +16248,7 @@
         },
         "erpLastUpdate": {
           "description": "",
-          "example": "10/6/2011 8:55:11 AM",
+          "example": "0000-01-01T00:00:00",
           "type": "string"
         },
         "erpCreation": {
@@ -17080,65 +16256,78 @@
           "example": "0000-01-01T00:00:00",
           "type": "string"
         },
-        "pid": {
+        "aid": {
           "description": "",
-          "example": 74761,
+          "example": 1,
           "type": "integer",
           "format": "int32"
         },
         "uid": {
           "description": "",
-          "example": 75731,
+          "example": 1,
           "type": "integer",
           "format": "int32"
         },
-        "alias": {
+        "contact": {
           "description": "",
           "type": "string"
         },
-        "formOfAddress": {
+        "company": {
           "description": "",
           "type": "string"
         },
-        "salutation": {
-          "description": "",
-          "example": "Sehr geehrte Damen und Herren,",
-          "type": "string"
-        },
-        "firstname": {
-          "description": "",
-          "example": "Mey",
-          "type": "string"
-        },
-        "name1": {
-          "description": "",
-          "example": "Administrator",
-          "type": "string"
-        },
-        "name2": {
+        "address1": {
           "description": "",
           "type": "string"
         },
-        "title": {
+        "address2": {
           "description": "",
           "type": "string"
         },
-        "custom1": {
+        "normStatus": {
+          "description": "",
+          "example": "0",
+          "type": "string"
+        },
+        "city": {
           "description": "",
           "type": "string"
         },
-        "custom2": {
+        "state": {
           "description": "",
           "type": "string"
         },
-        "birthday": {
+        "zipcode": {
           "description": "",
-          "example": "0000-01-01T00:00:00",
+          "type": "string"
+        },
+        "country": {
+          "description": "",
+          "example": "de",
+          "type": "string"
+        },
+        "description": {
+          "description": "",
+          "type": "string"
+        },
+        "type": {
+          "description": "",
+          "example": "4",
+          "type": "string"
+        },
+        "preset": {
+          "description": "",
+          "example": 1,
+          "type": "integer",
+          "format": "int32"
+        },
+        "systemUsage": {
+          "description": "",
           "type": "string"
         },
         "lastUpdate": {
           "description": "",
-          "example": "0000-01-01T00:00:00",
+          "example": "2/1/2017 5:36:15 PM",
           "type": "string"
         }
       },
@@ -17148,28 +16337,69 @@
         "erpNumber",
         "erpLastUpdate",
         "erpCreation",
-        "pid",
+        "aid",
         "uid",
-        "alias",
-        "formOfAddress",
-        "salutation",
-        "firstname",
-        "name1",
-        "name2",
-        "title",
-        "custom1",
-        "custom2",
-        "birthday",
+        "contact",
+        "company",
+        "address1",
+        "address2",
+        "normStatus",
+        "city",
+        "state",
+        "zipcode",
+        "country",
+        "description",
+        "type",
+        "preset",
+        "systemUsage",
         "lastUpdate"
       ]
     },
-    "Properties280": {
-      "title": "Properties280",
+    "Property": {
+      "title": "Property",
       "example": {
-        "pid": 890011,
-        "uid": 75731,
-        "name": "core.interface.image.limitsize",
-        "value": "",
+        "dataset": [
+          {
+            "pid": 1,
+            "uid": 1,
+            "name": "property.name",
+            "value": "value",
+            "language": "",
+            "country": ""
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "pid": 1,
+              "uid": 1,
+              "name": "property.name",
+              "value": "value",
+              "language": "",
+              "country": ""
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset282"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "Dataset282": {
+      "title": "Dataset282",
+      "example": {
+        "pid": 1,
+        "uid": 1,
+        "name": "property.name",
+        "value": "value",
         "language": "",
         "country": ""
       },
@@ -17177,23 +16407,24 @@
       "properties": {
         "pid": {
           "description": "",
-          "example": 890011,
+          "example": 1,
           "type": "integer",
           "format": "int32"
         },
         "uid": {
           "description": "",
-          "example": 75731,
+          "example": 1,
           "type": "integer",
           "format": "int32"
         },
         "name": {
           "description": "",
-          "example": "core.interface.image.limitsize",
+          "example": "property.name",
           "type": "string"
         },
         "value": {
           "description": "",
+          "example": "value",
           "type": "string"
         },
         "language": {
@@ -17214,110 +16445,187 @@
         "country"
       ]
     },
-    "Communication": {
-      "title": "Communication",
+    "Orders": {
+      "title": "Orders",
       "example": {
-        "erpID": "",
-        "erpName": "",
-        "erpNumber": "",
-        "erpLastUpdate": "2011-10-06T08:56:14",
-        "erpCreation": "0000-01-01T00:00:00",
-        "cid": 185882,
-        "uid": 75731,
-        "type": 1,
-        "description": "",
-        "locator": "support@schukai.de",
-        "preset": "1",
-        "private": "",
-        "scope": "50",
-        "lastUpdate": "0000-01-01T00:00:00"
+        "dataset": []
       },
       "type": "object",
       "properties": {
-        "erpID": {
+        "dataset": {
           "description": "",
+          "example": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "LoginRequest": {
+      "title": "LoginRequest",
+      "example": {
+        "username": "api-user",
+        "password": "geheim"
+      },
+      "type": "object",
+      "properties": {
+        "username": {
+          "description": "",
+          "example": "api-user",
           "type": "string"
         },
-        "erpName": {
+        "password": {
           "description": "",
-          "type": "string"
-        },
-        "erpNumber": {
-          "description": "",
-          "type": "string"
-        },
-        "erpLastUpdate": {
-          "description": "",
-          "example": "10/6/2011 8:56:14 AM",
-          "type": "string"
-        },
-        "erpCreation": {
-          "description": "",
-          "example": "0000-01-01T00:00:00",
-          "type": "string"
-        },
-        "cid": {
-          "description": "",
-          "example": 185882,
-          "type": "integer",
-          "format": "int32"
-        },
-        "uid": {
-          "description": "",
-          "example": 75731,
-          "type": "integer",
-          "format": "int32"
-        },
-        "type": {
-          "description": "",
-          "example": 1,
-          "type": "integer",
-          "format": "int32"
-        },
-        "description": {
-          "description": "",
-          "type": "string"
-        },
-        "locator": {
-          "description": "",
-          "example": "support@schukai.de",
-          "type": "string"
-        },
-        "preset": {
-          "description": "",
-          "example": "1",
-          "type": "string"
-        },
-        "private": {
-          "description": "",
-          "type": "string"
-        },
-        "scope": {
-          "description": "",
-          "example": "50",
-          "type": "string"
-        },
-        "lastUpdate": {
-          "description": "",
-          "example": "0000-01-01T00:00:00",
+          "example": "geheim",
           "type": "string"
         }
       },
       "required": [
-        "erpID",
-        "erpName",
-        "erpNumber",
-        "erpLastUpdate",
-        "erpCreation",
-        "cid",
-        "uid",
-        "type",
-        "description",
-        "locator",
-        "preset",
-        "private",
-        "scope",
-        "lastUpdate"
+        "username",
+        "password"
+      ]
+    },
+    "AccessToken anfordernrequest": {
+      "title": "Access-Token anfordernRequest",
+      "example": {
+        "username": "administrator"
+      },
+      "type": "object",
+      "properties": {
+        "username": {
+          "description": "",
+          "example": "administrator",
+          "type": "string"
+        }
+      },
+      "required": [
+        "username"
+      ]
+    },
+    "TemplateMehrfachlöschungrequest": {
+      "title": "Template  MehrfachlöschungRequest",
+      "example": {
+        "dataset": [
+          {
+            "cid": 53
+          },
+          {
+            "cid": 56
+          },
+          {
+            "cid": 55
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "cid": 53
+            },
+            {
+              "cid": 56
+            },
+            {
+              "cid": 55
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset7"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "TemplateHinzufügenrequest": {
+      "title": "Template hinzufügenRequest",
+      "example": {
+        "dataset": [
+          {
+            "erpName": "erp-name-1",
+            "name": "Neue Kategorie 1",
+            "flag": 2
+          },
+          {
+            "erpName": "Neue Kategorie 2",
+            "flag": 2
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "erpName": "erp-name-1",
+              "name": "Neue Kategorie 1",
+              "flag": 2
+            },
+            {
+              "erpName": "Neue Kategorie 2",
+              "flag": 2
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset12"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "TemplateÄndernrequest": {
+      "title": "Template ändernRequest",
+      "example": {
+        "dataset": [
+          {
+            "cid": 50,
+            "erpName": "erp-name-1",
+            "name": "Software",
+            "flag": 2
+          },
+          {
+            "cid": 70,
+            "flag": 1
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "cid": 50,
+              "erpName": "erp-name-1",
+              "name": "Software",
+              "flag": 2
+            },
+            {
+              "cid": 70,
+              "flag": 1
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset14"
+          }
+        }
+      },
+      "required": [
+        "dataset"
       ]
     }
   }
