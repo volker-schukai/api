@@ -901,7 +901,7 @@
     },
     "/api/commerce/item/catalog/category/5": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Eine Kategorien auslesen",
         "tags": [
           "Kategorien"
@@ -945,7 +945,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Eine Kategorien auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1116,7 +1116,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Produkte ändern",
         "tags": [
           "item"
@@ -1178,7 +1178,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Produkte ändern",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1189,7 +1189,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Benutzer hinzufügen",
         "tags": [
           "user"
@@ -1251,7 +1251,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Benutzer hinzufügen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1264,7 +1264,7 @@
     },
     "/api/commerce/item/10000": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Ein Produkt auslesen",
         "tags": [
           "item"
@@ -1308,7 +1308,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Ein Produkt auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1321,7 +1321,7 @@
     },
     "/api/commerce/item/search": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Produkt suchen1",
         "tags": [
           "item"
@@ -1409,7 +1409,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Produkt suchen1",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1422,7 +1422,7 @@
     },
     "/api/commerce/pos/cashregister": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Kassen auslesen",
         "tags": [
           "cashregister"
@@ -1466,7 +1466,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Kassen auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1477,7 +1477,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Kasse hinzufügen",
         "tags": [
           "cashregister"
@@ -1539,7 +1539,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Kasse hinzufügen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1552,7 +1552,7 @@
     },
     "/api/commerce/pos/cashregister/1": {
       "put": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Kasse ändern",
         "tags": [
           "cashregister"
@@ -1614,7 +1614,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Kasse ändern",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1627,7 +1627,7 @@
     },
     "/api/commerce/pos/cashdrawer": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Schubladen auslesen",
         "tags": [
           "cashdrawer"
@@ -1671,7 +1671,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Schubladen auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1682,7 +1682,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Kasse hinzufügen",
         "tags": [
           "cashdrawer"
@@ -1744,7 +1744,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Kasse hinzufügen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1757,7 +1757,7 @@
     },
     "/api/commerce/pos/cashdraweramount": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Beträge auslesen",
         "tags": [
           "cashdraweramount"
@@ -1801,7 +1801,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Beträge auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1812,7 +1812,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Beträge hinzufügen",
         "tags": [
           "cashdraweramount"
@@ -1874,7 +1874,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Beträge hinzufügen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1887,7 +1887,7 @@
     },
     "/api/commerce/pos/cashdraweramount/8": {
       "put": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Betrag ändern",
         "tags": [
           "cashdraweramount"
@@ -1949,7 +1949,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Betrag ändern",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -1962,7 +1962,7 @@
     },
     "/api/commerce/pos/journal": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Einträge auslesen",
         "tags": [
           "journal"
@@ -2006,7 +2006,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Einträge auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -2017,7 +2017,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Eintrag hinzufügen",
         "tags": [
           "journal"
@@ -2079,7 +2079,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Eintrag hinzufügen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -2092,7 +2092,7 @@
     },
     "/api/commerce/pos/journal/search": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Journal suchen",
         "tags": [
           "journal"
@@ -2133,7 +2133,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Journal suchen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -2369,7 +2369,7 @@
     },
     "/api/commerce/report/customer": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Kundenreport",
         "tags": [
           "report"
@@ -2420,7 +2420,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Kundenreport",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -2433,7 +2433,7 @@
     },
     "/api/commerce/report/item": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Produktreport",
         "tags": [
           "report"
@@ -2500,7 +2500,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Produktreport",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -2513,7 +2513,7 @@
     },
     "/api/commerce/report/warehouseoverview": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Warehouse Übersichtsreport",
         "tags": [
           "report"
@@ -2564,7 +2564,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Warehouse Übersichtsreport",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -2621,7 +2621,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Projektliste schreiben",
         "tags": [
           "Listen"
@@ -2686,7 +2686,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Projektliste schreiben",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -2697,7 +2697,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Projektliste löschen",
         "tags": [
           "Listen"
@@ -2741,7 +2741,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Projektliste löschen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -3125,7 +3125,7 @@
     },
     "/api/legacy/item": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Produkte auslesen",
         "tags": [
           "item"
@@ -3179,7 +3179,7 @@
     },
     "/api/legacy/price": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Preis auslesen",
         "tags": [
           "price"
@@ -3469,7 +3469,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Preis auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -3482,7 +3482,7 @@
     },
     "/api/legacy/order": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Bestellung auslesen",
         "tags": [
           "order"
@@ -3541,7 +3541,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Bestellung auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -3552,7 +3552,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Bestellung erstellen mit Retoure",
         "tags": [
           "order"
@@ -3614,7 +3614,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Bestellung erstellen mit Retoure",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -3627,7 +3627,7 @@
     },
     "/api/legacy/voucher": {
       "post": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Gutschein berechnen",
         "tags": [
           "voucher"
@@ -3745,7 +3745,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Gutschein berechnen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -3836,7 +3836,7 @@
     },
     "/api/account/user/29": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Einen Benutzer auslesen",
         "tags": [
           "user"
@@ -3895,7 +3895,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Einen Benutzer auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -3908,7 +3908,7 @@
     },
     "/api/account/user": {
       "put": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Benutzer ändern",
         "tags": [
           "user"
@@ -3970,7 +3970,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Benutzer ändern",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -4425,7 +4425,7 @@
     },
     "/api/company": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Firmendaten auslesen",
         "tags": [
           "company"
@@ -4469,7 +4469,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Firmendaten auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -4482,7 +4482,7 @@
     },
     "/api/company/1": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Einen Firmendatensatz auslesen",
         "tags": [
           "company"
@@ -4526,7 +4526,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Einen Firmendatensatz auslesen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -4539,7 +4539,7 @@
     },
     "/api/company/search": {
       "get": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Firma suchen",
         "tags": [
           "company"
@@ -4597,7 +4597,7 @@
             "x-testShouldPass": true,
             "x-testEnabled": true,
             "x-testName": "Firma suchen",
-            "x-testDescription": ""
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -5528,7 +5528,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset16"
+            "$ref": "#/definitions/Dataset20"
           }
         },
         "sys": {
@@ -5537,6 +5537,21 @@
       },
       "required": [
         "dataset",
+        "sys"
+      ]
+    },
+    "Dataset20": {
+      "title": "Dataset20",
+      "type": "object",
+      "properties": {
+        "sys": {
+          "$ref": "#/definitions/Sys18"
+        },
+        "dataset": {
+          "$ref": "#/definitions/Dataset17"
+        }
+      },
+      "required": [
         "sys"
       ]
     },
