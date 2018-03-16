@@ -320,7 +320,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n\t\"dataset\": [{\n\t\t\"pid\":3,\n\t\t\"language\":\"de\",\n\t\t\"country\":\"de\",\n\t\t\"propertyName\":\"my1-1\",\n\t\t\"propertyValue\":\"de1-1\"\n\t},{\n\t\t\"pid\":4,\n\t\t\"language\":\"de\",\n\t\t\"country\":\"de\",\n\t\t\"propertyName\":\"my2-1\",\n\t\t\"propertyValue\":\"de2-1\"\n\t}]\n}"
+              "body": "{\"dataset\":[{\"pid\":3,\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my1-1\",\"propertyValue\":\"de1-1\"},{\"pid\":4,\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my2-1\",\"propertyValue\":\"de2-1\"}]}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -393,7 +393,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n\t\"dataset\": [{\n\t\t\"language\":\"de\",\n\t\t\"country\":\"de\",\n\t\t\"propertyName\":\"my1\",\n\t\t\"propertyValue\":\"de1\"\n\t},{\n\t\t\"language\":\"de\",\n\t\t\"country\":\"de\",\n\t\t\"propertyName\":\"my2\",\n\t\t\"propertyValue\":\"de2\"\n\t},{\n\t\t\"language\":\"de\",\n\t\t\"country\":\"de\",\n\t\t\"propertyName\":\"my3\",\n\t\t\"propertyValue\":\"de3\"\n\t}]\n}"
+              "body": "{\"dataset\":[{\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my1\",\"propertyValue\":\"de1\"},{\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my2\",\"propertyValue\":\"de2\"},{\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my3\",\"propertyValue\":\"de3\"}]}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -466,7 +466,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n\t\"dataset\": [\n\t{\n\t\t\"pid\":1\n\t},\n\t{\n\t\t\"pid\":2\n\t}\n\t]\n}"
+              "body": "{\"dataset\":[{\"pid\":1},{\"pid\":2}]}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -638,7 +638,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"dataset\": [\n         {\n            \"erpName\": \"erp-name-1\",\n            \"name\": \"Neue Kategorie 1\",\n            \"flag\":2\n        },{\n            \"erpName\": \"Neue Kategorie 2\",\n            \"flag\":2\n        }\n    ]\n}"
+              "body": "{\"dataset\":[{\"erpName\":\"erp-name-1\",\"name\":\"Neue Kategorie 1\",\"flag\":2},{\"erpName\":\"Neue Kategorie 2\",\"flag\":2}]}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -732,7 +732,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n   \"dataset\": [\n     { \"cid\": 53 },\n     { \"cid\": 56 },\n     { \"cid\": 55 }\n   ]\n}"
+              "body": "{\"dataset\":[{\"cid\":53},{\"cid\":56},{\"cid\":55}]}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -1165,7 +1165,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"dataset\": [\n      {\n          \"iid\": 1001,\n            \"erpName\": \"erp-name-1\",\n            \"masterNumber\": \"12345\"\n        },\n        {\n          \"iid\": 1000,\"masterName\":\"dsfsdfsdf\"\n        }\n    ]\n}"
+              "body": "{\"dataset\":[{\"iid\":1001,\"erpName\":\"erp-name-1\",\"masterNumber\":\"12345\"},{\"iid\":1000,\"masterName\":\"dsfsdfsdf\"}]}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -1238,7 +1238,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"dataset\": [\n         {\n            \"masterName\": \"erp-name-1\",\n            \"active\":true\n        },{\n            \"erpName\": \"Neue Kategorie 2\",\n            \"active\":false\n        }\n    ]\n}"
+              "body": "{\"dataset\":[{\"masterName\":\"erp-name-1\",\"active\":true},{\"erpName\":\"Neue Kategorie 2\",\"active\":false}]}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -1526,7 +1526,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"name\":\"Beispiel Kasse\",\n    \"bonID\": 0,\n    \"shid\":3\n}"
+              "body": "{\"name\":\"Beispiel Kasse\",\"bonID\":0,\"shid\":3}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -1601,7 +1601,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"bonID\": 3333\n}"
+              "body": "{\"bonID\":3333}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -1731,7 +1731,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"name\":\"Beispiel Schublade\",\n    \"crid\": 1\n}"
+              "body": "{\"name\":\"Beispiel Schublade\",\"crid\":1}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -1861,7 +1861,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n\"dataset\":\n\t[\n\t\t{\n\t\t    \"amount\":12638,\n\t\t    \"currency\": \"EUR\",\n\t\t    \"cdid\":1\n\t\t},\n\t\t{\n\t\t    \"amount\":239,\n\t\t    \"currency\": \"USD\",\n\t\t    \"cdid\":1\n\t\t}\n\t]\n}"
+              "body": "{\"dataset\":[{\"amount\":12638,\"currency\":\"EUR\",\"cdid\":1},{\"amount\":239,\"currency\":\"USD\",\"cdid\":1}]}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -1936,7 +1936,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"amount\":12638,\n    \"currency\": \"EUR\",\n    \"cdid\":1\n}"
+              "body": "{\"amount\":12638,\"currency\":\"EUR\",\"cdid\":1}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -2066,7 +2066,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"journalUUID\":\"ea7a59b6-18a1-47f5-992d-2a1fac927784\",\n    \"type\":20,\n    \"crid\": 1,\n    \"documentNumber\":\"0001/01/156282\",\n    \"currency\":\"EUR\",\n    \"credit\": 2562,\n    \"debit\": 0,\n    \"description\" : \"Test eintrag aus Postman\",\n    \"date\":1510900734,\n    \"uid\":32,\n    \"account\":2,\n    \"created\":1510900734\n}"
+              "body": "{\"journalUUID\":\"ea7a59b6-18a1-47f5-992d-2a1fac927784\",\"type\":20,\"crid\":1,\"documentNumber\":\"0001/01/156282\",\"currency\":\"EUR\",\"credit\":2562,\"debit\":0,\"description\":\"Test eintrag aus Postman\",\"date\":1510900734,\"uid\":32,\"account\":2,\"created\":1510900734}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -2673,7 +2673,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n\t\"1\": \"my value 1\",\n\t\"2\": \"my value 2\",\n\t\"3\": \"my value 3\",\n\t\"4\": \"my value 4\"\n}"
+              "body": "{\"1\":\"my value 1\",\"2\":\"my value 2\",\"3\":\"my value 3\",\"4\":\"my value 4\"}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -3601,7 +3601,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n \"companyOrderID\": \"0001/01/00004\",\n  \"billNumber\": \"0001/01/00004\",\n  \"notice\": \"Das ist eine Kassen Bestellung\",\n  \"shid\": 1,\n  \"transactions\": [\n    {\n      \"provider\": \"alvine\",\n      \"type\": \"\",\n      \"id\": \"\",\n      \"token\": \"\",\n      \"amount\": \"1256\",\n      \"currency\": \"EUR\",\n      \"authcode\": \"CAPTURED\",\n      \"authmsg\": \"CAPTURED\",\n      \"result\": \"\",\n      \"captureState\": \"CAPTURED\",\n      \"captureAmount\": \"1256\",\n      \"resultData\": \"\",\n      \"resultText\": \"\",\n      \"erpID\": \"\",\n      \"paymentPTID\": 20\n    }\n  ],\n  \"user\": {\n    \"userName\": \"b2c@example.com\",\n    \"formOfAddress\": \"\",\n    \"letterFormOfAddress\": \"\",\n    \"birthday\": \"04.01.1977\",\n    \"custom1\": \"\",\n    \"custom2\": \"\",\n    \"company\": \"schukai GmbH\"\n  },\n  \"sellTo\": {\n    \"address1\": \"Eichenstrasse 26\",\n    \"address2\": \"\",\n    \"zip\": \"82290\",\n    \"city\": \"Landsberied\",\n    \"country\": \"de\"\n  },\n  \"shipTo\": null,\n  \"positions\": [\n  \t{\n      \"iid\": \"10076\",\n      \"optional\": \"_UNIQUE_\",\n      \"ean\": \"6985694862569\",\n      \"count\": -1,\n      \"gross\": 32900,\n      \"net\": 27647,\n      \"currency\": \"EUR\",\n      \"vat\": 1900,\n      \"priceType\": \"\",\n      \"custom1\": \"\",\n      \"custom2\": \"\",\n      \"custom3\": \"\",\n      \"name\": \"Waschmaschine - W352\",\n      \"itemNumber\": \"10076\",\n      \"salesman\": 1,\n      \"turnoverInfo\":{\n      \t\"orderReference\": \"0001/01/00003\",\n      \t\"reason\":\"\"\n      }\n    },\n    {\n      \"iid\": \"501\",\n      \"optional\": \"__UNIQUE__\",\n      \"ean\": \"\",\n      \"count\": -1,\n      \"gross\": -5000,\n      \"net\": -4202,\n      \"currency\": \"EUR\",\n      \"vat\": 1900,\n      \"priceType\": \"\",\n      \"custom1\": \"\",\n      \"custom2\": \"\",\n      \"custom3\": \"\",\n      \"name\": \"Gutschein\",\n      \"itemNumber\": \"gutschein\",\n      \"salesman\": 1,\n      \"turnoverInfo\":{\n      \t\"orderReference\": \"0001/01/00003\",\n      \t\"reason\":\"\"\n      }\n    }\n\n  ],\n  \"sys\": {\n    \"reserverStockPositions\": true,\n    \"createDelivery\": true,\n    \"setDelivered\":true,\n    \"setBillNumber\": true,\n    \"createEdiOrder\": false\n  }\n}"
+              "body": "{\"companyOrderID\":\"0001/01/00004\",\"billNumber\":\"0001/01/00004\",\"notice\":\"Das ist eine Kassen Bestellung\",\"shid\":1,\"transactions\":[{\"provider\":\"alvine\",\"type\":\"\",\"id\":\"\",\"token\":\"\",\"amount\":\"1256\",\"currency\":\"EUR\",\"authcode\":\"CAPTURED\",\"authmsg\":\"CAPTURED\",\"result\":\"\",\"captureState\":\"CAPTURED\",\"captureAmount\":\"1256\",\"resultData\":\"\",\"resultText\":\"\",\"erpID\":\"\",\"paymentPTID\":20}],\"user\":{\"userName\":\"b2c@example.com\",\"formOfAddress\":\"\",\"letterFormOfAddress\":\"\",\"birthday\":\"04.01.1977\",\"custom1\":\"\",\"custom2\":\"\",\"company\":\"schukai GmbH\"},\"sellTo\":{\"address1\":\"Eichenstrasse 26\",\"address2\":\"\",\"zip\":\"82290\",\"city\":\"Landsberied\",\"country\":\"de\"},\"shipTo\":null,\"positions\":[{\"iid\":\"10076\",\"optional\":\"_UNIQUE_\",\"ean\":\"6985694862569\",\"count\":-1,\"gross\":32900,\"net\":27647,\"currency\":\"EUR\",\"vat\":1900,\"priceType\":\"\",\"custom1\":\"\",\"custom2\":\"\",\"custom3\":\"\",\"name\":\"Waschmaschine - W352\",\"itemNumber\":\"10076\",\"salesman\":1,\"turnoverInfo\":{\"orderReference\":\"0001/01/00003\",\"reason\":\"\"}},{\"iid\":\"501\",\"optional\":\"__UNIQUE__\",\"ean\":\"\",\"count\":-1,\"gross\":-5000,\"net\":-4202,\"currency\":\"EUR\",\"vat\":1900,\"priceType\":\"\",\"custom1\":\"\",\"custom2\":\"\",\"custom3\":\"\",\"name\":\"Gutschein\",\"itemNumber\":\"gutschein\",\"salesman\":1,\"turnoverInfo\":{\"orderReference\":\"0001/01/00003\",\"reason\":\"\"}}],\"sys\":{\"reserverStockPositions\":true,\"createDelivery\":true,\"setDelivered\":true,\"setBillNumber\":true,\"createEdiOrder\":false}}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -3722,7 +3722,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "[\n\t{\n\t\"IID\":\"10083\",\n\t\"price\":595,\n\t\"vat\":1900,\n\t\"count\":1\n\t}\n]"
+              "body": "[{\"IID\":\"10083\",\"price\":595,\"vat\":1900,\"count\":1}]"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -3740,7 +3740,7 @@
                 "Host": "localhost:8005",
                 "X-Powered-By": "Alvine Framework <http://alvine.io>"
               },
-              "body": "{\"dataset\":[{\"IID\":\"501\",\"message\":[{\"text\":\"Der Gutschein wurde bereits eingel\\u00f6st.\"}],\"ean\":null,\"label\":\"Kaufgutschein aus OID 432 (SCID 1446)\",\"digits\":2,\"gross\":-595,\"net\":-500,\"diff\":null,\"vat\":1900,\"currency\":\"EUR\",\"meta\":{\"soid\":\"3\",\"min_order_value\":\"0\",\"unit\":\"2\",\"offer\":\"5000\",\"currency\":\"EUR\",\"type\":\"3\",\"offer_net\":4202},\"type\":\"voucher\",\"additional\":[]}]}"
+              "body": "{\"dataset\":[{\"IID\":\"501\",\"message\":[{\"text\":\"Der Gutschein wurde bereits eingelöst.\"}],\"ean\":null,\"label\":\"Kaufgutschein aus OID 432 (SCID 1446)\",\"digits\":2,\"gross\":-595,\"net\":-500,\"diff\":null,\"vat\":1900,\"currency\":\"EUR\",\"meta\":{\"soid\":\"3\",\"min_order_value\":\"0\",\"unit\":\"2\",\"offer\":\"5000\",\"currency\":\"EUR\",\"type\":\"3\",\"offer_net\":4202},\"type\":\"voucher\",\"additional\":[]}]}"
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
@@ -3957,7 +3957,7 @@
                 "Content-Type": "application/json",
                 "Accept": "application/json"
               },
-              "body": "{\n    \"dataset\": [\n      {\n          \"uid\": 10,\n            \"erpName\": \"erp-name-1\",\n            \"username\":\"new-name\",\n            \"personal\": {\n                \"dataset\": {\n                \t\"pid\": 12,\n                    \"erpID\": \"personal-erp-id-1\"\n                }\n            }\n            \n        },\n        {\n          \"uid\": 20,\"erpName\":\"dsfsdfsdf\"\n        }\n    ]\n}"
+              "body": "{\"dataset\":[{\"uid\":10,\"erpName\":\"erp-name-1\",\"username\":\"new-name\",\"personal\":{\"dataset\":{\"pid\":12,\"erpID\":\"personal-erp-id-1\"}}},{\"uid\":20,\"erpName\":\"dsfsdfsdf\"}]}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -4105,7 +4105,7 @@
                 "Set-Cookie": "suid=15b9957f-c435-4a3a-b4f3-0bcbe4ae1393; expires=Sun, 25-Feb-2018 19:55:07 GMT; Max-Age=14400; path=/; HttpOnly",
                 "X-Powered-By": "Alvine Framework <http://alvine.io>"
               },
-              "body": "{\r\n    \"dataset\": {\r\n        \"erpID\": \"\",\r\n        \"erpName\": \"\",\r\n        \"erpNumber\": \"\",\r\n        \"erpLastUpdate\": \"0000-01-01T00:00:00\",\r\n        \"erpCreation\": \"0000-01-01T00:00:00\",\r\n        \"archived\": \"0\",\r\n        \"ranking\": \"0\",\r\n        \"uid\": 123213,\r\n        \"username\": \"info@example.com\",\r\n        \"state\": 0,\r\n        \"addresses\": {\r\n            \"dataset\": [\r\n                {\r\n                    \"erpID\": \"\",\r\n                    \"erpName\": \"\",\r\n                    \"erpNumber\": \"\",\r\n                    \"erpLastUpdate\": \"0000-01-01T00:00:00\",\r\n                    \"erpCreation\": \"0000-01-01T00:00:00\",\r\n                    \"aid\": 1,\r\n                    \"uid\": 1,\r\n                    \"contact\": \"\",\r\n                    \"company\": \"\",\r\n                    \"address1\": \"\",\r\n                    \"address2\": \"\",\r\n                    \"normStatus\": \"0\",\r\n                    \"city\": \"\",\r\n                    \"state\": \"\",\r\n                    \"zipcode\": \"\",\r\n                    \"country\": \"de\",\r\n                    \"description\": \"\",\r\n                    \"type\": \"4\",\r\n                    \"preset\": 1,\r\n                    \"systemUsage\": \"\",\r\n                    \"lastUpdate\": \"2017-02-01T17:36:15\"\r\n                }\r\n            ]\r\n        },\r\n        \"property\": {\r\n            \"dataset\": [\r\n                {\r\n                    \"pid\": 1,\r\n                    \"uid\": 1,\r\n                    \"name\": \"property.name\",\r\n                    \"value\": \"value\",\r\n                    \"language\": \"\",\r\n                    \"country\": \"\"\r\n                }\r\n            ]\r\n        },\r\n        \"orders\": {\r\n            \"dataset\": []\r\n        }\r\n    },\r\n    \"sys\": {\r\n        \"message\": \"200 OK\",\r\n        \"code\": 200\r\n    }\r\n}"
+              "body": "{\"dataset\":{\"erpID\":\"\",\"erpName\":\"\",\"erpNumber\":\"\",\"erpLastUpdate\":\"0000-01-01T00:00:00\",\"erpCreation\":\"0000-01-01T00:00:00\",\"archived\":\"0\",\"ranking\":\"0\",\"uid\":123213,\"username\":\"info@example.com\",\"state\":0,\"addresses\":{\"dataset\":[{\"erpID\":\"\",\"erpName\":\"\",\"erpNumber\":\"\",\"erpLastUpdate\":\"0000-01-01T00:00:00\",\"erpCreation\":\"0000-01-01T00:00:00\",\"aid\":1,\"uid\":1,\"contact\":\"\",\"company\":\"\",\"address1\":\"\",\"address2\":\"\",\"normStatus\":\"0\",\"city\":\"\",\"state\":\"\",\"zipcode\":\"\",\"country\":\"de\",\"description\":\"\",\"type\":\"4\",\"preset\":1,\"systemUsage\":\"\",\"lastUpdate\":\"2017-02-01T17:36:15\"}]},\"property\":{\"dataset\":[{\"pid\":1,\"uid\":1,\"name\":\"property.name\",\"value\":\"value\",\"language\":\"\",\"country\":\"\"}]},\"orders\":{\"dataset\":[]}},\"sys\":{\"message\":\"200 OK\",\"code\":200}}"
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
@@ -4218,7 +4218,7 @@
               "headers": {
                 "Content-Type": "application/json"
               },
-              "body": "{\n\t\"username\": \"api-user\",\n\t\"password\": \"geheim\"\n}"
+              "body": "{\"username\":\"api-user\",\"password\":\"geheim\"}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -4298,7 +4298,7 @@
               "headers": {
                 "Content-Type": "application/json"
               },
-              "body": "{\n\t\"username\": \"administrator\"\n}"
+              "body": "{\"username\":\"administrator\"}"
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
