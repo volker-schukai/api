@@ -6714,7 +6714,8 @@
           "type": "string"
         },
         "sys_specification_baseprice_reference": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "sys_sourcing_distributor1_name": {
           "description": "",
@@ -7111,10 +7112,12 @@
           "type": "string"
         },
         "sales_announcement_order_hide_orderform": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "sales_announcement_price_hide_price": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "sales_announcement_order_show_orderform": {
           "description": "",
@@ -7127,7 +7130,8 @@
           "type": "boolean"
         },
         "localeText": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "DestinationDID_1": {
           "description": "",
@@ -7169,10 +7173,12 @@
           "$ref": "#/definitions/Category1"
         },
         "category2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "category3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "categoryName1": {
           "description": "",
@@ -7185,16 +7191,20 @@
           "type": "string"
         },
         "categoryLabel2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "categoryLabel3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "audienceLabel1": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "collectionLabel": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "departmentName": {
           "description": "",
@@ -7207,7 +7217,8 @@
           "type": "string"
         },
         "departmentLabel1": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "seasonLabel": {
           "description": "",
@@ -7215,10 +7226,12 @@
           "type": "string"
         },
         "styleLabel1": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "styleLabel2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "sys_cataloging_category_list": {
           "description": "",
@@ -7369,7 +7382,8 @@
           "format": "int32"
         },
         "quantityRestriction_maxCount": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "quantityRestriction_quantityList": {
           "description": "",
@@ -7436,7 +7450,8 @@
           "type": "string"
         },
         "color_html": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_htmlcode": {
           "description": "",
@@ -7448,19 +7463,24 @@
           "type": "string"
         },
         "color_image_url": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_path": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_name": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_picture_path": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_picture_url": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_info2": {
           "description": "",
@@ -7479,22 +7499,28 @@
           "type": "string"
         },
         "color_html2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_htmlcode2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_label_plain2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_url2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_path2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_name2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_info3": {
           "description": "",
@@ -7513,22 +7539,28 @@
           "type": "string"
         },
         "color_html3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_htmlcode3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_label_plain3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_url3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_path3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_name3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "variantRaster": {
           "description": "",
@@ -7851,7 +7883,8 @@
           "type": "string"
         },
         "description": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "activeFlag": {
           "description": "",
@@ -7954,7 +7987,8 @@
           "type": "string"
         },
         "description": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "activeFlag": {
           "description": "",
@@ -8021,7 +8055,8 @@
           "type": "string"
         },
         "description": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "activeFlag": {
           "description": "",
@@ -8579,7 +8614,8 @@
           "type": "string"
         },
         "info_text": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "info_hide": {
           "description": "",
@@ -9104,7 +9140,8 @@
           "type": "string"
         },
         "info_text": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "info_hide": {
           "description": "",
@@ -9356,7 +9393,8 @@
           "type": "string"
         },
         "info_text": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "info_hide": {
           "description": "",
@@ -9608,7 +9646,8 @@
           "type": "string"
         },
         "info_text": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "info_hide": {
           "description": "",
@@ -9713,7 +9752,8 @@
           "type": "string"
         },
         "ean": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "useable": {
           "description": "",
@@ -9726,7 +9766,8 @@
           "type": "boolean"
         },
         "details": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "definition": {
           "description": "",
@@ -9804,7 +9845,8 @@
       "type": "object",
       "properties": {
         "locale": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "locale_plain": {
           "description": "",
@@ -10221,7 +10263,8 @@
           "type": "string"
         },
         "sys_specification_baseprice_reference": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "sys_sourcing_distributor1_name": {
           "description": "",
@@ -10618,10 +10661,12 @@
           "type": "string"
         },
         "sales_announcement_order_hide_orderform": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "sales_announcement_price_hide_price": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "sales_announcement_order_show_orderform": {
           "description": "",
@@ -10634,7 +10679,8 @@
           "type": "boolean"
         },
         "localeText": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "DestinationDID_1": {
           "description": "",
@@ -10681,10 +10727,12 @@
           "$ref": "#/definitions/Category1"
         },
         "category2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "category3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "categoryName1": {
           "description": "",
@@ -10697,16 +10745,20 @@
           "type": "string"
         },
         "categoryLabel2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "categoryLabel3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "audienceLabel1": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "collectionLabel": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "departmentName": {
           "description": "",
@@ -10719,7 +10771,8 @@
           "type": "string"
         },
         "departmentLabel1": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "seasonLabel": {
           "description": "",
@@ -10727,10 +10780,12 @@
           "type": "string"
         },
         "styleLabel1": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "styleLabel2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "sys_cataloging_category_list": {
           "description": "",
@@ -10881,7 +10936,8 @@
           "format": "int32"
         },
         "quantityRestriction_maxCount": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "quantityRestriction_quantityList": {
           "description": "",
@@ -10948,7 +11004,8 @@
           "type": "string"
         },
         "color_html": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_htmlcode": {
           "description": "",
@@ -10961,19 +11018,24 @@
           "type": "string"
         },
         "color_image_url": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_path": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_name": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_picture_path": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_picture_url": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_info2": {
           "description": "",
@@ -10992,22 +11054,28 @@
           "type": "string"
         },
         "color_html2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_htmlcode2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_label_plain2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_url2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_path2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_name2": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_info3": {
           "description": "",
@@ -11026,22 +11094,28 @@
           "type": "string"
         },
         "color_html3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_htmlcode3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_label_plain3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_url3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_path3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "color_image_name3": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "variantRaster": {
           "description": "",
@@ -12181,7 +12255,8 @@
           "type": "string"
         },
         "formatted_label": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "pricelistID": {
           "description": "",
@@ -12198,7 +12273,8 @@
           "type": "string"
         },
         "volumeprice": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "meta_multi": {
           "description": "",
@@ -12216,7 +12292,8 @@
           "type": "boolean"
         },
         "meta_group": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "meta_IID": {
           "description": "",
@@ -12287,7 +12364,8 @@
           "type": "string"
         },
         "original_formatted_label": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "isOriginal": {
           "description": "",
@@ -12957,7 +13035,8 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "positions": {
           "description": "",
@@ -14351,7 +14430,8 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "positions": {
           "description": "",
@@ -14700,7 +14780,8 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "positions": {
           "description": "",
@@ -14892,7 +14973,8 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "positions": {
           "description": "",
@@ -15241,7 +15323,8 @@
           "$ref": "#/definitions/SellTo"
         },
         "shipTo": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "positions": {
           "description": "",
@@ -15624,7 +15707,8 @@
           }
         },
         "ean": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "label": {
           "description": "",
@@ -15650,7 +15734,8 @@
           "format": "int32"
         },
         "diff": {
-          "description": ""
+          "description": "",
+          "type": "null"
         },
         "vat": {
           "description": "",
