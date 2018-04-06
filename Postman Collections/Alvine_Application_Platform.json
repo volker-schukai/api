@@ -3493,10 +3493,11 @@
         ],
         "parameters": [
           {
-            "name": "billNumber",
+            "name": "oid",
             "in": "query",
             "required": true,
-            "type": "string",
+            "type": "integer",
+            "format": "int32",
             "description": ""
           },
           {
@@ -3524,7 +3525,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/legacy/order?billNumber=0001/01/26594",
+              "uri": "/api/legacy/order?oid=1023",
               "headers": {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
