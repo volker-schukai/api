@@ -493,20 +493,29 @@
     "/api/commerce/item/catalog/audience": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Zielgruppe suchen",
+        "summary": "Zielgruppen auslesen",
         "tags": [
           "audiences"
         ],
-        "operationId": "ApiCommerceItemCatalogAudienceGet2",
+        "operationId": "ApiCommerceItemCatalogAudienceGet",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "Content-Type",
-            "in": "header",
+            "name": "page",
+            "in": "query",
             "required": true,
-            "type": "string",
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
             "description": ""
           },
           {
@@ -519,15 +528,33 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
-            },
-            "examples": {}
+            "description": ""
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/item/catalog/audience?page=0&count=5",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Zielgruppen auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -771,14 +798,14 @@
         }
       }
     },
-    "/api/commerce/item/catalog/audience/5": {
+    "/api/commerce/item/catalog/audience/1": {
       "get": {
         "description": "TODO: Add Description",
         "summary": "Eine Zielgruppe auslesen",
         "tags": [
           "audiences"
         ],
-        "operationId": "ApiCommerceItemCatalogAudience5Get",
+        "operationId": "ApiCommerceItemCatalogAudience1Get",
         "produces": [
           "application/json"
         ],
@@ -801,7 +828,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/item/catalog/audience/5",
+              "uri": "/api/commerce/item/catalog/audience/1",
               "headers": {
                 "Accept": "application/json"
               }
@@ -915,6 +942,59 @@
         }
       }
     },
+    "/api/commerce/item/catalog/audience/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Zielgruppe suchen",
+        "tags": [
+          "audiences"
+        ],
+        "operationId": "ApiCommerceItemCatalogAudienceSearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
     "/api/commerce/item/catalog/category": {
       "get": {
         "description": "TODO: Add Description",
@@ -922,7 +1002,7 @@
         "tags": [
           "Dokumente"
         ],
-        "operationId": "ApiCommerceItemCatalogCategoryGet3",
+        "operationId": "ApiCommerceItemCatalogCategoryGet2",
         "produces": [
           "application/json"
         ],
@@ -2348,6 +2428,65 @@
             "x-testDescription": "TODO: Add Description"
           }
         ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/catalog/category/hierarchical": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Kategoriebaum",
+        "tags": [
+          "categories"
+        ],
+        "operationId": "ApiCommerceItemCatalogCategoryHierarchicalGet3",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4350,7 +4489,7 @@
     "/api/commerce/item/catalog/category/1/files": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Dateiliste14",
+        "summary": "Dateiliste15",
         "tags": [
           "Dateien"
         ],
@@ -4392,7 +4531,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Dateiliste14",
+            "x-testName": "Dateiliste15",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -4407,7 +4546,7 @@
     "/api/commerce/item/catalog/category/1/upload": {
       "post": {
         "description": "TODO: Add Description",
-        "summary": "Datei hinzufügen14",
+        "summary": "Datei hinzufügen15",
         "tags": [
           "Dateien"
         ],
@@ -4468,7 +4607,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Datei hinzufügen14",
+            "x-testName": "Datei hinzufügen15",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -4483,7 +4622,7 @@
     "/api/commerce/item/catalog/category/1/schukai.gif": {
       "delete": {
         "description": "TODO: Add Description",
-        "summary": "Datei löschen14",
+        "summary": "Datei löschen15",
         "tags": [
           "Dateien"
         ],
@@ -4525,7 +4664,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Datei löschen14",
+            "x-testName": "Datei löschen15",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -4540,7 +4679,7 @@
     "/api/commerce/item/catalog/category/9/property": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Eigenschaften auslesen16",
+        "summary": "Eigenschaften auslesen17",
         "tags": [
           "Eigenschaften"
         ],
@@ -4589,7 +4728,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften auslesen16",
+            "x-testName": "Eigenschaften auslesen17",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -4602,7 +4741,7 @@
       },
       "put": {
         "description": "TODO: Add Description",
-        "summary": "Eigenschaften ändern16",
+        "summary": "Eigenschaften ändern17",
         "tags": [
           "Eigenschaften"
         ],
@@ -4662,7 +4801,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften ändern16",
+            "x-testName": "Eigenschaften ändern17",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -4675,7 +4814,7 @@
       },
       "post": {
         "description": "TODO: Add Description",
-        "summary": "Eigenschaften hinzufügen16",
+        "summary": "Eigenschaften hinzufügen17",
         "tags": [
           "Eigenschaften"
         ],
@@ -4735,7 +4874,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften hinzufügen16",
+            "x-testName": "Eigenschaften hinzufügen17",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -4748,7 +4887,7 @@
       },
       "delete": {
         "description": "TODO: Add Description",
-        "summary": "Eigenschaften löschen16",
+        "summary": "Eigenschaften löschen17",
         "tags": [
           "Eigenschaften"
         ],
@@ -4808,7 +4947,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften löschen16",
+            "x-testName": "Eigenschaften löschen17",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -4956,6 +5095,65 @@
             "x-testDescription": "TODO: Add Description"
           }
         ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/catalog/category/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Kategorien suchen",
+        "tags": [
+          "categories"
+        ],
+        "operationId": "ApiCommerceItemCatalogCategorySearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -13649,20 +13847,29 @@
     "/api/commerce/item/variant": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Varianten suchen",
+        "summary": "Varianten auslesen",
         "tags": [
           "variants"
         ],
-        "operationId": "ApiCommerceItemVariantGet2",
+        "operationId": "ApiCommerceItemVariantGet",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "Content-Type",
-            "in": "header",
+            "name": "page",
+            "in": "query",
             "required": true,
-            "type": "string",
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
             "description": ""
           },
           {
@@ -13675,21 +13882,33 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
-            },
-            "examples": {}
-          },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
-            }
+            "description": ""
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/item/variant?page=0&count=5",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Varianten auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -13928,11 +14147,11 @@
       },
       "patch": {
         "description": "TODO: Add Description",
-        "summary": "Variantenfeld ändern",
+        "summary": "Storefeld ändern",
         "tags": [
-          "variants"
+          "stores"
         ],
-        "operationId": "ApiCommerceItemVariantPatch",
+        "operationId": "ApiCommerceItemVariantPatch2",
         "produces": [
           "application/json"
         ],
@@ -14049,7 +14268,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Variantenfeld ändern",
+            "x-testName": "Storefeld ändern",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -14178,6 +14397,58 @@
             "x-testDescription": "TODO: Add Description"
           }
         ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/variant/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Varianten suchen",
+        "tags": [
+          "variants"
+        ],
+        "operationId": "ApiCommerceItemVariantSearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -14472,17 +14743,17 @@
     "/api/commerce/item/price": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Preise suchen",
+        "summary": "Preise auslesen",
         "tags": [
           "prices"
         ],
-        "operationId": "ApiCommerceItemPriceGet2",
+        "operationId": "ApiCommerceItemPriceGet",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "iid",
+            "name": "page",
             "in": "query",
             "required": true,
             "type": "integer",
@@ -14490,10 +14761,11 @@
             "description": ""
           },
           {
-            "name": "Content-Type",
-            "in": "header",
+            "name": "count",
+            "in": "query",
             "required": true,
-            "type": "string",
+            "type": "integer",
+            "format": "int32",
             "description": ""
           },
           {
@@ -14506,15 +14778,33 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
-            },
-            "examples": {}
+            "description": ""
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/item/price?page=0&count=5",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Preise auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -15020,6 +15310,839 @@
             "x-testDescription": "TODO: Add Description"
           }
         ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/price/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Preise suchen",
+        "tags": [
+          "prices"
+        ],
+        "operationId": "ApiCommerceItemPriceSearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/stock/9/property": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Eigenschaften auslesen15",
+        "tags": [
+          "Eigenschaften"
+        ],
+        "operationId": "ApiCommerceItemStock9PropertyGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/item/stock/9/property?name=myname",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Eigenschaften auslesen15",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Eigenschaften ändern15",
+        "tags": [
+          "Eigenschaften"
+        ],
+        "operationId": "ApiCommerceItemStock9PropertyPut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EigenschaftenÄndernrequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/api/commerce/item/stock/9/property",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\"dataset\":[{\"pid\":3,\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my1-1\",\"propertyValue\":\"de1-1\"},{\"pid\":4,\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my2-1\",\"propertyValue\":\"de2-1\"}]}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Eigenschaften ändern15",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Eigenschaften hinzufügen15",
+        "tags": [
+          "Eigenschaften"
+        ],
+        "operationId": "ApiCommerceItemStock9PropertyPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EigenschaftenHinzufügenrequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/commerce/item/stock/9/property",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\"dataset\":[{\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my1\",\"propertyValue\":\"de1\"},{\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my2\",\"propertyValue\":\"de2\"},{\"language\":\"de\",\"country\":\"de\",\"propertyName\":\"my3\",\"propertyValue\":\"de3\"}]}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Eigenschaften hinzufügen15",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Eigenschaften löschen15",
+        "tags": [
+          "Eigenschaften"
+        ],
+        "operationId": "ApiCommerceItemStock9PropertyDelete",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EigenschaftenLöschenrequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/commerce/item/stock/9/property",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\"dataset\":[{\"pid\":1},{\"pid\":2}]}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Eigenschaften löschen15",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/stock": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Lager auslesen",
+        "tags": [
+          "stock"
+        ],
+        "operationId": "ApiCommerceItemStockGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "str",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/item/stock?page=0&count=5&str=",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Lager auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Lager ändern",
+        "tags": [
+          "stock"
+        ],
+        "operationId": "ApiCommerceItemStockPut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LagerÄndernrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Lager hinzufügen",
+        "tags": [
+          "stock"
+        ],
+        "operationId": "ApiCommerceItemStockPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LagerHinzufügenrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/commerce/item/stock",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\"dataset\":[{\"erpName\":\"erp-name-1\",\"name\":\"Neue Kategorie 1\",\"flag\":2},{\"erpName\":\"Neue Kategorie 2\",\"flag\":2}]}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Lager hinzufügen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Lager Mehrfachlöschung",
+        "tags": [
+          "stock"
+        ],
+        "operationId": "ApiCommerceItemStockDelete",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LagerMehrfachlöschungrequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MehrfachKategorienLöschen"
+            },
+            "examples": {
+              "application/json": {
+                "dataset": [
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  },
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/commerce/item/stock",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\"dataset\":[{\"cid\":53},{\"cid\":56},{\"cid\":55}]}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "access-control-allow-origin": "*",
+                "connection": "keep-alive",
+                "content-length": "93",
+                "content-type": "application/json",
+                "date": "Sat, 21 Oct 2017 12:51:54 GMT",
+                "server": "nginx",
+                "x-powered-by": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":[{\"sys\":{\"message\":\"200 OK\",\"code\":200}},{\"sys\":{\"message\":\"200 OK\",\"code\":200}}]}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Lager Mehrfachlöschung",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/stock/1": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Ein Lager auslesen",
+        "tags": [
+          "stock"
+        ],
+        "operationId": "ApiCommerceItemStock1Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/item/stock/1",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Ein Lager auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Lager löschen",
+        "tags": [
+          "stock"
+        ],
+        "operationId": "ApiCommerceItemStock1Delete",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {}
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/commerce/item/stock/1",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "access-control-allow-origin": "*",
+                "connection": "keep-alive",
+                "content-type": "text/html; charset=UTF-8",
+                "date": "Sat, 21 Oct 2017 12:07:39 GMT",
+                "server": "nginx",
+                "x-powered-by": "Alvine Framework <http://alvine.io>"
+              }
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Lager löschen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/stock/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Lager suchen",
+        "tags": [
+          "stock"
+        ],
+        "operationId": "ApiCommerceItemStockSearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -15683,7 +16806,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/KasseHinzufügenrequest531"
+              "$ref": "#/definitions/KasseHinzufügenrequest588"
             }
           },
           {
@@ -16560,14 +17683,204 @@
         }
       }
     },
-    "/api/commerce/item/stock/9/property": {
+    "/api/commerce/store/1/files": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Eigenschaften auslesen15",
+        "summary": "Dateiliste14",
+        "tags": [
+          "Dateien"
+        ],
+        "operationId": "ApiCommerceStore1FilesGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/store/1/files",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Dateiliste14",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/store/1/upload": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Datei hinzufügen14",
+        "tags": [
+          "Dateien"
+        ],
+        "operationId": "ApiCommerceStore1UploadPost",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "image",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/commerce/store/1/upload",
+              "headers": {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept": "application/json"
+              },
+              "body": "image="
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Datei hinzufügen14",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/store/1/schukai.gif": {
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Datei löschen14",
+        "tags": [
+          "Dateien"
+        ],
+        "operationId": "ApiCommerceStore1SchukaiGifDelete",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/commerce/store/1/schukai.gif",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Datei löschen14",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/store/9/property": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Eigenschaften auslesen16",
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "ApiCommerceItemStock9PropertyGet",
+        "operationId": "ApiCommerceStore9PropertyGet",
         "produces": [
           "application/json"
         ],
@@ -16597,7 +17910,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/item/stock/9/property?name=myname",
+              "uri": "/api/commerce/store/9/property?name=myname",
               "headers": {
                 "Accept": "application/json"
               }
@@ -16612,7 +17925,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften auslesen15",
+            "x-testName": "Eigenschaften auslesen16",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -16625,11 +17938,11 @@
       },
       "put": {
         "description": "TODO: Add Description",
-        "summary": "Eigenschaften ändern15",
+        "summary": "Eigenschaften ändern16",
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "ApiCommerceItemStock9PropertyPut",
+        "operationId": "ApiCommerceStore9PropertyPut",
         "produces": [
           "application/json"
         ],
@@ -16668,7 +17981,7 @@
           {
             "request": {
               "method": "PUT",
-              "uri": "/api/commerce/item/stock/9/property",
+              "uri": "/api/commerce/store/9/property",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -16685,7 +17998,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften ändern15",
+            "x-testName": "Eigenschaften ändern16",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -16698,11 +18011,11 @@
       },
       "post": {
         "description": "TODO: Add Description",
-        "summary": "Eigenschaften hinzufügen15",
+        "summary": "Eigenschaften hinzufügen16",
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "ApiCommerceItemStock9PropertyPost",
+        "operationId": "ApiCommerceStore9PropertyPost",
         "produces": [
           "application/json"
         ],
@@ -16741,7 +18054,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/api/commerce/item/stock/9/property",
+              "uri": "/api/commerce/store/9/property",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -16758,7 +18071,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften hinzufügen15",
+            "x-testName": "Eigenschaften hinzufügen16",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -16771,11 +18084,11 @@
       },
       "delete": {
         "description": "TODO: Add Description",
-        "summary": "Eigenschaften löschen15",
+        "summary": "Eigenschaften löschen16",
         "tags": [
           "Eigenschaften"
         ],
-        "operationId": "ApiCommerceItemStock9PropertyDelete",
+        "operationId": "ApiCommerceStore9PropertyDelete",
         "produces": [
           "application/json"
         ],
@@ -16814,7 +18127,7 @@
           {
             "request": {
               "method": "DELETE",
-              "uri": "/api/commerce/item/stock/9/property",
+              "uri": "/api/commerce/store/9/property",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -16831,7 +18144,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Eigenschaften löschen15",
+            "x-testName": "Eigenschaften löschen16",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -16843,23 +18156,32 @@
         }
       }
     },
-    "/api/commerce/item/stock": {
+    "/api/commerce/store": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Lager suchen",
+        "summary": "Stores auslesen",
         "tags": [
-          "stock"
+          "stores"
         ],
-        "operationId": "ApiCommerceItemStockGet2",
+        "operationId": "ApiCommerceStoreGet",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "Content-Type",
-            "in": "header",
+            "name": "page",
+            "in": "query",
             "required": true,
-            "type": "string",
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
             "description": ""
           },
           {
@@ -16872,21 +18194,33 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
-            },
-            "examples": {}
-          },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
-            }
+            "description": ""
           }
         },
         "security": [],
-        "x-unitTests": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/commerce/store?page=0&count=5",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Stores auslesen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -16896,11 +18230,11 @@
       },
       "put": {
         "description": "TODO: Add Description",
-        "summary": "Lager ändern",
+        "summary": "Store ändern",
         "tags": [
-          "stock"
+          "stores"
         ],
-        "operationId": "ApiCommerceItemStockPut",
+        "operationId": "ApiCommerceStorePut",
         "produces": [
           "application/json"
         ],
@@ -16911,7 +18245,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/LagerÄndernrequest"
+              "$ref": "#/definitions/StoreÄndernrequest"
             }
           },
           {
@@ -16955,11 +18289,11 @@
       },
       "post": {
         "description": "TODO: Add Description",
-        "summary": "Lager hinzufügen",
+        "summary": "Store hinzufügen",
         "tags": [
-          "stock"
+          "stores"
         ],
-        "operationId": "ApiCommerceItemStockPost",
+        "operationId": "ApiCommerceStorePost",
         "produces": [
           "application/json"
         ],
@@ -16970,7 +18304,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/LagerHinzufügenrequest"
+              "$ref": "#/definitions/StoreHinzufügenrequest"
             }
           },
           {
@@ -16998,7 +18332,7 @@
           {
             "request": {
               "method": "POST",
-              "uri": "/api/commerce/item/stock",
+              "uri": "/api/commerce/store",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -17015,7 +18349,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Lager hinzufügen",
+            "x-testName": "Store hinzufügen",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -17028,11 +18362,11 @@
       },
       "delete": {
         "description": "TODO: Add Description",
-        "summary": "Lager Mehrfachlöschung",
+        "summary": "Store Mehrfachlöschung",
         "tags": [
-          "stock"
+          "stores"
         ],
-        "operationId": "ApiCommerceItemStockDelete",
+        "operationId": "ApiCommerceStoreDelete",
         "produces": [
           "application/json"
         ],
@@ -17043,7 +18377,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/LagerMehrfachlöschungrequest"
+              "$ref": "#/definitions/StoreMehrfachlöschungrequest"
             }
           },
           {
@@ -17092,7 +18426,7 @@
           {
             "request": {
               "method": "DELETE",
-              "uri": "/api/commerce/item/stock",
+              "uri": "/api/commerce/store",
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -17118,7 +18452,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Lager Mehrfachlöschung",
+            "x-testName": "Store Mehrfachlöschung",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -17130,14 +18464,14 @@
         }
       }
     },
-    "/api/commerce/item/stock/1": {
+    "/api/commerce/store/1": {
       "get": {
         "description": "TODO: Add Description",
-        "summary": "Ein Lager auslesen",
+        "summary": "Ein Store auslesen",
         "tags": [
-          "stock"
+          "stores"
         ],
-        "operationId": "ApiCommerceItemStock1Get",
+        "operationId": "ApiCommerceStore1Get",
         "produces": [
           "application/json"
         ],
@@ -17160,7 +18494,7 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/commerce/item/stock/1",
+              "uri": "/api/commerce/store/1",
               "headers": {
                 "Accept": "application/json"
               }
@@ -17175,7 +18509,7 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Ein Lager auslesen",
+            "x-testName": "Ein Store auslesen",
             "x-testDescription": "TODO: Add Description"
           }
         ],
@@ -17185,14 +18519,16 @@
           "AllowDynamicFormParameters": false,
           "IsMultiContentStreaming": false
         }
-      },
+      }
+    },
+    "/api/commerce/store/52": {
       "delete": {
         "description": "TODO: Add Description",
-        "summary": "Lager löschen",
+        "summary": "Store löschen",
         "tags": [
-          "stock"
+          "stores"
         ],
-        "operationId": "ApiCommerceItemStock1Delete",
+        "operationId": "ApiCommerceStore52Delete",
         "produces": [
           "application/json"
         ],
@@ -17206,12 +18542,29 @@
           }
         ],
         "responses": {
-          "204": {
+          "200": {
             "description": "",
             "schema": {
-              "type": "object"
+              "$ref": "#/definitions/MehrfachKategorienLöschen"
             },
-            "examples": {}
+            "examples": {
+              "application/json": {
+                "dataset": [
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  },
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  }
+                ]
+              }
+            }
           }
         },
         "security": [],
@@ -17219,32 +18572,87 @@
           {
             "request": {
               "method": "DELETE",
-              "uri": "/api/commerce/item/stock/1",
+              "uri": "/api/commerce/store/52",
               "headers": {
                 "Accept": "application/json"
               }
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
+              "x-bodyMatchMode": "RAW",
               "x-arrayOrderedMatching": false,
               "x-arrayCheckCount": false,
               "x-matchResponseSchema": true,
               "headers": {
                 "access-control-allow-origin": "*",
                 "connection": "keep-alive",
-                "content-type": "text/html; charset=UTF-8",
-                "date": "Sat, 21 Oct 2017 12:07:39 GMT",
+                "content-length": "93",
+                "content-type": "application/json",
+                "date": "Sat, 21 Oct 2017 12:51:54 GMT",
                 "server": "nginx",
                 "x-powered-by": "Alvine Framework <http://alvine.io>"
-              }
+              },
+              "body": "{\"dataset\":[{\"sys\":{\"message\":\"200 OK\",\"code\":200}},{\"sys\":{\"message\":\"200 OK\",\"code\":200}}]}"
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Lager löschen",
+            "x-testName": "Store löschen",
             "x-testDescription": "TODO: Add Description"
           }
         ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/store/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Store suchen",
+        "tags": [
+          "stores"
+        ],
+        "operationId": "ApiCommerceStoreSearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -17255,16 +18663,24 @@
     },
     "/api/util/list/account_priority": {
       "get": {
-        "description": "Mit diesem Aufruf kann überprüft werden, ob die API Antwortet und Verfügbar ist. Aus Performancegründen, sollte dieser Aufruf sollte immer ohne Cookies durchgeführt werden.",
-        "summary": "Ping",
+        "description": "TODO: Add Description",
+        "summary": "Standard-/Projektliste holen",
         "tags": [
-          "util"
+          "Listen"
         ],
-        "operationId": "ApiUtilListAccountPriorityGet2",
+        "operationId": "ApiUtilListAccountPriorityGet",
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
         "responses": {
           "200": {
             "description": ""
@@ -17275,7 +18691,10 @@
           {
             "request": {
               "method": "GET",
-              "uri": "/api/util/list/account_priority"
+              "uri": "/api/util/list/account_priority",
+              "headers": {
+                "Accept": "application/json"
+              }
             },
             "expectedResponse": {
               "x-allowExtraHeaders": true,
@@ -17287,8 +18706,8 @@
             },
             "x-testShouldPass": true,
             "x-testEnabled": true,
-            "x-testName": "Ping",
-            "x-testDescription": "Mit diesem Aufruf kann überprüft werden, ob die API Antwortet und Verfügbar ist. Aus Performancegründen, sollte dieser Aufruf sollte immer ohne Cookies durchgeführt werden."
+            "x-testName": "Standard-/Projektliste holen",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -17745,6 +19164,116 @@
             "x-testEnabled": true,
             "x-testName": "Dokument löschen",
             "x-testDescription": "Mit diesem Aufruf kann geprüft werden, ob der aktuelle Benutzer angemeldet ist und über eine gültige Session verfügt."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/ping": {
+      "get": {
+        "description": "Mit diesem Aufruf kann überprüft werden, ob die API Antwortet und Verfügbar ist. Aus Performancegründen, sollte dieser Aufruf sollte immer ohne Cookies durchgeführt werden.",
+        "summary": "Ping",
+        "tags": [
+          "util"
+        ],
+        "operationId": "ApiPingGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/ping"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Ping",
+            "x-testDescription": "Mit diesem Aufruf kann überprüft werden, ob die API Antwortet und Verfügbar ist. Aus Performancegründen, sollte dieser Aufruf sollte immer ohne Cookies durchgeführt werden."
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/util/delta/20140101061722": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Delta",
+        "tags": [
+          "util"
+        ],
+        "operationId": "ApiUtilDelta20140101061722Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/util/delta/20140101061722?fields=id,url",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Delta",
+            "x-testDescription": "TODO: Add Description"
           }
         ],
         "x-operation-settings": {
@@ -19423,6 +20952,651 @@
           "IsMultiContentStreaming": false
         }
       }
+    },
+    "/api/content/publishing": {
+      "get": {
+        "description": "Auslesen von Dokumentenvorlagen \n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* manager\n* document-template-data-manager\n* document-template-data-consumer",
+        "summary": "Veröffentlichung auslesen",
+        "tags": [
+          "Publishing"
+        ],
+        "operationId": "ApiContentPublishingGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/content/publishing?page=0&count=5",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Veröffentlichung auslesen",
+            "x-testDescription": "Auslesen von Dokumentenvorlagen \n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* manager\n* document-template-data-manager\n* document-template-data-consumer"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Veröffentlichung ändern",
+        "tags": [
+          "Publishing"
+        ],
+        "operationId": "ApiContentPublishingPut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/VeröffentlichungÄndernrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Veröffentlichung hinzufügen",
+        "tags": [
+          "Publishing"
+        ],
+        "operationId": "ApiContentPublishingPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/VeröffentlichungHinzufügenrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/api/content/publishing",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\"dataset\":[{\"erpName\":\"erp-name-1\",\"name\":\"Neue Kategorie 1\",\"flag\":2},{\"erpName\":\"Neue Kategorie 2\",\"flag\":2}]}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Veröffentlichung hinzufügen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Veröffentlichung  Mehrfachlöschung",
+        "tags": [
+          "Publishing"
+        ],
+        "operationId": "ApiContentPublishingDelete",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/VeröffentlichungMehrfachlöschungrequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MehrfachKategorienLöschen"
+            },
+            "examples": {
+              "application/json": {
+                "dataset": [
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  },
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/content/publishing",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              "body": "{\"dataset\":[{\"cid\":53},{\"cid\":56},{\"cid\":55}]}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "access-control-allow-origin": "*",
+                "connection": "keep-alive",
+                "content-length": "93",
+                "content-type": "application/json",
+                "date": "Sat, 21 Oct 2017 12:51:54 GMT",
+                "server": "nginx",
+                "x-powered-by": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":[{\"sys\":{\"message\":\"200 OK\",\"code\":200}},{\"sys\":{\"message\":\"200 OK\",\"code\":200}}]}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Veröffentlichung  Mehrfachlöschung",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "patch": {
+        "description": "TODO: Add Description",
+        "summary": "Veröffentlichungsfeld ändern",
+        "tags": [
+          "Publishing"
+        ],
+        "operationId": "ApiContentPublishingPatch",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "pk",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "Hauptschlüssel des Objektes"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "Name des zu ändernden Feldes"
+          },
+          {
+            "name": "value",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "Neuer Wert"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EinFeldInEinemDatensatzÄndern"
+            },
+            "examples": {
+              "application/json": {
+                "dataset": {
+                  "erpID": "",
+                  "erpName": "Neue Kategorie 2",
+                  "erpNumber": "123456",
+                  "erpLastUpdate": "1970-01-01T00:59:59",
+                  "erpCreation": "1970-01-01T00:59:59",
+                  "archived": "",
+                  "cid": 5,
+                  "name": "name",
+                  "token": "",
+                  "ranking": 0,
+                  "label": {
+                    "de": "Hallo"
+                  },
+                  "flag": 2,
+                  "gpCoefficient": 0,
+                  "specificationWeight": 0,
+                  "specificationWeightUnit": 0,
+                  "financesVat": [],
+                  "locale": [],
+                  "localeText": [],
+                  "searchKeywords": "",
+                  "parentCID": 0
+                },
+                "sys": {
+                  "updated": "2017-10-22T11:16:00",
+                  "message": "200 OK",
+                  "code": 200
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PATCH",
+              "uri": "/api/content/publishing",
+              "headers": {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept": "application/json"
+              },
+              "body": "pk=5&name=erpNumber&value=123456"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "access-control-allow-origin": "*",
+                "connection": "keep-alive",
+                "content-encoding": "gzip",
+                "content-length": "294",
+                "content-type": "application/json",
+                "date": "Sun, 22 Oct 2017 11:16:00 GMT",
+                "server": "nginx",
+                "x-powered-by": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":{\"erpID\":\"\",\"erpName\":\"Neue Kategorie 2\",\"erpNumber\":\"123456\",\"erpLastUpdate\":\"1970-01-01T00:59:59\",\"erpCreation\":\"1970-01-01T00:59:59\",\"archived\":\"\",\"cid\":5,\"name\":\"name\",\"token\":\"\",\"ranking\":0,\"label\":{\"de\":\"Hallo\"},\"flag\":2,\"gpCoefficient\":0,\"specificationWeight\":0,\"specificationWeightUnit\":0,\"financesVat\":[],\"locale\":[],\"localeText\":[],\"searchKeywords\":\"\",\"parentCID\":0},\"sys\":{\"updated\":\"2017-10-22T11:16:00\",\"message\":\"200 OK\",\"code\":200}}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Veröffentlichungsfeld ändern",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/content/publishing/76": {
+      "get": {
+        "description": "Auslesen einer Dokumentenvorlage\n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* manager\n* document-template-data-manager\n* document-template-data-consumer",
+        "summary": "Eine Veröffentlichung auslesen",
+        "tags": [
+          "Publishing"
+        ],
+        "operationId": "ApiContentPublishing76Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/api/content/publishing/76",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Eine Veröffentlichung auslesen",
+            "x-testDescription": "Auslesen einer Dokumentenvorlage\n\n## Berechtigungen\n\nMitglieder der folgenden Gruppen haben Zugriff auf diese API\n\n* administrator\n* manager\n* document-template-data-manager\n* document-template-data-consumer"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/commerce/item/catalog/publishing/52": {
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Veröffentlichung löschen",
+        "tags": [
+          "Publishing"
+        ],
+        "operationId": "ApiCommerceItemCatalogPublishing52Delete",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MehrfachKategorienLöschen"
+            },
+            "examples": {
+              "application/json": {
+                "dataset": [
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  },
+                  {
+                    "sys": {
+                      "message": "200 OK",
+                      "code": 200
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/api/commerce/item/catalog/publishing/52",
+              "headers": {
+                "Accept": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "access-control-allow-origin": "*",
+                "connection": "keep-alive",
+                "content-length": "93",
+                "content-type": "application/json",
+                "date": "Sat, 21 Oct 2017 12:51:54 GMT",
+                "server": "nginx",
+                "x-powered-by": "Alvine Framework <http://alvine.io>"
+              },
+              "body": "{\"dataset\":[{\"sys\":{\"message\":\"200 OK\",\"code\":200}},{\"sys\":{\"message\":\"200 OK\",\"code\":200}}]}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Veröffentlichung löschen",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/api/content/publishing/search": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Veröffentlichung suchen",
+        "tags": [
+          "Publishing"
+        ],
+        "operationId": "ApiContentPublishingSearchGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZweiKategorienÜberJsonÄndern"
+            },
+            "examples": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/EineErfolgreicheUndEineFehlerhafteÄnderung"
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
     }
   },
   "definitions": {
@@ -19895,12 +22069,11 @@
           {
             "cid": 50,
             "erpName": "erp-name-1",
-            "name": "Software",
-            "flag": 2
+            "name": "Software"
           },
           {
-            "cid": 70,
-            "flag": 1
+            "auid": 2,
+            "name": "test2"
           }
         ]
       },
@@ -19912,12 +22085,11 @@
             {
               "cid": 50,
               "erpName": "erp-name-1",
-              "name": "Software",
-              "flag": 2
+              "name": "Software"
             },
             {
-              "cid": 70,
-              "flag": 1
+              "auid": 2,
+              "name": "test2"
             }
           ],
           "type": "array",
@@ -19935,20 +22107,18 @@
       "example": {
         "cid": 50,
         "erpName": "erp-name-1",
-        "name": "Software",
-        "flag": 2
+        "name": "Software"
       },
       "type": "object",
       "properties": {
+        "name": {
+          "description": "",
+          "example": "Software",
+          "type": "string"
+        },
         "cid": {
           "description": "",
           "example": 50,
-          "type": "integer",
-          "format": "int32"
-        },
-        "flag": {
-          "description": "",
-          "example": 2,
           "type": "integer",
           "format": "int32"
         },
@@ -19957,15 +22127,15 @@
           "example": "erp-name-1",
           "type": "string"
         },
-        "name": {
+        "auid": {
           "description": "",
-          "example": "Software",
-          "type": "string"
+          "example": 2,
+          "type": "integer",
+          "format": "int32"
         }
       },
       "required": [
-        "cid",
-        "flag"
+        "name"
       ]
     },
     "EineErfolgreicheUndEineFehlerhafteÄnderung": {
@@ -20649,12 +22819,50 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
       "required": [
         "dataset"
+      ]
+    },
+    "Dataset53": {
+      "title": "Dataset53",
+      "example": {
+        "cid": 50,
+        "erpName": "erp-name-1",
+        "name": "Software",
+        "flag": 2
+      },
+      "type": "object",
+      "properties": {
+        "cid": {
+          "description": "",
+          "example": 50,
+          "type": "integer",
+          "format": "int32"
+        },
+        "flag": {
+          "description": "",
+          "example": 2,
+          "type": "integer",
+          "format": "int32"
+        },
+        "erpName": {
+          "description": "",
+          "example": "erp-name-1",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "example": "Software",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cid",
+        "flag"
       ]
     },
     "KategorienMehrfachlöschungrequest": {
@@ -20771,7 +22979,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -20893,7 +23101,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -21015,7 +23223,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -21137,7 +23345,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -21259,7 +23467,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -21381,7 +23589,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -21503,7 +23711,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -21625,7 +23833,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -21747,7 +23955,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -21869,7 +24077,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -21991,7 +24199,129 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "LagerMehrfachlöschungrequest": {
+      "title": "Lager MehrfachlöschungRequest",
+      "example": {
+        "dataset": [
+          {
+            "cid": 53
+          },
+          {
+            "cid": 56
+          },
+          {
+            "cid": 55
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "cid": 53
+            },
+            {
+              "cid": 56
+            },
+            {
+              "cid": 55
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset10"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "LagerHinzufügenrequest": {
+      "title": "Lager hinzufügenRequest",
+      "example": {
+        "dataset": [
+          {
+            "erpName": "erp-name-1",
+            "name": "Neue Kategorie 1",
+            "flag": 2
+          },
+          {
+            "erpName": "Neue Kategorie 2",
+            "flag": 2
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "erpName": "erp-name-1",
+              "name": "Neue Kategorie 1",
+              "flag": 2
+            },
+            {
+              "erpName": "Neue Kategorie 2",
+              "flag": 2
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset15"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "LagerÄndernrequest": {
+      "title": "Lager ändernRequest",
+      "example": {
+        "dataset": [
+          {
+            "cid": 50,
+            "erpName": "erp-name-1",
+            "name": "Software",
+            "flag": 2
+          },
+          {
+            "cid": 70,
+            "flag": 1
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "cid": 50,
+              "erpName": "erp-name-1",
+              "name": "Software",
+              "flag": 2
+            },
+            {
+              "cid": 70,
+              "flag": 1
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -22029,7 +24359,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset526"
+            "$ref": "#/definitions/Dataset583"
           }
         }
       },
@@ -22037,8 +24367,8 @@
         "dataset"
       ]
     },
-    "Dataset526": {
-      "title": "Dataset526",
+    "Dataset583": {
+      "title": "Dataset583",
       "example": {
         "masterName": "erp-name-1",
         "active": true
@@ -22097,7 +24427,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset528"
+            "$ref": "#/definitions/Dataset585"
           }
         }
       },
@@ -22105,8 +24435,8 @@
         "dataset"
       ]
     },
-    "Dataset528": {
-      "title": "Dataset528",
+    "Dataset585": {
+      "title": "Dataset585",
       "example": {
         "iid": 1001,
         "erpName": "erp-name-1",
@@ -22191,8 +24521,8 @@
         "bonID"
       ]
     },
-    "KasseHinzufügenrequest531": {
-      "title": "Kasse hinzufügenRequest531",
+    "KasseHinzufügenrequest588": {
+      "title": "Kasse hinzufügenRequest588",
       "example": {
         "name": "Beispiel Schublade",
         "crid": 1
@@ -22316,7 +24646,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset535"
+            "$ref": "#/definitions/Dataset592"
           }
         }
       },
@@ -22324,8 +24654,8 @@
         "dataset"
       ]
     },
-    "Dataset535": {
-      "title": "Dataset535",
+    "Dataset592": {
+      "title": "Dataset592",
       "example": {
         "amount": 12638,
         "currency": "EUR",
@@ -22459,8 +24789,8 @@
         "created"
       ]
     },
-    "LagerMehrfachlöschungrequest": {
-      "title": "Lager MehrfachlöschungRequest",
+    "StoreMehrfachlöschungrequest": {
+      "title": "Store MehrfachlöschungRequest",
       "example": {
         "dataset": [
           {
@@ -22499,8 +24829,8 @@
         "dataset"
       ]
     },
-    "LagerHinzufügenrequest": {
-      "title": "Lager hinzufügenRequest",
+    "StoreHinzufügenrequest": {
+      "title": "Store hinzufügenRequest",
       "example": {
         "dataset": [
           {
@@ -22539,8 +24869,8 @@
         "dataset"
       ]
     },
-    "LagerÄndernrequest": {
-      "title": "Lager ändernRequest",
+    "StoreÄndernrequest": {
+      "title": "Store ändernRequest",
       "example": {
         "dataset": [
           {
@@ -22573,7 +24903,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
@@ -22586,10 +24916,10 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset577"
+          "$ref": "#/definitions/Dataset631"
         },
         "sys": {
-          "$ref": "#/definitions/Sys734"
+          "$ref": "#/definitions/Sys788"
         }
       },
       "required": [
@@ -22597,8 +24927,8 @@
         "sys"
       ]
     },
-    "Dataset577": {
-      "title": "Dataset577",
+    "Dataset631": {
+      "title": "Dataset631",
       "type": "object",
       "properties": {
         "70f6f40d-1642-4c7b-9193-4374ae49bfba": {
@@ -23539,7 +25869,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject582"
+            "$ref": "#/definitions/GeneratedObject636"
           }
         },
         "brandLabel1": {
@@ -24296,8 +26626,8 @@
         "erp_number"
       ]
     },
-    "GeneratedObject582": {
-      "title": "generatedObject582",
+    "GeneratedObject636": {
+      "title": "generatedObject636",
       "example": {
         "bid": "9",
         "label": "Mode-Marke 2",
@@ -27093,7 +29423,7 @@
           "description": "",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/GeneratedObject582"
+            "$ref": "#/definitions/GeneratedObject636"
           }
         },
         "brandLabel1": {
@@ -27644,8 +29974,8 @@
         "variantRaster"
       ]
     },
-    "Sys734": {
-      "title": "Sys734",
+    "Sys788": {
+      "title": "Sys788",
       "example": {
         "pagination": {
           "total": 7,
@@ -27953,15 +30283,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset737"
+          "$ref": "#/definitions/Dataset791"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset737": {
-      "title": "Dataset737",
+    "Dataset791": {
+      "title": "Dataset791",
       "example": {
         "525918f5-44a6-4f8e-95bb-7f372b5ab5cd": {
           "IID": 10033,
@@ -28410,7 +30740,7 @@
           "$ref": "#/definitions/Price"
         },
         "variants": {
-          "$ref": "#/definitions/Variants740"
+          "$ref": "#/definitions/Variants794"
         }
       },
       "required": [
@@ -28682,8 +31012,8 @@
         "original_percent"
       ]
     },
-    "Variants740": {
-      "title": "Variants740",
+    "Variants794": {
+      "title": "Variants794",
       "example": {
         "S": {
           "ean": "5424155144857",
@@ -28857,16 +31187,16 @@
       "type": "object",
       "properties": {
         "S": {
-          "$ref": "#/definitions/S741"
+          "$ref": "#/definitions/S795"
         },
         "M": {
-          "$ref": "#/definitions/M743"
+          "$ref": "#/definitions/M797"
         },
         "L": {
-          "$ref": "#/definitions/L745"
+          "$ref": "#/definitions/L799"
         },
         "XL": {
-          "$ref": "#/definitions/XL747"
+          "$ref": "#/definitions/XL801"
         }
       },
       "required": [
@@ -28876,8 +31206,8 @@
         "XL"
       ]
     },
-    "S741": {
-      "title": "S741",
+    "S795": {
+      "title": "S795",
       "example": {
         "ean": "5424155144857",
         "key": "S",
@@ -28942,8 +31272,8 @@
         "price"
       ]
     },
-    "M743": {
-      "title": "M743",
+    "M797": {
+      "title": "M797",
       "example": {
         "ean": "5769864186729",
         "key": "M",
@@ -29008,8 +31338,8 @@
         "price"
       ]
     },
-    "L745": {
-      "title": "L745",
+    "L799": {
+      "title": "L799",
       "example": {
         "ean": "6876634633196",
         "key": "L",
@@ -29074,8 +31404,8 @@
         "price"
       ]
     },
-    "XL747": {
-      "title": "XL747",
+    "XL801": {
+      "title": "XL801",
       "example": {
         "ean": "5591665777547",
         "key": "XL",
@@ -29330,7 +31660,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys754"
+          "$ref": "#/definitions/Sys808"
         }
       },
       "required": [
@@ -29670,8 +32000,8 @@
         "salesman"
       ]
     },
-    "Sys754": {
-      "title": "Sys754",
+    "Sys808": {
+      "title": "Sys808",
       "example": {
         "reserverStockPositions": true,
         "createDelivery": true,
@@ -29751,7 +32081,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset756"
+            "$ref": "#/definitions/Dataset810"
           }
         },
         "sys": {
@@ -29763,8 +32093,8 @@
         "sys"
       ]
     },
-    "Dataset756": {
-      "title": "Dataset756",
+    "Dataset810": {
+      "title": "Dataset810",
       "example": {
         "sys": {
           "error": {
@@ -29943,7 +32273,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset762"
+            "$ref": "#/definitions/Dataset816"
           }
         },
         "sys": {
@@ -29955,8 +32285,8 @@
         "sys"
       ]
     },
-    "Dataset762": {
-      "title": "Dataset762",
+    "Dataset816": {
+      "title": "Dataset816",
       "example": {
         "dataset": {
           "companyOrderID": "0001/01/616",
@@ -30031,7 +32361,7 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset763"
+          "$ref": "#/definitions/Dataset817"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -30042,8 +32372,8 @@
         "sys"
       ]
     },
-    "Dataset763": {
-      "title": "Dataset763",
+    "Dataset817": {
+      "title": "Dataset817",
       "example": {
         "companyOrderID": "0001/01/616",
         "notice": "Das ist eine Kassen Bestellung",
@@ -30152,10 +32482,10 @@
           }
         },
         "user": {
-          "$ref": "#/definitions/User765"
+          "$ref": "#/definitions/User819"
         },
         "sellTo": {
-          "$ref": "#/definitions/SellTo766"
+          "$ref": "#/definitions/SellTo820"
         },
         "positions": {
           "description": "",
@@ -30183,11 +32513,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position767"
+            "$ref": "#/definitions/Position821"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys768"
+          "$ref": "#/definitions/Sys822"
         }
       },
       "required": [
@@ -30256,8 +32586,8 @@
         "state"
       ]
     },
-    "User765": {
-      "title": "User765",
+    "User819": {
+      "title": "User819",
       "example": {
         "userName": "user@example.com",
         "formOfAddress": "Herr",
@@ -30343,8 +32673,8 @@
         "surName"
       ]
     },
-    "SellTo766": {
-      "title": "SellTo766",
+    "SellTo820": {
+      "title": "SellTo820",
       "example": {
         "company": "schukai GmbH",
         "address1": "MÃ¼nchenerstrasse 563",
@@ -30394,8 +32724,8 @@
         "country"
       ]
     },
-    "Position767": {
-      "title": "Position767",
+    "Position821": {
+      "title": "Position821",
       "example": {
         "iid": "10056",
         "optional": "40",
@@ -30528,8 +32858,8 @@
         "salesman"
       ]
     },
-    "Sys768": {
-      "title": "Sys768",
+    "Sys822": {
+      "title": "Sys822",
       "example": {
         "reserverStockPositions": false,
         "createDelivery": true,
@@ -30731,11 +33061,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position775"
+            "$ref": "#/definitions/Position829"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys754"
+          "$ref": "#/definitions/Sys808"
         }
       },
       "required": [
@@ -30751,8 +33081,8 @@
         "sys"
       ]
     },
-    "Position775": {
-      "title": "Position775",
+    "Position829": {
+      "title": "Position829",
       "example": {
         "iid": "10026",
         "optional": "S",
@@ -30872,7 +33202,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Properties776"
+            "$ref": "#/definitions/Properties830"
           }
         }
       },
@@ -30895,8 +33225,8 @@
         "properties"
       ]
     },
-    "Properties776": {
-      "title": "Properties776",
+    "Properties830": {
+      "title": "Properties830",
       "example": {
         "name": "shoppingcard.erp.discounttype",
         "value": "3"
@@ -31075,7 +33405,7 @@
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys754"
+          "$ref": "#/definitions/Sys808"
         }
       },
       "required": [
@@ -31285,11 +33615,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position788"
+            "$ref": "#/definitions/Position842"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys754"
+          "$ref": "#/definitions/Sys808"
         }
       },
       "required": [
@@ -31305,8 +33635,8 @@
         "sys"
       ]
     },
-    "Position788": {
-      "title": "Position788",
+    "Position842": {
+      "title": "Position842",
       "example": {
         "iid": "10076",
         "optional": "_UNIQUE_",
@@ -31639,11 +33969,11 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Position794"
+            "$ref": "#/definitions/Position848"
           }
         },
         "sys": {
-          "$ref": "#/definitions/Sys754"
+          "$ref": "#/definitions/Sys808"
         }
       },
       "required": [
@@ -31659,8 +33989,8 @@
         "sys"
       ]
     },
-    "Position794": {
-      "title": "Position794",
+    "Position848": {
+      "title": "Position848",
       "example": {
         "iid": "10076",
         "optional": "_UNIQUE_",
@@ -31915,7 +34245,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset799"
+            "$ref": "#/definitions/Dataset853"
           }
         }
       },
@@ -31923,8 +34253,8 @@
         "dataset"
       ]
     },
-    "Dataset799": {
-      "title": "Dataset799",
+    "Dataset853": {
+      "title": "Dataset853",
       "example": {
         "IID": "501",
         "message": [
@@ -32153,7 +34483,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset526"
+            "$ref": "#/definitions/Dataset583"
           }
         }
       },
@@ -32205,7 +34535,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset805"
+            "$ref": "#/definitions/Dataset859"
           }
         }
       },
@@ -32213,8 +34543,8 @@
         "dataset"
       ]
     },
-    "Dataset805": {
-      "title": "Dataset805",
+    "Dataset859": {
+      "title": "Dataset859",
       "example": {
         "uid": 10,
         "erpName": "erp-name-1",
@@ -32264,15 +34594,15 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset807"
+          "$ref": "#/definitions/Dataset861"
         }
       },
       "required": [
         "dataset"
       ]
     },
-    "Dataset807": {
-      "title": "Dataset807",
+    "Dataset861": {
+      "title": "Dataset861",
       "example": {
         "pid": 12,
         "erpID": "personal-erp-id-1"
@@ -32361,7 +34691,7 @@
       "type": "object",
       "properties": {
         "dataset": {
-          "$ref": "#/definitions/Dataset809"
+          "$ref": "#/definitions/Dataset863"
         },
         "sys": {
           "$ref": "#/definitions/Sys"
@@ -32372,8 +34702,8 @@
         "sys"
       ]
     },
-    "Dataset809": {
-      "title": "Dataset809",
+    "Dataset863": {
+      "title": "Dataset863",
       "example": {
         "erpID": "",
         "erpName": "",
@@ -32565,7 +34895,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset811"
+            "$ref": "#/definitions/Dataset865"
           }
         }
       },
@@ -32573,8 +34903,8 @@
         "dataset"
       ]
     },
-    "Dataset811": {
-      "title": "Dataset811",
+    "Dataset865": {
+      "title": "Dataset865",
       "example": {
         "erpID": "",
         "erpName": "",
@@ -32751,7 +35081,7 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset813"
+            "$ref": "#/definitions/Dataset867"
           }
         }
       },
@@ -32759,8 +35089,8 @@
         "dataset"
       ]
     },
-    "Dataset813": {
-      "title": "Dataset813",
+    "Dataset867": {
+      "title": "Dataset867",
       "example": {
         "pid": 1,
         "uid": 1,
@@ -32986,7 +35316,129 @@
           ],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Dataset17"
+            "$ref": "#/definitions/Dataset53"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "VeröffentlichungMehrfachlöschungrequest": {
+      "title": "Veröffentlichung  MehrfachlöschungRequest",
+      "example": {
+        "dataset": [
+          {
+            "cid": 53
+          },
+          {
+            "cid": 56
+          },
+          {
+            "cid": 55
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "cid": 53
+            },
+            {
+              "cid": 56
+            },
+            {
+              "cid": 55
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset10"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "VeröffentlichungHinzufügenrequest": {
+      "title": "Veröffentlichung hinzufügenRequest",
+      "example": {
+        "dataset": [
+          {
+            "erpName": "erp-name-1",
+            "name": "Neue Kategorie 1",
+            "flag": 2
+          },
+          {
+            "erpName": "Neue Kategorie 2",
+            "flag": 2
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "erpName": "erp-name-1",
+              "name": "Neue Kategorie 1",
+              "flag": 2
+            },
+            {
+              "erpName": "Neue Kategorie 2",
+              "flag": 2
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset15"
+          }
+        }
+      },
+      "required": [
+        "dataset"
+      ]
+    },
+    "VeröffentlichungÄndernrequest": {
+      "title": "Veröffentlichung ändernRequest",
+      "example": {
+        "dataset": [
+          {
+            "cid": 50,
+            "erpName": "erp-name-1",
+            "name": "Software",
+            "flag": 2
+          },
+          {
+            "cid": 70,
+            "flag": 1
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "description": "",
+          "example": [
+            {
+              "cid": 50,
+              "erpName": "erp-name-1",
+              "name": "Software",
+              "flag": 2
+            },
+            {
+              "cid": 70,
+              "flag": 1
+            }
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dataset53"
           }
         }
       },
